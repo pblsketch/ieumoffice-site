@@ -8,6 +8,8 @@ npm run dev      # 로컬에서 보기
 npm run build    # dist/ 에 만들기
 ```
 
+`main`에 push하면 Vercel이 자동으로 배포합니다(프로젝트 `ieumoffice`, https://ieumoffice.vercel.app).
+
 내려받기 버튼은 페이지가 열릴 때 GitHub API로 최신 릴리스의 `IeumOffice-Setup-*.exe`를 찾아 연결합니다. 찾지 못하면 릴리스 페이지로 갑니다. 새 버전을 낼 때 사이트를 다시 올릴 필요는 없습니다.
 
 ## 화면 캡처 다시 만들기
