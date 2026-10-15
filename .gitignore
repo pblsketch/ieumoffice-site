@@ -1,0 +1,10 @@
+node_modules
+dist
+.vercel
+.env*
+
+# captures stay on this PC: raw app screens, previews, cover images
+capture/raw
+capture/out
+capture/preview
+capture/*.png

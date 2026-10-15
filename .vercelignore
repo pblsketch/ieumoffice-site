@@ -1,0 +1,4 @@
+capture
+node_modules
+dist
+.env*

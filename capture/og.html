@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- The link-preview card: node capture/og.mjs renders this to public/og.png -->
+    <link rel="stylesheet" href="../node_modules/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      body {
+        background: #2b2489;
+        color: #fff;
+        font-family: 'Wanted Sans Variable', sans-serif;
+        position: relative;
+        word-break: keep-all;
+      }
+      .mark {
+        position: absolute;
+        width: 760px;
+        right: -250px;
+        top: -170px;
+      }
+      .copy {
+        position: absolute;
+        left: 72px;
+        top: 78px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 30px;
+        font-weight: 760;
+        letter-spacing: -0.02em;
+      }
+      .brand svg {
+        width: 46px;
+        height: 46px;
+      }
+      h1 {
+        margin: 40px 0 0;
+        font-size: 92px;
+        line-height: 1.04;
+        font-weight: 820;
+        letter-spacing: -0.055em;
+      }
+      p {
+        margin: 26px 0 0;
+        font-size: 26px;
+        color: rgba(255, 255, 255, 0.8);
+        letter-spacing: -0.01em;
+      }
+      .shot {
+        position: absolute;
+        right: -40px;
+        bottom: -150px;
+        width: 620px;
+        border-radius: 12px;
+        box-shadow: 0 30px 60px -10px rgba(10, 8, 60, 0.6);
+        transform: rotate(-4deg);
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="mark" viewBox="0 0 1024 1024">
+      <defs>
+        <clipPath id="u"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="l"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="ur" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#u)" />
+        </mask>
+        <mask id="us" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#l)" />
+        </mask>
+      </defs>
+      <g fill="none" stroke-width="112">
+        <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#ur)" />
+        <circle cx="399" cy="512" r="192" stroke="#6E63F0" mask="url(#us)" />
+      </g>
+    </svg>
+    <img class="shot" src="out/home.png" alt="" />
+    <div class="copy">
+      <div class="brand">
+        <svg viewBox="0 0 1024 1024"><image href="../public/favicon.svg" width="1024" height="1024" /></svg>
+        이음오피스
+      </div>
+      <h1>한글부터 PDF까지,<br />한 창에서.</h1>
+      <p>한컴오피스, MS 오피스 없이 쓰는 무료 오픈소스 오피스</p>
+    </div>
+  </body>
+</html>
