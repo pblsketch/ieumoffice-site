@@ -227,12 +227,16 @@ async function wireDownload() {
   const label = document.querySelector('[data-download-label]')
   const meta = document.querySelector('[data-download-meta]')
   const versionNote = document.querySelector('[data-version]')
+  const mac = document.querySelector('[data-download-mac]')
+  const macLabel = document.querySelector('[data-download-mac-label]')
+  const macMeta = document.querySelector('[data-download-mac-meta]')
   try {
     const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {
       headers: { Accept: 'application/vnd.github+json' },
     })
     if (!res.ok) throw new Error(String(res.status))
     const rel = await res.json()
+    wireMac(rel)
     const exe = rel.assets?.find((a) => /^IeumOffice-Setup-.*\.exe$/i.test(a.name))
     if (!exe) throw new Error('no installer')
     const version = rel.tag_name.replace(/^v/, '')
@@ -240,13 +244,28 @@ async function wireDownload() {
     links.forEach((a) => {
       if (a.hasAttribute('data-download-main')) a.href = exe.browser_download_url
     })
-    label.textContent = `${version} 버전 내려받기`
+    label.textContent = `Windows용 ${version} 내려받기`
     meta.textContent = `${exe.name} (${mb}MB)`
     versionNote.textContent = `${version} 베타`
   } catch {
     // no published release yet, or GitHub is unreachable: the button keeps
     // pointing at the releases page, which says what is there
     label.textContent = '릴리스 페이지에서 내려받기'
+  }
+
+  /** the Apple Silicon disk image, when the release carries one (the Mac build is attached separately) */
+  function wireMac(rel) {
+    const dmg = rel.assets?.find((a) => /^IeumOffice-.*-arm64\.dmg$/i.test(a.name))
+    if (dmg) {
+      mac.href = dmg.browser_download_url
+      macLabel.textContent = `Mac용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
+      macMeta.textContent = `${dmg.name} (${Math.round(dmg.size / 1024 / 1024)}MB) · Apple Silicon`
+    } else {
+      // this release has no Mac build yet: say so rather than open a page without one
+      mac.classList.add('is-pending')
+      mac.setAttribute('aria-disabled', 'true')
+      macLabel.textContent = 'Mac판 준비 중'
+    }
   }
 }
 wireDownload()
