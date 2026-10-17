@@ -8,3 +8,4 @@ capture/raw
 capture/out
 capture/preview
 capture/*.png
+preview.log
