@@ -910,6 +910,38 @@ section:not(.hero) {
   margin-top: 6px;
   color: var(--muted);
 }
+.oss-star {
+  margin-top: 14px;
+  font-weight: 650;
+}
+.oss-star a {
+  color: var(--indigo);
+  text-underline-offset: 4px;
+}
+.star-count {
+  min-width: 1.6em;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 22px;
+  font-size: var(--t-sm);
+  color: rgba(255, 255, 255, 0.72);
+}
+.hero-stats b {
+  display: block;
+  font-size: var(--t-lg);
+  font-weight: 760;
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+}
 .oss-refs {
   list-style: none;
   margin: 20px 0 0;

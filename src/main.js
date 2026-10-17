@@ -220,7 +220,7 @@ function setupDemo(demo) {
 
 document.querySelectorAll('[data-ai-demo]').forEach(setupDemo)
 
-/* ---------- download: the latest release's installer, if there is one ---------- */
+/* ---------- download: the latest release's installer, if there is one */
 
 async function wireDownload() {
   const links = document.querySelectorAll('[data-download]')
@@ -269,3 +269,82 @@ async function wireDownload() {
   }
 }
 wireDownload()
+
+/* ---------- GitHub numbers: the page asks the GitHub API first so the
+ * counts are live for every visit; the openoffice repo's daily growth
+ * summary is the fallback for rate-limited or offline visitors. The
+ * unauthenticated API allows 60 calls/hour per visitor, two per visit. */
+
+const GROWTH_SUMMARY_URL =
+  'https://raw.githubusercontent.com/pblsketch/openoffice/main/docs/tracking/growth-latest.json'
+
+async function fetchJson(url) {
+  const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } })
+  if (!res.ok) throw new Error(String(res.status))
+  return res.json()
+}
+
+/** Live numbers straight from the GitHub API, or null when it is unreachable. */
+async function liveGrowthNumbers() {
+  try {
+    const [releases, repo] = await Promise.all([
+      fetchJson(`https://api.github.com/repos/${REPO}/releases?per_page=100`),
+      fetchJson(`https://api.github.com/repos/${REPO}`),
+    ])
+    if (!Array.isArray(releases)) return null
+    const numbers = { totalDownloads: 0, windowsInstalls: 0, macosInstalls: 0, stars: repo.stargazers_count }
+    for (const release of releases) {
+      for (const asset of release.assets ?? []) {
+        if (!/.(exe|dmg|zip)$/.test(asset.name)) continue
+        numbers.totalDownloads += asset.download_count
+        if (asset.name.endsWith('.exe')) numbers.windowsInstalls += asset.download_count
+        else numbers.macosInstalls += asset.download_count
+      }
+    }
+    return numbers
+  } catch {
+    return null
+  }
+}
+
+async function growthNumbers() {
+  return (await liveGrowthNumbers()) ?? (await fetchJson(GROWTH_SUMMARY_URL).catch(() => null))
+}
+
+function fillStats(strip, data) {
+  const pick = {
+    '[data-stat-downloads]': 'totalDownloads',
+    '[data-stat-windows]': 'windowsInstalls',
+    '[data-stat-mac]': 'macosInstalls',
+    '[data-stat-stars]': 'stars',
+  }
+  let filled = 0
+  for (const [sel, key] of Object.entries(pick)) {
+    const el = document.querySelector(sel)
+    if (typeof data[key] === 'number' && data[key] > 0) {
+      el.textContent = data[key].toLocaleString("ko-KR")
+      filled++
+    }
+  }
+  if (filled > 0) strip.hidden = false
+}
+
+async function wireGrowthStats() {
+  const strip = document.querySelector('[data-hero-stats]')
+  if (!strip) return
+  const data = await growthNumbers()
+  if (data) fillStats(strip, data)
+}
+wireGrowthStats()
+
+async function wireStarCount() {
+  const badge = document.querySelector('[data-star-count]')
+  if (!badge) return
+  const data = await growthNumbers()
+  const stars = data?.stars ?? data?.stargazers_count
+  if (typeof stars === 'number' && stars > 0) {
+    badge.textContent = String(stars)
+    badge.hidden = false
+  }
+}
+wireStarCount()
