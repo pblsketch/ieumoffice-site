@@ -262,15 +262,27 @@ async function wireDownload() {
   const label = document.querySelector('[data-download-label]')
   const meta = document.querySelector('[data-download-meta]')
   const versionNote = document.querySelector('[data-version]')
-  const mac = document.querySelector('[data-download-mac]')
+  const macLinks = document.querySelectorAll('[data-download-mac]')
   const macLabel = document.querySelector('[data-download-mac-label]')
   const macMeta = document.querySelector('[data-download-mac-meta]')
-  const linux = document.querySelector('[data-download-linux]')
+  const linuxLinks = document.querySelectorAll('[data-download-linux]')
   const linuxLabel = document.querySelector('[data-download-linux-label]')
   const linuxMeta = document.querySelector('[data-download-linux-meta]')
   const linuxAppImage = document.querySelector('[data-linux-appimage]')
   const linuxDeb = document.querySelector('[data-linux-deb]')
   const linuxRpm = document.querySelector('[data-linux-rpm]')
+
+  function bindGuideJump(el, hash) {
+    if (!el.closest('.hero-actions')) return
+    el.addEventListener('click', () => {
+      if (hash === '#mac' || hash === '#linux') {
+        const guide = document.querySelector(`details.mac-guide${hash}`)
+        if (guide) guide.open = true
+      }
+      document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
+    })
+  }
+
   try {
     const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {
       headers: { Accept: 'application/vnd.github+json' },
@@ -284,7 +296,8 @@ async function wireDownload() {
     const version = rel.tag_name.replace(/^v/, '')
     const mb = Math.round(exe.size / 1024 / 1024)
     links.forEach((a) => {
-      if (a.hasAttribute('data-download-main')) a.href = exe.browser_download_url
+      a.href = exe.browser_download_url
+      bindGuideJump(a, '#download')
     })
     label.textContent = `Windows용 ${version} 내려받기`
     meta.textContent = `${exe.name} (${mb}MB)`
@@ -299,32 +312,41 @@ async function wireDownload() {
   function wireMac(rel) {
     const dmg = rel.assets?.find((a) => /^IeumOffice-.*-arm64\.dmg$/i.test(a.name))
     if (dmg) {
-      mac.href = dmg.browser_download_url
-      macLabel.textContent = `Mac용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
-      macMeta.textContent = `${dmg.name} (${Math.round(dmg.size / 1024 / 1024)}MB) · Apple Silicon`
+      macLinks.forEach((a) => {
+        a.href = dmg.browser_download_url
+        bindGuideJump(a, '#mac')
+      })
+      if (macLabel) macLabel.textContent = `Mac용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
+      if (macMeta) macMeta.textContent = `${dmg.name} (${Math.round(dmg.size / 1024 / 1024)}MB) · Apple Silicon`
     } else {
       // this release has no Mac build yet: say so rather than open a page without one
-      mac.classList.add('is-pending')
-      mac.setAttribute('aria-disabled', 'true')
-      macLabel.textContent = 'Mac판 준비 중'
+      macLinks.forEach((a) => {
+        a.classList.add('is-pending')
+        a.setAttribute('aria-disabled', 'true')
+      })
+      if (macLabel) macLabel.textContent = 'Mac판 준비 중'
     }
   }
 
   /** the Linux x64 AppImage / deb / rpm packages, when the release carries them */
   function wireLinux(rel) {
-    if (!linux) return
     const appImage = rel.assets?.find((a) => /^IeumOffice-.*\.AppImage$/i.test(a.name))
     const deb = rel.assets?.find((a) => /^ieumoffice_.*\.deb$/i.test(a.name))
     const rpm = rel.assets?.find((a) => /^ieumoffice-.*\.rpm$/i.test(a.name))
     const primary = appImage ?? deb ?? rpm
     if (primary) {
-      linux.href = primary.browser_download_url
-      linuxLabel.textContent = `Linux용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
-      linuxMeta.textContent = `${primary.name} (${Math.round(primary.size / 1024 / 1024)}MB) · x64`
+      linuxLinks.forEach((a) => {
+        a.href = primary.browser_download_url
+        bindGuideJump(a, '#linux')
+      })
+      if (linuxLabel) linuxLabel.textContent = `Linux용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
+      if (linuxMeta) linuxMeta.textContent = `${primary.name} (${Math.round(primary.size / 1024 / 1024)}MB) · x64`
     } else {
-      linux.classList.add('is-pending')
-      linux.setAttribute('aria-disabled', 'true')
-      linuxLabel.textContent = 'Linux판 준비 중'
+      linuxLinks.forEach((a) => {
+        a.classList.add('is-pending')
+        a.setAttribute('aria-disabled', 'true')
+      })
+      if (linuxLabel) linuxLabel.textContent = 'Linux판 준비 중'
     }
     if (appImage && linuxAppImage) {
       linuxAppImage.href = appImage.browser_download_url
