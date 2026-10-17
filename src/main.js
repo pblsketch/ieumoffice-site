@@ -13,6 +13,7 @@ const heroCopy = document.querySelector('.hero-copy')
 let navFrame = 0
 function updateNav() {
   navFrame = 0
+  nav.classList.toggle('is-scrolled', scrollY > 12)
   // solid once the indigo part of the hero is behind the bar
   nav.classList.toggle('is-solid', heroCopy.getBoundingClientRect().bottom < 120)
 }
