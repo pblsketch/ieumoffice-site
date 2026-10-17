@@ -424,13 +424,9 @@ function fillStats(strip, data) {
   for (const [sel, key] of Object.entries(pick)) {
     const el = document.querySelector(sel)
     if (!el) continue
-    const item = el.closest('span')
-    if (typeof data[key] === 'number' && data[key] > 0) {
+    if (typeof data[key] === 'number' && data[key] >= 0) {
       el.textContent = data[key].toLocaleString('ko-KR')
-      if (item) item.hidden = false
-      filled++
-    } else if (item && item.hasAttribute('hidden')) {
-      item.hidden = true
+      if (data[key] > 0) filled++
     }
   }
   if (filled > 0) strip.hidden = false
