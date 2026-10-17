@@ -25,7 +25,7 @@ updateNav()
 const FORMATS = [
   { id: 'home', label: '홈', icon: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg>', color: '#4338ca', title: '홈', text: '최근 문서와 폴더를 보고, 파일 이름과 내용으로 검색합니다. 새 문서도 여기서 만듭니다.', alt: '이음오피스 홈 화면' },
   { id: 'hwp', label: '한글', icon: 'ㅎ', color: '#1ea0e0', title: '한글 .hwp .hwpx', text: '한컴오피스가 없어도 HWP·HWPX 문서를 열어 고치고, 연 형식 그대로 저장합니다.', alt: '한글 편집기에서 참가 신청서를 연 화면' },
-  { id: 'docs', label: '워드', icon: 'W', color: '#2b6fd6', title: '워드 .docx', text: '저장할 때 고친 부분만 원본 파일에 반영하므로, 손대지 않은 서식은 그대로 남습니다.', alt: '워드 편집기에서 기획서를 연 화면' },
+  { id: 'docs', label: '워드', icon: 'W', color: '#2b6fd6', title: '워드 .docx .odt', text: '워드와 ODT 문서를 열고 고칩니다. 저장할 때 고친 부분만 원본 파일에 반영하므로, 손대지 않은 서식은 그대로 남습니다.', alt: '워드 편집기에서 기획서를 연 화면' },
   { id: 'sheets', label: '엑셀', icon: 'X', color: '#1f8f4e', title: '엑셀 .xlsx', text: '수식과 서식, 차트가 든 통합 문서를 열고 그 형식 그대로 저장합니다.', alt: '엑셀 편집기에서 예산표를 연 화면' },
   { id: 'slides', label: '파워포인트', icon: 'P', color: '#d24726', title: '파워포인트 .pptx', text: '슬라이드를 고치고, 자료를 주면 발표 자료를 새로 만듭니다.', alt: '파워포인트 편집기에서 발표 자료를 연 화면' },
   { id: 'pdf', label: 'PDF', icon: 'PDF', color: '#e0383e', title: 'PDF', text: '쪽 위의 글자를 고치고, PDF를 워드·엑셀·파워포인트 파일로 내 PC에서 바꿉니다.', alt: 'PDF 편집기에서 안내문을 연 화면' },
@@ -256,6 +256,34 @@ function setupDemo(demo) {
 
 document.querySelectorAll('[data-ai-demo]').forEach(setupDemo)
 
+/* ---------- GitHub API: shared across the installer links and the live
+ * usage counters so each visit makes at most two unauthenticated requests
+ * (GitHub allows 60 calls/hour per visitor). The daily growth summary in
+ * the openoffice repo is the fallback for rate-limited or offline visitors. */
+
+const GROWTH_SUMMARY_URL =
+  'https://raw.githubusercontent.com/pblsketch/openoffice/main/docs/tracking/growth-latest.json'
+
+async function fetchJson(url) {
+  const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } })
+  if (!res.ok) throw new Error(String(res.status))
+  return res.json()
+}
+
+let releasesCache
+function getReleases() {
+  return (releasesCache ??= fetchJson(`https://api.github.com/repos/${REPO}/releases?per_page=100`))
+}
+
+async function getLatestRelease() {
+  const list = await getReleases().catch(() => null)
+  if (Array.isArray(list)) {
+    const latest = list.find((r) => !r.draft && !r.prerelease) ?? list[0]
+    if (latest) return latest
+  }
+  return fetchJson(`https://api.github.com/repos/${REPO}/releases/latest`)
+}
+
 /* ---------- download: the latest release's installer, if there is one */
 
 async function wireDownload() {
@@ -285,11 +313,7 @@ async function wireDownload() {
   }
 
   try {
-    const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {
-      headers: { Accept: 'application/vnd.github+json' },
-    })
-    if (!res.ok) throw new Error(String(res.status))
-    const rel = await res.json()
+    const rel = await getLatestRelease()
     wireMac(rel)
     wireLinux(rel)
     const exe = rel.assets?.find((a) => /^IeumOffice-Setup-.*\.exe$/i.test(a.name))
@@ -365,25 +389,11 @@ async function wireDownload() {
 }
 wireDownload()
 
-/* ---------- GitHub numbers: the page asks the GitHub API first so the
- * counts are live for every visit; the openoffice repo's daily growth
- * summary is the fallback for rate-limited or offline visitors. The
- * unauthenticated API allows 60 calls/hour per visitor, two per visit. */
-
-const GROWTH_SUMMARY_URL =
-  'https://raw.githubusercontent.com/pblsketch/openoffice/main/docs/tracking/growth-latest.json'
-
-async function fetchJson(url) {
-  const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } })
-  if (!res.ok) throw new Error(String(res.status))
-  return res.json()
-}
-
 /** Live numbers straight from the GitHub API, or null when it is unreachable. */
 async function liveGrowthNumbers() {
   try {
     const [releases, repo] = await Promise.all([
-      fetchJson(`https://api.github.com/repos/${REPO}/releases?per_page=100`),
+      getReleases(),
       fetchJson(`https://api.github.com/repos/${REPO}`),
     ])
     if (!Array.isArray(releases)) return null
@@ -409,8 +419,10 @@ async function liveGrowthNumbers() {
   }
 }
 
-async function growthNumbers() {
-  return (await liveGrowthNumbers()) ?? (await fetchJson(GROWTH_SUMMARY_URL).catch(() => null))
+let growthCache
+function growthNumbers() {
+  return (growthCache ??= (async () =>
+    (await liveGrowthNumbers()) ?? (await fetchJson(GROWTH_SUMMARY_URL).catch(() => null)))())
 }
 
 function fillStats(strip, data) {

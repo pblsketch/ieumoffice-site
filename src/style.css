@@ -1507,3 +1507,33 @@ details.more p {
     flex: none;
   }
 }
+
+@media (max-width: 640px) {
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .hero-actions .btn {
+    justify-content: center;
+    padding: 13px 12px;
+    font-size: 0.9375rem;
+    gap: 8px;
+  }
+  .download-options {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .download-option,
+  .download-option .btn-large {
+    width: 100%;
+    justify-content: center;
+  }
+  .download-option .btn-large {
+    padding: 16px 20px;
+    font-size: var(--t-base);
+  }
+}
+
