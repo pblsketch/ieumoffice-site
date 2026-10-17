@@ -166,17 +166,17 @@ requestAnimationFrame(() => document.documentElement.classList.add('is-ready'))
   })
 }
 
-/* ---------- the Mac guide opens when the hero note jumps to it ---------- */
+/* ---------- the Mac / Linux guides open when the hero note jumps to them ---------- */
 
 {
-  const macGuide = document.querySelector('details.mac-guide')
-  if (macGuide) {
-    const openMac = () => {
-      if (location.hash === '#mac') macGuide.open = true
+  const openHashGuide = () => {
+    if (location.hash === '#mac' || location.hash === '#linux') {
+      const guide = document.querySelector(`details.mac-guide${location.hash}`)
+      if (guide) guide.open = true
     }
-    openMac()
-    addEventListener('hashchange', openMac)
   }
+  openHashGuide()
+  addEventListener('hashchange', openHashGuide)
 }
 
 /* ---------- AI demos: each plays once when it scrolls into view ---------- */
@@ -265,6 +265,12 @@ async function wireDownload() {
   const mac = document.querySelector('[data-download-mac]')
   const macLabel = document.querySelector('[data-download-mac-label]')
   const macMeta = document.querySelector('[data-download-mac-meta]')
+  const linux = document.querySelector('[data-download-linux]')
+  const linuxLabel = document.querySelector('[data-download-linux-label]')
+  const linuxMeta = document.querySelector('[data-download-linux-meta]')
+  const linuxAppImage = document.querySelector('[data-linux-appimage]')
+  const linuxDeb = document.querySelector('[data-linux-deb]')
+  const linuxRpm = document.querySelector('[data-linux-rpm]')
   try {
     const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {
       headers: { Accept: 'application/vnd.github+json' },
@@ -272,6 +278,7 @@ async function wireDownload() {
     if (!res.ok) throw new Error(String(res.status))
     const rel = await res.json()
     wireMac(rel)
+    wireLinux(rel)
     const exe = rel.assets?.find((a) => /^IeumOffice-Setup-.*\.exe$/i.test(a.name))
     if (!exe) throw new Error('no installer')
     const version = rel.tag_name.replace(/^v/, '')
@@ -302,6 +309,36 @@ async function wireDownload() {
       macLabel.textContent = 'Mac판 준비 중'
     }
   }
+
+  /** the Linux x64 AppImage / deb / rpm packages, when the release carries them */
+  function wireLinux(rel) {
+    if (!linux) return
+    const appImage = rel.assets?.find((a) => /^IeumOffice-.*\.AppImage$/i.test(a.name))
+    const deb = rel.assets?.find((a) => /^ieumoffice_.*\.deb$/i.test(a.name))
+    const rpm = rel.assets?.find((a) => /^ieumoffice-.*\.rpm$/i.test(a.name))
+    const primary = appImage ?? deb ?? rpm
+    if (primary) {
+      linux.href = primary.browser_download_url
+      linuxLabel.textContent = `Linux용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
+      linuxMeta.textContent = `${primary.name} (${Math.round(primary.size / 1024 / 1024)}MB) · x64`
+    } else {
+      linux.classList.add('is-pending')
+      linux.setAttribute('aria-disabled', 'true')
+      linuxLabel.textContent = 'Linux판 준비 중'
+    }
+    if (appImage && linuxAppImage) {
+      linuxAppImage.href = appImage.browser_download_url
+      linuxAppImage.textContent = `${appImage.name} (${Math.round(appImage.size / 1024 / 1024)}MB)`
+    }
+    if (deb && linuxDeb) {
+      linuxDeb.href = deb.browser_download_url
+      linuxDeb.textContent = `${deb.name} (${Math.round(deb.size / 1024 / 1024)}MB)`
+    }
+    if (rpm && linuxRpm) {
+      linuxRpm.href = rpm.browser_download_url
+      linuxRpm.textContent = `${rpm.name} (${Math.round(rpm.size / 1024 / 1024)}MB)`
+    }
+  }
 }
 wireDownload()
 
@@ -327,12 +364,19 @@ async function liveGrowthNumbers() {
       fetchJson(`https://api.github.com/repos/${REPO}`),
     ])
     if (!Array.isArray(releases)) return null
-    const numbers = { totalDownloads: 0, windowsInstalls: 0, macosInstalls: 0, stars: repo.stargazers_count }
+    const numbers = {
+      totalDownloads: 0,
+      windowsInstalls: 0,
+      macosInstalls: 0,
+      linuxInstalls: 0,
+      stars: repo.stargazers_count,
+    }
     for (const release of releases) {
       for (const asset of release.assets ?? []) {
-        if (!/.(exe|dmg|zip)$/.test(asset.name)) continue
+        if (!/\.(exe|dmg|zip|AppImage|deb|rpm)$/i.test(asset.name)) continue
         numbers.totalDownloads += asset.download_count
         if (asset.name.endsWith('.exe')) numbers.windowsInstalls += asset.download_count
+        else if (/\.(AppImage|deb|rpm)$/i.test(asset.name)) numbers.linuxInstalls += asset.download_count
         else numbers.macosInstalls += asset.download_count
       }
     }
@@ -351,14 +395,20 @@ function fillStats(strip, data) {
     '[data-stat-downloads]': 'totalDownloads',
     '[data-stat-windows]': 'windowsInstalls',
     '[data-stat-mac]': 'macosInstalls',
+    '[data-stat-linux]': 'linuxInstalls',
     '[data-stat-stars]': 'stars',
   }
   let filled = 0
   for (const [sel, key] of Object.entries(pick)) {
     const el = document.querySelector(sel)
+    if (!el) continue
+    const item = el.closest('span')
     if (typeof data[key] === 'number' && data[key] > 0) {
-      el.textContent = data[key].toLocaleString("ko-KR")
+      el.textContent = data[key].toLocaleString('ko-KR')
+      if (item) item.hidden = false
       filled++
+    } else if (item && item.hasAttribute('hidden')) {
+      item.hidden = true
     }
   }
   if (filled > 0) strip.hidden = false
