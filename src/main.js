@@ -144,6 +144,41 @@ show(0)
 
 requestAnimationFrame(() => document.documentElement.classList.add('is-ready'))
 
+/* ---------- sections rise once as they enter the viewport ---------- */
+
+{
+  const seen = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue
+        e.target.classList.add('is-in')
+        seen.unobserve(e.target)
+      }
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -6% 0px' },
+  )
+  document.querySelectorAll('main section:not(.hero)').forEach((sec) => {
+    ;[...sec.children].slice(0, 6).forEach((el, i) => {
+      el.classList.add('reveal')
+      el.style.transitionDelay = `${Math.min(i, 3) * 70}ms`
+      seen.observe(el)
+    })
+  })
+}
+
+/* ---------- the Mac guide opens when the hero note jumps to it ---------- */
+
+{
+  const macGuide = document.querySelector('details.mac-guide')
+  if (macGuide) {
+    const openMac = () => {
+      if (location.hash === '#mac') macGuide.open = true
+    }
+    openMac()
+    addEventListener('hashchange', openMac)
+  }
+}
+
 /* ---------- AI demos: each plays once when it scrolls into view ---------- */
 
 const wait = (ms) => new Promise((r) => setTimeout(r, reduceMotion ? 0 : ms))
