@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- The feedback survey's Google Forms header (1600x400).
+         node capture/form-banner.mjs renders this to public/form-banner.png -->
+    <link
+      rel="stylesheet"
+      href="../node_modules/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.css"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1600px;
+        height: 400px;
+        overflow: hidden;
+      }
+      body {
+        background: linear-gradient(112deg, #2b2489 0%, #4338ca 56%, #1c1766 100%);
+        color: #fff;
+        font-family: 'Wanted Sans Variable', 'Malgun Gothic', sans-serif;
+        position: relative;
+        word-break: keep-all;
+      }
+      .glow {
+        position: absolute;
+        right: -220px;
+        top: -320px;
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 50% 50%, rgba(255, 176, 32, 0.2), rgba(255, 176, 32, 0) 62%);
+      }
+      .ring,
+      .square {
+        position: absolute;
+        fill: none;
+        stroke-width: 120;
+      }
+      .ring {
+        left: -260px;
+        top: -180px;
+        width: 660px;
+        height: 660px;
+        stroke: #a79fff;
+        opacity: 0.13;
+      }
+      .square {
+        right: -210px;
+        bottom: -290px;
+        width: 660px;
+        height: 660px;
+        stroke: #ffc85c;
+        opacity: 0.15;
+      }
+      .copy {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        text-align: center;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .brand img {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+      }
+      .brand .name {
+        font-size: 32px;
+        font-weight: 780;
+        letter-spacing: -0.03em;
+      }
+      .headline {
+        font-size: 64px;
+        font-weight: 830;
+        letter-spacing: -0.05em;
+        line-height: 1.05;
+      }
+      .sub {
+        font-size: 25px;
+        font-weight: 520;
+        color: rgba(255, 255, 255, 0.82);
+        letter-spacing: -0.012em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <svg class="ring" viewBox="0 0 640 640" aria-hidden="true">
+      <circle cx="320" cy="320" r="212" />
+    </svg>
+    <svg class="square" viewBox="0 0 640 640" aria-hidden="true">
+      <rect x="150" y="150" width="340" height="340" rx="92" />
+    </svg>
+    <div class="copy">
+      <div class="brand">
+        <img src="../public/favicon.svg" alt="" />
+        <span class="name">이음오피스</span>
+      </div>
+      <div class="headline">의견을 들려주세요</div>
+      <div class="sub">불편한 점, 바라는 점, 잘 된 점 무엇이든 좋습니다.</div>
+    </div>
+  </body>
+</html>

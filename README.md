@@ -24,6 +24,9 @@ npm run build    # dist/ 에 만들기
 node capture/capture.mjs        # capture/out/*.png (탭 9개)
 python capture/optimize.py      # public/shots/*.webp
 node capture/og.mjs             # public/og.png (링크 미리보기)
+node capture/form-banner.mjs    # public/form-banner.png (의견 설문 머리글)
 ```
 
 엑셀 화면의 AI 시연에서 강조 상자의 위치는 `src/main.js`의 `MARKS`에 캡처 대비 비율로 적혀 있습니다. 엑셀 캡처가 달라지면 함께 맞춥니다.
+
+`public/form-banner.png`는 앱 안 "의견 보내기"의 Google 설문 머리글입니다. 설문의 테마 맞춤설정 → 헤더 이미지 선택 → URL 사용에 `https://ieumoffice.vercel.app/form-banner.png`를 넣어 두었습니다. 배너를 바꾸면 그 PNG를 다시 올리고, 설문에서도 다시 골라 주세요.
