@@ -33,10 +33,11 @@ node capture/form-banner.mjs    # public/form-banner.png (의견 설문 머리�
 
 ## 새 버전을 낸 뒤
 
-내려받기 버튼은 저절로 새 버전을 가리키지만, 소개 글과 화면은 손으로 고칩니다. 이음오피스 저장소의 `docs/releasing.ko.md` 13번이 이 절차를 부릅니다.
+내려받기 버튼은 저절로 새 버전을 가리키지만, 업데이트 소식은 손으로 더합니다. 이음오피스 저장소의 `docs/releasing.ko.md` 13번이 이 절차를 부릅니다.
 
-1. **"새 버전" 칸**(`index.html`의 `#new`)을 그 버전의 릴리스 본문 "새로 들어간 것"에 맞춰 다시 씁니다. 머리글의 버전 번호, 제목과 소개 문단, 큰 기능 1~3개의 캡처와 설명, 나머지 기능 네 개 안팎, 맨 아래 "바뀐 점 전체 보기"의 태그 주소를 고칩니다. 앞 버전의 내용은 지웁니다(바뀐 점의 전체 목록은 GitHub 릴리스가 맡습니다).
-2. **다른 칸과 어긋나지 않게** 봅니다. 편집기 설명(`src/main.js`의 `FORMATS`), 한글·AI·비용·개인정보 칸의 문장이 새 기능이나 바뀐 동작과 맞는지 확인합니다.
-3. **캡처**는 그 버전으로 빌드한 이음오피스(`IEUM_REPO`, 기본 `E:/github/openoffice-release`)로 찍습니다. 새 장면은 `capture/capture.mjs`에 장면 함수를 하나 더해 이름으로 찍고(`node capture/capture.mjs split pdf-reading`), 그 이름만 변환합니다(`python capture/optimize.py split pdf-reading`). 화면이 크게 바뀐 편집기는 기존 캡처도 다시 찍습니다. 엑셀을 다시 찍으면 `MARKS`도 맞춥니다.
-4. **문구**는 humanizer로 AI 티를 걷어 냅니다. 오피스가 먼저이고 AI는 보조 도구로 씁니다.
-5. `npm run build`와 `npx vite preview`로 데스크톱·모바일 폭에서 확인하고(`node capture/preview.mjs`), 저장소 주인의 확인을 받은 뒤 `main`에 push합니다. Vercel이 배포하면 https://ieumoffice.vercel.app 에서 "새 버전" 칸과 내려받기 버튼의 버전을 다시 봅니다.
+1. **업데이트 페이지**(`updates.html`, 주소 `/updates`) 맨 위에 새 버전의 `<article class="release" id="v<버전>">`을 하나 더합니다. 앞 버전 항목은 지우지 않고 그대로 둡니다. 날짜, 제목, 두세 줄 소개, 큰 기능 1~3개의 캡처와 설명, 나머지 기능 네 개 안팎, "에서 고친 것까지 전부 보기"의 태그 주소를 채웁니다. 내용은 윤문한 릴리스 본문의 "새로 들어간 것"에서 체감이 큰 것만 고릅니다.
+2. **메인의 한 줄 안내**(`index.html`의 `.hero-news`)에서 버전 번호, 기능 이름, 링크(`/updates#v<버전>`)를 고칩니다.
+3. **다른 칸과 어긋나지 않게** 봅니다. 편집기 설명(`src/main.js`의 `FORMATS`)과 한글·AI·비용·개인정보 칸의 문장이 새 기능이나 바뀐 동작과 맞는지 확인합니다. 오래 쓸 기능은 메인 소개 칸에도 옮겨 적습니다.
+4. **캡처**는 그 버전으로 빌드한 이음오피스(`IEUM_REPO`, 기본 `E:/github/openoffice-release`)로 찍습니다. 새 장면은 `capture/capture.mjs`에 장면 함수를 하나 더해 이름으로 찍고(`node capture/capture.mjs split pdf-reading`), 그 이름만 변환합니다(`python capture/optimize.py split pdf-reading`). 이름은 버전마다 겹치지 않게 짓습니다(앞 버전 항목이 옛 캡처를 계속 씁니다). 엑셀을 다시 찍으면 `MARKS`도 맞춥니다.
+5. **문구**는 humanizer로 검토합니다. 추상적인 말("표시", "도구가 늘었다")이나 전문 용어("주석", "릴리스", "본문", "EPUB")는 일반 사용자가 바로 알아듣는 말로 바꾸거나 괄호로 풀어 씁니다. 오피스가 먼저이고 AI는 보조 도구로 씁니다.
+6. `npm run build`와 `npx vite preview`로 데스크톱·모바일 폭에서 `/updates.html`과 메인을 확인하고, 저장소 주인의 확인을 받은 뒤 `main`에 push합니다. Vercel이 배포하면 https://ieumoffice.vercel.app/updates 와 메인의 한 줄 안내, 내려받기 버튼의 버전을 다시 봅니다.
