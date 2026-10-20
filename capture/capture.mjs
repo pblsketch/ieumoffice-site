@@ -142,6 +142,110 @@ async function openFromHome(app, shell, fileName) {
   return editorPage(app, before)
 }
 
+const tabOf = async (shell, file) =>
+  (await shell.evaluate(() => window.aiOfficeTabs.list())).find((t) => t.title?.includes(file))
+
+function hideSheetStreamingNotice(app) {
+  const sheet = app.windows().find((p) => p.url().includes('://sheets/'))
+  return sheet?.evaluate(() => {
+    for (const el of document.querySelectorAll('body *')) {
+      if (el.children.length === 0 && el.textContent.includes('스트리밍하는 중')) el.style.visibility = 'hidden'
+    }
+  })
+}
+
+/** PDF reading assist: two highlights and an underline made with the H/U keys, annotation list open. */
+async function pdfReadingShot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'pdf')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const pdf = app.windows().find((p) => p.url().includes('://pdf/'))
+  const spans = await pdf.evaluate(() =>
+    [...document.querySelectorAll('.textLayer span')]
+      .filter((s) => s.textContent.trim().length > 12)
+      .slice(0, 8)
+      .map((s) => {
+        const r = s.getBoundingClientRect()
+        return { x: r.x, y: r.y, w: r.width, h: r.height }
+      }),
+  )
+  const marks = [
+    [1, 'h'],
+    [3, 'u'],
+    [5, 'h'],
+  ]
+  for (const [i, key] of marks) {
+    const s = spans[i]
+    if (!s) continue
+    await pdf.mouse.move(s.x + 1, s.y + s.h / 2)
+    await pdf.mouse.down()
+    await pdf.mouse.move(s.x + s.w - 1, s.y + s.h / 2, { steps: 12 })
+    await pdf.mouse.up()
+    await sleep(500)
+    await pdf.keyboard.press(key)
+    await sleep(500)
+  }
+  // drop the last selection with the AI panel's clear button, which also hides the selection bar
+  await pdf.locator('.ai-scope-clear').first().click().catch(() => {})
+  await pdf.evaluate(() => getSelection().removeAllRanges())
+  // a click on the blank page margin beside the info card deselects the last highlight
+  await pdf.mouse.click(1362, 520)
+  await sleep(400)
+  await sleep(400)
+  await pdf.getByRole('button', { name: '보기', exact: true }).first().click()
+  await sleep(500)
+  await pdf.evaluate(() => {
+    const b = [...document.querySelectorAll('button')].filter((x) => x.offsetParent && x.innerText.trim() === '주석')
+    b[b.length - 1]?.click()
+  })
+  await sleep(1500)
+  await shot(app, 'pdf-reading')
+  console.log('wrote pdf-reading')
+}
+
+/** Split view: the Word plan on the left, the budget sheet dropped on the right edge. */
+async function splitShot(app, shell, opened) {
+  const left = opened.find(([name]) => name === 'docs')
+  const right = opened.find(([name]) => name === 'sheets')
+  if (!left || !right) return
+  const a = await tabOf(shell, left[1])
+  const b = await tabOf(shell, right[1])
+  await shell.evaluate((id) => window.aiOfficeTabs.activate(id), a.id)
+  await sleep(1500)
+  const bounds = await app.evaluate(({ BrowserWindow }) =>
+    BrowserWindow.getAllWindows()
+      .find((w) => w.isVisible() && !w.getParentWindow())
+      .getContentBounds(),
+  )
+  await shell.evaluate((id) => window.aiOfficeTabs.tearOff(id, 500, 400), b.id)
+  await shell.evaluate((p) => window.aiOfficeTabs.dragTornWindow(p.x, p.y), {
+    x: bounds.x + bounds.width - 8,
+    y: bounds.y + Math.round(bounds.height / 2),
+  })
+  await sleep(600)
+  await shell.evaluate(() => window.aiOfficeTabs.endTornDrag())
+  await sleep(4000)
+  await hideSheetStreamingNotice(app)
+  await sleep(300)
+  await shot(app, 'split')
+  console.log('wrote split')
+}
+
+/** Spacebar Quick Look over Home on the sample Word plan. */
+async function quickLookShot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1500)
+  const row = shell.locator('.recent-row, .recent-item').filter({ hasText: '.docx' }).first()
+  await row.locator('.col-check').first().click()
+  await shell.evaluate(() => document.activeElement?.blur())
+  await shell.keyboard.press(' ')
+  await sleep(2500)
+  await shot(app, 'quicklook')
+  console.log('wrote quicklook')
+  await shell.keyboard.press('Escape')
+}
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -214,11 +318,15 @@ async function main() {
       await shot(app, name)
       console.log(`wrote ${name}`)
     }
-    if (!ONLY.length || ONLY.includes('home')) {
+    const want = (name) => !ONLY.length || ONLY.includes(name)
+    if (want('pdf-reading')) await pdfReadingShot(app, shell, opened)
+    if (want('split')) await splitShot(app, shell, opened)
+    if (want('home')) {
       await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
       await sleep(1500)
       await shot(app, 'home')
     }
+    if (want('quicklook')) await quickLookShot(app, shell)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()

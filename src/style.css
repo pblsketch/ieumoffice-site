@@ -734,6 +734,42 @@ section:not(.hero) {
   color: var(--muted);
 }
 
+/* What's new */
+.new-shot {
+  margin-top: 48px;
+}
+.new-caption,
+.new-pair figcaption {
+  margin-top: 16px;
+  color: var(--muted);
+  max-width: 46em;
+}
+.new-caption b,
+.new-pair figcaption b {
+  color: var(--ink);
+  font-weight: 720;
+  margin-right: 0.5em;
+}
+.new-pair {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+}
+.new-pair figure {
+  margin: 0;
+}
+.new-pair kbd {
+  font: inherit;
+  font-size: 0.85em;
+  font-weight: 700;
+  padding: 0 0.4em;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--ink);
+}
+
 /* HWP */
 .hwp-shot {
   margin-top: 48px;
@@ -1443,6 +1479,7 @@ details.more p {
   .split-head,
   .ai-points,
   .hwp-facts,
+  .new-pair,
   .privacy,
   .dev,
   .cost-cards {

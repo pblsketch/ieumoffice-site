@@ -36,6 +36,7 @@
         <span>이음오피스</span>
       </a>
       <nav class="nav-links" aria-label="페이지 안내">
+        <a href="#new">새 기능</a>
         <a href="#formats">문서</a>
         <a href="#hwp">한글</a>
         <a href="#ai">AI</a>
@@ -122,6 +123,59 @@
           <div class="format-bar" role="tablist" aria-label="문서 종류" data-format-bar></div>
           <p class="format-caption" aria-live="polite" data-format-caption></p>
         </div>
+      </section>
+
+      <!-- What's new: rewritten for every release (README "새 버전을 낸 뒤") -->
+      <section class="whatsnew" id="new">
+        <div class="split-head">
+          <div>
+            <p class="eyebrow">새 버전 · 0.12.2</p>
+            <h2>두 문서를 나란히,<br />PDF는 읽으면서 표시.</h2>
+          </div>
+          <p>
+            화면을 두 칸으로 나눠 문서 두 개를 함께 볼 수 있습니다. PDF에는 읽으면서 표시하고 모아 보는 도구가
+            늘었고, 파일을 열지 않고 스페이스바로 내용을 훑어볼 수 있습니다.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/split-1600.webp" srcset="/shots/split-1600.webp 1600w, /shots/split-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="화면을 두 칸으로 나눠 왼쪽에 워드 기획서, 오른쪽에 엑셀 예산표를 연 화면" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>화면 나누기</b> 탭을 창의 오른쪽 끝이나 아래쪽 끝으로 끌어다 놓거나, 탭을 오른쪽 단추로 눌러 나눕니다. AI 창은 지금 보고 있는 칸의 문서를 맡습니다.</p>
+        <div class="new-pair">
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/pdf-reading-1600.webp" srcset="/shots/pdf-reading-1600.webp 1600w, /shots/pdf-reading-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="PDF 안내문에 형광펜과 밑줄을 긋고, 왼쪽 주석 목록에 모아 본 화면" loading="lazy" />
+            </div>
+            <figcaption><b>PDF 읽기 도우미</b> 글자를 선택하고 <kbd>H</kbd> 형광펜, <kbd>U</kbd> 밑줄, <kbd>N</kbd> 메모. 표시한 것은 주석 목록에 모이고, 번역을 원문 옆에 나란히 놓고 읽을 수도 있습니다.</figcaption>
+          </figure>
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/quicklook-1600.webp" srcset="/shots/quicklook-1600.webp 1600w, /shots/quicklook-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="홈의 파일 목록에서 스페이스바로 워드 기획서의 내용을 미리 본 화면" loading="lazy" />
+            </div>
+            <figcaption><b>스페이스바 미리보기</b> 파일을 고르고 스페이스바를 누르면 탭을 열지 않고 내용을 봅니다. 앱이 켜져 있으면 Windows 파일 탐색기에서도 됩니다.</figcaption>
+          </figure>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>열린 문서를 AI 창에 첨부</dt>
+            <dd>지금 열려 있는 문서와 최근 문서 가운데 골라 AI 창에 붙입니다.</dd>
+          </div>
+          <div>
+            <dt>AI가 링크를 읽습니다</dt>
+            <dd>대화에 웹 주소를 넣으면 AI가 그 페이지의 본문을 읽고 답합니다.</dd>
+          </div>
+          <div>
+            <dt>슬라이드 메모 모아 보기</dt>
+            <dd>파워포인트의 메모 창에서 모든 페이지의 메모를 한꺼번에 봅니다.</dd>
+          </div>
+          <div>
+            <dt>암호 걸린 파일 열기</dt>
+            <dd>열기 암호가 걸린 엑셀·파워포인트 파일이 빈 화면 대신 암호를 묻습니다.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/openoffice/releases/tag/v0.12.2" rel="noopener">0.12.2에서 바뀐 점 전체 보기</a>
+        </p>
       </section>
 
       <!-- HWP -->

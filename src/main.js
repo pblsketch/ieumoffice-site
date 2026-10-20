@@ -28,7 +28,7 @@ const FORMATS = [
   { id: 'docs', label: '워드', icon: 'W', color: '#2b6fd6', title: '워드 .docx .odt', text: '워드와 ODT 문서를 열고 고칩니다. 저장할 때 고친 부분만 원본 파일에 반영하므로, 손대지 않은 서식은 그대로 남습니다.', alt: '워드 편집기에서 기획서를 연 화면' },
   { id: 'sheets', label: '엑셀', icon: 'X', color: '#1f8f4e', title: '엑셀 .xlsx', text: '수식과 서식, 차트가 든 통합 문서를 열고 그 형식 그대로 저장합니다.', alt: '엑셀 편집기에서 예산표를 연 화면' },
   { id: 'slides', label: '파워포인트', icon: 'P', color: '#d24726', title: '파워포인트 .pptx', text: '슬라이드를 고치고, 자료를 주면 발표 자료를 새로 만듭니다.', alt: '파워포인트 편집기에서 발표 자료를 연 화면' },
-  { id: 'pdf', label: 'PDF', icon: 'PDF', color: '#e0383e', title: 'PDF', text: '쪽 위의 글자를 고치고, PDF를 워드·엑셀·파워포인트 파일로 내 PC에서 바꿉니다.', alt: 'PDF 편집기에서 안내문을 연 화면' },
+  { id: 'pdf', label: 'PDF', icon: 'PDF', color: '#e0383e', title: 'PDF', text: '쪽 위의 글자를 고치고, 읽으면서 형광펜과 메모를 남깁니다. PDF를 워드·엑셀·파워포인트 파일로 내 PC에서 바꿉니다.', alt: 'PDF 편집기에서 안내문을 연 화면' },
   { id: 'markdown', label: '마크다운', icon: 'M↓', color: '#7c4ddb', title: '마크다운 .md', text: '서식이 보이는 화면에서 쓰고, 필요하면 원문으로 바꿔 고칩니다.', alt: '마크다운 편집기에서 회의 메모를 연 화면' },
   { id: 'html', label: 'HTML', icon: '</>', color: '#119c8f', title: 'HTML', text: '웹 페이지를 보이는 화면에서 고칩니다. 고른 자료로 새 페이지를 만들 수도 있습니다.', alt: 'HTML 편집기에서 행사 소개 페이지를 연 화면' },
   { id: 'mindmap', label: '마인드맵', icon: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="6" cy="12" r="2.6" fill="currentColor"/><path d="M8.5 12h3m0 0c0-4 2-6 5-6m-5 6c0 4 2 6 5 6m-5-6h5"/></svg>', color: '#d63d8f', title: '마인드맵 .xmind', text: 'XMind 파일을 열고 고쳐 같은 파일로 저장합니다. 그림, PDF, 마크다운 개요로 내보냅니다.', alt: '마인드맵 편집기에서 아이디어 지도를 연 화면' },
