@@ -151,6 +151,10 @@ p {
 .btn:active {
   transform: translateY(1px) scale(0.99);
 }
+.btn.is-busy,
+.linux-files a.is-busy {
+  opacity: 0.6;
+}
 .btn-amber {
   background: var(--amber);
   color: var(--indigo-night);

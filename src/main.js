@@ -286,6 +286,37 @@ async function getLatestRelease() {
 
 /* ---------- download: the latest release's installer, if there is one */
 
+/** One intent is one download. The same installer is linked from the hero and
+ *  the download section, and the hero used to jump to the section on the same
+ *  click, leaving a second copy under the pointer. A download link now only
+ *  downloads; this guard also swallows a double click or a quick second click
+ *  on the other copy, and dims the links so the first click is acknowledged. */
+const DOWNLOAD_GUARD_MS = 6000
+
+function guardRepeatedDownload(elements) {
+  const links = elements.filter(Boolean)
+  let busyUntil = 0
+  let resetTimer = 0
+  const setBusy = (busy) => {
+    clearTimeout(resetTimer)
+    for (const el of links) el.classList.toggle('is-busy', busy)
+    if (busy) resetTimer = setTimeout(() => setBusy(false), DOWNLOAD_GUARD_MS)
+  }
+  for (const el of links) {
+    el.addEventListener('click', (event) => {
+      if (event.button !== 0) return
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+      const now = Date.now()
+      if (now < busyUntil) {
+        event.preventDefault()
+        return
+      }
+      busyUntil = now + DOWNLOAD_GUARD_MS
+      setBusy(true)
+    })
+  }
+}
+
 async function wireDownload() {
   const links = document.querySelectorAll('[data-download]')
   const label = document.querySelector('[data-download-label]')
@@ -301,17 +332,6 @@ async function wireDownload() {
   const linuxDeb = document.querySelector('[data-linux-deb]')
   const linuxRpm = document.querySelector('[data-linux-rpm]')
 
-  function bindGuideJump(el, hash) {
-    if (!el.closest('.hero-actions')) return
-    el.addEventListener('click', () => {
-      if (hash === '#mac' || hash === '#linux') {
-        const guide = document.querySelector(`details.mac-guide${hash}`)
-        if (guide) guide.open = true
-      }
-      document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
-    })
-  }
-
   try {
     const rel = await getLatestRelease()
     wireMac(rel)
@@ -322,8 +342,8 @@ async function wireDownload() {
     const mb = Math.round(exe.size / 1024 / 1024)
     links.forEach((a) => {
       a.href = exe.browser_download_url
-      bindGuideJump(a, '#download')
     })
+    guardRepeatedDownload([...links])
     label.textContent = `Windows용 ${version} 내려받기`
     meta.textContent = `${exe.name} (${mb}MB)`
     versionNote.textContent = `${version} 베타`
@@ -339,8 +359,8 @@ async function wireDownload() {
     if (dmg) {
       macLinks.forEach((a) => {
         a.href = dmg.browser_download_url
-        bindGuideJump(a, '#mac')
       })
+      guardRepeatedDownload([...macLinks])
       if (macLabel) macLabel.textContent = `Mac용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
       if (macMeta) macMeta.textContent = `${dmg.name} (${Math.round(dmg.size / 1024 / 1024)}MB) · Apple Silicon`
     } else {
@@ -362,8 +382,10 @@ async function wireDownload() {
     if (primary) {
       linuxLinks.forEach((a) => {
         a.href = primary.browser_download_url
-        bindGuideJump(a, '#linux')
       })
+      const primaryGuideLink =
+        primary === appImage ? linuxAppImage : primary === deb ? linuxDeb : linuxRpm
+      guardRepeatedDownload([...linuxLinks, primaryGuideLink])
       if (linuxLabel) linuxLabel.textContent = `Linux용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
       if (linuxMeta) linuxMeta.textContent = `${primary.name} (${Math.round(primary.size / 1024 / 1024)}MB) · x64`
     } else {
