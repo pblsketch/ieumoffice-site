@@ -3,6 +3,30 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ieumoffice.com"
+        }
+      ],
+      "destination": "https://ieumoffice.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/((?!privacy\\.html$|form-banner\\.png$|google8ab101bc93526a97\\.html$).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ieumoffice.vercel.app"
+        }
+      ],
+      "destination": "https://ieumoffice.com/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/updates",
