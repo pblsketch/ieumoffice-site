@@ -299,7 +299,11 @@ function guardRepeatedDownload(elements) {
   let resetTimer = 0
   const setBusy = (busy) => {
     clearTimeout(resetTimer)
-    for (const el of links) el.classList.toggle('is-busy', busy)
+    for (const el of links) {
+      el.classList.toggle('is-busy', busy)
+      if (busy) el.setAttribute('aria-busy', 'true')
+      else el.removeAttribute('aria-busy')
+    }
     if (busy) resetTimer = setTimeout(() => setBusy(false), DOWNLOAD_GUARD_MS)
   }
   for (const el of links) {
