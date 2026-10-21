@@ -14,7 +14,11 @@
     <meta name="keywords" content="이음오피스, IeumOffice, 무료 오피스, 한글 뷰어, HWP 편집, HWPX, 워드, 엑셀, 파워포인트, PDF 편집, 마인드맵, 오픈소스 오피스, AI 문서 편집" />
     <link rel="canonical" href="https://ieumoffice.com/" />
     <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="이음오피스" />
     <meta property="og:url" content="https://ieumoffice.com/" />
@@ -44,7 +48,16 @@
             "url": "https://ieumoffice.com/",
             "name": "이음오피스",
             "alternateName": ["IeumOffice", "이음 오피스"],
-            "inLanguage": "ko-KR"
+            "inLanguage": "ko-KR",
+            "publisher": { "@id": "https://ieumoffice.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://ieumoffice.com/#organization",
+            "name": "이음오피스",
+            "alternateName": "IeumOffice",
+            "url": "https://ieumoffice.com/",
+            "logo": "https://ieumoffice.com/icon-512.png"
           },
           {
             "@type": "SoftwareApplication",
@@ -52,6 +65,7 @@
             "alternateName": "IeumOffice",
             "url": "https://ieumoffice.com/",
             "image": "https://ieumoffice.com/og.png",
+            "publisher": { "@id": "https://ieumoffice.com/#organization" },
             "description": "한글, 워드, 엑셀, 파워포인트, PDF, 마크다운, HTML, 마인드맵 파일을 한 창에서 열고 고치는 무료 오픈소스 오피스입니다.",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Windows, macOS, Linux",
