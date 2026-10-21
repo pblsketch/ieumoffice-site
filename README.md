@@ -8,7 +8,11 @@ npm run dev      # 로컬에서 보기
 npm run build    # dist/ 에 만들기
 ```
 
-`main`에 push하면 Vercel이 자동으로 배포합니다(프로젝트 `ieumoffice`, https://ieumoffice.vercel.app).
+`main`에 push하면 Vercel이 자동으로 배포합니다(프로젝트 `ieumoffice`, https://ieumoffice.com).
+
+주소는 Cloudflare에서 산 `ieumoffice.com`입니다. Cloudflare DNS의 `@`와 `www` CNAME이 Vercel을 가리키고(프록시 끔), `www.ieumoffice.com`과 `ieumoffice.vercel.app`은 `vercel.json`의 `redirects`가 `ieumoffice.com`으로 옮깁니다. 이미 Google에 등록한 `privacy.html`, `form-banner.png`, Search Console 확인 파일만 vercel.app 주소에서도 그대로 열립니다.
+
+검색 등록: `robots.txt`와 `sitemap.xml`이 `public/`에 있습니다. 페이지를 더하면 `sitemap.xml`에도 넣고, 각 페이지 `<head>`에 `canonical`을 `https://ieumoffice.com/...`으로 답니다.
 
 내려받기 버튼은 페이지가 열릴 때 GitHub API로 최신 릴리스의 `IeumOffice-Setup-*.exe`를 찾아 연결합니다. 찾지 못하면 릴리스 페이지로 갑니다. 새 버전을 낼 때 사이트를 다시 올릴 필요는 없습니다.
 
@@ -40,4 +44,4 @@ node capture/form-banner.mjs    # public/form-banner.png (의견 설문 머리�
 3. **다른 칸과 어긋나지 않게** 봅니다. 편집기 설명(`src/main.js`의 `FORMATS`)과 한글·AI·비용·개인정보 칸의 문장이 새 기능이나 바뀐 동작과 맞는지 확인합니다. 오래 쓸 기능은 메인 소개 칸에도 옮겨 적습니다.
 4. **캡처**는 그 버전으로 빌드한 이음오피스(`IEUM_REPO`, 기본 `E:/github/openoffice-release`)로 찍습니다. 새 장면은 `capture/capture.mjs`에 장면 함수를 하나 더해 이름으로 찍고(`node capture/capture.mjs split pdf-reading`), 그 이름만 변환합니다(`python capture/optimize.py split pdf-reading`). 이름은 버전마다 겹치지 않게 짓습니다(앞 버전 항목이 옛 캡처를 계속 씁니다). 엑셀을 다시 찍으면 `MARKS`도 맞춥니다.
 5. **문구**는 humanizer로 검토합니다. 추상적인 말("표시", "도구가 늘었다")이나 전문 용어("주석", "릴리스", "본문", "EPUB")는 일반 사용자가 바로 알아듣는 말로 바꾸거나 괄호로 풀어 씁니다. 오피스가 먼저이고 AI는 보조 도구로 씁니다.
-6. `npm run build`와 `npx vite preview`로 데스크톱·모바일 폭에서 `/updates.html`과 메인을 확인하고, 저장소 주인의 확인을 받은 뒤 `main`에 push합니다. Vercel이 배포하면 https://ieumoffice.vercel.app/updates 와 메인의 한 줄 안내, 내려받기 버튼의 버전을 다시 봅니다.
+6. `npm run build`와 `npx vite preview`로 데스크톱·모바일 폭에서 `/updates.html`과 메인을 확인하고, 저장소 주인의 확인을 받은 뒤 `main`에 push합니다. Vercel이 배포하면 https://ieumoffice.com/updates 와 메인의 한 줄 안내, 내려받기 버튼의 버전을 다시 봅니다.
