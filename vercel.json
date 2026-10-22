@@ -16,7 +16,7 @@
       "permanent": true
     },
     {
-      "source": "/((?!privacy\\.html$|form-banner\\.png$|google8ab101bc93526a97\\.html$).*)",
+      "source": "/((?!privacy\\.html$|form-banner\\.png$|og\\.png$|google8ab101bc93526a97\\.html$).*)",
       "has": [
         {
           "type": "host",
@@ -45,6 +45,24 @@
     },
     {
       "source": "/shots/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/:file(favicon\\.ico|favicon\\.svg|favicon-48\\.png|favicon-96\\.png|apple-touch-icon\\.png|icon-192\\.png|icon-512\\.png|og\\.png|form-banner\\.png|site\\.webmanifest)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/:file(robots\\.txt|sitemap\\.xml)",
       "headers": [
         {
           "key": "Cache-Control",

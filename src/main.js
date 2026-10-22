@@ -1,4 +1,4 @@
-import 'wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.css'
+import './font.css'
 import './style.css'
 
 const REPO = 'pblsketch/openoffice'

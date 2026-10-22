@@ -1,0 +1,19 @@
+/*
+Wanted Sans Variable, cut down to the characters this site uses.
+
+The package's split build is 92 woff2 files; one page view pulled 15 of them,
+and every one counts as a CDN request. This subset is a single 90 KB file.
+
+Rebuild it when page copy changes:
+
+    python scripts/subset-font.py
+
+Missing glyphs fall through to the next family in --font.
+*/
+@font-face {
+  font-family: "Wanted Sans Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 1000;
+  src: url("./fonts/WantedSansVariable.subset.woff2") format("woff2-variations");
+}
