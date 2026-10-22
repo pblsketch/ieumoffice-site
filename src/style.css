@@ -1398,6 +1398,20 @@ details.more p {
 .footer-links a:hover {
   color: var(--indigo);
 }
+.footer-legal {
+  flex-basis: 100%;
+  max-width: 62em;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+}
+.footer-legal p + p {
+  margin-top: 6px;
+}
+.footer-legal a {
+  color: inherit;
+}
 
 /* ---------- intro: the page-load sequence ---------- */
 
