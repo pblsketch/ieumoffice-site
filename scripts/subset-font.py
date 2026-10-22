@@ -30,7 +30,7 @@ SAFETY = (
     + "·…—–‘’“”" + "×※•→←↑↓↔" + "₩°±"
 )
 
-SOURCES = ["index.html", "updates.html", "public/privacy.html", "src/main.js", "src/updates.js", "src/style.css"]
+SOURCES = ["index.html", "updates.html", "story.html", "public/privacy.html", "src/main.js", "src/updates.js", "src/story.js", "src/style.css"]
 
 
 def main() -> int:

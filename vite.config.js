@@ -1,13 +1,14 @@
 import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 
-// two pages: the landing page and the release history at /updates
+// three pages: the landing page, the release history at /updates and the maker's story at /story
 export default defineConfig({
   build: {
     rollupOptions: {
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         updates: resolve(import.meta.dirname, 'updates.html'),
+        story: resolve(import.meta.dirname, 'story.html'),
       },
     },
   },

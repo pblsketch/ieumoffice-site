@@ -2,6 +2,8 @@
 
 [이음오피스](https://github.com/pblsketch/openoffice)를 소개하고 설치 파일을 내려받는 한 쪽짜리 사이트입니다. Vite로 만들고 Vercel에 올립니다.
 
+페이지는 세 개입니다. 메인(`index.html`), 업데이트 소식(`updates.html`, 주소 `/updates`), 만든 이야기(`story.html`, 주소 `/story`). 만든 이야기는 저장소 주인이 직접 쓴 글이므로 맞춤법과 띄어쓰기 말고는 손대지 않습니다.
+
 ```sh
 npm install
 npm run dev      # 로컬에서 보기

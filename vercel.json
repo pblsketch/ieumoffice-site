@@ -31,6 +31,10 @@
     {
       "source": "/updates",
       "destination": "/updates.html"
+    },
+    {
+      "source": "/story",
+      "destination": "/story.html"
     }
   ],
   "headers": [

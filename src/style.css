@@ -811,6 +811,62 @@ section:not(.hero) {
   font-weight: 720;
 }
 
+/* Story page: one long essay in the serif face */
+.page-story main {
+  padding-bottom: clamp(72px, 10vw, 120px);
+}
+.story {
+  width: min(40rem, calc(100vw - 48px));
+  margin: 0 auto;
+  padding-top: clamp(120px, 14vw, 168px);
+}
+.story-head h1 {
+  font-family: var(--serif);
+  font-size: var(--t-xl);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+.story-byline {
+  margin-top: 28px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--ink);
+  color: var(--muted);
+  font-size: var(--t-sm);
+}
+.story-byline b {
+  color: var(--ink);
+  font-weight: 720;
+  margin-right: 0.4em;
+}
+.story-body {
+  margin-top: clamp(40px, 6vw, 56px);
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  line-height: 1.95;
+}
+.story-body p + p {
+  margin-top: 1.4em;
+}
+.story-body h2 {
+  margin: 2.6em 0 0.9em;
+  font-size: var(--t-md);
+  letter-spacing: -0.03em;
+  color: var(--indigo-deep);
+}
+.story-body .text-link {
+  font-weight: 700;
+}
+.story-next {
+  margin-top: clamp(56px, 8vw, 80px);
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+}
+
 /* What's new (used by the updates page) */
 .new-shot {
   margin-top: 48px;
