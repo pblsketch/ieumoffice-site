@@ -1414,6 +1414,303 @@ details.more p {
   color: var(--white);
 }
 
+/* "which screen do you see?" cards: the install help page and the download section */
+.symptoms {
+  width: var(--wrap);
+  margin: clamp(36px, 5vw, 56px) auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.symptom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 14px 18px;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--line);
+  text-decoration: none;
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s;
+}
+.symptom:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 2px var(--indigo),
+    0 14px 30px -18px rgba(43, 36, 137, 0.5);
+}
+.symptom > b {
+  margin-top: 10px;
+  font-size: var(--t-base);
+  font-weight: 720;
+  letter-spacing: -0.02em;
+}
+.symptom > span:last-child {
+  font-size: var(--t-sm);
+  color: var(--muted);
+}
+
+/* the tiny drawings on the symptom cards */
+.symptom-pic {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  background: #eef0f7;
+  overflow: hidden;
+}
+.symptom-pic i,
+.symptom-pic b,
+.symptom-pic s,
+.symptom-pic u {
+  position: absolute;
+  display: block;
+}
+.sp-bar {
+  inset: 0 0 auto;
+  height: 18%;
+  background: #dfe3ea;
+}
+.sp-panel {
+  top: 24%;
+  right: 6%;
+  width: 56%;
+  height: 62%;
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.35);
+}
+.sp-panel b {
+  left: 10%;
+  top: 18%;
+  width: 14%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f0a400;
+}
+.sp-panel s,
+.sp-blue s,
+.sp-setup s {
+  left: 30%;
+  height: 8%;
+  border-radius: 4px;
+  background: #d4d7e3;
+}
+.sp-panel s {
+  top: 22%;
+  width: 58%;
+}
+.sp-panel s + s {
+  top: 42%;
+  width: 44%;
+}
+.symptom-pic-blue {
+  background: #c9d3e6;
+}
+.sp-blue {
+  inset: 14% 14%;
+  border-radius: 4px;
+  background: #0b5cad;
+}
+.sp-blue b {
+  left: 9%;
+  top: 14%;
+  width: 60%;
+  height: 16%;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.9);
+}
+.sp-blue s {
+  left: 9%;
+  top: 44%;
+  width: 78%;
+  background: rgba(255, 255, 255, 0.45);
+}
+.sp-blue s + s {
+  top: 60%;
+  width: 52%;
+}
+.sp-folder {
+  left: 50%;
+  top: 50%;
+  width: 34%;
+  height: 46%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px 6px 6px 6px;
+  background: #f6c344;
+  box-shadow: inset 0 9px 0 #e9ae1c;
+}
+.sp-folder::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 26%;
+  height: 34%;
+  transform: translateX(-50%);
+  border: solid var(--indigo);
+  border-width: 0 3px 3px 0;
+  rotate: 45deg;
+  translate: 0 -4px;
+}
+.sp-setup {
+  inset: 12% 18%;
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.35);
+}
+.sp-setup b {
+  inset: 0 0 auto;
+  height: 22%;
+  border-radius: 6px 6px 0 0;
+  background: #e8eaf3;
+}
+.sp-setup s {
+  left: 10%;
+  top: 38%;
+  width: 70%;
+}
+.sp-setup u {
+  right: 8%;
+  bottom: 10%;
+  width: 26%;
+  height: 16%;
+  border-radius: 4px;
+  background: var(--indigo);
+}
+
+/* the download section's one-row version */
+.stuck {
+  margin-top: clamp(32px, 5vw, 44px);
+}
+.stuck-title {
+  font-weight: 720;
+}
+.stuck-title span {
+  font-weight: 400;
+  color: var(--muted);
+}
+.symptoms.symptoms-compact {
+  width: auto;
+  margin-top: 18px;
+}
+.symptoms-compact .symptom {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 0;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+.symptoms-compact .symptom-pic {
+  grid-row: span 2;
+  border-radius: 8px;
+}
+.symptoms-compact .symptom > b {
+  margin-top: 0;
+  font-size: var(--t-sm);
+  align-self: end;
+}
+.symptoms-compact .symptom > span:last-child {
+  font-size: 0.8125rem;
+  align-self: start;
+}
+.stuck-more {
+  margin-top: 14px;
+  font-size: var(--t-sm);
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .symptoms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .symptom {
+    padding: 10px 10px 14px;
+  }
+  .symptom > span:last-child {
+    display: none;
+  }
+  /* phones mostly read here and install on a PC later: titles are enough */
+  .symptoms-compact .symptom {
+    display: block;
+  }
+  .symptoms-compact .symptom-pic {
+    display: none;
+  }
+}
+
+/* the hint that appears right after a download starts */
+.stuck-hint {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px 16px;
+  width: min(420px, calc(100vw - 40px));
+  padding: 18px 44px 18px 20px;
+  border-radius: 18px;
+  background: var(--indigo-night);
+  color: var(--white);
+  box-shadow: 0 20px 50px -20px rgba(28, 23, 102, 0.8);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    transform 0.4s var(--ease-out);
+}
+.stuck-hint.is-on {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.stuck-hint p {
+  margin: 0;
+  font-size: var(--t-sm);
+  line-height: 1.6;
+}
+.stuck-hint .btn {
+  padding: 10px 16px;
+  font-size: var(--t-sm);
+  white-space: nowrap;
+}
+.stuck-hint-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.stuck-hint-close:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 480px) {
+  .stuck-hint {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
+    grid-template-columns: 1fr;
+  }
+}
+
 /* footer */
 .footer {
   border-top: 1px solid var(--line);

@@ -2,7 +2,9 @@
 
 [이음오피스](https://github.com/pblsketch/openoffice)를 소개하고 설치 파일을 내려받는 한 쪽짜리 사이트입니다. Vite로 만들고 Vercel에 올립니다.
 
-페이지는 세 개입니다. 메인(`index.html`), 업데이트 소식(`updates.html`, 주소 `/updates`), 만든 이야기(`story.html`, 주소 `/story`). 만든 이야기는 저장소 주인이 직접 쓴 글이므로 맞춤법과 띄어쓰기 말고는 손대지 않습니다.
+페이지는 네 개입니다. 메인(`index.html`), 업데이트 소식(`updates.html`, 주소 `/updates`), 만든 이야기(`story.html`, 주소 `/story`), 설치 도움말(`install.html`, 주소 `/install`). 만든 이야기는 저장소 주인이 직접 쓴 글이므로 맞춤법과 띄어쓰기 말고는 손대지 않습니다.
+
+설치 도움말은 "지금 보이는 화면"을 고르면 다시 그린 화면 위에서 마우스가 누를 곳을 차례로 보여 줍니다. 장면마다 주소가 있어(`/install#edge`, `#pc-protect`, `#find-file`, `#installer`, `#mac`, `#linux`) 의견 보내기 답장에 그대로 붙일 수 있습니다. 화면은 그림이 아니라 HTML이라 Edge나 Windows 문구가 바뀌면 `install.html`의 글자만 고칩니다. 움직임 순서는 `src/install.js`의 `SCENES`에 있습니다. 메인에는 내려받기 상자 아래 카드 한 줄과, 내려받기를 누른 직후 뜨는 작은 안내만 둡니다. 예전 주소 `/#mac`, `/#linux`는 설치 도움말로 넘어갑니다.
 
 ```sh
 npm install

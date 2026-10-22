@@ -35,6 +35,10 @@
     {
       "source": "/story",
       "destination": "/story.html"
+    },
+    {
+      "source": "/install",
+      "destination": "/install.html"
     }
   ],
   "headers": [
