@@ -27,14 +27,14 @@ updateNav()
 
 const FORMATS = [
   { id: 'home', label: '홈', icon: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg>', color: '#4338ca', title: '홈', text: '최근 문서와 폴더를 보고, 파일 이름과 내용으로 검색합니다. 새 문서도 여기서 만듭니다.', alt: '이음오피스 홈 화면' },
-  { id: 'hwp', label: '한글', icon: 'ㅎ', color: '#1ea0e0', title: '한글 .hwp .hwpx', text: 'HWP·HWPX 문서를 열어 고치고, 연 형식 그대로 저장합니다.', alt: '한글 편집기에서 참가 신청서를 연 화면' },
-  { id: 'docs', label: '워드', icon: 'W', color: '#2b6fd6', title: '워드 .docx .odt', text: '워드와 ODT 문서를 열고 고칩니다. 저장할 때 고친 부분만 원본 파일에 반영하므로, 손대지 않은 서식은 그대로 남습니다.', alt: '워드 편집기에서 기획서를 연 화면' },
-  { id: 'sheets', label: '엑셀', icon: 'X', color: '#1f8f4e', title: '엑셀 .xlsx', text: '수식과 서식, 차트가 든 통합 문서를 열고 그 형식 그대로 저장합니다.', alt: '엑셀 편집기에서 예산표를 연 화면' },
-  { id: 'slides', label: '파워포인트', icon: 'P', color: '#d24726', title: '파워포인트 .pptx', text: '슬라이드를 고치고, 자료를 주면 발표 자료를 새로 만듭니다.', alt: '파워포인트 편집기에서 발표 자료를 연 화면' },
-  { id: 'pdf', label: 'PDF', icon: 'PDF', color: '#e0383e', title: 'PDF', text: '쪽 위의 글자를 고치고, 읽으면서 형광펜과 메모를 남깁니다. PDF를 워드·엑셀·파워포인트 파일로 내 PC에서 바꿉니다.', alt: 'PDF 편집기에서 안내문을 연 화면' },
-  { id: 'markdown', label: '마크다운', icon: 'M↓', color: '#7c4ddb', title: '마크다운 .md', text: '서식이 보이는 화면에서 쓰고, 필요하면 원문으로 바꿔 고칩니다.', alt: '마크다운 편집기에서 회의 메모를 연 화면' },
-  { id: 'html', label: 'HTML', icon: '</>', color: '#119c8f', title: 'HTML', text: '웹 페이지를 보이는 화면에서 고칩니다. 고른 자료로 새 페이지를 만들 수도 있습니다.', alt: 'HTML 편집기에서 행사 소개 페이지를 연 화면' },
-  { id: 'mindmap', label: '마인드맵', icon: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="6" cy="12" r="2.6" fill="currentColor"/><path d="M8.5 12h3m0 0c0-4 2-6 5-6m-5 6c0 4 2 6 5 6m-5-6h5"/></svg>', color: '#d63d8f', title: '마인드맵 .xmind', text: 'XMind 파일을 열고 고쳐 같은 파일로 저장합니다. 그림, PDF, 마크다운 개요로 내보냅니다.', alt: '마인드맵 편집기에서 아이디어 지도를 연 화면' },
+  { id: 'hwp', label: '한글', file: 'hwp', color: '#2e7faa', title: '한글 .hwp .hwpx', text: 'HWP·HWPX 문서를 열어 고치고, 연 형식 그대로 저장합니다.', alt: '한글 편집기에서 참가 신청서를 연 화면' },
+  { id: 'docs', label: '워드', file: 'docx', color: '#5160be', title: '워드 .docx .odt', text: '워드와 ODT 문서를 열고 고칩니다. 저장할 때 고친 부분만 원본 파일에 반영하므로, 손대지 않은 서식은 그대로 남습니다.', alt: '워드 편집기에서 기획서를 연 화면' },
+  { id: 'sheets', label: '엑셀', file: 'xlsx', color: '#2a8572', title: '엑셀 .xlsx', text: '수식과 서식, 차트가 든 통합 문서를 열고 그 형식 그대로 저장합니다.', alt: '엑셀 편집기에서 예산표를 연 화면' },
+  { id: 'slides', label: '파워포인트', file: 'pptx', color: '#c27630', title: '파워포인트 .pptx', text: '슬라이드를 고치고, 자료를 주면 발표 자료를 새로 만듭니다.', alt: '파워포인트 편집기에서 발표 자료를 연 화면' },
+  { id: 'pdf', label: 'PDF', file: 'pdf', color: '#b84a5c', title: 'PDF', text: '쪽 위의 글자를 고치고, 읽으면서 형광펜과 메모를 남깁니다. PDF를 워드·엑셀·파워포인트 파일로 내 PC에서 바꿉니다.', alt: 'PDF 편집기에서 안내문을 연 화면' },
+  { id: 'markdown', label: '마크다운', file: 'md', color: '#4a5568', title: '마크다운 .md', text: '서식이 보이는 화면에서 쓰고, 필요하면 원문으로 바꿔 고칩니다.', alt: '마크다운 편집기에서 회의 메모를 연 화면' },
+  { id: 'html', label: 'HTML', file: 'html', color: '#8257b6', title: 'HTML', text: '웹 페이지를 보이는 화면에서 고칩니다. 고른 자료로 새 페이지를 만들 수도 있습니다.', alt: 'HTML 편집기에서 행사 소개 페이지를 연 화면' },
+  { id: 'mindmap', label: '마인드맵', file: 'mindmap', color: '#b04e83', title: '마인드맵 .xmind', text: 'XMind 파일을 열고 고쳐 같은 파일로 저장합니다. 그림, PDF, 마크다운 개요로 내보냅니다.', alt: '마인드맵 편집기에서 아이디어 지도를 연 화면' },
 ]
 
 const showcase = document.querySelector('[data-showcase]')
@@ -62,7 +62,12 @@ const chips = FORMATS.map((f, i) => {
   b.role = 'tab'
   b.style.setProperty('--c', f.color)
   b.style.setProperty('--dwell', `${DWELL}ms`)
-  b.innerHTML = `<span class="format-icon" aria-hidden="true">${f.icon}</span>${f.label}<span class="progress"></span>`
+  // document tabs show the app's own file-type icon (public/icons, copied from
+  // the app's apps/shell/src/renderer/src/assets/file-*.svg); home keeps its glyph
+  const icon = f.file
+    ? `<img class="format-icon is-file" src="/icons/file-${f.file}.svg" width="26" height="26" alt="" />`
+    : `<span class="format-icon" aria-hidden="true">${f.icon}</span>`
+  b.innerHTML = `${icon}${f.label}<span class="progress"></span>`
   b.addEventListener('click', () => {
     auto = false
     show(i)

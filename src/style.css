@@ -507,6 +507,10 @@ p {
   font-weight: 800;
   letter-spacing: -0.02em;
 }
+.format-icon.is-file {
+  background: none;
+  border-radius: 0;
+}
 .format-chip .progress {
   position: absolute;
   left: 0;
