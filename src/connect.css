@@ -1,0 +1,685 @@
+/* ---------- AI connect help page ---------- */
+/* the player, guides and cards come from install.css; this file draws the
+   IeumOffice window, the vendor's terminal and sign-in page, and Settings */
+
+.connect-question {
+  width: var(--wrap);
+  margin: clamp(36px, 5vw, 56px) auto 0;
+  font-size: var(--t-md);
+  font-weight: 720;
+  letter-spacing: -0.02em;
+}
+.connect-question + .symptoms {
+  margin-top: 16px;
+}
+.page-connect .symptoms-more {
+  line-height: 1.6;
+}
+.page-connect .symptoms-more b {
+  color: var(--ink);
+}
+
+/* the little connect cards on the picker */
+.symptom-pic-stuck {
+  background: #f3e9ea;
+}
+.sp-card {
+  inset: 16% 18%;
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.35);
+}
+.sp-card b {
+  left: 9%;
+  top: 14%;
+  width: 11%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--indigo);
+}
+.sp-card s {
+  left: 26%;
+  top: 17%;
+  width: 46%;
+  height: 9%;
+  border-radius: 4px;
+  background: #d4d7e3;
+}
+.sp-card s + s {
+  left: 9%;
+  top: 42%;
+  width: 78%;
+}
+.sp-card u {
+  left: 9%;
+  bottom: 14%;
+  width: 30%;
+  height: 17%;
+  border-radius: 4px;
+  background: var(--indigo);
+}
+.sp-card-alt b,
+.sp-card-alt u {
+  background: var(--ink);
+}
+.sp-card-free b {
+  background: var(--amber-deep);
+}
+.sp-card-free u {
+  background: var(--amber);
+}
+.sp-card-stuck b {
+  background: #d93a3f;
+}
+.sp-card-stuck u {
+  background: none;
+  box-shadow: inset 0 0 0 1.5px #d93a3f;
+}
+
+/* ---------- the IeumOffice window ---------- */
+
+.io-window {
+  position: absolute;
+  inset: 18px 18px 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+.io-bar {
+  height: 36px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 12px;
+  background: #eef0f6;
+}
+.stage .io-mark {
+  width: 16px;
+  height: 16px;
+}
+.io-tab {
+  align-self: flex-end;
+  padding: 6px 16px;
+  border-radius: 8px 8px 0 0;
+  background: #fff;
+  font-size: 12.5px;
+}
+.io-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  background: #e9ebf2;
+}
+.io-doc {
+  margin: 22px 26px 0;
+  padding: 34px 36px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.io-doc i {
+  display: block;
+  height: 8px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background: #dcdfe8;
+}
+.io-doc i:first-child {
+  width: 46%;
+  height: 12px;
+  margin: 0 auto 26px;
+  background: #b9bdcc;
+}
+.io-doc i:nth-child(4) {
+  width: 72%;
+}
+.io-doc i:nth-child(7) {
+  width: 58%;
+}
+
+/* the AI panel and the connect guide in it */
+.io-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 14px;
+  border-left: 1px solid #e0e2ea;
+  background: #fff;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+.io-panel-title {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eceef4;
+  font-weight: 700;
+  font-size: 13px;
+}
+.cg-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+.cg-ask,
+.cg-open {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cg-open,
+.is-open .cg-ask {
+  display: none;
+}
+.is-open .cg-open {
+  display: flex;
+}
+.cg-q {
+  color: #5b5d6b;
+}
+.cg-path {
+  display: block;
+  padding: 6px 10px;
+  border: 1px solid #d9dbe8;
+  border-radius: 8px;
+}
+.cg-path b {
+  display: block;
+  font-weight: 700;
+}
+.cg-path span {
+  display: block;
+  color: #6b6d7a;
+  font-size: 11px;
+}
+.cg-need {
+  color: #5b5d6b;
+  font-size: 11.5px;
+}
+.cg-steps {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  color: #8a8c99;
+}
+.cg-steps li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.cg-steps i {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px #c5c8d6;
+  font-style: normal;
+  font-size: 10px;
+}
+/* the step the user is on, and the ones behind */
+.is-c-install .cg-s-install,
+.is-c-login .cg-s-login,
+.is-c-signing .cg-s-login {
+  color: #4338ca;
+  font-weight: 700;
+}
+.is-c-install .cg-s-install i,
+.is-c-login .cg-s-login i,
+.is-c-signing .cg-s-login i {
+  background: #4338ca;
+  box-shadow: none;
+  color: #fff;
+}
+.is-c-login .cg-s-install i,
+.is-c-signing .cg-s-install i {
+  background: #2f9e5b;
+  box-shadow: none;
+  font-size: 0;
+}
+.is-c-login .cg-s-install i::after,
+.is-c-signing .cg-s-install i::after {
+  content: '✓';
+  color: #fff;
+  font-size: 10px;
+}
+.cg-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 9px 10px;
+  border: 1px solid #d9dbe8;
+  border-radius: 10px;
+}
+.cg-card-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cg-card-head b {
+  font-size: 13px;
+}
+.cg-card-head span {
+  margin-left: auto;
+  color: #6b6d7a;
+  font-size: 11.5px;
+}
+.cg-ai {
+  color: #4338ca;
+  font-style: normal;
+}
+.cg-card [data-c] {
+  display: none;
+}
+.is-c-install .cg-card [data-c='install'],
+.is-c-login .cg-card [data-c='login'],
+.is-c-signing .cg-card [data-c='signing'] {
+  display: flex;
+}
+.cg-note {
+  color: #5b5d6b;
+  font-size: 11px;
+}
+.cg-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cg-btn {
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: #4338ca;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.cg-btn-plain {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #c5c8d6;
+  color: #1f1f1f;
+  font-weight: 600;
+}
+.cg-link,
+.cg-back {
+  color: #4338ca;
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* connected: the guide steps aside and the message box takes its place */
+.cg-chat {
+  display: none;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #c9cbe0;
+  border-radius: 12px;
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.12);
+}
+.is-c-ready .cg-title,
+.is-c-ready .cg-ask {
+  display: none;
+}
+.is-c-ready .cg-chat {
+  display: flex;
+}
+.cg-input {
+  flex: 1 0 100%;
+  height: 34px;
+}
+.cg-input s {
+  display: block;
+  width: 60%;
+  height: 8px;
+  border-radius: 4px;
+  background: #e3e5ee;
+}
+.cg-model {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eef0f6;
+  font-size: 11px;
+  font-weight: 600;
+}
+.cg-send {
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #4338ca;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* windows that open over the app: shown by their flag */
+.ps-window,
+.br-window,
+.st-window {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.98);
+  transition:
+    opacity 0.3s,
+    transform 0.3s var(--ease-out),
+    visibility 0.3s;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+}
+.is-term .ps-window,
+.is-browser .br-window,
+.is-settings .st-window {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* the vendor's install command in PowerShell */
+.ps-window {
+  left: 36px;
+  top: 70px;
+  width: 430px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #012456;
+  color: #e8e8e8;
+}
+.ps-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  padding-left: 12px;
+  background: #f3f3f3;
+  color: #1f1f1f;
+  font-size: 12px;
+}
+.ps-close {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 100%;
+}
+.ps-body {
+  height: 170px;
+  padding: 10px 12px;
+  font-family: Consolas, 'D2Coding', monospace;
+  font-size: 12px;
+}
+.ps-body p + p {
+  margin-top: 10px;
+}
+.ps-body b {
+  color: #f9f1a5;
+  font-weight: 400;
+}
+.ps-run {
+  width: 240px;
+  height: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.ps-run i {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #e8e8e8;
+}
+.is-term .ps-run i {
+  animation: ps-fill 2.4s linear forwards;
+}
+.is-term-done .ps-run i {
+  width: 100%;
+  animation: none;
+}
+@keyframes ps-fill {
+  to {
+    width: 100%;
+  }
+}
+.ps-out {
+  display: grid;
+  gap: 8px;
+  opacity: 0;
+}
+.ps-out s {
+  display: block;
+  width: 64%;
+  height: 7px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.35);
+}
+.ps-out s:nth-child(2) {
+  width: 48%;
+}
+.ps-out s:nth-child(3) {
+  width: 30%;
+}
+.is-term-done .ps-out {
+  opacity: 1;
+}
+
+/* the vendor's sign-in page */
+.br-window {
+  left: 28px;
+  top: 48px;
+  width: 440px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+.br-bar {
+  height: 38px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #e1e1e1;
+}
+.br-bar .ms-url {
+  height: 26px;
+  font-size: 12.5px;
+}
+.br-page {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  background: #f7f6f2;
+}
+.br-box {
+  position: relative;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+.br-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+.br-box s {
+  display: block;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #e5e4df;
+}
+.br-box s + s {
+  width: 70%;
+}
+.br-btn {
+  width: 100%;
+  margin-top: 6px;
+  padding: 7px 0;
+  border-radius: 8px;
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+.br-done {
+  display: none;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin: 2px 0 1px;
+  border-radius: 50%;
+  background: #2f9e5b;
+  color: #fff;
+  font-size: 20px;
+}
+.is-allowed .br-done {
+  display: grid;
+}
+.is-allowed .br-btn {
+  display: none;
+}
+
+/* Settings › AI, "use for free" */
+.st-window {
+  left: 150px;
+  top: 40px;
+  width: 462px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.st-bar {
+  height: 34px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  background: #eef0f6;
+  font-size: 13px;
+}
+.st-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  font-size: 12px;
+}
+.st-side {
+  margin: 0;
+  padding: 10px 6px;
+  list-style: none;
+  background: #f5f6fa;
+}
+.st-side li {
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: #555;
+}
+.st-side li.is-on {
+  background: #e4e3fb;
+  color: #4338ca;
+  font-weight: 700;
+}
+.st-main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 16px;
+}
+.st-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.st-desc,
+.fr-desc {
+  color: #5b5d6b;
+  font-size: 11px;
+}
+.fr-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 9px 10px;
+  border: 1px solid #d9dbe8;
+  border-radius: 10px;
+}
+.fr-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.fr-head b {
+  font-size: 13px;
+}
+.fr-head span {
+  margin-left: auto;
+  color: #6b6d7a;
+  font-size: 11px;
+}
+.fr-badge {
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(255, 176, 32, 0.25);
+  font-style: normal;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+.fr-wait,
+.fr-on,
+.is-or-wait .fr-off,
+.is-or-on .fr-off,
+.is-or-on .fr-actions {
+  display: none;
+}
+.is-or-wait .fr-wait,
+.is-or-on .fr-on {
+  display: block;
+}
+.is-or-on .fr-on {
+  color: #2f8a52;
+  font-weight: 700;
+}
+.fr-quota {
+  display: none;
+}
+.fr-quota s {
+  display: block;
+  width: 58%;
+  height: 7px;
+  border-radius: 4px;
+  background: #cfe7d8;
+}
+.is-or-on .fr-quota {
+  display: block;
+}
+.fr-input {
+  flex: 1;
+  min-width: 0;
+  padding: 3px 8px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px #c5c8d6;
+  color: #9a9cab;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+}
