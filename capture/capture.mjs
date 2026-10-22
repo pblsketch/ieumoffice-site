@@ -13,7 +13,7 @@
  * composite.py lays them back together at their bounds.
  */
 import { createRequire } from 'node:module'
-import { cpSync, mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -35,8 +35,21 @@ const electronPath = createRequire(join(SHELL_DIR, 'package.json'))('electron')
 const W = 1440
 const H = 860
 
+// Paths show up in some scenes (the `@` document list prints each file's
+// folder). IEUM_SCRATCH_ROOT puts the scratch profile at a short neutral path
+// instead of the temp folder, which carries the Windows user name. It must
+// not exist yet; it is removed at the end.
+const SCRATCH_ROOT = process.env.IEUM_SCRATCH_ROOT
+
 function makeScratch() {
-  const root = mkdtempSync(join(tmpdir(), 'ieum-site-shots-'))
+  let root
+  if (SCRATCH_ROOT) {
+    if (existsSync(SCRATCH_ROOT)) throw new Error(`IEUM_SCRATCH_ROOT already exists: ${SCRATCH_ROOT}`)
+    root = resolve(SCRATCH_ROOT)
+    mkdirSync(root, { recursive: true })
+  } else {
+    root = mkdtempSync(join(tmpdir(), 'ieum-site-shots-'))
+  }
   const home = join(root, 'home')
   const userData = join(root, 'userdata')
   const docs = join(root, '내 문서')
@@ -98,7 +111,8 @@ async function grabLayers(app) {
   })
 }
 
-async function shot(app, name) {
+/** crop: [x, y, width, height] in window pixels (DIP), for pictures shown at half width */
+async function shot(app, name, crop) {
   const grab = await grabLayers(app)
   const dir = join(RAW, name)
   rmSync(dir, { recursive: true, force: true })
@@ -111,7 +125,9 @@ async function shot(app, name) {
   })
   writeFileSync(join(dir, 'meta.json'), JSON.stringify(meta, null, 2))
   mkdirSync(OUT, { recursive: true })
-  execFileSync('python', [join(HERE, 'composite.py'), dir, join(OUT, `${name}.png`)], { stdio: 'inherit' })
+  const args = [join(HERE, 'composite.py'), dir, join(OUT, `${name}.png`)]
+  if (crop) args.push(crop.join(','))
+  execFileSync('python', args, { stdio: 'inherit' })
 }
 
 async function shellPage(app) {
@@ -246,6 +262,67 @@ async function quickLookShot(app, shell) {
   await shell.keyboard.press('Escape')
 }
 
+/** The AI panel input of an editor tab, emptied. Nothing typed here is ever sent. */
+async function aiInputOf(app, shell, opened, name, urlPart) {
+  const entry = opened.find(([n]) => n === name)
+  if (!entry) return null
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const page = app.windows().find((p) => p.url().includes(urlPart))
+  const input = page?.locator('textarea').first()
+  if (!input || !(await input.count())) return null
+  await input.click()
+  await input.press('Control+a')
+  await input.press('Backspace')
+  return { page, input }
+}
+
+async function clearAiInput(target) {
+  await target.input.press('Escape').catch(() => {})
+  await target.input.press('Control+a').catch(() => {})
+  await target.input.press('Backspace').catch(() => {})
+}
+
+/** 0.12.3 skills: `/` in the Word editor's AI input opens the skill list. */
+async function skillsSlashShot(app, shell, opened) {
+  const t = await aiInputOf(app, shell, opened, 'docs', '://docs/')
+  if (!t) return
+  await t.input.type('/')
+  await t.page.locator('.ai-skill-picker').first().waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(800)
+  await shot(app, 'skills-slash')
+  console.log('wrote skills-slash')
+  await clearAiInput(t)
+}
+
+/** 0.12.3 `@`: the open and recent documents in the HWP editor's AI input. */
+async function docMentionShot(app, shell, opened) {
+  const t = await aiInputOf(app, shell, opened, 'hwp', '://hwp/')
+  if (!t) return
+  await t.input.type('@')
+  await t.page.locator('.ai-doc-mention-picker').first().waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(800)
+  // the lower left: the list over the AI panel and part of the form beside it
+  await shot(app, 'doc-mention', [0, 346, 848, 506])
+  console.log('wrote doc-mention')
+  await clearAiInput(t)
+}
+
+/** 0.12.3 Settings → Skills, reached from "스킬 관리…" at the end of the `/` list. */
+async function skillsSettingsShot(app, shell, opened) {
+  const t = await aiInputOf(app, shell, opened, 'docs', '://docs/')
+  if (!t) return
+  await t.input.type('/')
+  await t.page.locator('.ai-skill-picker-manage').first().click()
+  await sleep(2500)
+  // the settings window, without the dimmed home around it
+  await shot(app, 'skills-settings', [216, 60, 1008, 602])
+  console.log('wrote skills-settings')
+  await shell.keyboard.press('Escape').catch(() => {})
+  await sleep(600)
+  await clearAiInput(t)
+}
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -327,6 +404,9 @@ async function main() {
       await shot(app, 'home')
     }
     if (want('quicklook')) await quickLookShot(app, shell)
+    if (want('skills-slash')) await skillsSlashShot(app, shell, opened)
+    if (want('doc-mention')) await docMentionShot(app, shell, opened)
+    if (want('skills-settings')) await skillsSettingsShot(app, shell, opened)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()

@@ -896,7 +896,9 @@ section:not(.hero) {
 .new-pair figure {
   margin: 0;
 }
-.new-pair kbd {
+.new-pair kbd,
+.new-caption kbd,
+.new-facts kbd {
   font: inherit;
   font-size: 0.85em;
   font-weight: 700;
