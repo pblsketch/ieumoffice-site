@@ -1,0 +1,85 @@
+# Keeps the question helper's knowledge base (lib/kb-data.js) in step with the
+# app's latest release and this site's pages. Runs every night, whenever a page
+# is pushed to main, and by hand (Actions → Question helper knowledge base →
+# Run workflow). When the rebuilt file differs it is committed to main, which
+# makes Vercel redeploy the site; when nothing changed nothing happens.
+
+name: Question helper knowledge base
+
+on:
+  schedule:
+    - cron: '0 18 * * *' # 03:00 KST
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'public/*.html'
+      - 'scripts/build-kb.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kb
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Find the app's latest release
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: echo "tag=$(gh release view --repo pblsketch/openoffice --json tagName --jq .tagName)" >> "$GITHUB_OUTPUT"
+
+      # only the files the knowledge base reads, at the release tag
+      - uses: actions/checkout@v4
+        with:
+          repository: pblsketch/openoffice
+          ref: ${{ steps.release.outputs.tag }}
+          path: .app
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            apps/shell/src/renderer/src/i18n/help/topics
+            README.md
+            PRIVACY.md
+          sparse-checkout-cone-mode: false
+
+      - name: Rebuild
+        env:
+          IEUM_APP_REPO: ${{ github.workspace }}/.app
+          GITHUB_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          git -C .app tag -f "$TAG" HEAD
+          npm run kb -- --ref "$TAG"
+
+      - name: Check
+        run: npm run kb:check -- --ref "${{ steps.release.outputs.tag }}"
+
+      - name: Commit when changed
+        env:
+          TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          if git diff --quiet -- lib/kb-data.js; then
+            echo "knowledge base unchanged"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lib/kb-data.js
+          git commit -m "chore(kb): rebuild the question helper's knowledge base ($TAG)"
+          git pull --rebase origin main
+          git push origin HEAD:main

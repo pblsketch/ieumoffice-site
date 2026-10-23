@@ -32,7 +32,12 @@ npm run build    # dist/ 에 만들기
 
 자료에 없는 것은 없다고 하고 의견 보내기로 안내합니다. 모델이 실패하면 찾은 안내 조각을 대신 보여 줍니다.
 
-- **지식베이스** `lib/kb-data.js`는 `npm run kb`가 만듭니다. 앱 저장소(옆의 `../openoffice`, 다르면 `IEUM_APP_REPO`)의 **최신 릴리스 태그**에서 한국어 앱 도움말, README, PRIVACY.md를 `git show`로 읽습니다. 앱 폴더의 브랜치나 고치던 내용은 섞이지 않습니다. 여기에 GitHub의 최근 릴리스 본문 5개와 이 사이트의 페이지들을 더합니다. 개발 문서(AGENTS.md, engineering-notes, 결정 기록)는 넣지 않습니다.
+- **지식베이스** `lib/kb-data.js`는 `npm run kb`가 만듭니다. 앱 저장소(옆의 `../openoffice`, 다르면 `IEUM_APP_REPO`)의 **최신 릴리스 태그**에서 한국어 앱 도움말, README, PRIVACY.md를 `git show`로 읽습니다. 앱 폴더의 브랜치나 고치던 내용은 섞이지 않습니다. 여기에 GitHub의 최근 릴리스 본문 5개와 이 사이트의 페이지들을 더합니다. 개발 문서(AGENTS.md, engineering-notes, 결정 기록)는 넣지 않습니다. 같은 자료로 다시 만들면 바이트까지 같은 파일이 나옵니다(만든 날짜를 넣지 않습니다).
+- **자동 갱신** `.github/workflows/kb.yml`: 매일 새벽 3시(KST)에 돌고, `main`에 페이지(`*.html`, `public/*.html`)나 `scripts/build-kb.mjs`가 바뀌어 올라갈 때도 돕니다. Actions 탭에서 "Question helper knowledge base" → Run workflow로 손으로 돌릴 수도 있습니다. 하는 일은 이렇습니다.
+  1. 앱 저장소의 최신 릴리스 태그를 찾고, 필요한 파일만 받습니다(부분 복제, 몇 MB).
+  2. `npm run kb`로 지식베이스를 다시 만들고 `npm run kb:check`로 검사합니다. 출처마다 조각이 남아 있는지, 제품 이름이 바뀌었는지, 조각 크기와 검색 몇 개를 봅니다. 모델은 부르지 않습니다.
+  3. 파일이 달라졌으면 `chore(kb): …`로 `main`에 커밋합니다. 그러면 Vercel이 다시 배포합니다. 같으면 아무것도 하지 않습니다.
+  4. 검사가 실패하면 커밋하지 않고 빨간 실행으로 남습니다. GitHub가 저장소 주인에게 메일을 보내니, 그 메일이 오면 실행 기록의 ✗ 줄을 봅니다.
 - **모델**은 Claude Haiku 5.5(`claude-haiku-5-5`, 바꾸려면 `QA_MODEL`)입니다. 저장소 주인의 Claude Console 조직에서 돌고, 워크스페이스 `ieumoffice-site`에 월 지출 한도 $20이 걸려 있습니다. 한도나 크레딧이 떨어지면 답 대신 안내 조각이 나옵니다.
 - **API 키는 없습니다.** Vercel의 OIDC 토큰을 Anthropic Workload Identity Federation으로 짧은 토큰과 바꿉니다. Vercel 환경변수에는 비밀이 아닌 ID 네 개만 있습니다(`ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`, `ANTHROPIC_WORKSPACE_ID`). 콘솔의 발급자 `https://oidc.vercel.com/wnsdlf1212-6473s-projects`는 최대 토큰 수명이 12시간이어야 합니다. Vercel 토큰 수명이 실제 사이트 2시간, 개발용 12시간이라, 이보다 짧으면 `jwt_lifetime_too_long`으로 거절됩니다. `ANTHROPIC_API_KEY`를 환경에 넣으면 페더레이션보다 먼저 쓰이니 넣지 않습니다.
 - **로컬에서 보기**: `vercel env pull .env.local`로 개발용 OIDC 토큰과 ID를 받은 뒤, `npm run dev:api`(질문 서버, 8787)와 `npm run dev`를 함께 띄웁니다. Vite가 `/api`를 질문 서버로 넘깁니다.
@@ -67,5 +72,5 @@ node capture/form-banner.mjs    # public/form-banner.png (의견 설문 머리�
 3. **다른 칸과 어긋나지 않게** 봅니다. 편집기 설명(`src/main.js`의 `FORMATS`)과 한글·AI·비용·개인정보 칸의 문장이 새 기능이나 바뀐 동작과 맞는지 확인합니다. 오래 쓸 기능은 메인 소개 칸에도 옮겨 적습니다.
 4. **캡처**는 그 버전으로 빌드한 이음오피스(`IEUM_REPO`, 기본 `E:/github/openoffice-release`)로 찍습니다. 새 장면은 `capture/capture.mjs`에 장면 함수를 하나 더해 이름으로 찍고(`node capture/capture.mjs split pdf-reading`), 그 이름만 변환합니다(`python capture/optimize.py split pdf-reading`). 이름은 버전마다 겹치지 않게 짓습니다(앞 버전 항목이 옛 캡처를 계속 씁니다). 엑셀을 다시 찍으면 `MARKS`도 맞춥니다.
 5. **문구**는 humanizer로 검토합니다. 추상적인 말("표시", "도구가 늘었다")이나 전문 용어("주석", "릴리스", "본문", "EPUB")는 일반 사용자가 바로 알아듣는 말로 바꾸거나 괄호로 풀어 씁니다. 오피스가 먼저이고 AI는 보조 도구로 씁니다.
-6. **질문 도우미의 지식베이스**를 새로 만듭니다. 앱 폴더에서 `git fetch --tags`로 새 태그를 받은 뒤 이 폴더에서 `npm run kb`를 실행합니다. 업데이트 페이지까지 고친 다음에 해야 새 소식이 들어갑니다. 그다음 `npm run kb:eval -- --answer`로 시험 질문이 모두 통과하는지 보고, 바뀐 `lib/kb-data.js`를 함께 커밋합니다. 앱 도움말이 바뀐 버전이면 `git diff lib/kb-data.js`로 바뀐 조각을 한 번 훑어봅니다.
+6. **질문 도우미의 지식베이스**는 따로 손대지 않아도 됩니다. 7번에서 페이지를 push하면 "Question helper knowledge base" 작업이 새 릴리스 태그와 새 업데이트 페이지로 다시 만들어 커밋합니다. 그 실행이 초록인지, 그리고 `lib/kb-data.js`의 첫 줄 버전이 새 태그인지 확인합니다. 앱 도움말이 크게 바뀐 버전이면 Claude로 답까지 시험합니다(`vercel env pull .env.local` 뒤 `npm run kb:eval -- --answer`, 몇 센트). 틀린 답이 나오면 지침(`lib/qa.js`)이나 시험 질문(`scripts/kb-eval.mjs`)을 고칩니다.
 7. `npm run build`와 `npx vite preview`로 데스크톱·모바일 폭에서 `/updates.html`과 메인을 확인하고, 저장소 주인의 확인을 받은 뒤 `main`에 push합니다. Vercel이 배포하면 https://ieumoffice.com/updates 와 메인의 한 줄 안내, 내려받기 버튼의 버전을 다시 봅니다.

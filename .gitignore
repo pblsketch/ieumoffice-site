@@ -9,3 +9,6 @@ capture/out
 capture/preview
 capture/*.png
 preview.log
+
+# the app repository checkout the knowledge base workflow reads
+.app
