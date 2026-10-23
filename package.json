@@ -19,6 +19,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^1.2.0",
     "@orama/orama": "^3.1.18",
+    "@vercel/functions": "^3.10.3",
     "@vercel/oidc": "^4.0.3",
     "wanted-sans": "^1.0.3"
   }

@@ -7,9 +7,12 @@
 //   { type: 'sources', items } the pieces the answer cited
 //   { type: 'error', code, items } no answer; items are the closest pieces to read instead
 //
-// Questions are not logged or stored. Errors log only their status.
+// Each finished turn is kept as one row in the owner's Google Sheet for 90 days
+// (lib/log.js: masked question and answer, no IP). Errors log only their status.
 
-import { ask, retrieve } from '../lib/qa.js'
+import { waitUntil } from '@vercel/functions'
+import { logTurn } from '../lib/log.js'
+import { KB_VERSION, ask, retrieve } from '../lib/qa.js'
 
 const MAX_QUESTION = 500
 const MAX_TURN = 2000
@@ -68,16 +71,21 @@ export async function POST(request) {
   const body = new ReadableStream({
     async start(controller) {
       const send = (event) => controller.enqueue(encoder.encode(`${JSON.stringify(event)}\n`))
-      let answered = false
+      let answer = ''
+      let sources = []
+      let errorCode = null
       try {
         for await (const event of ask(messages, { signal: request.signal })) {
-          if (event.type === 'text') answered = true
+          if (event.type === 'text') answer += event.text
+          if (event.type === 'sources') sources = event.items
           send(event)
         }
       } catch (error) {
         if (!request.signal.aborted) {
           console.error('ask failed', error?.status ?? error?.code ?? error?.name)
           const code = [429, 529].includes(error?.status) ? 'busy' : 'failed'
+          errorCode = code
+          const answered = Boolean(answer)
           // without an answer, point at the pieces the question's own words find
           const items = answered
             ? []
@@ -86,6 +94,18 @@ export async function POST(request) {
         }
       }
       controller.close()
+      if (!request.signal.aborted) {
+        waitUntil(
+          logTurn({
+            question: messages.at(-1).content,
+            answer,
+            sources,
+            version: KB_VERSION,
+            turn: messages.filter((m) => m.role === 'user').length,
+            errorCode,
+          }),
+        )
+      }
     },
   })
   return new Response(body, {

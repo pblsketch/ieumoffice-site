@@ -37,7 +37,7 @@ npm run build    # dist/ 에 만들기
 - **API 키는 없습니다.** Vercel의 OIDC 토큰을 Anthropic Workload Identity Federation으로 짧은 토큰과 바꿉니다. Vercel 환경변수에는 비밀이 아닌 ID 네 개만 있습니다(`ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`, `ANTHROPIC_WORKSPACE_ID`). 콘솔의 발급자 `https://oidc.vercel.com/wnsdlf1212-6473s-projects`는 최대 토큰 수명이 12시간이어야 합니다. Vercel 토큰 수명이 실제 사이트 2시간, 개발용 12시간이라, 이보다 짧으면 `jwt_lifetime_too_long`으로 거절됩니다. `ANTHROPIC_API_KEY`를 환경에 넣으면 페더레이션보다 먼저 쓰이니 넣지 않습니다.
 - **로컬에서 보기**: `vercel env pull .env.local`로 개발용 OIDC 토큰과 ID를 받은 뒤, `npm run dev:api`(질문 서버, 8787)와 `npm run dev`를 함께 띄웁니다. Vite가 `/api`를 질문 서버로 넘깁니다.
 - **시험**: `npm run kb:eval`은 질문마다 Claude가 고른 조각에 맞는 자료가 들어갔는지 봅니다. `-- --answer`는 답까지 받아 꼭 들어갈 말과 들어가면 안 되는 말을 봅니다. 질문 20여 개에 몇 센트가 듭니다. `-- --offline`은 Claude 없이 글자 검색만 봅니다. 실제 질문에 틀리게 답한 사례가 생기면 `scripts/kb-eval.mjs`에 넣습니다.
-- 질문과 답은 저장하지 않고, 서버 로그에는 오류 상태 코드만 남깁니다. 이 내용은 `public/privacy.html#ask`에 적혀 있습니다.
+- **대화 기록**: 답이 끝날 때마다 `lib/log.js`가 한 줄을 저장소 주인(pblsketch@gmail.com)의 시트 "이음오피스 질문 도우미 기록"에 보냅니다. 남기는 것은 시각, 질문, 답, 결과(답함 / 자료에 없음 / 답 못 함), 근거 제목, 지식베이스 버전, 대화 차례입니다. IP는 남기지 않고 이메일·전화·주민번호·카드번호 꼴은 가립니다. 시트에 붙은 Apps Script 웹 앱이 받고(`QA_LOG_URL`, 비밀 `QA_LOG_SECRET`), 매일 새벽 90일 지난 줄을 지웁니다. 두 변수가 없으면 기록하지 않습니다. 서버 로그에는 오류 상태 코드만 남깁니다. 사용자에게 알리는 문구는 채팅 창 아래와 `public/privacy.html#ask`에 있습니다. "자료에 없음"으로 끝난 질문은 도움말에 보탤 내용이자 `kb:eval`에 넣을 후보입니다.
 
 ## 화면 캡처 다시 만들기
 

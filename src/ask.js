@@ -1,6 +1,7 @@
 // The question helper's chat window: a button at the bottom right of every page
 // that opens a small panel talking to /api/ask (api/ask.js). The conversation
-// lives only in this page's memory; nothing is saved in the browser.
+// lives only in this page's memory; nothing is saved in the browser. The server
+// keeps each finished turn for 90 days (lib/log.js).
 
 import './ask.css'
 
@@ -41,7 +42,7 @@ panel.innerHTML = `
     <textarea rows="1" maxlength="${MAX_QUESTION}" placeholder="예: 맥에서도 쓸 수 있나요?" aria-label="질문"></textarea>
     <button type="submit" aria-label="보내기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
   </form>
-  <p class="ask-note">개인정보나 문서 내용은 적지 마세요. 질문은 답을 만들기 위해 Anthropic의 Claude로 보내고, 저장하지 않아요. 답이 틀릴 수 있어요. <a href="/privacy.html#ask">자세히</a></p>`
+  <p class="ask-note">개인정보나 문서 내용은 적지 마세요. 질문은 답을 만들려고 Anthropic의 Claude로 보내고, 도우미를 고치는 데 쓰려고 질문과 답을 90일 동안 보관해요. 답이 틀릴 수 있어요. <a href="/privacy.html#ask">자세히</a></p>`
 
 const log = panel.querySelector('.ask-log')
 const status = panel.querySelector('.ask-status')
