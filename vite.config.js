@@ -15,4 +15,6 @@ export default defineConfig({
       },
     },
   },
+  // the question helper's server function runs separately in dev (`npm run dev:api`)
+  server: { proxy: { '/api': 'http://localhost:8787' } },
 })

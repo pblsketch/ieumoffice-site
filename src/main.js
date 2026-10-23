@@ -1,5 +1,6 @@
 import './font.css'
 import './style.css'
+import './ask.js'
 import { REPO, fetchJson, getReleases, wireDownload } from './release.js'
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches

@@ -7,12 +7,19 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "font": "python scripts/subset-font.py"
+    "font": "python scripts/subset-font.py",
+    "kb": "node scripts/build-kb.mjs",
+    "kb:eval": "node --env-file-if-exists=.env.local scripts/kb-eval.mjs",
+    "dev:api": "node --env-file-if-exists=.env.local scripts/dev-api.mjs"
   },
   "devDependencies": {
+    "node-html-parser": "^9.0.5",
     "vite": "^8.0.0"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.2.0",
+    "@orama/orama": "^3.1.18",
+    "@vercel/oidc": "^4.0.3",
     "wanted-sans": "^1.0.3"
   }
 }

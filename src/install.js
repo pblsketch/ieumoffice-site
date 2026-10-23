@@ -2,6 +2,7 @@
 // installer, each as a pointer walkthrough (src/player.js).
 import './font.css'
 import './style.css'
+import './ask.js'
 import './install.css'
 import { wireDownload } from './release.js'
 import { openDetailsFromHash, setupPlayers } from './player.js'

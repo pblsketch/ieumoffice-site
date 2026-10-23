@@ -3,6 +3,7 @@
 // window. The card states follow the app's connect guide (decision 0047).
 import './font.css'
 import './style.css'
+import './ask.js'
 import './install.css'
 import './connect.css'
 import { openDetailsFromHash, setupPlayers } from './player.js'
