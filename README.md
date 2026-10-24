@@ -20,7 +20,7 @@ npm run build    # dist/ 에 만들기
 
 검색 등록: `robots.txt`와 `sitemap.xml`이 `public/`에 있습니다. 페이지를 더하면 `sitemap.xml`에도 넣고, 각 페이지 `<head>`에 `canonical`을 `https://ieumoffice.com/...`으로 답니다.
 
-내려받기 버튼은 페이지가 열릴 때 GitHub API로 최신 릴리스의 `IeumOffice-Setup-*.exe`를 찾아 연결합니다. 찾지 못하면 릴리스 페이지로 갑니다. 새 버전을 낼 때 사이트를 다시 올릴 필요는 없습니다.
+내려받기 버튼은 페이지가 열릴 때 GitHub API로 최신 릴리스의 `IeumOffice-Setup-*.exe`를 찾아 연결합니다. Mac은 `-arm64.dmg`(Apple Silicon)와 `-x64.dmg`(Intel)를 따로 찾아 두 줄로 안내하고, 그 버전에 없는 파일은 "준비 중"으로 둡니다. 찾지 못하면 릴리스 페이지로 갑니다. 새 버전을 낼 때 사이트를 다시 올릴 필요는 없습니다.
 
 ## 질문 도우미
 

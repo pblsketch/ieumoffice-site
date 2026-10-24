@@ -1356,6 +1356,28 @@ details.more p {
 .download-meta {
   font-weight: 600;
 }
+/* under the download buttons: the other Mac disk, so an Intel Mac is not left out */
+.download-alt {
+  max-width: 30em;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: var(--t-sm);
+  color: rgba(255, 255, 255, 0.72);
+}
+.download-alt > span {
+  display: block;
+}
+.download-alt .download-alt-file {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.55);
+}
+.download-alt a {
+  color: var(--white);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .download-small {
   color: rgba(255, 255, 255, 0.65);
   font-size: var(--t-sm);

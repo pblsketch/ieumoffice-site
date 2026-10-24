@@ -318,7 +318,7 @@ function wireStuckHints() {
     )
   }
   watch('[data-download]', isEdge ? 'edge' : 'windows', /\.exe$/i)
-  watch('[data-download-mac]', 'mac', /\.dmg$/i)
+  watch('[data-download-mac], [data-download-mac-intel]', 'mac', /\.dmg$/i)
   watch('[data-download-linux]', 'linux', /\.(AppImage|deb|rpm)$/i)
 }
 wireStuckHints()

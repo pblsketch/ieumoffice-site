@@ -67,6 +67,12 @@ export async function wireDownload() {
   const macLinks = document.querySelectorAll('[data-download-mac]')
   const macLabel = document.querySelector('[data-download-mac-label]')
   const macMeta = document.querySelector('[data-download-mac-meta]')
+  const macFileMeta = document.querySelector('[data-download-mac-file]')
+  const macAlt = document.querySelector('[data-download-mac-alt]')
+  const macIntelLinks = document.querySelectorAll('[data-download-mac-intel]')
+  const macIntelLabel = document.querySelector('[data-download-mac-intel-label]')
+  const macIntelMeta = document.querySelector('[data-download-mac-intel-meta]')
+  const macIntelFileMeta = document.querySelector('[data-download-mac-intel-file]')
   const linuxLinks = document.querySelectorAll('[data-download-linux]')
   const linuxLabel = document.querySelector('[data-download-linux-label]')
   const linuxMeta = document.querySelector('[data-download-linux-meta]')
@@ -95,23 +101,50 @@ export async function wireDownload() {
     if (label) label.textContent = '릴리스 페이지에서 내려받기'
   }
 
-  /** the Apple Silicon disk image, when the release carries one (the Mac build is attached separately) */
+  /** the two Mac disks, when the release carries them: Apple Silicon and Intel
+   *  are built and attached separately, and an Intel Mac cannot run the arm64 one */
   function wireMac(rel) {
-    const dmg = rel.assets?.find((a) => /^IeumOffice-.*-arm64\.dmg$/i.test(a.name))
-    if (dmg) {
+    const version = rel.tag_name.replace(/^v/, '')
+    const arm = rel.assets?.find((a) => /^IeumOffice-.*-arm64\.dmg$/i.test(a.name))
+    const intel = rel.assets?.find((a) => /^IeumOffice-.*-x64\.dmg$/i.test(a.name))
+    const mb = (asset) => Math.round(asset.size / 1024 / 1024)
+
+    if (arm) {
       macLinks.forEach((a) => {
-        a.href = dmg.browser_download_url
+        a.href = arm.browser_download_url
       })
       guardRepeatedDownload([...macLinks])
-      if (macLabel) macLabel.textContent = `Mac용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
-      if (macMeta) macMeta.textContent = `${dmg.name} (${Math.round(dmg.size / 1024 / 1024)}MB) · Apple Silicon`
+      if (macLabel) macLabel.textContent = `Mac용 ${version} 내려받기`
+      if (macMeta) macMeta.textContent = `${arm.name} (${mb(arm)}MB) · Apple Silicon · 베타`
     } else {
-      // this release has no Mac build yet: say so rather than open a page without one
+      // this release has no Apple Silicon build yet: say so rather than open a page without one
       macLinks.forEach((a) => {
         a.classList.add('is-pending')
         a.setAttribute('aria-disabled', 'true')
       })
-      if (macLabel) macLabel.textContent = 'Mac판 준비 중'
+      if (macLabel) macLabel.textContent = 'Apple Silicon Mac판 준비 중'
+    }
+    if (macFileMeta) macFileMeta.textContent = arm ? ` — ${arm.name} (${mb(arm)}MB)` : ' — 이 버전에는 없습니다'
+
+    if (intel) {
+      macIntelLinks.forEach((a) => {
+        a.href = intel.browser_download_url
+      })
+      guardRepeatedDownload([...macIntelLinks])
+      if (macIntelLabel) macIntelLabel.textContent = `Intel Mac용 ${version} 내려받기`
+      if (macIntelMeta) macIntelMeta.textContent = `${intel.name} (${mb(intel)}MB) · 베타`
+      // on the landing page the Intel line stays out of the way until there is a file for it
+      if (macAlt) macAlt.hidden = false
+    } else {
+      // an older release without the Intel build: keep the guide's line, but offer no file
+      macIntelLinks.forEach((a) => {
+        a.classList.add('is-pending')
+        a.setAttribute('aria-disabled', 'true')
+      })
+      if (macIntelLabel) macIntelLabel.textContent = 'Intel Mac판 준비 중'
+    }
+    if (macIntelFileMeta) {
+      macIntelFileMeta.textContent = intel ? ` — ${intel.name} (${mb(intel)}MB)` : ' — 이 버전에는 없습니다'
     }
   }
 
