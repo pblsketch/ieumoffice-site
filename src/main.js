@@ -36,7 +36,7 @@ const FORMATS = [
   { id: 'markdown', label: '마크다운', file: 'md', color: '#4a5568', title: '마크다운 .md', text: '서식이 보이는 화면에서 쓰고, 필요하면 원문으로 바꿔 고칩니다.', alt: '마크다운 편집기에서 회의 메모를 연 화면' },
   { id: 'html', label: 'HTML', file: 'html', color: '#8257b6', title: 'HTML', text: '웹 페이지를 보이는 화면에서 고칩니다. 고른 자료로 새 페이지를 만들 수도 있습니다.', alt: 'HTML 편집기에서 행사 소개 페이지를 연 화면' },
   { id: 'mindmap', label: '마인드맵', file: 'mindmap', color: '#b04e83', title: '마인드맵 .xmind', text: 'XMind 파일을 열고 고쳐 같은 파일로 저장합니다. 그림, PDF, 마크다운 개요로 내보냅니다.', alt: '마인드맵 편집기에서 아이디어 지도를 연 화면' },
-  { id: 'epub', label: 'EPUB', file: 'epub', color: '#2f6f5e', title: 'EPUB 전자책', text: 'EPUB 책을 열어 읽고 본문을 고쳐 저장합니다. 책 전체나 고른 장을 다른 언어로 번역해 새 책으로 냅니다.', alt: 'EPUB 편집기에서 가을 북페어 안내책을 연 화면' },
+  { id: 'epub', label: 'EPUB', file: 'epub', color: '#2f6f5e', title: 'EPUB 전자책', text: 'EPUB 책을 열어 읽고 본문을 고쳐 저장합니다. 책 전체나 고른 장을 다른 언어로 번역해 번역본 파일로 저장합니다.', alt: 'EPUB 편집기에서 가을 북페어 안내책을 연 화면' },
 ]
 
 const showcase = document.querySelector('[data-showcase]')
