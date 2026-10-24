@@ -1447,7 +1447,8 @@ details.more p {
   width: var(--wrap);
   margin: clamp(36px, 5vw, 56px) auto 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* five symptoms still sit on one row on a wide screen, four (the AI page) keep their size */
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 16px;
 }
 .symptom {
@@ -1608,6 +1609,44 @@ details.more p {
   border-radius: 4px;
   background: var(--indigo);
 }
+/* Smart App Control: a white dialog with a blue shield and one blue button */
+.symptom-pic-sac {
+  background: #dde4f2;
+}
+.sp-sac {
+  inset: 12% 8%;
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.35);
+}
+.sp-sac b {
+  left: 7%;
+  top: 13%;
+  width: 11%;
+  aspect-ratio: 1;
+  border-radius: 3px 3px 6px 6px;
+  background: #0f6cbd;
+}
+.sp-sac s {
+  left: 22%;
+  top: 14%;
+  width: 64%;
+  height: 8%;
+  border-radius: 4px;
+  background: #cfd4e2;
+}
+.sp-sac s + s {
+  top: 32%;
+  width: 52%;
+}
+.sp-sac u {
+  right: 8%;
+  bottom: 12%;
+  width: 30%;
+  height: 20%;
+  border-radius: 3px;
+  background: #0f6cbd;
+}
 
 /* the download section's one-row version */
 .stuck {
@@ -1651,6 +1690,13 @@ details.more p {
   margin-top: 14px;
   font-size: var(--t-sm);
   color: var(--muted);
+}
+
+/* five cards at middle widths: 3 + 2 reads better than a lone card on its own row */
+@media (min-width: 901px) and (max-width: 1239px) {
+  .symptoms-compact {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 900px) {

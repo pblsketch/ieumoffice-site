@@ -282,7 +282,7 @@ wireDownload()
 
 const STUCK_HINTS = {
   edge: ['Edge에서 "일반적으로 다운로드되지 않습니다"가 뜨면', '/install#edge'],
-  windows: ['설치 파일을 열 때 파란 경고 창이 뜨면', '/install#pc-protect'],
+  windows: ['설치 파일을 열 때 경고 창이 뜨면', '/install#pc-protect'],
   mac: ['Mac에서 처음 열 때 막히면', '/install#mac'],
   linux: ['Linux에서 설치 방법이 궁금하면', '/install#linux'],
 }

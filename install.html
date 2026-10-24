@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>설치가 막혔을 때 · 이음오피스</title>
-    <meta name="description" content="Edge에서 내려받기가 안 되거나 설치 파일을 열 때 경고가 뜨면, 지금 보이는 화면을 골라 어디를 누르면 되는지 화면으로 봅니다." />
+    <meta name="description" content="Edge에서 내려받기가 안 되거나, 설치 파일을 열 때 'Windows의 PC 보호'나 스마트 앱 컨트롤이 막으면, 지금 보이는 화면을 골라 어디를 누르면 되는지 화면으로 봅니다." />
     <link rel="canonical" href="https://ieumoffice.com/install" />
     <meta name="theme-color" content="#2b2489" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -73,6 +73,13 @@
           </span>
           <b>파란 경고 창이 떠요</b>
           <span>"Windows의 PC 보호"</span>
+        </a>
+        <a class="symptom" href="#smart-app-control">
+          <span class="symptom-pic symptom-pic-sac" aria-hidden="true">
+            <i class="sp-sac"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>스마트 앱 컨트롤이 막았어요</b>
+          <span>"안전하지 않을 수 있는 앱"</span>
         </a>
         <a class="symptom" href="#find-file">
           <span class="symptom-pic symptom-pic-folder" aria-hidden="true">
@@ -221,6 +228,11 @@
             <b>실행 안 함</b> 하나뿐이어도 닫지 마세요.
           </p>
         </div>
+        <p class="guide-alt">
+          창이 파란색이 아니라 흰 바탕에 <b>"스마트 앱 컨트롤이 … 차단했습니다"</b>라고 나오나요? 그 창에는
+          <b>추가 정보</b>가 없습니다. <a class="text-link" href="#smart-app-control">스마트 앱 컨트롤이 차단했을 때</a>로
+          이어서 보세요.
+        </p>
         <div class="player" data-player="pc-protect">
           <div class="player-screen" data-screen>
             <div class="stage" data-stage aria-hidden="true">
@@ -266,6 +278,138 @@
         </div>
         <p class="guide-next">
           그다음에는 설치 창이 열립니다. <a class="text-link" href="#installer">설치 창에서 누를 것</a>을 이어서 보세요.
+        </p>
+      </section>
+
+      <!-- Smart App Control: the white "차단했습니다" dialog on new Windows 11 PCs -->
+      <section class="guide" id="smart-app-control" aria-labelledby="sac-title">
+        <div class="guide-head">
+          <p class="guide-tag">Windows 11</p>
+          <h2 id="sac-title">"스마트 앱 컨트롤이 차단했습니다"가 떠요</h2>
+          <p>
+            새로 산 노트북이나 Windows를 새로 설치한 PC에서 자주 뜨는 창입니다. 이음오피스는 무료로 배포하는
+            프로그램이라 Windows가 게시자를 확인할 수 있는 서명이 없습니다. 그래서 설치할 때뿐 아니라 실행할
+            때도 Windows 11이 막습니다. 이 창에는 <b>실행</b> 단추도 없고, 이 프로그램만 따로 허용하는 방법도
+            없습니다. 스마트 앱 컨트롤을 끄면 설치와 실행이 됩니다. 대신 다시 켜면 이음오피스가 막히므로,
+            이음오피스를 쓰는 동안은 꺼 둔 채로 두어야 합니다.
+          </p>
+        </div>
+        <div class="player" data-player="sac">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+
+              <!-- the dialog from the new PC -->
+              <div class="sac-window" data-frame>
+                <div class="sac-head">
+                  <svg class="sac-shield" viewBox="0 0 24 24">
+                    <path d="M12 2.6 4.7 5.8v6c0 4.9 3.1 8 7.3 9.4 4.2-1.4 7.3-4.5 7.3-9.4v-6z" />
+                    <path class="sac-check" d="m8.9 11.7 2.1 2.1 4.1-4.1" />
+                  </svg>
+                  <b>스마트 앱 컨트롤이 안전하지 않을 수 있는 앱을 차단했습니다.</b>
+                </div>
+                <div class="sac-body">
+                  <p>
+                    이 앱은 디바이스 및 데이터를 보호하기 위해 차단되었습니다. Microsoft는 앱을 검토하여 안전한지
+                    확인합니다.
+                  </p>
+                  <p class="sac-path">C:\Users\내 이름\Downloads\IeumOffice-Setup.exe</p>
+                  <p class="sac-learn">스마트 앱 컨트롤을 자세히 알아보기</p>
+                </div>
+                <div class="sac-foot">
+                  <span class="sac-btn sac-primary" data-t="sac-ok">확인</span>
+                  <span class="sac-btn">Microsoft Store에서 앱 가져오기</span>
+                </div>
+              </div>
+
+              <!-- Windows Security -->
+              <div class="ws-window" data-frame>
+                <div class="ws-bar">
+                  <svg class="ws-shield" viewBox="0 0 24 24">
+                    <path d="M12 2.6 4.7 5.8v6c0 4.9 3.1 8 7.3 9.4 4.2-1.4 7.3-4.5 7.3-9.4v-6z" />
+                  </svg>
+                  <b>Windows 보안</b>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ws-body">
+                  <ul class="ws-nav">
+                    <li>홈</li>
+                    <li>바이러스 및 위협 방지</li>
+                    <li>계정 보호</li>
+                    <li>방화벽 및 네트워크 보호</li>
+                    <li data-t="ws-appbrowser">앱 및 브라우저 제어</li>
+                    <li>장치 성능 및 상태</li>
+                    <li>가족 옵션</li>
+                  </ul>
+                  <div class="ws-page">
+                    <div class="ws-home">
+                      <p class="ws-title">PC가 보호되고 있습니다</p>
+                      <p class="ws-sub">마지막 검사: 오늘 오전 9:12</p>
+                      <div class="ws-tiles"><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="ws-appbrowser">
+                      <p class="ws-title">앱 및 브라우저 제어</p>
+                      <p class="ws-sub">Microsoft Defender SmartScreen</p>
+                      <div class="ws-card">
+                        <b>스마트 앱 컨트롤</b>
+                        <p>신뢰할 수 없는 앱으로부터 PC를 보호합니다.</p>
+                        <span class="ws-link" data-t="ws-sac">스마트 앱 컨트롤 설정</span>
+                      </div>
+                    </div>
+                    <div class="ws-settings">
+                      <p class="ws-back">‹ 스마트 앱 컨트롤</p>
+                      <p class="ws-title">스마트 앱 컨트롤 설정</p>
+                      <div class="ws-option ws-on">
+                        <i></i><b>켜짐</b><span>악성 앱과 신뢰할 수 없는 앱을 차단합니다.</span>
+                      </div>
+                      <div class="ws-option">
+                        <i></i><b>평가</b><span>이 PC에 맞는지 확인한 뒤 켤지 정합니다.</span>
+                      </div>
+                      <div class="ws-option ws-off" data-t="sac-off">
+                        <i></i><b>꺼짐</b><span>앱을 확인하지 않습니다. 보호가 줄어듭니다.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>차단 창이 뜨면 <b>확인</b>을 눌러 닫습니다.</li>
+            <li>시작 단추 옆 검색에 <b>Windows 보안</b>을 쳐서 열고, 왼쪽에서 <b>앱 및 브라우저 제어</b>를 누릅니다.</li>
+            <li><b>스마트 앱 컨트롤 설정</b>을 누릅니다.</li>
+            <li><b>꺼짐</b>을 고릅니다. 이제 받은 설치 파일을 다시 열면 설치가 시작됩니다.</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="이전 단계">‹ 이전</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="멈춤">❚❚ 멈춤</button>
+            <button type="button" class="pb-btn" data-next aria-label="다음 단계">다음 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          스마트 앱 컨트롤은 인터넷에서 받은 낯선 프로그램을 막아 주는 기능입니다. 끄면 그 보호가 줄어드는 대신
+          이음오피스를 쓸 수 있고, Windows 보안의 바이러스 및 위협 방지(Defender)는 그대로 켜져 있어 바이러스
+          검사는 계속 됩니다. 나중에 다시 켜면 이음오피스는 실행되지 않습니다.
+        </p>
+        <p class="guide-next">
+          끈 뒤 파란 "Windows의 PC 보호" 창이 이어서 뜨면, 그 창에서는 <b>추가 정보 → 실행</b>을 누르면 됩니다.
+          방법은 <a class="text-link" href="#pc-protect">"Windows의 PC 보호"가 떠요</a>에 있습니다.
+        </p>
+        <p class="demo-note">
+          <b>Microsoft Store에서 앱 가져오기</b>를 눌러도 이음오피스는 나오지 않습니다. Store에 올리지 않은
+          프로그램입니다. PC에 따라 "한 번 끄면 되돌릴 수 없다"는 안내가 나옵니다. 끄기 전에 읽어 보세요. 설정을
+          바꾼 뒤에도 막히면 PC를 한 번 다시 시작해 보세요. 회사나 학교에서 준 PC라면 이 설정을 바꾸지 못할 수
+          있으니 PC를 관리하는 사람에게 알려 주세요. 화면은 설명을 위해 다시 그린 것이라 Windows 버전에 따라 조금
+          다를 수 있습니다.
         </p>
       </section>
 

@@ -56,9 +56,28 @@
 .guide-next {
   margin-top: 24px;
 }
+/* a pointer to the other window that looks like this one */
+.guide-alt {
+  max-width: 46em;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(67, 56, 202, 0.06);
+  color: var(--muted);
+  font-size: var(--t-sm);
+}
+.guide-alt b {
+  color: var(--ink);
+}
+/* the closing notes of the Smart App Control guide read as one narrow column */
+#smart-app-control .guide-next {
+  max-width: 46em;
+}
 .page-install .demo-note {
+  max-width: 46em;
   margin-top: 8px;
   font-size: var(--t-sm);
+  line-height: 1.65;
   color: var(--muted);
 }
 
@@ -774,6 +793,291 @@
   display: block;
 }
 
+/* Smart App Control: the white "차단했습니다" dialog, then Windows 보안 */
+.sac-window {
+  position: absolute;
+  left: 160px;
+  top: 92px;
+  width: 480px;
+  border-radius: 8px;
+  background: #f3f3f3;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.14),
+    0 20px 55px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition:
+    opacity 0.3s,
+    transform 0.3s var(--ease-out);
+}
+.stage:not(.is-blocked) .sac-window {
+  opacity: 0;
+  transform: scale(0.97);
+}
+.sac-head {
+  display: flex;
+  gap: 10px;
+  padding: 17px 18px 0;
+}
+.sac-shield {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+}
+.stage .sac-shield path:first-child {
+  fill: #0f6cbd;
+  stroke: none;
+}
+.stage .sac-shield .sac-check {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+}
+.sac-head b {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.sac-body {
+  padding: 10px 18px 16px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #333;
+}
+.sac-path {
+  margin-top: 8px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: #e7e7e7;
+  color: #555;
+  font-size: 11.5px;
+  word-break: break-all;
+}
+.sac-learn {
+  margin-top: 8px;
+  color: #0f6cbd;
+  font-size: 11.5px;
+}
+.sac-foot {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 8px;
+  padding: 0 18px 18px;
+}
+.sac-btn {
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: #e6e6e6;
+  box-shadow: inset 0 0 0 1px #c6c6c6;
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+.sac-primary {
+  background: #0f6cbd;
+  color: #fff;
+  box-shadow: none;
+}
+
+.ws-window {
+  position: absolute;
+  left: 80px;
+  top: 30px;
+  width: 640px;
+  height: 390px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.12),
+    0 20px 55px rgba(0, 0, 0, 0.42);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s,
+    transform 0.35s var(--ease-out);
+}
+.is-security .ws-window {
+  opacity: 1;
+  transform: none;
+}
+.ws-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding-left: 12px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.ws-shield {
+  width: 16px;
+  height: 16px;
+}
+.stage .ws-shield path {
+  fill: #0f6cbd;
+  stroke: none;
+}
+.ws-bar b {
+  font-size: 13px;
+  font-weight: 600;
+}
+.ws-bar .ms-caption {
+  padding-right: 14px;
+}
+.ws-body {
+  display: grid;
+  grid-template-columns: 186px 1fr;
+  height: 358px;
+}
+.ws-nav {
+  margin: 0;
+  padding: 10px 8px;
+  list-style: none;
+  border-right: 1px solid #ececec;
+  background: #fafafa;
+  font-size: 12.5px;
+  color: #333;
+}
+.ws-nav li {
+  padding: 7px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.2s;
+}
+.is-appbrowser .ws-nav li[data-t='ws-appbrowser'] {
+  background: #e5f0fb;
+  color: #0b4f8a;
+  font-weight: 600;
+}
+.ws-page {
+  position: relative;
+  padding: 20px 22px;
+  overflow: hidden;
+}
+.ws-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: #1b1b1b;
+}
+.ws-sub {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666;
+}
+.ws-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+.ws-tiles span {
+  height: 86px;
+  border-radius: 8px;
+  background: #f4f4f4;
+  box-shadow: inset 0 0 0 1px #e4e4e4;
+}
+.ws-appbrowser,
+.ws-settings {
+  display: none;
+}
+.is-appbrowser .ws-home {
+  display: none;
+}
+.is-appbrowser .ws-appbrowser {
+  display: block;
+}
+.is-sacsettings .ws-appbrowser {
+  display: none;
+}
+.is-sacsettings .ws-settings {
+  display: block;
+}
+.ws-card {
+  margin-top: 18px;
+  padding: 12px 14px 14px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px #e3e3e3,
+    0 10px 24px -18px rgba(0, 0, 0, 0.4);
+}
+.ws-card b {
+  font-size: 13px;
+  font-weight: 600;
+}
+.ws-card p {
+  margin-top: 3px;
+  font-size: 12px;
+  color: #555;
+}
+.ws-link {
+  display: inline-block;
+  margin-top: 9px;
+  color: #0f6cbd;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.ws-settings {
+  position: absolute;
+  inset: 0;
+  padding: 16px 22px;
+  background: #f7f8fa;
+}
+.ws-back {
+  margin-bottom: 10px;
+  color: #0f6cbd;
+  font-size: 12px;
+}
+.ws-option {
+  position: relative;
+  margin-top: 8px;
+  padding: 8px 12px 8px 36px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e3e6ec;
+}
+.ws-option i {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.5px #6b7280;
+}
+.ws-option i::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: #0f6cbd;
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+.ws-on i::after {
+  transform: scale(1);
+}
+.is-off .ws-on i::after {
+  transform: scale(0);
+}
+.is-off .ws-off i::after {
+  transform: scale(1);
+}
+.ws-option b {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.ws-option span {
+  display: block;
+  margin-top: 1px;
+  font-size: 11.5px;
+  color: #666;
+}
+
 /* File Explorer */
 .ex-window {
   position: absolute;
@@ -1153,6 +1457,12 @@
   margin: 18px auto 0;
   font-size: var(--t-sm);
   color: var(--muted);
+}
+/* five symptom cards: 3 + 2 at middle widths, where four columns leave a lone card */
+@media (min-width: 901px) and (max-width: 1080px) {
+  .page-install .symptoms {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 .guide-other .mac-guide:first-of-type {
   margin-top: 28px;

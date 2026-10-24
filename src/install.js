@@ -1,5 +1,5 @@
-// The install help page: Edge, SmartScreen, finding the file and the
-// installer, each as a pointer walkthrough (src/player.js).
+// The install help page: Edge, SmartScreen, Smart App Control, finding the
+// file and the installer, each as a pointer walkthrough (src/player.js).
 import './font.css'
 import './style.css'
 import './ask.js'
@@ -31,6 +31,12 @@ const SCENES = {
         { t: 'run', add: ['ran'] },
       ],
     },
+  ],
+  sac: [
+    { at: ['blocked'], moves: [{ t: 'sac-ok', remove: ['blocked'], add: ['security'] }] },
+    { at: ['security'], moves: [{ t: 'ws-appbrowser', add: ['appbrowser'] }] },
+    { at: ['security', 'appbrowser'], moves: [{ t: 'ws-sac', add: ['sacsettings'] }] },
+    { at: ['security', 'appbrowser', 'sacsettings'], moves: [{ t: 'sac-off', add: ['off'] }] },
   ],
   'find-file': [
     { at: [], moves: [{ keys: ['Ctrl', 'J'], add: ['flyout'] }] },
