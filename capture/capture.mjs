@@ -361,6 +361,7 @@ async function main() {
       ['markdown', /\.md$/],
       ['html', /\.html$/],
       ['mindmap', /\.xmind$/],
+      ['epub', /\.epub$/],
     ]
     // open every sample first, so each picture carries the same tab strip and
     // only the active tab changes between them
