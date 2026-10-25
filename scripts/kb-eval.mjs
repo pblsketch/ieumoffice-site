@@ -23,6 +23,9 @@ const CASES = [
   { q: '구독이 없으면 AI를 못 쓰나요?', source: ['무료'] },
   { q: '내 문서가 AI 학습에 쓰이나요?', source: ['training', '학습', '개인정보'] },
   { q: 'PDF를 워드로 바꿀 수 있나요?', source: ['PDF'] },
+  // a link looks clickable, but editing keeps a plain click for the caret
+  { q: '마크다운 문서 안 링크가 클릭해도 열리지 않아요', source: ['마크다운에서 링크'], must: ['Ctrl', '클릭'] },
+  { q: '마크다운 바깥 링크는 어떻게 열어요?', source: ['마크다운에서 링크'], must: ['Ctrl'] },
   { q: '단축키 목록은 어디서 보나요?', source: ['단축키'] },
   { q: '구글 드라이브 파일을 열 수 있나요?', source: ['Google 드라이브'] },
   { q: '업데이트는 어떻게 하나요?', source: ['업데이트'] },
