@@ -43,6 +43,10 @@
     {
       "source": "/connect",
       "destination": "/connect.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
     }
   ],
   "headers": [

@@ -1,0 +1,87 @@
+/* ---------- FAQ page ---------- */
+
+.page-faq main {
+  padding-bottom: clamp(72px, 10vw, 120px);
+}
+
+.faq-toc {
+  width: var(--wrap);
+  margin: 24px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.faq-toc a {
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--line);
+  color: var(--indigo);
+  font-size: var(--t-sm);
+  text-decoration: none;
+}
+.faq-toc a:hover {
+  border-bottom-color: var(--indigo);
+}
+
+.faq-list {
+  width: var(--wrap);
+  margin: 0 auto;
+}
+.faq-list .guide {
+  padding-top: clamp(44px, 6vw, 64px);
+}
+.faq-list .guide:first-child {
+  padding-top: clamp(48px, 6vw, 72px);
+}
+.faq-list .guide + .guide {
+  border-top: 1px solid var(--line);
+}
+
+.faq-answer {
+  max-width: 46em;
+  margin-top: 18px;
+  color: var(--muted);
+}
+.faq-answer p {
+  margin: 0 0 14px;
+}
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+.faq-answer ul,
+.faq-answer ol {
+  margin: 0 0 14px;
+  padding-left: 1.25em;
+}
+.faq-answer li + li {
+  margin-top: 6px;
+}
+.faq-answer b {
+  color: var(--ink);
+}
+.faq-answer h3 {
+  margin: 26px 0 10px;
+  color: var(--ink);
+  font-size: 1.125rem;
+}
+.faq-answer table {
+  width: 100%;
+  margin: 0 0 16px;
+  border-collapse: collapse;
+  font-size: var(--t-sm);
+}
+.faq-answer th,
+.faq-answer td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.faq-answer th {
+  color: var(--ink);
+  font-weight: 700;
+}
+.faq-answer code {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: var(--paper);
+  font-size: 0.92em;
+}

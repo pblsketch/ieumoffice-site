@@ -33,6 +33,7 @@ npm run build    # dist/ 에 만들기
 자료에 없는 것은 없다고 하고 의견 보내기로 안내합니다. 모델이 실패하면 찾은 안내 조각을 대신 보여 줍니다.
 
 - **지식베이스** `lib/kb-data.js`는 `npm run kb`가 만듭니다. 앱 저장소(옆의 `../openoffice`, 다르면 `IEUM_APP_REPO`)의 **최신 릴리스 태그**에서 한국어 앱 도움말, README, PRIVACY.md를 `git show`로 읽습니다. 앱 폴더의 브랜치나 고치던 내용은 섞이지 않습니다. 여기에 GitHub의 최근 릴리스 본문 5개와 이 사이트의 페이지들을 더합니다. 개발 문서(AGENTS.md, engineering-notes, 결정 기록)는 넣지 않습니다. 같은 자료로 다시 만들면 바이트까지 같은 파일이 나옵니다(만든 날짜를 넣지 않습니다).
+- **자주 묻는 질문** `faq.html`은 질문 도우미가 "자료에 없음"으로 끝난 실제 질문을 모은 페이지입니다. 지원 환경(휴대폰·아이패드·Mac), 설치·제거, 한글 저장 오류, PDF 캡처, 엑셀 호환성, 기업 사용, 로컬 LLM처럼 자주 막히는 곳을 적습니다. 새 버전에서 답이 바뀌면 이 페이지도 함께 고칩니다.
 - **자동 갱신** `.github/workflows/kb.yml`: 매일 새벽 3시(KST)에 돌고, `main`에 페이지(`*.html`, `public/*.html`)나 `scripts/build-kb.mjs`가 바뀌어 올라갈 때도 돕니다. Actions 탭에서 "Question helper knowledge base" → Run workflow로 손으로 돌릴 수도 있습니다. 하는 일은 이렇습니다.
   1. 앱 저장소의 최신 릴리스 태그를 찾고, 필요한 파일만 받습니다(부분 복제, 몇 MB).
   2. `npm run kb`로 지식베이스를 다시 만들고 `npm run kb:check`로 검사합니다. 출처마다 조각이 남아 있는지, 제품 이름이 바뀌었는지, 조각 크기와 검색 몇 개를 봅니다. 모델은 부르지 않습니다.
@@ -72,5 +73,5 @@ node capture/form-banner.mjs    # public/form-banner.png (의견 설문 머리�
 3. **다른 칸과 어긋나지 않게** 봅니다. 편집기 설명(`src/main.js`의 `FORMATS`)과 한글·AI·비용·개인정보 칸의 문장이 새 기능이나 바뀐 동작과 맞는지 확인합니다. 오래 쓸 기능은 메인 소개 칸에도 옮겨 적습니다.
 4. **캡처**는 그 버전으로 빌드한 이음오피스(`IEUM_REPO`, 기본 `E:/github/openoffice-release`)로 찍습니다. 새 장면은 `capture/capture.mjs`에 장면 함수를 하나 더해 이름으로 찍고(`node capture/capture.mjs split pdf-reading`), 그 이름만 변환합니다(`python capture/optimize.py split pdf-reading`). 이름은 버전마다 겹치지 않게 짓습니다(앞 버전 항목이 옛 캡처를 계속 씁니다). 엑셀을 다시 찍으면 `MARKS`도 맞춥니다.
 5. **문구**는 humanizer로 검토합니다. 추상적인 말("표시", "도구가 늘었다")이나 전문 용어("주석", "릴리스", "본문", "EPUB")는 일반 사용자가 바로 알아듣는 말로 바꾸거나 괄호로 풀어 씁니다. 오피스가 먼저이고 AI는 보조 도구로 씁니다.
-6. **질문 도우미의 지식베이스**는 따로 손대지 않아도 됩니다. 7번에서 페이지를 push하면 "Question helper knowledge base" 작업이 새 릴리스 태그와 새 업데이트 페이지로 다시 만들어 커밋합니다. 그 실행이 초록인지, 그리고 `lib/kb-data.js`의 첫 줄 버전이 새 태그인지 확인합니다. 앱 도움말이 크게 바뀐 버전이면 Claude로 답까지 시험합니다(`vercel env pull .env.local` 뒤 `npm run kb:eval -- --answer`, 몇 센트). 틀린 답이 나오면 지침(`lib/qa.js`)이나 시험 질문(`scripts/kb-eval.mjs`)을 고칩니다.
+6. **질문 도우미의 지식베이스**는 따로 손대지 않아도 됩니다. 7번에서 페이지를 push하면 "Question helper knowledge base" 작업이 새 릴리스 태그와 새 업데이트 페이지로 다시 만들어 커밋합니다. 그 실행이 초록인지, 그리고 `lib/kb-data.js`의 첫 줄 버전이 새 태그인지 확인합니다. `faq.html`의 "0.12.4 기준"과 지원 환경·설치·저장·호환성 답이 새 버전과 맞는지 먼저 고칩니다. 앱 도움말이 크게 바뀐 버전이면 Claude로 답까지 시험합니다(`vercel env pull .env.local` 뒤 `npm run kb:eval -- --answer`, 몇 센트). 틀린 답이 나오면 지침(`lib/qa.js`)이나 시험 질문(`scripts/kb-eval.mjs`)을 고칩니다.
 7. `npm run build`와 `npx vite preview`로 데스크톱·모바일 폭에서 `/updates.html`과 메인을 확인하고, 저장소 주인의 확인을 받은 뒤 `main`에 push합니다. Vercel이 배포하면 https://ieumoffice.com/updates 와 메인의 한 줄 안내, 내려받기 버튼의 버전을 다시 봅니다.

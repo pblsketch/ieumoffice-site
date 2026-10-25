@@ -12,6 +12,7 @@ export default defineConfig({
         story: resolve(import.meta.dirname, 'story.html'),
         install: resolve(import.meta.dirname, 'install.html'),
         connect: resolve(import.meta.dirname, 'connect.html'),
+        faq: resolve(import.meta.dirname, 'faq.html'),
       },
     },
   },

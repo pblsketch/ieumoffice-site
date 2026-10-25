@@ -87,6 +87,7 @@ const PAGES = [
   ['index.html', '/', '이음오피스 소개'],
   ['install.html', '/install', '설치 도움말'],
   ['connect.html', '/connect', 'AI 연결 도움말'],
+  ['faq.html', '/faq', '자주 묻는 질문'],
   ['updates.html', '/updates', '업데이트 소식'],
   ['story.html', '/story', '만든 이야기'],
   ['public/privacy.html', '/privacy.html', '개인정보 처리방침'],
