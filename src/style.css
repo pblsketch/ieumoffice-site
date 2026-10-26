@@ -1215,6 +1215,7 @@ section:not(.hero) {
   color: var(--white);
   margin-right: 0.45em;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 .oss-refs {
   list-style: none;
@@ -2060,6 +2061,24 @@ details.more p {
   }
   .format-chip {
     flex: none;
+  }
+}
+
+/* phones: put each label under its number so a long figure never splits */
+@media (max-width: 480px) {
+  .hero-stats {
+    gap: 12px 18px;
+  }
+  .hero-stats span,
+  .hero-stats a {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    line-height: 1.4;
+  }
+  .hero-stats b {
+    margin-right: 0;
+    line-height: 1.3;
   }
 }
 
