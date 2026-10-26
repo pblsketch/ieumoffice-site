@@ -323,6 +323,65 @@ async function skillsSettingsShot(app, shell, opened) {
   await clearAiInput(t)
 }
 
+/** 0.12.5 HWP memos: a reviewed copy of the sample form with the memo panel out. */
+async function hwpMemoShot(app, shell, scratch) {
+  const file = join(scratch.docs, '가을 북페어', '참가신청서_검토.hwpx')
+  cpSync(join(HERE, 'samples-extra', '참가신청서_검토.hwpx'), file)
+  const before = [...app.windows()]
+  await shell.evaluate((path) => window.aiOffice.openPath(path), file)
+  const page = await editorPage(app, before)
+  await page.waitForSelector('.hwp-app[data-phase="ready"]', { timeout: 90_000 })
+  await sleep(3000)
+  const collapse = page.locator('.ai-panel-collapse')
+  if (await collapse.isVisible().catch(() => false)) await collapse.click()
+  await page.locator('.memo-rail').click()
+  await page.locator('.memo-card').nth(2).waitFor({ state: 'visible', timeout: 15_000 })
+  await sleep(1500)
+  await shot(app, 'hwp-memo')
+  console.log('wrote hwp-memo')
+  if (!ONLY.length || ONLY.includes('hwp-format-copy')) {
+    // 0.12.5 format copy: Alt+C with the caret in the form's title opens the dialog
+    await page.locator('.memo-panel .memo-close, .memo-panel [aria-label="닫기"]').first().click().catch(() => {})
+    const editor = page.frameLocator('.hwp-editor-host iframe')
+    await sleep(800)
+    // the caret on the form's title, "참가 신청서"
+    await page.mouse.click(900, 374)
+    await sleep(500)
+    await page.keyboard.press('Alt+c')
+    await editor.locator('.dialog-btn-primary').first().waitFor({ state: 'visible', timeout: 10_000 })
+    await sleep(1000)
+    await shot(app, 'hwp-format-copy')
+    console.log('wrote hwp-format-copy')
+  }
+}
+
+/** 0.12.5 Word mail merge: the 메일 ribbon tab of the sample plan. */
+async function docsMailingsShot(app, shell, opened, scratch) {
+  const entry = opened.find(([name]) => name === 'docs')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const page = app.windows().find((p) => p.url().includes('://docs/'))
+  await page.locator('.ribbon-tab', { hasText: /^\s*메일\s*$/ }).first().click()
+  await sleep(1000)
+  // a made-up list of participating shops; the picker is answered without a dialog
+  const list = join(scratch.docs, '가을 북페어', '참가서점_명단.csv')
+  writeFileSync(
+    list,
+    '﻿상호,대표자,부스\r\n골목책방 오늘,한서진,A-3\r\n바람서점,오지훈,B-1\r\n작은숲 출판사,이수아,C-2\r\n',
+  )
+  await app.evaluate(({ dialog }, path) => {
+    dialog.showOpenDialog = async () => ({ canceled: false, filePaths: [path] })
+  }, list)
+  await page.locator('.ribbon-btn, button', { hasText: '메일 병합 시작' }).first().click()
+  await page.locator('.modal-mailmerge').waitFor({ state: 'visible', timeout: 10_000 })
+  await page.locator('.modal-mailmerge button', { hasText: '받는 사람 목록 선택' }).click()
+  await page.locator('.mailmerge-field').first().waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(1200)
+  await shot(app, 'docs-mailings')
+  console.log('wrote docs-mailings')
+}
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -408,6 +467,8 @@ async function main() {
     if (want('skills-slash')) await skillsSlashShot(app, shell, opened)
     if (want('doc-mention')) await docMentionShot(app, shell, opened)
     if (want('skills-settings')) await skillsSettingsShot(app, shell, opened)
+    if (want('docs-mailings')) await docsMailingsShot(app, shell, opened, scratch)
+    if (want('hwp-memo') || want('hwp-format-copy')) await hwpMemoShot(app, shell, scratch)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()
