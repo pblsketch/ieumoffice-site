@@ -373,6 +373,23 @@ async function hwpMemoShot(app, shell, scratch) {
   }
 }
 
+/** 0.12.7: the memo list in its own column beside the document, next to the AI panel. */
+async function hwpMemoSideShot(app, shell, scratch) {
+  const file = join(scratch.docs, '가을 북페어', '참가신청서_메모칸.hwpx')
+  cpSync(join(HERE, 'samples-extra', '참가신청서_검토.hwpx'), file)
+  const before = [...app.windows()]
+  await shell.evaluate((path) => window.aiOffice.openPath(path), file)
+  const page = await editorPage(app, before)
+  await page.waitForSelector('.hwp-app[data-phase="ready"]', { timeout: 90_000 })
+  await sleep(3000)
+  const toggle = page.locator('.memo-toggle')
+  if (!(await toggle.evaluate((el) => el.classList.contains('on')))) await toggle.click()
+  await page.locator('.memo-side .memo-card').nth(2).waitFor({ state: 'visible', timeout: 15_000 })
+  await sleep(1500)
+  await shot(app, 'hwp-memo-side')
+  console.log('wrote hwp-memo-side')
+}
+
 /** 0.12.5 Word mail merge: the 메일 ribbon tab of the sample plan. */
 async function docsMailingsShot(app, shell, opened, scratch) {
   const entry = opened.find(([name]) => name === 'docs')
@@ -508,6 +525,7 @@ async function main() {
     if (want('docs-mailings')) await docsMailingsShot(app, shell, opened, scratch)
     if (want('local-ai')) await localAiShot(app, shell)
     if (want('hwp-memo') || want('hwp-format-copy') || want('hwp-memo-menu')) await hwpMemoShot(app, shell, scratch)
+    if (want('hwp-memo-side')) await hwpMemoSideShot(app, shell, scratch)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()
