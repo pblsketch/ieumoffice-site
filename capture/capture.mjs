@@ -339,6 +339,24 @@ async function hwpMemoShot(app, shell, scratch) {
   await sleep(1500)
   await shot(app, 'hwp-memo')
   console.log('wrote hwp-memo')
+  if (!ONLY.length || ONLY.includes('hwp-memo-menu')) {
+    // 0.12.6: the right-click menu on a selected title offers 메모
+    await sleep(800)
+    await page.mouse.click(900, 374)
+    await page.keyboard.press('Home')
+    await page.keyboard.press('Shift+End')
+    await sleep(400)
+    await page.mouse.click(900, 374, { button: 'right' })
+    await page
+      .frameLocator('.hwp-editor-host iframe')
+      .locator('.context-menu .md-item[data-cmd="insert:comment"]')
+      .waitFor({ state: 'visible', timeout: 10_000 })
+    await sleep(800)
+    await shot(app, 'hwp-memo-menu')
+    console.log('wrote hwp-memo-menu')
+    await page.keyboard.press('Escape')
+    await sleep(400)
+  }
   if (!ONLY.length || ONLY.includes('hwp-format-copy')) {
     // 0.12.5 format copy: Alt+C with the caret in the form's title opens the dialog
     await page.locator('.memo-panel .memo-close, .memo-panel [aria-label="닫기"]').first().click().catch(() => {})
@@ -380,6 +398,26 @@ async function docsMailingsShot(app, shell, opened, scratch) {
   await sleep(1200)
   await shot(app, 'docs-mailings')
   console.log('wrote docs-mailings')
+}
+
+/** 0.12.6 local AI: Settings → AI model, adding a server on this PC (nothing is sent). */
+async function localAiShot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1200)
+  await shell.locator('.account-btn').first().click()
+  const card = shell.locator('.set-local-ai')
+  await card.waitFor({ state: 'visible', timeout: 15_000 })
+  await card.locator('button', { hasText: '서버 추가' }).first().click()
+  await shell.locator('#set-local-name').fill('내 PC의 Ollama')
+  await shell.locator('#set-local-address').fill('http://localhost:11434')
+  await shell.locator('#set-local-address').blur()
+  await card.scrollIntoViewIfNeeded()
+  await shell.locator('.set-local-form').first().scrollIntoViewIfNeeded()
+  await sleep(1500)
+  await shot(app, 'local-ai', [216, 60, 1008, 602])
+  console.log('wrote local-ai')
+  await shell.keyboard.press('Escape').catch(() => {})
+  await sleep(600)
 }
 
 async function main() {
@@ -468,7 +506,8 @@ async function main() {
     if (want('doc-mention')) await docMentionShot(app, shell, opened)
     if (want('skills-settings')) await skillsSettingsShot(app, shell, opened)
     if (want('docs-mailings')) await docsMailingsShot(app, shell, opened, scratch)
-    if (want('hwp-memo') || want('hwp-format-copy')) await hwpMemoShot(app, shell, scratch)
+    if (want('local-ai')) await localAiShot(app, shell)
+    if (want('hwp-memo') || want('hwp-format-copy') || want('hwp-memo-menu')) await hwpMemoShot(app, shell, scratch)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()
