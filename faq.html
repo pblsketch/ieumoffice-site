@@ -55,7 +55,7 @@
         <p class="eyebrow">도움말</p>
         <h1>자주 묻는 질문</h1>
         <p class="install-lede">
-          이음오피스를 쓰다가 막히는 곳을 모았습니다. 0.12.7 기준입니다.
+          이음오피스를 쓰다가 막히는 곳을 모았습니다. 0.12.8 기준입니다.
           여기에 없는 것은 <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">의견 보내기</a>로
           알려 주세요.
         </p>
@@ -66,11 +66,13 @@
         <a href="#cost">비용</a>
         <a href="#portable">포터블</a>
         <a href="#install-remove">설치와 제거</a>
+        <a href="#first-run-freeze">처음 켤 때 멈춤</a>
         <a href="#hwp-save">한글 저장 오류</a>
         <a href="#markdown-links">마크다운 링크</a>
         <a href="#pdf-capture">PDF 캡처·붙여넣기</a>
         <a href="#excel-compat">엑셀 호환성</a>
         <a href="#excel-row-height">엑셀 행 높이</a>
+        <a href="#chatgpt">ChatGPT 연결</a>
         <a href="#gemini">Gemini 유료</a>
         <a href="#business">기업 사용</a>
         <a href="#hwp-compare">한글과 비교</a>
@@ -132,7 +134,7 @@
               없습니다. 이음오피스가 따로 받는 돈은 없습니다.
             </p>
             <p>
-              AI 기능은 사용자가 이미 쓰는 Claude·Codex 구독이나, 본인이 넣은 API 키로 돌아갑니다.
+              AI 기능은 사용자가 이미 쓰는 Claude·ChatGPT 구독이나, 본인이 넣은 API 키로 돌아갑니다.
               구독료는 그 회사에 내는 것이고, 이음오피스에 추가로 내는 돈은 없습니다. API 키
               (OpenRouter·Gemini)를 쓰면 그 회사에 사용한 만큼 요금이 나갈 수 있고, 무료 한도가
               있는 키도 있습니다.
@@ -189,6 +191,26 @@
               <code>~/Library/Application Support/IeumOffice</code>, Linux
               <code>~/.config/IeumOffice</code>). 완전히 지우려면 제거한 뒤 이 폴더를 직접
               지웁니다.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="first-run-freeze">
+          <div class="guide-head">
+            <p class="guide-tag">설치</p>
+            <h2>처음 켜면 "응답 없음"이나 회색 화면에서 멈춰요</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Windows 보안의 <b>제어된 폴더 액세스</b>(랜섬웨어 방지)가 켜진 PC에서 생기던 문제입니다.
+              이 기능이 문서 폴더에 새 폴더를 만들지 못하게 막아서, 0.12.7까지는 이런 PC에서 앱이 처음 켜질 때 멈출 수 있었습니다.
+              0.12.8로 업데이트하거나 새로 설치하면 고쳐집니다.
+            </p>
+            <p>
+              0.12.8부터는 문서 폴더에 쓸 수 없으면 사용자 폴더 아래 <code>IeumOffice</code> 폴더에 새 파일을
+              저장하고, "문서 폴더에 저장할 수 없습니다" 안내를 한 번 보여 줍니다. 원래대로 문서 폴더에
+              저장하려면 Windows 보안의 <b>제어된 폴더 액세스를 통해 앱 허용</b>에 이음오피스를 추가한 뒤 앱을
+              다시 시작합니다. <b>설정 → 일반 → 저장 위치</b>에서 다른 폴더를 골라도 됩니다.
             </p>
           </div>
         </section>
@@ -310,6 +332,29 @@
           </div>
         </section>
 
+        <section class="guide" id="chatgpt">
+          <div class="guide-head">
+            <p class="guide-tag">AI 연결</p>
+            <h2>ChatGPT 요금제로 쓸 수 있나요? Codex 프로그램이 꼭 있어야 하나요?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              쓸 수 있고, 0.12.8부터는 Codex 프로그램이 없어도 됩니다. 연결 도우미에서 <b>ChatGPT를 써요</b>를
+              고르고 <b>ChatGPT로 계속</b>을 누르면 브라우저에 ChatGPT 로그인 화면이 열립니다. 로그인한 뒤 이 앱이
+              요금제를 쓰도록 허용하면 연결됩니다. 설정 → AI의 <b>ChatGPT</b> 카드에서도 같은 일을 합니다.
+              화면으로 보려면 <a class="text-link" href="/connect#chatgpt">AI 연결 도움말</a>을 보세요.
+            </p>
+            <p>
+              이 PC에서 Codex 프로그램을 이미 쓰고 있다면 Codex로 연결해도 됩니다. 에이전트 모드와 터미널 명령어는
+              지금처럼 Claude Code나 Codex 프로그램이 있어야 합니다.
+            </p>
+            <p>
+              <b>사용할 AI</b>가 <b>자동</b>이면 연결된 것 가운데 Claude, ChatGPT, Codex 순서로 고릅니다. 요금이
+              나가는 API 키나 종량제 로그인은 자동으로 고르지 않습니다.
+            </p>
+          </div>
+        </section>
+
         <section class="guide" id="gemini">
           <div class="guide-head">
             <p class="guide-tag">AI 연결</p>
@@ -325,7 +370,7 @@
               있는 키도 있습니다. 앱이 사용자를 유료 API 키로 저절로 바꾸지는 않습니다.
             </p>
             <p>
-              Gemini Advanced 구독을 쓰고 있다면, 지금은 Claude Code나 Codex 구독 연결을 쓰거나
+              Gemini Advanced 구독을 쓰고 있다면, 지금은 Claude나 ChatGPT 구독을 연결하거나
               Google AI Studio에서 API 키를 만들어 연결해야 합니다.
             </p>
           </div>
@@ -343,7 +388,7 @@
               편집·저장 기능에 유료 제한은 없습니다.
             </p>
             <p>
-              AI 기능은 각 사용자의 Claude·Codex 구독이나 본인이 넣은 API 키로 돌아갑니다. 회사
+              AI 기능은 각 사용자의 Claude·ChatGPT 구독이나 본인이 넣은 API 키로 돌아갑니다. 회사
               계정으로 관리하려면 그 회사의 약관을 확인하세요. 앱은 사용 통계를 보내지 않고,
               문서는 PC에 남습니다.
             </p>
@@ -383,12 +428,14 @@
           </div>
           <div class="faq-answer">
             <p>
-              지원하지 않습니다. 이음오피스는 PC 안에서 LLM을 직접 돌리지 않고, Claude Code,
-              Codex 구독, 또는 OpenRouter·Gemini 같은 API 키 제공자로 연결합니다.
+              됩니다(0.12.6부터). 이음오피스가 모델을 직접 돌리지는 않고, 내 PC나 사내망에서 돌리는
+              AI 서버(Ollama 등)에 연결합니다. <b>설정 → AI</b>의 <b>로컬 AI</b>에서 서버 주소를
+              등록하고, 연결 테스트로 대화가 되는지 확인합니다.
             </p>
             <p>
-              인터넷 없이도 문서 편집과 저장은 할 수 있지만, AI 기능은 연결이 필요합니다. 로컬
-              LLM 지원 계획은 아직 공개되어 있지 않습니다.
+              등록만 해서는 쓰는 AI가 바뀌지 않고, 직접 고른 서버만 씁니다. 서버 주소가 PC 밖 인터넷
+              주소이면 문서가 그쪽으로 간다고 알려 줍니다. 인터넷 없이도 문서 편집과 저장은 할 수
+              있습니다.
             </p>
           </div>
         </section>
@@ -449,7 +496,7 @@
       <div class="footer-brand">
         <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
         <div>
-          <p class="maker">만든이 <b>박준일</b> (공주영자고등학교 국어 교사) · <a href="/story">만든 이야기</a></p>
+          <p class="maker">만든이 <b>박준일</b> (온양여자고등학교 국어 교사) · <a href="/story">만든 이야기</a></p>
           <p>
             이음오피스는 오픈소스 프로젝트
             <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a>(Apache-2.0)를 바탕으로 고쳐

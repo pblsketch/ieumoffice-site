@@ -65,7 +65,7 @@
       <a class="back" href="/">← 이음오피스</a>
       <h1>개인정보 처리방침</h1>
       <p class="meta">
-        최종 갱신: 2026년 10월 24일 · <a href="#english">English version below</a> · 전체 목록(영어):
+        최종 갱신: 2026년 10월 28일 · <a href="#english">English version below</a> · 전체 목록(영어):
         <a href="https://github.com/pblsketch/openoffice/blob/main/PRIVACY.md" rel="noopener">PRIVACY.md</a>
       </p>
 
@@ -152,6 +152,13 @@
           앱을 끄면 연결이 끊깁니다.
         </li>
         <li>드라이브에서 열어 둔 파일의 PC 사본(데이터 폴더의 <code>drive-cache</code>)과 AI 첨부용 임시 폴더.</li>
+        <li>
+          ChatGPT를 앱에서 바로 연결한 경우 그 연결(<code>chatgpt-connection.json</code>) — OpenAI가 이 앱에 내준
+          로그인과, 이 설치본과 OpenAI 계정을 가리키는 ID입니다. 이메일 주소는 저장하지 않습니다. Windows에서는
+          사용자 계정 보호로, Linux에서는 데스크톱 키링으로 암호화하고, Mac과 키링이 없는 Linux에서는 암호화하지
+          않은 채 저장합니다. 연결을 끊으면 OpenAI에 연결 종료를 요청하고 이 PC에서 지웁니다. Codex 프로그램의
+          로그인과는 따로이고, ChatGPT 비밀번호는 앱이 보지 않습니다.
+        </li>
       </ul>
       <p class="note">
         무엇이 어디에 남는지, 언제 지워지는지의 전체 목록도 PRIVACY.md의 "What stays on your PC"에
@@ -195,7 +202,7 @@
       <hr />
 
       <h1 id="english">IeumOffice Privacy Policy</h1>
-      <p class="meta">Last updated: October 24, 2026 · The complete list of data flows is in
+      <p class="meta">Last updated: October 28, 2026 · The complete list of data flows is in
         <a href="https://github.com/pblsketch/openoffice/blob/main/PRIVACY.md" rel="noopener">PRIVACY.md</a>.
       </p>
 
@@ -211,7 +218,7 @@
         When you use AI, what you typed, the document content the request works on, the files and
         images you attached, skills (the text of those you pick or the AI uses, and the title and description of those
         the AI may use on its own), and the conversation are sent to the AI provider you use: Anthropic
-        (Claude) or OpenAI (Codex) under your own subscription, an API-key provider you configured,
+        (Claude) or OpenAI (ChatGPT, connected in the app or through Codex) under your own subscription, an API-key provider you configured,
         or a free connection (OpenRouter or Google Gemini). Each request goes under your own
         account directly from this PC.
       </p>
@@ -256,6 +263,14 @@
         <li>
           Copies of the Drive files you opened (<code>drive-cache</code>) and the temporary folder
           for Drive files attached to a chat.
+        </li>
+        <li>
+          Your ChatGPT connection, if you connected ChatGPT in the app (<code>chatgpt-connection.json</code>):
+          the sign-in OpenAI gave this app and IDs for this installation and your OpenAI account, no e-mail
+          address. It is encrypted with Windows' protection for your user account or, on Linux, your desktop
+          keyring; on macOS and on Linux without a keyring it is stored unencrypted. Disconnecting asks OpenAI
+          to end the sign-in and deletes it here. It is not the Codex program's login, and the app never sees
+          your ChatGPT password.
         </li>
       </ul>
       <p class="note">

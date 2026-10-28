@@ -1,4 +1,5 @@
-// The AI connect help page: a Claude or ChatGPT subscription, or a free AI,
+// The AI connect help page: a Claude subscription, a ChatGPT plan (directly or
+// through the Codex program), or a free AI,
 // each as a pointer walkthrough (src/player.js) over a redrawn IeumOffice
 // window. The card states follow the app's connect guide (decision 0047).
 import './font.css'
@@ -35,9 +36,34 @@ const SUBSCRIPTION = [
   },
 ]
 
+// ChatGPT connected directly: nothing to install, sign in → connected
+const CHATGPT = [
+  { at: [], moves: [{ t: 'path', add: ['open', 'c-login'] }] },
+  {
+    at: ['open', 'c-login'],
+    moves: [{ t: 'login', remove: ['c-login'], add: ['c-signing', 'browser'] }],
+  },
+  { at: ['open', 'c-signing', 'browser'], moves: [{ t: 'allow', add: ['allowed'] }] },
+  {
+    at: ['open', 'c-signing', 'browser', 'allowed'],
+    moves: [
+      { wait: 1600, remove: ['browser', 'allowed', 'c-signing', 'open'], add: ['c-ready'] },
+      { t: 'model', hover: true },
+    ],
+  },
+]
+
+// the Codex program: the ChatGPT answer opens the direct way, whose link leads here
+const CODEX = [
+  { at: [], moves: [{ t: 'path', add: ['open', 'direct'] }] },
+  { at: ['open', 'direct'], moves: [{ t: 'use-codex', remove: ['direct'], add: ['c-install'] }] },
+  ...SUBSCRIPTION.slice(1),
+]
+
 const SCENES = {
   claude: SUBSCRIPTION,
-  codex: SUBSCRIPTION,
+  chatgpt: CHATGPT,
+  codex: CODEX,
   free: [
     { at: [], moves: [{ t: 'path', add: ['open'] }] },
     { at: ['open'], moves: [{ t: 'connect-free', add: ['settings'] }] },

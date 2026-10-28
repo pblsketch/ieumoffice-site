@@ -1,0 +1,2 @@
+# the command-line installer is piped to sh: it must keep LF endings on every checkout
+public/cli/*.sh text eol=lf

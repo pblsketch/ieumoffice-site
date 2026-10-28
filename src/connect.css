@@ -683,3 +683,49 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+/* ChatGPT connected directly (0.12.8): the link to the Codex way shows while signed out */
+.cg-open > [data-c] {
+  display: none;
+}
+.is-c-login .cg-open > [data-c='login'] {
+  display: block;
+}
+/* the Codex walkthrough starts on the direct way and follows its link */
+.cg-direct,
+.cg-via {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cg-direct,
+.is-direct .cg-via {
+  display: none;
+}
+.is-direct .cg-direct {
+  display: flex;
+}
+.cg-s-now {
+  color: #4338ca;
+  font-weight: 700;
+}
+.cg-s-now i {
+  background: #4338ca;
+  box-shadow: none;
+  color: #fff;
+}
+/* the browser page before and after the sign-in hands back to the app */
+.br-after,
+.is-allowed .br-before {
+  display: none;
+}
+.is-allowed .br-after {
+  display: inline;
+}
+.is-allowed p.br-after {
+  display: block;
+}
+.br-note {
+  color: #5b5d6b;
+  font-size: 12px;
+}

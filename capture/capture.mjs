@@ -54,7 +54,7 @@ function makeScratch() {
   const userData = join(root, 'userdata')
   const docs = join(root, '내 문서')
   const saveDir = join(root, 'save')
-  for (const d of [home, userData, docs, saveDir]) mkdirSync(d, { recursive: true })
+  for (const d of [home, userData, docs, saveDir, join(home, '.codex'), join(home, '.claude')]) mkdirSync(d, { recursive: true })
   cpSync(SAMPLES, join(docs, '가을 북페어'), { recursive: true })
   writeFileSync(
     join(userData, 'app-settings.json'),
@@ -78,6 +78,10 @@ async function launch(scratch) {
       USERPROFILE: scratch.home,
       GENOFFICE_USER_DATA: scratch.userData,
       GENOFFICE_AUTH_DIR: join(scratch.home, '.ieumoffice'),
+      // Codex finds its folder from the Windows profile, not USERPROFILE: without
+      // these the vendor programs answer with the signed-in state of whoever runs this
+      CODEX_HOME: join(scratch.home, '.codex'),
+      CLAUDE_CONFIG_DIR: join(scratch.home, '.claude'),
       GENOFFICE_NO_SPARE_VIEW: '1',
       GENOFFICE_LANG: 'ko',
     },
@@ -437,6 +441,71 @@ async function localAiShot(app, shell) {
   await sleep(600)
 }
 
+/** 0.12.8 HTML math: the equation dialog over the sample page, with a formula typed in. */
+async function htmlMathShot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'html')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const page = app.windows().find((p) => p.url().includes('://html/'))
+  // a block of the page picked first: the formula goes after it
+  const frame = page.frameLocator('iframe').first()
+  const target = frame.locator(process.env.IEUM_MATH_TARGET ?? 'main p, section p, p').first()
+  await target.scrollIntoViewIfNeeded().catch(() => {})
+  await target.click()
+  await sleep(800)
+  await page.locator('button[aria-label="수식 삽입"]').first().click()
+  const dialog = page.locator('.html-math-dialog')
+  await dialog.waitFor({ state: 'visible', timeout: 15_000 })
+  await sleep(800)
+  await dialog.locator('textarea').fill(
+    process.env.IEUM_MATH_LATEX ?? '\\text{할인가}=\\text{정가}\\times\\left(1-\\frac{r}{100}\\right)',
+  )
+  await sleep(1500)
+  await shot(app, 'html-math')
+  console.log('wrote html-math')
+  await page.keyboard.press('Escape').catch(() => {})
+  await sleep(600)
+}
+
+/** 0.12.8 direct ChatGPT: the AI panel's connect guide with "ChatGPT를 써요" open (nothing is pressed after). */
+async function chatgptDirectShot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'docs')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const page = app.windows().find((p) => p.url().includes('://docs/'))
+  const path = page.locator('.ai-sub-guide-path[data-path="chatgpt"]').first()
+  await path.waitFor({ state: 'visible', timeout: 30_000 })
+  await shot(app, 'chatgpt-ask')
+  console.log('wrote chatgpt-ask')
+  await path.click()
+  await page.locator('.ai-sub-guide-open[data-path="chatgpt"]').first().waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(1200)
+  await shot(app, 'chatgpt-direct')
+  console.log('wrote chatgpt-direct')
+  // the Codex way inside it, then back: only links, nothing that starts a sign-in
+  await page.locator('.ai-sub-guide-alternate[data-path="codex"]').first().click()
+  await page.locator('.ai-sub-guide-open[data-path="codex"]').first().waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(1200)
+  await shot(app, 'chatgpt-codex-way')
+  console.log('wrote chatgpt-codex-way')
+}
+
+/** 0.12.8 Settings → AI: the three subscription cards (Claude, ChatGPT, Codex). */
+async function aiCardsShot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1200)
+  await shell.locator('.account-btn').first().click()
+  await shell.locator('.ai-sub-card').first().waitFor({ state: 'visible', timeout: 15_000 })
+  await shell.locator('.ai-sub-card[data-provider="chatgpt"]').first().scrollIntoViewIfNeeded().catch(() => {})
+  await sleep(1500)
+  await shot(app, 'ai-cards-0128', [216, 60, 1008, 602])
+  console.log('wrote ai-cards-0128')
+  await shell.keyboard.press('Escape').catch(() => {})
+  await sleep(600)
+}
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -452,7 +521,7 @@ async function main() {
     await sleep(2500)
     const shell = await shellPage(app)
     // the plan name of whatever subscription this PC has is not the product's to show
-    await shell.addStyleTag({ content: '.account-sub{display:none!important}' })
+    await shell.addStyleTag({ content: '.account-sub,.ai-sub-account{display:none!important}' })
 
     if (PROBE) {
       console.log('windows:', app.windows().map((p) => p.url()))
@@ -526,6 +595,9 @@ async function main() {
     if (want('local-ai')) await localAiShot(app, shell)
     if (want('hwp-memo') || want('hwp-format-copy') || want('hwp-memo-menu')) await hwpMemoShot(app, shell, scratch)
     if (want('hwp-memo-side')) await hwpMemoSideShot(app, shell, scratch)
+    if (want('html-math')) await htmlMathShot(app, shell, opened)
+    if (want('chatgpt-direct')) await chatgptDirectShot(app, shell, opened)
+    if (want('ai-cards-0128')) await aiCardsShot(app, shell)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()
