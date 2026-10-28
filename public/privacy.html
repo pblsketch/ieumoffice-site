@@ -123,8 +123,9 @@
 
       <h3>이음오피스가 읽는 Google 사용자 데이터</h3>
       <p>
-        이음오피스는 드라이브 전체 접근 권한(<code>https://www.googleapis.com/auth/drive</code>)
-        하나만 요청하고, 이 권한으로 다음을 읽습니다.
+        이음오피스는 사용자가 고른 파일에만 닿는 권한(<code>https://www.googleapis.com/auth/drive.file</code>)
+        하나만 요청합니다. 사용자가 Google의 파일 고르기 창에서 고른 파일과 이음오피스가 만든 파일만
+        열고 고칠 수 있고, 드라이브의 나머지 파일은 보지 못합니다. 이 권한으로 다음을 읽습니다.
       </p>
       <ul>
         <li>
@@ -132,8 +133,8 @@
           보여 주는 데만 씁니다.
         </li>
         <li>
-          <b>파일 정보</b>: 사용자가 연 폴더·목록·검색 결과와 AI가 찾은 결과에 있는 파일의 이름,
-          형식, 크기, 수정 시각, 체크섬, 상위 폴더, 편집 가능 여부, 바로가기가 가리키는 파일.
+          <b>파일 정보</b>: 사용자가 고른 파일의 이름, 형식, 크기, 수정 시각, 체크섬, 상위 폴더 ID,
+          편집 가능 여부. 앱의 "고른 파일" 목록과 그 안의 검색, AI의 검색에 씁니다.
         </li>
         <li>
           <b>파일 내용</b>: 사용자가 연 파일, AI 창에 첨부한 파일, 사용자가 켜 둔 경우 AI가 읽은
@@ -142,7 +143,8 @@
       </ul>
       <p>
         드라이브에 쓰는 일은 사용자가 <b>저장</b>을 누를 때 하나뿐입니다. 그때 고친 문서를 그
-        드라이브 파일에 올리거나, 사용자가 고른 경우 그 옆에 새 파일로 올립니다. 이음오피스는
+        드라이브 파일에 올리거나, 사용자가 고른 경우(또는 Google 문서를 Office 파일로 저장할 때) 그 옆이나
+        내 드라이브에 새 파일로 올립니다. 이음오피스는
         드라이브 파일을 지우거나 옮기거나 공유하지 않고, Gmail·연락처 같은 다른 Google 서비스의
         데이터에는 닿지 않습니다. 드라이브 데이터를 모아 통계나 익명 데이터를 만들지도 않습니다.
       </p>
@@ -151,7 +153,7 @@
       <p>
         읽은 데이터는 사용자가 화면에서 보는 기능에만 씁니다. 파일 목록과 검색 결과 보여 주기,
         파일을 편집기에서 열기, 고친 문서를 드라이브에 저장하기, 그리고 사용자가 켜 둔 경우 AI가
-        드라이브에서 파일을 찾아 읽고 요청에 답하기입니다. 광고, 판매, 대출·신용 판단, 사용자 분석에
+        고른 파일에서 찾아 읽고 요청에 답하기입니다. 광고, 판매, 대출·신용 판단, 사용자 분석에
         쓰지 않고, 이음오피스가 AI 모델을 만들거나 학습시키는 데 쓰지 않습니다. 프로젝트는 서버가
         없어 드라이브 데이터를 받지 않으므로, 만든 사람을 포함해 누구도 사용자의 드라이브 데이터를
         보지 않습니다.
@@ -162,10 +164,10 @@
         <li><b>Google</b>: 드라이브 요청은 사용자의 계정으로 사용자의 PC에서 Google에 직접 갑니다.</li>
         <li>
           <b>사용자가 고른 AI 제공자</b>: 사용자가 드라이브에서 연 문서를 AI에게 맡기거나, 드라이브
-          파일을 AI 창에 첨부하거나, AI가 드라이브를 찾아 읽도록 켜 두었을 때만 그 대화의 AI
+          파일을 AI 창에 첨부하거나, AI가 고른 파일을 찾아 읽도록 켜 두었을 때만 그 대화의 AI
           제공자에게 찾은 파일 목록과 읽은 글이 갑니다. 제공자는 Anthropic(Claude), OpenAI(ChatGPT·Codex),
-          사용자가 넣은 API 키의 제공자, 무료 연결(OpenRouter, Google Gemini) 가운데 사용자가 고른 곳이고,
-          전송은 PC에서 사용자 계정으로 직접 갑니다. AI에게 가리기로 감춘 부분은 감춘 채로 갑니다.
+          사용자가 넣은 API 키의 제공자 가운데 사용자가 고른 곳이고, 전송은 PC에서 사용자 계정으로 직접
+          갑니다. AI에게 가리기로 감춘 부분은 감춘 채로 갑니다.
         </li>
         <li>
           <b>그 밖에는 아무에게도</b> 가지 않습니다. 이음오피스나 만든 사람, 광고주, 데이터 중개업자,
@@ -173,12 +175,25 @@
         </li>
       </ul>
       <p>
-        AI 제공자가 받은 내용을 모델 학습에 쓰는지는 그 제공자의 약관과 사용자의 계정 설정을 따릅니다.
-        Anthropic과 OpenAI의 API(키 제공자)는 API로 받은 내용을 기본적으로 학습에 쓰지 않습니다. 개인
-        구독(Claude Free·Pro·Max, ChatGPT Free·Plus·Pro와 Codex)은 계정 설정에 따라 대화를 모델 개선에
-        쓸 수 있습니다. 드라이브 파일을 AI에게 맡기기 전에 Claude는 설정 → 개인정보 보호(Privacy)에서,
-        ChatGPT는 설정 → 데이터 제어의 "모두를 위한 모델 개선"에서 학습 허용을 꺼 두세요.
+        Google은 드라이브 데이터를 모델 학습에 쓰는 AI 서비스로 넘기는 것을 허락하지 않습니다. 그래서
+        이음오피스는 이렇게 합니다.
       </p>
+      <ul>
+        <li>
+          드라이브를 연결하기 전에, 드라이브 파일과 함께 쓰는 AI 계정에서 모델 학습을 껐다는 확인을
+          받습니다. 끄는 곳도 함께 보여 줍니다(Claude는 설정 → 개인정보 보호, ChatGPT·Codex는 설정 →
+          데이터 제어의 "모두를 위한 모델 개선"). 확인하기 전에는 연결하거나 파일을 고르거나 AI에게
+          드라이브 파일을 넘길 수 없습니다.
+        </li>
+        <li>
+          Anthropic과 OpenAI의 API(키 제공자)는 API로 받은 내용을 기본적으로 학습에 쓰지 않습니다.
+        </li>
+        <li>
+          무료 AI 연결(Gemini, OpenRouter 무료 모델)은 학습을 끌 수 없어서 드라이브 파일을 주지 않습니다.
+          무료 연결을 쓰는 동안에는 드라이브에서 첨부, AI의 드라이브 읽기, 드라이브에서 연 문서로 보내는
+          AI 요청이 모두 멈춥니다.
+        </li>
+      </ul>
 
       <h3>보호</h3>
       <ul>
@@ -329,8 +344,9 @@
 
       <h3>Google user data the app accesses</h3>
       <p>
-        The app requests the single scope <code>https://www.googleapis.com/auth/drive</code> and uses
-        it to access:
+        The app requests the single scope <code>https://www.googleapis.com/auth/drive.file</code>, which
+        reaches only the files you choose in Google's file picker and the files the app created. The app
+        cannot see the rest of your Drive. With it the app accesses:
       </p>
       <ul>
         <li>
@@ -338,9 +354,9 @@
           Settings which account is connected.
         </li>
         <li>
-          <b>File metadata</b> for the files in the folders, lists and search results you open, and in
-          the results the AI finds: name, type, size, modified time, checksum, parent folder, whether you
-          can edit it, and the target of a shortcut.
+          <b>File metadata</b> of the files you chose: name, type, size, modified time, checksum, parent
+          folder id, and whether you can edit it. It is used for the app's "Files you chose" list, the
+          search within it, and the AI's search.
         </li>
         <li>
           <b>File content</b>: the files you open, the files you attach to an AI chat, and, if you turned
@@ -349,7 +365,8 @@
       </ul>
       <p>
         The app writes to Drive only when you press <b>Save</b>: it uploads the edited document to that
-        Drive file, or, if you choose, as a new file beside it. It never deletes, moves or shares Drive
+        Drive file, or, if you choose (and when a Google document is saved as an Office file), as a new
+        file beside it or in My Drive. It never deletes, moves or shares Drive
         files, and it does not touch data in other Google services such as Gmail or Contacts. It creates
         no aggregated or anonymized data from Drive.
       </p>
@@ -358,7 +375,7 @@
       <p>
         Drive data is used only for features you see: showing file lists and search results, opening a
         file in an editor, saving your changes back to Drive, and, if you turned it on, letting the AI
-        find and read Drive files to answer your request. It is not used for advertising, sale, lending or
+        find and read the files you chose to answer your request. It is not used for advertising, sale, lending or
         credit decisions, or user profiling, and IeumOffice does not use it to develop or train AI models.
         The project runs no server and never receives Drive data, so no one, including its maintainers,
         sees your Drive data.
@@ -369,10 +386,10 @@
         <li><b>Google</b>: Drive requests go directly from your PC to Google, under your account.</li>
         <li>
           <b>The AI provider you chose</b>, only when you hand a document opened from Drive to the AI,
-          attach a Drive file to an AI chat, or let the AI search and read Drive: the list of files found
-          and the text read go to that chat's AI provider. That is the one you picked: Anthropic (Claude),
-          OpenAI (ChatGPT or Codex), the provider of an API key you entered, or a free connection
-          (OpenRouter, Google Gemini). It goes directly from your PC under your account. Parts you hid from
+          attach a Drive file to an AI chat, or let the AI search and read the files you chose: the list of
+          files found and the text read go to that chat's AI provider. That is the one you picked:
+          Anthropic (Claude), OpenAI (ChatGPT or Codex), or the provider of an API key you entered. It goes
+          directly from your PC under your account. Parts you hid from
           AI stay hidden.
         </li>
         <li>
@@ -381,13 +398,22 @@
         </li>
       </ul>
       <p>
-        Whether an AI provider uses what it receives to train its models depends on that provider's terms
-        and your account settings there. The Anthropic and OpenAI APIs (key providers) do not use API
-        inputs for training by default. Personal subscriptions (Claude Free, Pro and Max; ChatGPT Free,
-        Plus and Pro, and Codex) may use conversations to improve models depending on your account
-        setting. Before handing Drive files to the AI, turn model training off: in Claude under Settings →
-        Privacy, in ChatGPT under Settings → Data controls → "Improve the model for everyone".
+        Google does not allow Drive data to go to an AI service that uses it to train its models. So:
       </p>
+      <ul>
+        <li>
+          Before you can connect Drive, the app asks you to confirm that model training is off in the AI
+          accounts you use with Drive files, and shows where to turn it off (Claude: Settings → Privacy;
+          ChatGPT and Codex: Settings → Data controls → "Improve the model for everyone"). Until you
+          confirm, you cannot connect, choose files, or hand Drive files to the AI.
+        </li>
+        <li>The Anthropic and OpenAI APIs (key providers) do not use API inputs for training by default.</li>
+        <li>
+          Free AI connections (Gemini, OpenRouter free models) cannot turn training off, so they are never
+          given Drive files. While a free connection is in use, attaching from Drive, the AI's Drive
+          reading, and AI requests from a document opened from Drive all stop.
+        </li>
+      </ul>
 
       <h3>How the data is protected</h3>
       <ul>
