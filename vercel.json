@@ -47,6 +47,10 @@
     {
       "source": "/faq",
       "destination": "/faq.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
     }
   ],
   "headers": [
