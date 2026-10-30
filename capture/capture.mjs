@@ -506,6 +506,30 @@ async function aiCardsShot(app, shell) {
   await sleep(600)
 }
 
+/** 0.12.9 projects: Home → 프로젝트, a new project with its instructions saved. */
+async function projectsShot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1200)
+  await shell.locator('.nav-item', { hasText: '프로젝트' }).first().click()
+  await shell.getByRole('button', { name: '새 프로젝트' }).first().click()
+  await shell.locator('.projects-create input').fill('가을 북페어 준비')
+  await shell.getByRole('button', { name: '만들기', exact: true }).click()
+  await shell.locator('.projects-textarea').waitFor({ state: 'visible', timeout: 15_000 })
+  await shell
+    .locator('.projects-textarea')
+    .fill(
+      '가을 북페어(11월 15일, 시민회관) 준비 자료를 만든다.\n' +
+        '- 안내문은 학부모가 읽기 쉽게 짧은 문장으로\n' +
+        '- 보고서는 개조식, 문장 끝은 "~함"\n' +
+        '- 예산은 "북페어_예산표.xlsx"의 숫자만 쓴다',
+    )
+  await shell.getByRole('button', { name: '저장', exact: true }).click()
+  await shell.getByText('저장했습니다.').first().waitFor({ state: 'visible', timeout: 10_000 }).catch(() => {})
+  await sleep(1200)
+  await shot(app, 'projects-0129')
+  console.log('wrote projects-0129')
+}
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -598,6 +622,7 @@ async function main() {
     if (want('html-math')) await htmlMathShot(app, shell, opened)
     if (want('chatgpt-direct')) await chatgptDirectShot(app, shell, opened)
     if (want('ai-cards-0128')) await aiCardsShot(app, shell)
+    if (want('projects-0129')) await projectsShot(app, shell)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()
