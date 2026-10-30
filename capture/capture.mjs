@@ -530,6 +530,20 @@ async function projectsShot(app, shell) {
   console.log('wrote projects-0129')
 }
 
+/** 0.12.9 projects: the HWP editor's AI panel with the 프로젝트 picker open (run after projectsShot). */
+async function projectPickerShot(app, shell, opened) {
+  const t = await aiInputOf(app, shell, opened, 'hwp', '://hwp/')
+  if (!t) return
+  await t.page.locator('.ai-project-chip').first().click()
+  await t.page.locator('.ai-project-pop').first().waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(900)
+  // the lower left: the picker over the AI panel and the form beside it
+  await shot(app, 'project-picker-0129', [0, 606, 900, 254])
+  console.log('wrote project-picker-0129')
+  await t.page.keyboard.press('Escape').catch(() => {})
+  await sleep(400)
+}
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -622,7 +636,8 @@ async function main() {
     if (want('html-math')) await htmlMathShot(app, shell, opened)
     if (want('chatgpt-direct')) await chatgptDirectShot(app, shell, opened)
     if (want('ai-cards-0128')) await aiCardsShot(app, shell)
-    if (want('projects-0129')) await projectsShot(app, shell)
+    if (want('projects-0129') || want('project-picker-0129')) await projectsShot(app, shell)
+    if (want('project-picker-0129')) await projectPickerShot(app, shell, opened)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()
