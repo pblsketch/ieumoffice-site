@@ -544,6 +544,66 @@ async function projectPickerShot(app, shell, opened) {
   await sleep(400)
 }
 
+/** 0.12.10: cells copied from a spreadsheet, the caret in a form cell, Ctrl+V: 셀 붙이기. */
+async function hwpCellPasteShot(app, shell, scratch) {
+  const file = join(scratch.docs, '가을 북페어', '참가신청서_붙이기.hwpx')
+  cpSync(join(SAMPLES, '참가신청서.hwpx'), file)
+  const before = [...app.windows()]
+  await shell.evaluate((path) => window.aiOffice.openPath(path), file)
+  const page = await editorPage(app, before)
+  await page.waitForSelector('.hwp-app[data-phase="ready"]', { timeout: 90_000 })
+  await sleep(3000)
+  const collapse = page.locator('.ai-panel-collapse')
+  if (await collapse.isVisible().catch(() => false)) await collapse.click()
+  await sleep(1200)
+  if (PROBE) {
+    await shot(app, 'hwp-cell-paste-probe')
+    console.log('wrote hwp-cell-paste-probe')
+    return
+  }
+  const [x, y] = (process.env.CELL_AT ?? '700,520').split(',').map(Number)
+  await page.mouse.click(x, y)
+  await sleep(500)
+  await app.evaluate(({ clipboard }) => {
+    clipboard.write({
+      text: '김하늘\t3학년 2반\t그림책\r\n이도윤\t3학년 5반\t만화\r\n',
+      html:
+        '<table><tr><td>김하늘</td><td>3학년 2반</td><td>그림책</td></tr>' +
+        '<tr><td>이도윤</td><td>3학년 5반</td><td>만화</td></tr></table>',
+    })
+  })
+  await page.keyboard.press('Control+v')
+  await page
+    .frameLocator('.hwp-editor-host iframe')
+    .locator('[name="ieum-cell-paste"]')
+    .first()
+    .waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(1000)
+  await shot(app, 'hwp-cell-paste-01210')
+  console.log('wrote hwp-cell-paste-01210')
+  await page.keyboard.press('Escape').catch(() => {})
+}
+
+/** 0.12.10: the slide selection pane (Alt+F10) on the sample deck. */
+async function slidesSelectionShot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'slides')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const page = app.windows().find((p) => p.url().includes('://slides/'))
+  if (!page) return
+  const collapse = page.locator('.ai-panel-collapse')
+  if (await collapse.isVisible().catch(() => false)) await collapse.click()
+  await sleep(800)
+  await page.mouse.click(Number(process.env.SLIDE_X ?? 760), Number(process.env.SLIDE_Y ?? 420))
+  await sleep(500)
+  await page.keyboard.press('Alt+F10')
+  await sleep(1800)
+  await shot(app, 'slides-selection-01210')
+  console.log('wrote slides-selection-01210')
+  await page.keyboard.press('Alt+F10').catch(() => {})
+}
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -638,6 +698,8 @@ async function main() {
     if (want('ai-cards-0128')) await aiCardsShot(app, shell)
     if (want('projects-0129') || want('project-picker-0129')) await projectsShot(app, shell)
     if (want('project-picker-0129')) await projectPickerShot(app, shell, opened)
+    if (want('hwp-cell-paste-01210')) await hwpCellPasteShot(app, shell, scratch)
+    if (want('slides-selection-01210')) await slidesSelectionShot(app, shell, opened)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()
