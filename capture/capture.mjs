@@ -604,6 +604,82 @@ async function slidesSelectionShot(app, shell, opened) {
   await page.keyboard.press('Alt+F10').catch(() => {})
 }
 
+/** 0.12.11: the diagram editor on a sample flowchart (draw.io file), AI panel folded. */
+async function diagramShot(app, shell, scratch) {
+  const file = join(scratch.docs, '가을 북페어', '북페어_신청처리.drawio')
+  cpSync(join(HERE, 'samples-extra', '북페어_신청처리.drawio'), file)
+  const before = [...app.windows()]
+  await shell.evaluate((path) => window.aiOffice.openPath(path), file)
+  const page = await editorPage(app, before)
+  // draw.io runs in a frame of the tab; it is ready once its page tabs are drawn
+  const editor = page.frameLocator('iframe').first()
+  await editor.locator('.geTabContainer, .geDiagramContainer').first().waitFor({ state: 'visible', timeout: 90_000 })
+  await sleep(4000)
+  const collapse = page.locator('.ai-panel-collapse')
+  if (!process.env.DIAGRAM_KEEP_AI && (await collapse.isVisible().catch(() => false))) await collapse.click()
+  await sleep(1500)
+  if (PROBE) {
+    await shot(app, 'diagram-probe')
+    console.log('wrote diagram-probe')
+    return
+  }
+  // a click on the empty canvas gives draw.io the keyboard, then the toolbar's
+  // right end opens the format pane; the decision is picked last so the pane
+  // shows a shape's style (page coordinates: the tab's view starts under the tab strip)
+  const clicks = (process.env.DIAGRAM_CLICKS ?? '1100,640;1381,49').split(';').filter(Boolean)
+  for (const at of clicks) {
+    const [x, y] = at.split(',').map(Number)
+    await page.mouse.click(x, y)
+    await sleep(1200)
+  }
+  // draw.io's own shortcut for the shape library (도형)
+  await page.keyboard.press(process.env.DIAGRAM_SHAPES_KEY ?? 'Control+Shift+K')
+  await sleep(1500)
+  // and its 창에 맞추기, so the flowchart sits whole between the two panes
+  await page.keyboard.press('Control+Shift+H')
+  await sleep(1500)
+  const pick = process.env.DIAGRAM_PICK ?? '남은 자리'
+  if (pick) {
+    await editor.getByText(pick).first().click()
+    await sleep(1200)
+  }
+  await shot(app, 'diagram-01211')
+  console.log('wrote diagram-01211')
+}
+
+/** 0.12.11: the mind map's 서식 pane on its 선 tab, a main branch picked. */
+async function mindmapFormatShot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'mindmap')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const page = app.windows().find((p) => p.url().includes('://mindmap/'))
+  if (!page) return
+  const collapse = page.locator('.ai-panel-collapse')
+  if (await collapse.isVisible().catch(() => false)) await collapse.click()
+  await sleep(800)
+  const topicName = process.env.MM_TOPIC ?? '홍보'
+  await page.locator('me-tpc').filter({ hasText: new RegExp(String.raw`^\s*${topicName}\s*$`) }).first().click()
+  await sleep(600)
+  await page.locator('button[data-action="text-format"]').first().click()
+  await page.locator('.mm-format-panel').first().waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(600)
+  if (process.env.MM_TAB !== 'text') {
+    await page.locator('button[data-action="format-tab-line"]').first().click()
+    await sleep(800)
+    // one change on the branch, so the picture shows what the pane does
+    const shape = process.env.MM_SHAPE ?? '둥근 꺾은선'
+    if (shape) await page.locator(`.mm-format-shapes button[aria-label="${shape}"]`).first().click()
+    await sleep(1000)
+  }
+  await shot(app, 'mindmap-format-01211')
+  console.log('wrote mindmap-format-01211')
+  // take the change back: an unsaved map asks before the app may close
+  await page.keyboard.press('Escape').catch(() => {})
+  await page.keyboard.press('Control+z').catch(() => {})
+  await sleep(800)
+}
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -700,6 +776,8 @@ async function main() {
     if (want('project-picker-0129')) await projectPickerShot(app, shell, opened)
     if (want('hwp-cell-paste-01210')) await hwpCellPasteShot(app, shell, scratch)
     if (want('slides-selection-01210')) await slidesSelectionShot(app, shell, opened)
+    if (want('mindmap-format-01211')) await mindmapFormatShot(app, shell, opened)
+    if (want('diagram-01211')) await diagramShot(app, shell, scratch)
   } finally {
     await app?.close().catch(() => {})
     scratch.dispose()

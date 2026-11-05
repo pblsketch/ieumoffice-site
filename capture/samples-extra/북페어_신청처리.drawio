@@ -1,0 +1,78 @@
+<mxfile host="IeumOffice" type="device">
+  <diagram id="apply" name="참가 신청 처리">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="참가 신청서 접수" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kind" value="부스 종류 확인&lt;br&gt;(서점·출판사·공방)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="65" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="room" value="남은 자리&lt;br&gt;있음?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="470" y="45" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="wait" value="대기 명단에 올리고&lt;br&gt;순서 알림" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="660" y="65" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fee" value="참가비 안내 문자" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="460" y="230" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="paid" value="입금 확인" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="230" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="booth" value="부스 번호 배정&lt;br&gt;(A-1 ~ C-12)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="225" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1" source="start" target="kind">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1" source="kind" target="room">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="아니요" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;fontSize=13;" edge="1" parent="1" source="room" target="wait">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="예" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;fontSize=13;" edge="1" parent="1" source="room" target="fee">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1" source="fee" target="paid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1" source="paid" target="booth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="day" name="행사 당일">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d1" value="09:00 부스 설치" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="11:00 개막" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="60" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="14:00 작가와의 대화" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="460" y="60" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="18:00 정리" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="670" y="60" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1" source="d1" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1" source="d2" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1" source="d3" target="d4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
