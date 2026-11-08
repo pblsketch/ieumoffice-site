@@ -2,6 +2,7 @@ import './font.css'
 import './style.css'
 import './ask.js'
 import { REPO, fetchJson, getReleases, wireDownload } from './release.js'
+import { countDownloads } from '../lib/growth-count.js'
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -334,23 +335,19 @@ async function liveGrowthNumbers() {
       fetchJson(`https://api.github.com/repos/${REPO}`),
     ])
     if (!Array.isArray(releases)) return null
-    const numbers = {
-      totalDownloads: 0,
-      windowsInstalls: 0,
-      macosInstalls: 0,
-      linuxInstalls: 0,
-      stars: repo.stargazers_count,
-    }
-    for (const release of releases) {
-      for (const asset of release.assets ?? []) {
-        if (!/\.(exe|dmg|zip|AppImage|deb|rpm)$/i.test(asset.name)) continue
-        numbers.totalDownloads += asset.download_count
-        if (asset.name.endsWith('.exe')) numbers.windowsInstalls += asset.download_count
-        else if (/\.(AppImage|deb|rpm)$/i.test(asset.name)) numbers.linuxInstalls += asset.download_count
-        else numbers.macosInstalls += asset.download_count
-      }
-    }
-    return numbers
+    return { ...countDownloads(releases), stars: repo.stargazers_count }
+  } catch {
+    return null
+  }
+}
+
+/** The site's own cached copy (api/stats.js); visitors share one answer. */
+async function siteGrowthNumbers() {
+  try {
+    const res = await fetch('/api/stats')
+    if (!res.ok) return null
+    const data = await res.json()
+    return typeof data.totalDownloads === 'number' ? data : null
   } catch {
     return null
   }
@@ -359,7 +356,9 @@ async function liveGrowthNumbers() {
 let growthCache
 function growthNumbers() {
   return (growthCache ??= (async () =>
-    (await liveGrowthNumbers()) ?? (await fetchJson(GROWTH_SUMMARY_URL).catch(() => null)))())
+    (await siteGrowthNumbers()) ??
+    (await liveGrowthNumbers()) ??
+    (await fetchJson(GROWTH_SUMMARY_URL).catch(() => null)))())
 }
 
 function fillStats(strip, data) {
