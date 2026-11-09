@@ -41,12 +41,12 @@ jobs:
         id: release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: echo "tag=$(gh release view --repo pblsketch/openoffice --json tagName --jq .tagName)" >> "$GITHUB_OUTPUT"
+        run: echo "tag=$(gh release view --repo pblsketch/ieumoffice --json tagName --jq .tagName)" >> "$GITHUB_OUTPUT"
 
       # only the files the knowledge base reads, at the release tag
       - uses: actions/checkout@v4
         with:
-          repository: pblsketch/openoffice
+          repository: pblsketch/ieumoffice
           ref: ${{ steps.release.outputs.tag }}
           path: .app
           fetch-depth: 1

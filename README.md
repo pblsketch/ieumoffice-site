@@ -1,6 +1,6 @@
 # 이음오피스 소개 사이트
 
-[이음오피스](https://github.com/pblsketch/openoffice)를 소개하고 설치 파일을 내려받는 한 쪽짜리 사이트입니다. Vite로 만들고 Vercel에 올립니다.
+[이음오피스](https://github.com/pblsketch/ieumoffice)를 소개하고 설치 파일을 내려받는 한 쪽짜리 사이트입니다. Vite로 만들고 Vercel에 올립니다.
 
 페이지는 다섯 개이고, 모든 페이지에 질문 도우미 창이 붙습니다(아래 "질문 도우미"). 메인(`index.html`), 업데이트 소식(`updates.html`, 주소 `/updates`), 만든 이야기(`story.html`, 주소 `/story`), 설치 도움말(`install.html`, 주소 `/install`), AI 연결 도움말(`connect.html`, 주소 `/connect`). 만든 이야기는 저장소 주인이 직접 쓴 글이므로 맞춤법과 띄어쓰기 말고는 손대지 않습니다.
 

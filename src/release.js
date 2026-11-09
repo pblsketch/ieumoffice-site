@@ -1,6 +1,6 @@
 // Release lookups and installer links, shared by the landing page and the install help page.
 
-export const REPO = 'pblsketch/openoffice'
+export const REPO = 'pblsketch/ieumoffice'
 
 export async function fetchJson(url) {
   const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } })

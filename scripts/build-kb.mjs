@@ -18,7 +18,7 @@ import { parse } from 'node-html-parser'
 
 const SITE = resolve(import.meta.dirname, '..')
 const APP_REPO = process.env.IEUM_APP_REPO ?? resolve(SITE, '../openoffice')
-const GITHUB_REPO = 'pblsketch/openoffice'
+const GITHUB_REPO = 'pblsketch/ieumoffice'
 const SITE_URL = 'https://ieumoffice.com'
 const RELEASE_NOTES = 5
 const MAX_CHUNK = 1500
