@@ -47,19 +47,24 @@ const bar = document.querySelector('[data-format-bar]')
 const caption = document.querySelector('[data-format-caption]')
 const DWELL = 5200
 
-const shots = FORMATS.map((f, i) => {
+// The captures are stacked in one spot, so `loading="lazy"` would not hold any
+// of them back: each one gets its address only when it is shown or is next.
+const shots = FORMATS.map((f) => {
   const img = new Image()
-  // a format added later carries the version-named capture it was shot in
-  const name = f.shot ?? f.id
-  img.src = `/shots/${name}-1600.webp`
-  img.srcset = `/shots/${name}-1600.webp 1600w, /shots/${name}-2880.webp 2880w`
-  img.sizes = '(min-width: 1260px) 1240px, 96vw'
   img.alt = f.alt
   img.decoding = 'async'
-  if (i > 1) img.loading = 'lazy'
   stage.append(img)
   return img
 })
+function load(i) {
+  const img = shots[i]
+  if (img.src) return
+  // a format added later carries the version-named capture it was shot in
+  const name = FORMATS[i].shot ?? FORMATS[i].id
+  img.sizes = '(min-width: 1260px) 1240px, 96vw'
+  img.srcset = `/shots/${name}-1600.webp 1600w, /shots/${name}-2880.webp 2880w`
+  img.src = `/shots/${name}-1600.webp`
+}
 
 const chips = FORMATS.map((f, i) => {
   const b = document.createElement('button')
@@ -78,6 +83,9 @@ const chips = FORMATS.map((f, i) => {
     auto = false
     show(i)
   })
+  // a head start on the capture before the click lands
+  b.addEventListener('pointerenter', () => load(i))
+  b.addEventListener('focus', () => load(i))
   bar.append(b)
   return b
 })
@@ -89,6 +97,8 @@ let visible = true
 
 function show(i) {
   if (i === current) return
+  load(i)
+  load((i + 1) % FORMATS.length)
   const prev = shots[current]
   const next = shots[i]
   shots.forEach((s) => s.classList.remove('is-entering'))
