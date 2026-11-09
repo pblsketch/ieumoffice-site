@@ -33,10 +33,10 @@ const FORMATS = [
   { id: 'docs', label: '워드', file: 'docx', color: '#5160be', title: '워드 .docx .odt', text: '워드와 ODT 문서를 열고 고칩니다. 저장할 때 고친 부분만 원본 파일에 반영하므로, 손대지 않은 서식은 그대로 남습니다.', alt: '워드 편집기에서 기획서를 연 화면' },
   { id: 'sheets', label: '엑셀', file: 'xlsx', color: '#2a8572', title: '엑셀 .xlsx', text: '수식과 서식, 차트가 든 통합 문서를 열고 그 형식 그대로 저장합니다.', alt: '엑셀 편집기에서 예산표를 연 화면' },
   { id: 'slides', label: '파워포인트', file: 'pptx', color: '#c27630', title: '파워포인트 .pptx', text: '슬라이드를 고치고, 자료를 주면 발표 자료를 새로 만듭니다.', alt: '파워포인트 편집기에서 발표 자료를 연 화면' },
-  { id: 'pdf', label: 'PDF', file: 'pdf', color: '#b84a5c', title: 'PDF', text: '쪽 위의 글자를 고치고, 읽으면서 형광펜과 메모를 남깁니다. PDF를 워드·엑셀·파워포인트 파일로 내 PC에서 바꿉니다.', alt: 'PDF 편집기에서 안내문을 연 화면' },
+  { id: 'pdf', label: 'PDF', file: 'pdf', color: '#b84a5c', title: 'PDF', text: '쪽 위의 글자를 고치고, 읽으면서 형광펜과 메모를 남깁니다. PDF를 워드·엑셀·파워포인트 파일로 내 PC에서 바꾸고, 한글 문서로도 가져옵니다.', alt: 'PDF 편집기에서 안내문을 연 화면' },
   { id: 'markdown', label: '마크다운', file: 'md', color: '#4a5568', title: '마크다운 .md', text: '서식이 보이는 화면에서 쓰고, 필요하면 원문으로 바꿔 고칩니다.', alt: '마크다운 편집기에서 회의 메모를 연 화면' },
   { id: 'html', label: 'HTML', file: 'html', color: '#8257b6', title: 'HTML', text: '웹 페이지를 보이는 화면에서 고치고, 수식도 넣습니다. 고른 자료로 새 페이지를 만들 수도 있습니다.', alt: 'HTML 편집기에서 행사 소개 페이지를 연 화면' },
-  { id: 'mindmap', label: '마인드맵', file: 'mindmap', color: '#b04e83', title: '마인드맵 .xmind', text: 'XMind 파일을 열고 고쳐 같은 파일로 저장합니다. 토픽 글자와 가지 선의 모양·색을 바꾸고, 그림(PNG·SVG), PDF, 마크다운 개요로 내보냅니다.', alt: '마인드맵 편집기에서 아이디어 지도를 연 화면' },
+  { id: 'mindmap', label: '마인드맵', file: 'mindmap', color: '#b04e83', title: '마인드맵 .xmind', text: 'XMind 파일을 열고 고쳐 같은 파일로 저장합니다. 토픽 글자와 가지 선의 모양·색을 바꾸고, 그림(PNG·SVG), PDF, 마크다운 개요로 내보냅니다. FreeMind·Freeplane 파일(.mm)은 새 지도로 가져옵니다.', alt: '마인드맵 편집기에서 아이디어 지도를 연 화면' },
   { id: 'epub', label: 'EPUB', file: 'epub', color: '#2f6f5e', title: 'EPUB 전자책', text: 'EPUB 책을 열어 읽고 본문을 고쳐 저장합니다. 다른 언어로 번역해 번역본 파일로 저장합니다.', alt: 'EPUB 편집기에서 가을 북페어 안내책을 연 화면' },
   { id: 'diagram', shot: 'diagram-01211', label: '다이어그램', file: 'diagram', color: '#7a8b2c', title: '다이어그램 .drawio', text: 'draw.io 파일을 열어 순서도나 구성도를 고치고 연 형식 그대로 저장합니다. Visio 파일(.vsdx)은 새 다이어그램으로 가져옵니다.', alt: '다이어그램 편집기에서 북페어 참가 신청 처리 순서도를 연 화면' },
 ]
@@ -277,7 +277,7 @@ document.querySelectorAll('[data-ai-demo]').forEach(setupDemo)
  * rate-limited or offline visitors. */
 
 const GROWTH_SUMMARY_URL =
-  'https://raw.githubusercontent.com/pblsketch/openoffice/main/docs/tracking/growth-latest.json'
+  'https://raw.githubusercontent.com/pblsketch/ieumoffice/main/docs/tracking/growth-latest.json'
 
 wireDownload()
 

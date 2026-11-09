@@ -680,6 +680,70 @@ async function mindmapFormatShot(app, shell, opened) {
   await sleep(800)
 }
 
+/**
+ * Sample files a version's scenes bring in beside capture/samples. 0.12.12 reads
+ * its FreeMind map from here; the release run kept it outside the repository.
+ */
+const EXTRA = process.env.IEUM_EXTRA ?? join(HERE, 'samples-extra')
+
+/**
+ * 0.12.12: PDF 변환 › HWP로 변환 on the sample notice. The PDF opens in a new
+ * Hangul tab whose own PDF import dialog asks how to lay it out (one picture),
+ * then the imported document (another). The PDF file is not written.
+ */
+async function hwpFromPdfShot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'pdf')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const pdf = app.windows().find((p) => p.url().includes('://pdf/'))
+  if (!pdf) return
+  await pdf.locator('button[data-action="convert-pdf"]').first().click()
+  const item = pdf.locator('[role="menuitem"]', { hasText: 'HWP로 변환' }).first()
+  await item.waitFor({ state: 'visible', timeout: 10_000 })
+  await sleep(800)
+  if (want('hwp-from-pdf-menu-01212')) {
+    await shot(app, 'hwp-from-pdf-menu-01212')
+    console.log('wrote hwp-from-pdf-menu-01212')
+  }
+  const before = [...app.windows()]
+  await item.click()
+  const page = await editorPage(app, before)
+  const editor = page.frameLocator('.hwp-editor-host iframe')
+  await editor.locator('.dialog-pdf-import-body').first().waitFor({ state: 'visible', timeout: 90_000 })
+  await sleep(1500)
+  await shot(app, 'hwp-from-pdf-01212')
+  console.log('wrote hwp-from-pdf-01212')
+  if (!want('hwp-from-pdf-done-01212')) return
+  await editor.locator('.dialog-btn-primary').first().click()
+  await page.waitForSelector('.hwp-app[data-phase="ready"]', { timeout: 120_000 })
+  await sleep(3000)
+  const collapse = page.locator('.ai-panel-collapse')
+  if (await collapse.isVisible().catch(() => false)) await collapse.click()
+  await sleep(1500)
+  await shot(app, 'hwp-from-pdf-done-01212')
+  console.log('wrote hwp-from-pdf-done-01212')
+}
+
+/** 0.12.12: a FreeMind map (.mm) opened in the mind map editor, imported as a new map. */
+async function mindmapMmShot(app, shell, scratch) {
+  const name = process.env.MM_FILE ?? '독서동아리_계획.mm'
+  const file = join(scratch.docs, '가을 북페어', name)
+  cpSync(join(EXTRA, name), file)
+  const before = [...app.windows()]
+  await shell.evaluate((path) => window.aiOffice.openPath(path), file)
+  const page = await editorPage(app, before)
+  await page.locator('me-tpc').first().waitFor({ state: 'visible', timeout: 60_000 })
+  await sleep(2500)
+  const collapse = page.locator('.ai-panel-collapse')
+  if (await collapse.isVisible().catch(() => false)) await collapse.click()
+  await sleep(1500)
+  await shot(app, 'mindmap-mm-01212')
+  console.log('wrote mindmap-mm-01212')
+}
+
+const want = (name) => !ONLY.length || ONLY.includes(name)
+
 async function main() {
   const scratch = makeScratch()
   let app
@@ -753,7 +817,6 @@ async function main() {
       await shot(app, name)
       console.log(`wrote ${name}`)
     }
-    const want = (name) => !ONLY.length || ONLY.includes(name)
     if (want('pdf-reading')) await pdfReadingShot(app, shell, opened)
     if (want('split')) await splitShot(app, shell, opened)
     if (want('home')) {
@@ -778,8 +841,25 @@ async function main() {
     if (want('slides-selection-01210')) await slidesSelectionShot(app, shell, opened)
     if (want('mindmap-format-01211')) await mindmapFormatShot(app, shell, opened)
     if (want('diagram-01211')) await diagramShot(app, shell, scratch)
+    if (want('hwp-from-pdf-01212') || want('hwp-from-pdf-menu-01212') || want('hwp-from-pdf-done-01212'))
+      await hwpFromPdfShot(app, shell, opened)
+    if (want('mindmap-mm-01212')) await mindmapMmShot(app, shell, scratch)
   } finally {
-    await app?.close().catch(() => {})
+    // an imported document is unsaved and may ask before the app closes: do not wait on it
+    if (app) {
+      const closing = app.close().catch(() => {})
+      const closed = await Promise.race([closing.then(() => true), sleep(20_000).then(() => false)])
+      if (!closed) {
+        // the whole tree: Electron's helper processes keep the scratch profile open
+        const pid = app.process().pid
+        if (process.platform === 'win32') {
+          try {
+            execFileSync('taskkill', ['/PID', String(pid), '/T', '/F'], { stdio: 'ignore' })
+          } catch {}
+        } else app.process().kill()
+        await sleep(2000)
+      }
+    }
     scratch.dispose()
   }
 }
