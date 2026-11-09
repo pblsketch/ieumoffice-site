@@ -18,6 +18,8 @@ npm run build    # dist/ 에 만들기
 
 주소는 Cloudflare에서 산 `ieumoffice.com`입니다. Cloudflare DNS의 `@`와 `www` CNAME이 Vercel을 가리키고(프록시 끔), `www.ieumoffice.com`과 `ieumoffice.vercel.app`은 `vercel.json`의 `redirects`가 `ieumoffice.com`으로 옮깁니다. 이미 Google에 등록한 `privacy.html`, `form-banner.png`, Search Console 확인 파일만 vercel.app 주소에서도 그대로 열립니다.
 
+앱 캡처(`/shots/`)는 `cdn.ieumoffice.com`에서 내려받습니다(2026-11-09). 캡처가 사이트 전송량의 대부분이라 Vercel 무료 한도(Fast Data Transfer 100GB)를 넘었기 때문입니다. `cdn` CNAME은 `cname.vercel-dns.com`을 가리키고 **이 레코드만 Cloudflare 프록시를 켭니다**. Cloudflare가 캡처를 보관해 내주므로 다시 받는 몫은 Vercel 전송량에 들지 않습니다. 같은 Vercel 프로젝트의 도메인이라 저장소의 `public/shots/`가 그대로 원본이고, `vercel.json`이 이 주소에서 `/shots/` 밖의 경로를 `ieumoffice.com`으로 옮깁니다. 정식 빌드(`VERCEL_ENV=production`)만 `vite.config.js`가 페이지와 `src/main.js`의 캡처 주소를 cdn으로 바꾸고, 미리보기와 로컬 빌드는 같은 주소의 `/shots/`를 씁니다. `@`·`www`의 프록시는 켜지 않습니다. 켜면 질문 도우미의 요청 제한(`api/ask.js`, IP별)이 모든 방문자를 Cloudflare IP 몇 개로 보게 됩니다. 이미 올린 캡처를 같은 이름으로 바꾸면 Cloudflare와 브라우저가 최대 하루 동안 옛 그림을 보여 줄 수 있으니, 새 캡처는 새 이름(예: `-01212`)으로 올립니다.
+
 검색 등록: `robots.txt`와 `sitemap.xml`이 `public/`에 있습니다. 페이지를 더하면 `sitemap.xml`에도 넣고, 각 페이지 `<head>`에 `canonical`을 `https://ieumoffice.com/...`으로 답니다.
 
 내려받기 버튼은 페이지가 열릴 때 GitHub API로 최신 릴리스의 `IeumOffice-Setup-*.exe`를 찾아 연결합니다. Mac은 `-arm64.dmg`(Apple Silicon)와 `-x64.dmg`(Intel)를 따로 찾아 두 줄로 안내하고, 그 버전에 없는 파일은 "준비 중"으로 둡니다. 찾지 못하면 릴리스 페이지로 갑니다. 새 버전을 낼 때 사이트를 다시 올릴 필요는 없습니다.
