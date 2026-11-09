@@ -16,6 +16,17 @@
       "permanent": true
     },
     {
+      "source": "/((?!shots/).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "cdn.ieumoffice.com"
+        }
+      ],
+      "destination": "https://ieumoffice.com/$1",
+      "permanent": true
+    },
+    {
       "source": "/((?!privacy\\.html$|form-banner\\.png$|og\\.png$|google8ab101bc93526a97\\.html$).*)",
       "has": [
         {

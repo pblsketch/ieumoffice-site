@@ -62,8 +62,9 @@ function load(i) {
   // a format added later carries the version-named capture it was shot in
   const name = FORMATS[i].shot ?? FORMATS[i].id
   img.sizes = '(min-width: 1260px) 1240px, 96vw'
-  img.srcset = `/shots/${name}-1600.webp 1600w, /shots/${name}-2880.webp 2880w`
-  img.src = `/shots/${name}-1600.webp`
+  const base = `${__SHOTS__}/shots/${name}`
+  img.srcset = `${base}-1600.webp 1600w, ${base}-2880.webp 2880w`
+  img.src = `${base}-1600.webp`
 }
 
 const chips = FORMATS.map((f, i) => {
