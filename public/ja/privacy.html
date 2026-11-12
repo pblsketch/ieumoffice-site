@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>プライバシーポリシー · IeumOffice</title>
+    <meta name="description" content="IeumOffice が PC の外に送るものと PC に残すものをまとめたプライバシーポリシーです。" />
+    <link rel="canonical" href="https://ieumoffice.com/ja/privacy.html" />
+    <link rel="alternate" hreflang="ko" href="https://ieumoffice.com/privacy.html" />
+    <link rel="alternate" hreflang="en" href="https://ieumoffice.com/en/privacy.html" />
+    <link rel="alternate" hreflang="ja" href="https://ieumoffice.com/ja/privacy.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://ieumoffice.com/zh-tw/privacy.html" />
+    <link rel="alternate" hreflang="es" href="https://ieumoffice.com/es/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://ieumoffice.com/privacy.html" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --fg: #191510;
+        --muted: #5b564e;
+        --line: #e4ded4;
+        --bg: #fdfcf9;
+        --accent: #0b57d0;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fg: #ece7de;
+          --muted: #a8a196;
+          --line: #3a352d;
+          --bg: #17140f;
+          --accent: #8ab4f8;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "Wanted Sans Variable", "Wanted Sans", system-ui, -apple-system, "Segoe UI",
+          "Malgun Gothic", sans-serif;
+        line-height: 1.7;
+        word-break: keep-all;
+      }
+      main {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 3.5rem 1.25rem 5rem;
+      }
+      a { color: var(--accent); }
+      h1 { font-size: 1.75rem; line-height: 1.3; margin: 0 0 0.5rem; }
+      h2 { font-size: 1.2rem; margin: 2.5rem 0 0.75rem; }
+      h3 { font-size: 1rem; margin: 1.75rem 0 0.5rem; }
+      p, li { font-size: 0.98rem; }
+      .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+      hr { border: 0; border-top: 1px solid var(--line); margin: 3.5rem 0; }
+      table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+      th, td { border: 1px solid var(--line); padding: 0.5rem 0.6rem; text-align: left; font-size: 0.9rem; vertical-align: top; }
+      th { background: color-mix(in srgb, var(--line) 35%, transparent); }
+      code { font-family: ui-monospace, Consolas, monospace; font-size: 0.88em; }
+      .note { color: var(--muted); font-size: 0.92rem; }
+      .back { display: inline-block; margin-bottom: 2rem; font-size: 0.95rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="/ja/">← IeumOffice</a>
+      <p class="meta langs"><a href="/privacy.html" hreflang="ko" lang="ko">한국어</a> · <a href="/en/privacy.html" hreflang="en" lang="en">English</a> · <a href="/ja/privacy.html" hreflang="ja" lang="ja" aria-current="page">日本語</a> · <a href="/zh-tw/privacy.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a> · <a href="/es/privacy.html" hreflang="es" lang="es">Español</a></p>
+      <h1>プライバシーポリシー</h1>
+      <p class="meta">
+        最終更新：2026年10月29日 · <a href="#articles">条項別のプライバシーポリシー</a> · 全項目の一覧（英語）：
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/PRIVACY.md" rel="noopener">PRIVACY.md</a>
+      </p>
+      <p class="note">
+        このページは読みやすさのための翻訳です。<a href="/privacy.html" hreflang="ko">韓国語の原文</a>と内容が異なる場合は、韓国語の原文が優先します。
+      </p>
+
+      <p>
+        IeumOffice は、ユーザーの PC で文書を開き、編集し、保存するデスクトップアプリです。プロジェクトが運営するサーバーがないため、アプリが IeumOffice や作者に送るものは何もありません。利用統計やテレメトリーもありません。
+      </p>
+
+      <section id="articles">
+        <h2>条項別のプライバシーポリシー</h2>
+        <p class="note">
+          韓国の「個人情報保護法」第30条に基づいて定めたポリシーです。韓国の学校で学習支援ソフトウェアの必須基準を確認するとき、この条項番号を根拠として使えます。その下の節は、同じ内容を機能ごとに詳しく説明したものです。
+        </p>
+
+        <h3 id="art1">第1条（総則とデータ処理の仕組み）</h3>
+        <p>
+          IeumOffice の開発者（以下「運営者」）は、IeumOffice のプログラムと紹介サイト（ieumoffice.com）を運営するにあたり、利用者の個人情報をこのポリシーに従って取り扱います。
+        </p>
+        <ul>
+          <li>
+            IeumOffice はユーザーの PC にインストールして使うデスクトップアプリで、運営者はサーバーを置いていません。会員登録やログインはなく、利用統計・テレメトリーもありません。
+          </li>
+          <li>
+            文書、設定、AI との会話履歴はユーザーの PC（Windows では <code>%APPDATA%\IeumOffice</code>）にだけ保存され、運営者には送信されません。生徒が書いた文章や生徒の名簿が入った文書を開いても、その内容を運営者が受け取ることはありません。
+          </li>
+          <li>
+            AI 機能を使うと、文書の内容はユーザーが選んだ AI サービス（Anthropic の Claude、OpenAI の ChatGPT・Codex、ユーザーが入力した API キーの提供元など）へ、ユーザー本人のアカウントで PC から直接送信されます。この送信は、利用者がその会社と結んだ契約に基づくもので、運営者はその内容を受け取ることも見ることもできません。文書のうち AI から隠した部分は送信されません。
+          </li>
+          <li>
+            運営者が直接取り扱う個人情報は、利用者が自分で送った場合に限られます。「フィードバックを送る」のアンケート、メールでのお問い合わせ、紹介サイトの質問アシスタントがこれにあたり、項目は第2条に記載します。GitHub の Issue に書いた内容は GitHub で公開され、GitHub のポリシーに従います。
+          </li>
+        </ul>
+
+        <h3 id="art2">第2条（取り扱う個人情報の項目）</h3>
+        <table>
+          <thead>
+            <tr><th>区分</th><th>項目</th><th>収集方法</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>「フィードバックを送る」のアンケート</td>
+              <td>必須：フィードバックの種類<br />任意：詳しい内容、アプリの情報（バージョン・OS・表示言語）、返信を受け取るメールアドレス</td>
+              <td>利用者が Google フォームに直接入力</td>
+            </tr>
+            <tr>
+              <td>メールでのお問い合わせ</td>
+              <td>送信者のメールアドレスと表示名、メールの内容と添付ファイル</td>
+              <td>利用者が pblsketch@gmail.com に送ったメール</td>
+            </tr>
+            <tr>
+              <td>紹介サイトの質問アシスタント</td>
+              <td>質問、回答、根拠にした案内のタイトル、日時（メールアドレス・電話番号・住民登録番号・カード番号のように見える文字列は保存前に伏せる）</td>
+              <td>利用者が質問欄に入力</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          IeumOffice のプログラムは、運営者にどのような個人情報も送りません。紹介サイトは Cookie やアクセス解析ツールを使わず、質問アシスタントの記録には接続元アドレス（IP）とブラウザーの情報を残しません。住民登録番号などの固有識別情報や要配慮情報は受け取りません。
+        </p>
+
+        <h3 id="art3">第3条（取り扱いの目的）</h3>
+        <ul>
+          <li>「フィードバックを送る」のアンケート：不具合の確認と再現、機能の改善、メールアドレスが書かれている場合の返信</li>
+          <li>メールでのお問い合わせ：お問い合わせ内容の確認と返信</li>
+          <li>質問アシスタント：質問に答えること、答えられなかった質問を見つけて案内資料を補うこと</li>
+        </ul>
+        <p>
+          この目的以外には使わず、広告・販売・利用者の分析には使いません。目的が変わる場合は、韓国の「個人情報保護法」第18条に従って別途同意を得るなど、必要な措置をとります。
+        </p>
+
+        <h3 id="art4">第4条（保有期間と廃棄）</h3>
+        <ul>
+          <li>「フィードバックを送る」のアンケートの回答、メールでのお問い合わせ：返信などの対応を終えた日から1年が過ぎると廃棄します。</li>
+          <li>質問アシスタントの記録：90日が過ぎると自動で削除します。</li>
+          <li>利用者から削除の依頼があれば、期間内であっても遅滞なく廃棄します。</li>
+        </ul>
+        <p>
+          廃棄は、アンケート回答シートの行とメールを復元できないよう完全に削除する方法で行います。紙の文書としては保管しません。他の法令によって保存しなければならない情報はありません。
+        </p>
+
+        <h3 id="art5">第5条（第三者への提供）</h3>
+        <p>
+          運営者は個人情報を第三者に提供しません。ただし、韓国の「個人情報保護法」第17条・第18条が定める場合（利用者の別途の同意、法律の特別な規定や法令上の義務の遵守など）は例外です。第1条の AI への送信は、利用者本人が選んだサービスへ本人のアカウントから直接送るもので、運営者が提供するものではありません。
+        </p>
+
+        <h3 id="art6">第6条（取り扱いの委託と国外への移転）</h3>
+        <p>運営者は以下のサービスに個人情報の取り扱いを委託しており、これらのサービスは国外にあります。</p>
+        <table>
+          <thead>
+            <tr><th>受け取る者（連絡先）</th><th>委託する業務</th><th>移転する項目</th><th>国・時期・方法</th><th>保有期間</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google LLC<br />（<a href="https://support.google.com/policies/contact/general_privacy_form" rel="noopener">プライバシーに関するお問い合わせフォーム</a>）</td>
+              <td>アンケート回答・質問記録の保管（Google フォーム・スプレッドシート）、お問い合わせメールの受信（Gmail）</td>
+              <td>第2条のアンケート・メール・質問記録の項目</td>
+              <td>米国などの Google データセンター／アンケート送信・メール送信・質問のときにネットワークで送信</td>
+              <td>第4条の期間</td>
+            </tr>
+            <tr>
+              <td>Vercel Inc.<br />（privacy@vercel.com）</td>
+              <td>紹介サイトのホスティング、質問アシスタントのサーバー関数の実行</td>
+              <td>質問と、同じ画面での直近の会話</td>
+              <td>米国などの Vercel データセンター／質問のときにネットワークで送信</td>
+              <td>保存しない（処理後すぐに破棄）</td>
+            </tr>
+            <tr>
+              <td>Anthropic PBC<br />（privacy@anthropic.com）</td>
+              <td>質問アシスタントの回答の生成（Claude）</td>
+              <td>質問と、同じ画面での直近の会話</td>
+              <td>米国／質問のときにネットワークで送信</td>
+              <td>30日以内に削除（Anthropic の API ポリシー）、学習には使わない</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          国外への移転を望まない場合は、アンケート・メール・質問アシスタントを使わなければ十分です。その場合も IeumOffice のプログラムの利用には何の制限もなく、運営者に届く情報もありません。
+        </p>
+
+        <h3 id="art7">第7条（情報主体の権利と行使の方法）</h3>
+        <ul>
+          <li>
+            利用者はいつでも、運営者が取り扱う自分の個人情報の閲覧、訂正・削除、取り扱いの停止を求めることができます。pblsketch@gmail.com に依頼してください。依頼を受けた日から10日以内に対応の結果をお知らせします。
+          </li>
+          <li>法定代理人や委任を受けた人を通じて依頼することもできます。</li>
+          <li>
+            アンケートを送った日時や、質問した日時と内容を知らせていただければ、該当する記録を探して対応します。運営者は名前やアカウント情報を受け取らないため、本人確認にはその情報だけを使います。
+          </li>
+          <li>
+            PC に保存された文書・設定・会話履歴は、利用者が自分で管理します。会話履歴はアプリで削除でき、データフォルダー（<code>%APPDATA%\IeumOffice</code>）を削除するとすべて消えます。
+          </li>
+        </ul>
+
+        <h3 id="art8">第8条（満14歳未満の児童の個人情報）</h3>
+        <ul>
+          <li>
+            IeumOffice は、教師を含む成人が仕事に使うために作ったプログラムです。登録の手続きがなく、運営者が生徒の情報を受け取らないため、満14歳未満の児童の個人情報は収集しません。
+          </li>
+          <li>
+            生徒が書いた文章や生徒の情報が入った文書は、その文書を開いた PC にだけ保存され、運営者には届きません。
+          </li>
+          <li>
+            AI 機能は、利用者が自分で接続した AI 会社のアカウントで動き、その会社が定めた年齢制限に従います（例：Anthropic の Claude は18歳以上）。生徒の情報が入った文書を AI に任せるときは、名前などの識別情報を「AI から隠す」機能で隠すか削除してから使うことをおすすめします。
+          </li>
+          <li>
+            アンケート・メール・質問アシスタントは、成人の利用者のための窓口です。満14歳未満の児童が個人情報を送ったことがわかった場合は、法定代理人の同意を得ていない情報とみなし、遅滞なく廃棄します。
+          </li>
+        </ul>
+
+        <h3 id="art9">第9条（安全確保のための措置）</h3>
+        <ul>
+          <li>
+            管理的措置：取り扱う項目を第2条のものに最小限にとどめ、アンケート回答・メール・質問記録は運営者一人だけが閲覧し、他の人と共有しません。
+          </li>
+          <li>
+            技術的措置：サイトとアンケート・メール・AI サービスとの間の通信は HTTPS で暗号化されます。質問記録は保存する前にメールアドレス・電話番号・住民登録番号・カード番号の形をした文字列を伏せ、接続元アドレス（IP）を残しません。プログラムは運営者のサーバーに何も送らず、Google ドライブのログイントークンは OS の保護機能で暗号化して PC に保存します。
+          </li>
+          <li>
+            物理的措置：運営者が自分で運営するサーバーやサーバールームはなく、保管は第6条の委託先のデータセンターの保護体制に従います。
+          </li>
+        </ul>
+
+        <h3 id="art10">第10条（個人情報保護責任者と権利侵害の救済）</h3>
+        <ul>
+          <li>個人情報保護責任者：박준일（IeumOffice の開発者） · pblsketch@gmail.com</li>
+          <li>個人の開発者が運営しているため代表電話番号はなく、お問い合わせはメールで受け付けます。</li>
+        </ul>
+        <p>個人情報の侵害についての申告や相談は、以下の韓国の機関にもできます。</p>
+        <ul>
+          <li>個人情報紛争調停委員会：1833-6972、<a href="https://www.kopico.go.kr" rel="noopener">www.kopico.go.kr</a></li>
+          <li>個人情報侵害申告センター：118、<a href="https://privacy.kisa.or.kr" rel="noopener">privacy.kisa.or.kr</a></li>
+          <li>大検察庁：1301、<a href="https://www.spo.go.kr" rel="noopener">www.spo.go.kr</a></li>
+          <li>警察庁：182、<a href="https://ecrm.police.go.kr" rel="noopener">ecrm.police.go.kr</a></li>
+        </ul>
+
+        <h3 id="art11">第11条（ポリシーの変更）</h3>
+        <p>
+          このポリシーを変更するときは、このページに変更内容と施行日を掲載し、いちばん上の最終更新日を書き換えます。変更の履歴は<a href="https://github.com/pblsketch/ieumoffice-site/commits/main/public/privacy.html" rel="noopener">このページの変更履歴</a>で見られます。この条項別のポリシーは2026年10月29日から施行します。
+        </p>
+      </section>
+
+      <h2>PC の外に出るもの</h2>
+      <p>
+        データが PC の外に出るのは以下の場合だけで、そのときもユーザーの PC から以下のサービスへ<b>直接</b>送られます。各サービスが受け取ったデータをどう扱うかは、そのサービスの規約と、そこで設定したアカウントの状態に従います。
+      </p>
+      <ul>
+        <li>
+          <b>AI との会話。</b>ユーザーが送った文章、リクエストが扱う文書の内容、添付したファイルと画像、スキル（選んだスキルや
+          AI が書いたスキルの内容、AI が自分で使えるようにしたスキルのタイトルと説明）、会話履歴が AI の提供元（ユーザーの Claude・ChatGPT サブスクリプション、ユーザーが選んだ API キーの提供元、または無料接続の OpenRouter・Google）に送られます。どの送信もユーザーのアカウントで直接行われます。
+        </li>
+        <li>
+          <b>検索・画像。</b>AI や <code>ieumoffice search</code> がウェブを検索すると検索語が検索サービスに、アドレスで画像を挿入するとその画像をホストしているサイトにリクエストが送られます。
+        </li>
+        <li>
+          <b>新しいバージョンの確認。</b>インストールしたアプリが、公開リリースの一覧を GitHub に問い合わせます。
+        </li>
+        <li>
+          <b>スキルの取り込み。</b>「設定 → スキル」で GitHub のアドレスからスキルを取り込むとき、エージェント画面が提案したインストールを確認するとき、更新の確認を押したときにだけ、その公開リポジトリのファイルを GitHub から受け取ります。ログイン情報は送りません。
+        </li>
+        <li>
+          <b>フィードバックを送る。</b>ユーザーが押したときにだけ、製品のバージョン・OS・表示言語を表示してコピーしてから Google フォームを開きます。文書の内容・パス・アカウントは含めません。
+        </li>
+        <li>
+          <b>Google ドライブ</b>（接続した場合）。以下で別に説明します。
+        </li>
+      </ul>
+      <p class="note">
+        その他の送信経路（OpenRouter の接続、Gemini キーの確認、PDF の AI 読み取り・翻訳、画像生成、画像・動画の分析、Markdown の画像アップロード、作成画面、エージェントモードなど）は、
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/PRIVACY.md" rel="noopener">PRIVACY.md</a>の表にすべて記載しています。
+      </p>
+
+      <h2 id="google-drive">Google ドライブ</h2>
+      <p>
+        Google ドライブの接続は任意で、「設定 → 連携」で<b>Google ドライブに接続</b>を押したときにだけ始まります。ログインは、システムのブラウザーに表示される Google の画面で行います。
+        IeumOffice はアプリの中に Google のログインフォームを作らず、Google のパスワードを受け取ったり保存したりしません。
+      </p>
+
+      <h3>IeumOffice が読み取る Google ユーザーデータ</h3>
+      <p>
+        IeumOffice が求めるのは、ユーザーが選んだファイルにだけ届く権限（<code>https://www.googleapis.com/auth/drive.file</code>）ひとつだけです。ユーザーが Google のファイル選択画面で選んだファイルと IeumOffice が作ったファイルだけを開いて編集でき、ドライブのほかのファイルは見られません。この権限で次のものを読み取ります。
+      </p>
+      <ul>
+        <li>
+          <b>アカウントの表示</b>：接続したアカウントの名前とメールアドレス。設定画面にどのアカウントが接続されているかを表示するためだけに使います。
+        </li>
+        <li>
+          <b>ファイルの情報</b>：ユーザーが選んだファイルの名前、形式、サイズ、更新日時、チェックサム、親フォルダーの ID、編集できるかどうか。アプリの「選んだファイル」の一覧とその中での検索、AI の検索に使います。
+        </li>
+        <li>
+          <b>ファイルの内容</b>：ユーザーが開いたファイル、AI 画面に添付したファイル、ユーザーがオンにしている場合は AI が読んだファイルの内容。
+        </li>
+      </ul>
+      <p>
+        ドライブに書き込むのは、ユーザーが<b>保存</b>を押したときだけです。そのとき、編集した文書をそのドライブのファイルにアップロードするか、ユーザーが選んだ場合（または Google ドキュメントを Office ファイルとして保存する場合）はその隣かマイドライブに新しいファイルとしてアップロードします。IeumOffice はドライブのファイルを削除・移動・共有せず、Gmail や連絡先など他の Google サービスのデータには触れません。ドライブのデータを集めて統計や匿名データを作ることもしません。
+      </p>
+
+      <h3>使い道</h3>
+      <p>
+        読み取ったデータは、ユーザーが画面で目にする機能にだけ使います。ファイルの一覧と検索結果の表示、ファイルをエディターで開くこと、編集した文書をドライブに保存すること、そしてユーザーがオンにしている場合に AI が選んだファイルから探して読み、リクエストに答えることです。広告、販売、融資・信用の判断、ユーザーの分析には使わず、IeumOffice が AI モデルを作ったり学習させたりするのにも使いません。プロジェクトにはサーバーがなくドライブのデータを受け取らないため、作者を含め誰もユーザーのドライブのデータを見ません。
+      </p>
+
+      <h3>誰に渡るのか</h3>
+      <ul>
+        <li><b>Google</b>：ドライブへのリクエストは、ユーザーのアカウントでユーザーの PC から Google に直接送られます。</li>
+        <li>
+          <b>ユーザーが選んだ AI の提供元</b>：ユーザーがドライブから開いた文書を AI に任せたとき、ドライブのファイルを AI 画面に添付したとき、AI が選んだファイルを探して読めるようにオンにしたときにだけ、その会話の AI
+          提供元に、見つかったファイルの一覧と読み取った文章が送られます。提供元は Anthropic（Claude）、OpenAI（ChatGPT・Codex）、ユーザーが入力した API キーの提供元のうちユーザーが選んだところで、送信は PC からユーザーのアカウントで直接行われます。「AI から隠す」で隠した部分は隠したまま送られます。
+        </li>
+        <li>
+          <b>それ以外には誰にも</b>送られません。IeumOffice や作者、広告主、データブローカー、その他の第三者に渡したり売ったりしません。
+        </li>
+      </ul>
+      <p>
+        Google は、ドライブのデータをモデルの学習に使う AI サービスに渡すことを認めていません。そのため
+        IeumOffice は次のようにしています。
+      </p>
+      <ul>
+        <li>
+          ドライブを接続する前に、ドライブのファイルと一緒に使う AI アカウントでモデルの学習をオフにしたことを確認してもらいます。オフにする場所も一緒に示します（Claude は「設定 → プライバシー」、ChatGPT・Codex は「設定 →
+          データコントロール」の「すべての人のためにモデルを改善する」）。確認する前は、接続することも、ファイルを選ぶことも、AI にドライブのファイルを渡すこともできません。
+        </li>
+        <li>
+          Anthropic と OpenAI の API（キーの提供元）は、API で受け取った内容を初期設定では学習に使いません。
+        </li>
+        <li>
+          無料の AI 接続（Gemini、OpenRouter の無料モデル）は学習をオフにできないため、ドライブのファイルを渡しません。無料の接続を使っている間は、ドライブからの添付、AI によるドライブの読み取り、ドライブから開いた文書についての
+          AI へのリクエストがすべて止まります。
+        </li>
+      </ul>
+
+      <h3>保護</h3>
+      <ul>
+        <li>プロジェクトのサーバーを通らず、PC と Google の間は HTTPS で暗号化されてやり取りされます。</li>
+        <li>
+          ログインには PKCE と、この PC の中でだけ開くアドレス（<code>127.0.0.1</code>）を使い、ほかのプログラムがログインの結果を横取りできないようにしています。
+        </li>
+        <li>
+          ログインを続けるためのトークン（更新トークン）は、OS の保護機能（Windows のユーザーアカウントによる保護、macOS のキーチェーン、
+          Linux のデスクトップキーリング）で暗号化して保存します。暗号化できない PC では保存しません。アクセストークンはメモリーにだけ置き、エディター画面やログにトークンとファイルの内容を渡しません。
+        </li>
+        <li>
+          AI のドライブ用ツールは読み取り専用です。AI はドライブのファイルを編集・削除・移動・共有することはできません。
+        </li>
+        <li>
+          文書の中の文章に操られた AI がドライブの内容を外に持ち出せないよう、ドライブの内容が会話に入ったあとは、その会話ではウェブ検索、画像検索、アドレスからの画像の取得、アドレスからのページの読み取りを使いません。
+        </li>
+      </ul>
+
+      <h3>保管と削除</h3>
+      <ul>
+        <li>
+          ログイントークンは、接続を解除するまでこの PC に置きます。<b>接続を解除</b>を押すとトークンファイルを削除し、
+          Google にトークンの取り消しを依頼します。Google アカウントの<a href="https://myaccount.google.com/connections" rel="noopener">サードパーティとの接続</a>からも、いつでもアクセスを削除できます。
+        </li>
+        <li>
+          ドライブから開いたファイルの PC 上のコピー（データフォルダーの <code>drive-cache</code>）は、1か月開いておらず、アップロードしていない変更がなければ、アプリの起動時に削除します。AI への添付用に受け取ったファイルは1週間後に削除します。
+        </li>
+        <li>
+          AI との会話に入ったドライブの内容はこの PC の会話履歴に残り、その会話を削除すると一緒に消えます。
+          AI の提供元に送られた内容は、その提供元の保管ポリシーに従います。
+        </li>
+        <li>
+          データフォルダー（Windows では <code>%APPDATA%\IeumOffice</code>）を削除すると、上のものはすべて消えます。プロジェクトはドライブのデータを別に持っていないため、この PC の外で削除するものはありません。
+        </li>
+      </ul>
+
+      <h3>Google API のデータポリシーの遵守</h3>
+      <p>
+        IeumOffice が Google API から受け取った情報の使用と他のアプリへの転送は、
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener"
+          >Google API Services User Data Policy</a
+        >（Limited Use の要件を含む）に従います。Google Workspace API から受け取った元のユーザーデータや、そこから派生したデータの使用は
+        <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy" rel="noopener"
+          >Google Workspace API User Data and Developer Policy</a
+        >（Limited Use の要件を含む）に従い、IeumOffice はこのデータを使って汎用の AI・機械学習モデルを開発・改善・学習させることはありません。
+      </p>
+
+      <h2>PC に残るもの</h2>
+      <ul>
+        <li>文書ファイルと、エディターが文書の隣に置く補助ファイル。</li>
+        <li>AI との会話履歴と設定（データフォルダー。Windows では <code>%APPDATA%\IeumOffice</code>）。</li>
+        <li>
+          ドライブのログイン情報（<code>google-drive.json</code>）。OS の保護機能（Windows のユーザーアカウントによる保護、macOS のキーチェーン、Linux のデスクトップキーリング）で暗号化して保存し、接続を解除すると削除します。暗号化を使えない PC では保存せず、アプリを終了すると接続が切れます。
+        </li>
+        <li>ドライブから開いたファイルの PC 上のコピー（データフォルダーの <code>drive-cache</code>）と、AI への添付用の一時フォルダー。</li>
+        <li>
+          ChatGPT をアプリから直接接続した場合はその接続情報（<code>chatgpt-connection.json</code>）。OpenAI がこのアプリに発行したログインと、このインストールと OpenAI アカウントを指す ID です。メールアドレスは保存しません。Windows ではユーザーアカウントによる保護で、Linux ではデスクトップキーリングで暗号化し、Mac とキーリングのない Linux では暗号化せずに保存します。接続を解除すると OpenAI に接続の終了を依頼し、この PC から削除します。Codex プログラムのログインとは別のもので、ChatGPT のパスワードをアプリが目にすることはありません。
+        </li>
+      </ul>
+      <p class="note">
+        何がどこに残り、いつ削除されるかの全項目の一覧も、PRIVACY.md の「What stays on your PC」にあります。
+      </p>
+
+      <h2 id="ask">このサイトの質問アシスタント</h2>
+      <p>
+        ここまでは IeumOffice のアプリについての内容です。紹介サイト（ieumoffice.com）の右下にある<b>質問する</b>の画面は、アプリとは別に動きます。この画面で質問を送ると、質問と、同じ画面でそれまでにやり取りした会話（直近の数回分）が、サイトのサーバー関数（Vercel）を通って Anthropic の Claude に送られます。Claude は、IeumOffice のヘルプと案内ページから見つけた内容で回答を書きます。
+      </p>
+      <ul>
+        <li>
+          アシスタントが答えられない質問を見つけて案内資料を補うため、質問と回答、根拠にした案内のタイトル、日時をリポジトリの所有者の Google スプレッドシートに<b>90日</b>間保管し、その後削除します。接続元アドレス（IP）やブラウザーの情報は残さず、メールアドレス・電話番号・住民登録番号・カード番号のように見える文字列は保存する前に伏せます。記録はリポジトリの所有者だけが見ます。削除してほしい質問があれば、下記のお問い合わせ先か
+          pblsketch@gmail.com に、送った日時と質問を知らせてください。
+        </li>
+        <li>ブラウザーには何も保存しません。会話はそのページの中にだけあり、ページを閉じると消えます。</li>
+        <li>
+          Anthropic は、API で受け取った入力と出力を初期設定では AI の学習に使わず、30日以内に削除すると<a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organizations-data" rel="noopener">説明しています</a>。
+        </li>
+        <li>
+          短い時間に大量の質問が来るのを防ぐため、サーバーが接続元アドレス（IP）ごとの質問数を一時的に数えます。この数はサーバーのメモリーにだけあり、やがて消えます。
+        </li>
+        <li>個人情報や文書の内容は書かないでください。</li>
+      </ul>
+
+      <h2>お問い合わせ</h2>
+      <p>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener"
+          >github.com/pblsketch/ieumoffice/issues</a
+        > または <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">「フィードバックを送る」のアンケート</a>。
+      </p>
+    </main>
+  </body>
+</html>

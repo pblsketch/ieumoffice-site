@@ -32,6 +32,13 @@ SAFETY = (
 
 SOURCES = ["index.html", "updates.html", "story.html", "public/privacy.html", "src/main.js", "src/updates.js", "src/story.js", "src/style.css"]
 
+# the other languages' pages and the scripts' word tables: Spanish accents, the
+# Latin of every language. Kana and Han are not in the font and fall through.
+LANG_DIRS = ["en", "ja", "zh-tw", "es"]
+SOURCES += [f"{d}/{name}" for d in LANG_DIRS for name in ("index.html", "updates.html", "story.html")]
+SOURCES += [f"public/{d}/privacy.html" for d in LANG_DIRS]
+SOURCES += ["src/formats-copy.js", "src/lang-switch.js", "src/i18n.js"]
+
 
 def main() -> int:
     if not SOURCE.exists():
@@ -40,7 +47,8 @@ def main() -> int:
 
     chars = set(SAFETY)
     for name in SOURCES:
-        chars.update((ROOT / name).read_text(encoding="utf-8"))
+        if (ROOT / name).exists():
+            chars.update((ROOT / name).read_text(encoding="utf-8"))
 
     # everything a browser or a formatted number can add on its own
     chars.update(chr(c) for c in range(0x20, 0x7F))

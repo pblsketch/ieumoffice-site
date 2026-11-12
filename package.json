@@ -11,7 +11,8 @@
     "kb": "node scripts/build-kb.mjs",
     "kb:eval": "node --env-file-if-exists=.env.local scripts/kb-eval.mjs",
     "dev:api": "node --env-file-if-exists=.env.local scripts/dev-api.mjs",
-    "kb:check": "node scripts/kb-check.mjs"
+    "kb:check": "node scripts/kb-check.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs"
   },
   "devDependencies": {
     "node-html-parser": "^9.0.5",

@@ -1,0 +1,58 @@
+// The showcase tabs' words in the languages other than Korean (the Korean ones
+// sit in main.js's FORMATS). [tab label, caption title, caption, capture alt text]
+// The captures themselves show the Korean app.
+
+export const FORMAT_COPY = {
+  en: {
+    home: ['Home', 'Home', 'See recent documents and folders, and search by file name and content. New documents start here too.', 'The IeumOffice home screen'],
+    hwp: ['HWP', 'Hangul .hwp .hwpx', 'Open and edit HWP and HWPX documents, and save them in the format you opened. Save As switches between HWP and HWPX or makes a PDF copy.', 'An application form open in the Hangul (HWP) editor'],
+    docs: ['Word', 'Word .docx .odt', 'Open and edit Word and ODT documents. Saving writes only the parts you changed back into the original file, so formatting you did not touch stays as it was.', 'A proposal open in the Word editor'],
+    sheets: ['Excel', 'Excel .xlsx', 'Open workbooks with formulas, formatting and charts, and save them in the same format.', 'A budget sheet open in the Excel editor'],
+    slides: ['PowerPoint', 'PowerPoint .pptx', 'Edit slides, or hand over your material and get a new presentation.', 'A presentation open in the PowerPoint editor'],
+    pdf: ['PDF', 'PDF', 'Edit the text on the page, and leave highlights and notes as you read. Convert PDFs to Word, Excel and PowerPoint files on your own PC, or bring them in as Hangul documents.', 'A notice open in the PDF editor'],
+    markdown: ['Markdown', 'Markdown .md', 'Write in a view that shows the formatting, and switch to the source when you need to.', 'Meeting notes open in the Markdown editor'],
+    html: ['HTML', 'HTML', 'Edit web pages as they look, equations included. You can also build a new page from material you pick.', 'An event page open in the HTML editor'],
+    mindmap: ['Mind map', 'Mind map .xmind', 'Open and edit XMind files and save them as the same file. Change topic text and the shape and color of branch lines, and export to an image (PNG, SVG), PDF or a Markdown outline. FreeMind and Freeplane files (.mm) come in as new maps.', 'An idea map open in the mind map editor'],
+    epub: ['EPUB', 'EPUB e-books', 'Open EPUB books to read, edit the text and save. Translate a book into another language and save the translation as its own file.', 'A book fair guide open in the EPUB editor'],
+    diagram: ['Diagram', 'Diagram .drawio', 'Open draw.io files to edit flowcharts and layouts, and save them in the same format. Visio files (.vsdx) come in as new diagrams.', 'A sign-up process flowchart open in the diagram editor'],
+  },
+  ja: {
+    home: ['ホーム', 'ホーム', '最近の文書やフォルダーを確認し、ファイル名や内容で検索します。新しい文書もここから作れます。', 'IeumOffice のホーム画面'],
+    hwp: ['HWP', 'ハングル .hwp .hwpx', 'HWP・HWPX 文書を開いて編集し、開いた形式のまま保存します。「名前を付けて保存」で HWP と HWPX を切り替えたり、PDF のコピーを作ったりできます。', 'ハングル（HWP）エディターで参加申込書を開いた画面'],
+    docs: ['Word', 'Word .docx .odt', 'Word と ODT の文書を開いて編集します。保存するときは変更した部分だけを元のファイルに書き戻すので、触れていない書式はそのまま残ります。', 'Word エディターで企画書を開いた画面'],
+    sheets: ['Excel', 'Excel .xlsx', '数式、書式、グラフを含むブックを開き、同じ形式のまま保存します。', 'Excel エディターで予算表を開いた画面'],
+    slides: ['PowerPoint', 'PowerPoint .pptx', 'スライドを編集し、資料を渡せば新しいプレゼンテーションを作ります。', 'PowerPoint エディターでプレゼン資料を開いた画面'],
+    pdf: ['PDF', 'PDF', 'ページ上の文字を直し、読みながらハイライトやメモを残します。PDF を自分の PC の中で Word・Excel・PowerPoint ファイルに変換し、ハングル文書にも取り込めます。', 'PDF エディターで案内文を開いた画面'],
+    markdown: ['Markdown', 'Markdown .md', '書式が見える画面で書き、必要なときはソースに切り替えて直します。', 'Markdown エディターで会議メモを開いた画面'],
+    html: ['HTML', 'HTML', 'Web ページを見たままの画面で編集し、数式も入れられます。選んだ資料から新しいページを作ることもできます。', 'HTML エディターでイベント紹介ページを開いた画面'],
+    mindmap: ['マインドマップ', 'マインドマップ .xmind', 'XMind ファイルを開いて編集し、同じファイルとして保存します。トピックの文字や枝線の形・色を変え、画像（PNG・SVG）、PDF、Markdown のアウトラインに書き出します。FreeMind・Freeplane のファイル（.mm）は新しいマップとして取り込みます。', 'マインドマップエディターでアイデアマップを開いた画面'],
+    epub: ['EPUB', 'EPUB 電子書籍', 'EPUB の本を開いて読み、本文を直して保存します。別の言語に翻訳し、翻訳版のファイルとして保存できます。', 'EPUB エディターでブックフェアの案内冊子を開いた画面'],
+    diagram: ['ダイアグラム', 'ダイアグラム .drawio', 'draw.io ファイルを開いてフローチャートや構成図を編集し、同じ形式のまま保存します。Visio ファイル（.vsdx）は新しいダイアグラムとして取り込みます。', 'ダイアグラムエディターで参加申込の処理フローを開いた画面'],
+  },
+  'zh-TW': {
+    home: ['首頁', '首頁', '查看最近的文件與資料夾，並依檔名和內容搜尋。新文件也從這裡建立。', 'IeumOffice 首頁畫面'],
+    hwp: ['HWP', 'Hangul .hwp .hwpx', '開啟並編輯 HWP、HWPX 文件，並以原本的格式儲存。在「另存新檔」中可在 HWP 與 HWPX 之間切換，或另存一份 PDF。', '在 Hangul（HWP）編輯器中開啟報名表的畫面'],
+    docs: ['Word', 'Word .docx .odt', '開啟並編輯 Word 與 ODT 文件。儲存時只把修改過的部分寫回原始檔案，沒動過的格式維持原樣。', '在 Word 編輯器中開啟企劃書的畫面'],
+    sheets: ['Excel', 'Excel .xlsx', '開啟含有公式、格式與圖表的活頁簿，並以相同格式儲存。', '在 Excel 編輯器中開啟預算表的畫面'],
+    slides: ['PowerPoint', 'PowerPoint .pptx', '編輯投影片；交給它資料，就能做出新的簡報。', '在 PowerPoint 編輯器中開啟簡報的畫面'],
+    pdf: ['PDF', 'PDF', '直接修改頁面上的文字，閱讀時留下螢光標記與筆記。在自己的電腦上把 PDF 轉成 Word、Excel、PowerPoint 檔案，也能匯入成 Hangul 文件。', '在 PDF 編輯器中開啟通知的畫面'],
+    markdown: ['Markdown', 'Markdown .md', '在看得到格式的畫面中書寫，需要時切換成原始碼修改。', '在 Markdown 編輯器中開啟會議記錄的畫面'],
+    html: ['HTML', 'HTML', '在所見即所得的畫面中編輯網頁，也能插入數學式。還能用選定的資料做出新頁面。', '在 HTML 編輯器中開啟活動介紹頁的畫面'],
+    mindmap: ['心智圖', '心智圖 .xmind', '開啟並編輯 XMind 檔案，存回同一個檔案。可以改變主題文字與分支線的樣式和顏色，並匯出成圖片（PNG、SVG）、PDF 或 Markdown 大綱。FreeMind、Freeplane 檔案（.mm）會匯入成新的心智圖。', '在心智圖編輯器中開啟點子圖的畫面'],
+    epub: ['EPUB', 'EPUB 電子書', '開啟 EPUB 書籍閱讀，修改內文後儲存。也能翻譯成其他語言，另存成譯本檔案。', '在 EPUB 編輯器中開啟書展導覽手冊的畫面'],
+    diagram: ['圖表', '圖表 .drawio', '開啟 draw.io 檔案編輯流程圖或架構圖，並以相同格式儲存。Visio 檔案（.vsdx）會匯入成新的圖表。', '在圖表編輯器中開啟報名處理流程圖的畫面'],
+  },
+  es: {
+    home: ['Inicio', 'Inicio', 'Consulta los documentos y carpetas recientes y busca por nombre de archivo o por contenido. Los documentos nuevos también se crean aquí.', 'La pantalla de inicio de IeumOffice'],
+    hwp: ['HWP', 'Hangul .hwp .hwpx', 'Abre y edita documentos HWP y HWPX y guárdalos en el mismo formato. Con «Guardar como» puedes pasar de HWP a HWPX o crear una copia en PDF.', 'Un formulario de inscripción abierto en el editor de Hangul (HWP)'],
+    docs: ['Word', 'Word .docx .odt', 'Abre y edita documentos de Word y ODT. Al guardar solo se escriben en el archivo original las partes que cambiaste, así que el formato que no tocaste queda igual.', 'Una propuesta abierta en el editor de Word'],
+    sheets: ['Excel', 'Excel .xlsx', 'Abre libros con fórmulas, formato y gráficos, y guárdalos en el mismo formato.', 'Una hoja de presupuesto abierta en el editor de Excel'],
+    slides: ['PowerPoint', 'PowerPoint .pptx', 'Edita diapositivas o entrega tu material y obtén una presentación nueva.', 'Una presentación abierta en el editor de PowerPoint'],
+    pdf: ['PDF', 'PDF', 'Corrige el texto de la página y deja resaltados y notas mientras lees. Convierte PDF en archivos de Word, Excel y PowerPoint en tu propio PC, o llévalos a documentos de Hangul.', 'Un aviso abierto en el editor de PDF'],
+    markdown: ['Markdown', 'Markdown .md', 'Escribe en una vista que muestra el formato y cambia al texto fuente cuando lo necesites.', 'Notas de una reunión abiertas en el editor de Markdown'],
+    html: ['HTML', 'HTML', 'Edita páginas web tal como se ven, con fórmulas incluidas. También puedes crear una página nueva a partir del material que elijas.', 'Una página de evento abierta en el editor de HTML'],
+    mindmap: ['Mapa mental', 'Mapa mental .xmind', 'Abre y edita archivos de XMind y guárdalos en el mismo archivo. Cambia el texto de los temas y la forma y el color de las ramas, y exporta a imagen (PNG, SVG), PDF o un esquema en Markdown. Los archivos de FreeMind y Freeplane (.mm) se importan como mapas nuevos.', 'Un mapa de ideas abierto en el editor de mapas mentales'],
+    epub: ['EPUB', 'Libros EPUB', 'Abre libros EPUB para leerlos, corrige el texto y guarda. Traduce un libro a otro idioma y guarda la traducción como un archivo aparte.', 'La guía de una feria del libro abierta en el editor de EPUB'],
+    diagram: ['Diagrama', 'Diagrama .drawio', 'Abre archivos de draw.io para editar diagramas de flujo y esquemas, y guárdalos en el mismo formato. Los archivos de Visio (.vsdx) se importan como diagramas nuevos.', 'Un diagrama de flujo de inscripciones abierto en el editor de diagramas'],
+  },
+}

@@ -2,5 +2,6 @@
 import './font.css'
 import './style.css'
 import './ask.js'
+import './lang-switch.js'
 import './install.css'
 import './faq.css'

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>隱私權政策 · IeumOffice</title>
+    <meta name="description" content="整理 IeumOffice 會傳送到電腦以外的資料，以及留在電腦上的資料的隱私權政策。" />
+    <link rel="canonical" href="https://ieumoffice.com/zh-tw/privacy.html" />
+    <link rel="alternate" hreflang="ko" href="https://ieumoffice.com/privacy.html" />
+    <link rel="alternate" hreflang="en" href="https://ieumoffice.com/en/privacy.html" />
+    <link rel="alternate" hreflang="ja" href="https://ieumoffice.com/ja/privacy.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://ieumoffice.com/zh-tw/privacy.html" />
+    <link rel="alternate" hreflang="es" href="https://ieumoffice.com/es/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://ieumoffice.com/privacy.html" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --fg: #191510;
+        --muted: #5b564e;
+        --line: #e4ded4;
+        --bg: #fdfcf9;
+        --accent: #0b57d0;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fg: #ece7de;
+          --muted: #a8a196;
+          --line: #3a352d;
+          --bg: #17140f;
+          --accent: #8ab4f8;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "Wanted Sans Variable", "Wanted Sans", system-ui, -apple-system, "Segoe UI",
+          "Malgun Gothic", sans-serif;
+        line-height: 1.7;
+        word-break: keep-all;
+      }
+      main {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 3.5rem 1.25rem 5rem;
+      }
+      a { color: var(--accent); }
+      h1 { font-size: 1.75rem; line-height: 1.3; margin: 0 0 0.5rem; }
+      h2 { font-size: 1.2rem; margin: 2.5rem 0 0.75rem; }
+      h3 { font-size: 1rem; margin: 1.75rem 0 0.5rem; }
+      p, li { font-size: 0.98rem; }
+      .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+      hr { border: 0; border-top: 1px solid var(--line); margin: 3.5rem 0; }
+      table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+      th, td { border: 1px solid var(--line); padding: 0.5rem 0.6rem; text-align: left; font-size: 0.9rem; vertical-align: top; }
+      th { background: color-mix(in srgb, var(--line) 35%, transparent); }
+      code { font-family: ui-monospace, Consolas, monospace; font-size: 0.88em; }
+      .note { color: var(--muted); font-size: 0.92rem; }
+      .back { display: inline-block; margin-bottom: 2rem; font-size: 0.95rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="/zh-tw/">← IeumOffice</a>
+      <p class="meta langs"><a href="/privacy.html" hreflang="ko" lang="ko">한국어</a> · <a href="/en/privacy.html" hreflang="en" lang="en">English</a> · <a href="/ja/privacy.html" hreflang="ja" lang="ja">日本語</a> · <a href="/zh-tw/privacy.html" hreflang="zh-TW" lang="zh-TW" aria-current="page">繁體中文</a> · <a href="/es/privacy.html" hreflang="es" lang="es">Español</a></p>
+      <h1>隱私權政策</h1>
+      <p class="meta">
+        最後更新：2026 年 10 月 29 日 · <a href="#articles">逐條隱私權政策</a> · 完整清單（英文）：
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/PRIVACY.md" rel="noopener">PRIVACY.md</a>
+      </p>
+      <p class="note">
+        本頁是為了方便閱讀而提供的翻譯。若與<a href="/privacy.html" hreflang="ko" lang="ko">韓文原文</a>有出入，以韓文原文為準。
+      </p>
+
+      <p>
+        IeumOffice 是在你自己的電腦上開啟、編輯、儲存文件的桌面程式。本專案沒有營運任何伺服器，所以應用程式不會傳送任何東西給 IeumOffice 或製作者。也沒有使用統計與遙測。
+      </p>
+
+      <section id="articles">
+        <h2>逐條隱私權政策</h2>
+        <p class="note">
+          這是依韓國《個人資料保護法》第 30 條訂定的處理方針。韓國學校在確認「學習支援軟體必要標準」時，可以用這些條號作為依據。其後各節以功能別詳細說明同樣的內容。
+        </p>
+
+        <h3 id="art1">第 1 條（總則與資料處理結構）</h3>
+        <p>
+          IeumOffice 開發者（以下稱「營運者」）在營運 IeumOffice 程式與介紹網站（ieumoffice.com）時，依本政策處理使用者的個人資料。
+        </p>
+        <ul>
+          <li>
+            IeumOffice 是安裝在使用者電腦上使用的桌面程式，營運者不設置伺服器。沒有註冊會員與登入，也沒有使用統計與遙測。
+          </li>
+          <li>
+            文件、設定、AI 對話紀錄只儲存在使用者的電腦上（以 Windows 為例是 <code>%APPDATA%\IeumOffice</code>），不會傳送給營運者。即使開啟含有學生作文或學生名單的文件，營運者也不會收到其內容。
+          </li>
+          <li>
+            使用 AI 功能時，文件內容會以使用者本人的帳戶，從電腦直接傳送到使用者選擇的 AI 服務（Anthropic 的 Claude、
+            OpenAI 的 ChatGPT・Codex、使用者輸入之 API 金鑰的提供者等）。這項傳送依據的是使用者與該公司之間的契約，營運者無法接收或查看其內容。文件中對 AI 隱藏的部分不會被傳送。
+          </li>
+          <li>
+            營運者直接處理的個人資料，僅限使用者自行傳送的情形：意見回饋問卷、電子郵件詢問、介紹網站的提問小幫手，項目列於第 2 條。在 GitHub issue 寫下的內容會公開張貼在 GitHub 上，適用 GitHub 的政策。
+          </li>
+        </ul>
+
+        <h3 id="art2">第 2 條（處理的個人資料項目）</h3>
+        <table>
+          <thead>
+            <tr><th>類別</th><th>項目</th><th>蒐集方式</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>意見回饋問卷</td>
+              <td>必填：意見類型<br />選填：詳細內容、應用程式資訊（版本・作業系統・介面語言）、接收回覆的電子郵件地址</td>
+              <td>使用者直接填寫 Google 表單</td>
+            </tr>
+            <tr>
+              <td>電子郵件詢問</td>
+              <td>寄件者的電子郵件地址與顯示名稱、郵件內容與附件</td>
+              <td>使用者寄到 pblsketch@gmail.com 的郵件</td>
+            </tr>
+            <tr>
+              <td>介紹網站提問小幫手</td>
+              <td>問題、回答、作為依據的說明頁標題、時間（看起來像電子郵件、電話號碼、韓國居民登錄號碼、卡號的文字會在儲存前遮蔽）</td>
+              <td>使用者在提問視窗輸入</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          IeumOffice 程式不會傳送任何個人資料給營運者。介紹網站不使用 Cookie 與瀏覽分析工具，提問小幫手的紀錄不留下連線位址（IP）與瀏覽器資訊。不接收居民登錄號碼等唯一識別資訊與敏感資訊。
+        </p>
+
+        <h3 id="art3">第 3 條（處理目的）</h3>
+        <ul>
+          <li>意見回饋問卷：確認並重現錯誤、改善功能，留下電子郵件時進行回覆</li>
+          <li>電子郵件詢問：確認詢問內容並回覆</li>
+          <li>提問小幫手：回答問題，並找出無法回答的問題以補充說明資料</li>
+        </ul>
+        <p>
+          不會用於上述目的以外的用途，也不會用於廣告、販售或使用者分析。目的變更時，會依韓國《個人資料保護法》第 18 條另行取得同意等，採取必要措施。
+        </p>
+
+        <h3 id="art4">第 4 條（保存期間與銷毀）</h3>
+        <ul>
+          <li>意見回饋問卷回覆、電子郵件詢問：自完成回覆等處理之日起滿 1 年後銷毀。</li>
+          <li>提問小幫手紀錄：滿 90 天後自動刪除。</li>
+          <li>使用者要求刪除時，即使未到期也會立即銷毀。</li>
+        </ul>
+        <p>
+          銷毀方式是將問卷回覆試算表中的該列與郵件永久刪除，使其無法復原。不以紙本保存。沒有依其他法令必須保存的資訊。
+        </p>
+
+        <h3 id="art5">第 5 條（提供給第三方）</h3>
+        <p>
+          營運者不會將個人資料提供給第三方。但韓國《個人資料保護法》第 17 條・第 18 條所定的情形（使用者另行同意、法律有特別規定或為遵守法令上的義務等）除外。第 1 條所述的 AI 傳送，是使用者從本人帳戶直接傳送到本人選擇的服務，並非由營運者提供。
+        </p>
+
+        <h3 id="art6">第 6 條（委託處理與境外傳輸）</h3>
+        <p>營運者將個人資料的處理委託給下列服務，這些服務位於韓國境外。</p>
+        <table>
+          <thead>
+            <tr><th>接收者（聯絡方式）</th><th>委託事項</th><th>傳輸項目</th><th>國家・時間・方式</th><th>保存期間</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google LLC<br />（<a href="https://support.google.com/policies/contact/general_privacy_form" rel="noopener">隱私權詢問表單</a>）</td>
+              <td>保管問卷回覆與提問紀錄（Google 表單・試算表）、接收詢問郵件（Gmail）</td>
+              <td>第 2 條所列問卷・郵件・提問紀錄項目</td>
+              <td>美國等地的 Google 資料中心／提交問卷、寄送郵件、提問時經網路傳送</td>
+              <td>第 4 條所定期間</td>
+            </tr>
+            <tr>
+              <td>Vercel Inc.<br />（privacy@vercel.com）</td>
+              <td>介紹網站代管、執行提問小幫手的伺服器函式</td>
+              <td>問題與同一視窗中最近的對話</td>
+              <td>美國等地的 Vercel 資料中心／提問時經網路傳送</td>
+              <td>不儲存（處理後立即丟棄）</td>
+            </tr>
+            <tr>
+              <td>Anthropic PBC<br />（privacy@anthropic.com）</td>
+              <td>產生提問小幫手的回答（Claude）</td>
+              <td>問題與同一視窗中最近的對話</td>
+              <td>美國／提問時經網路傳送</td>
+              <td>30 天內刪除（Anthropic 的 API 政策），不用於訓練</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          不希望資料傳輸到境外時，不使用問卷、電子郵件與提問小幫手即可。這種情況下，使用 IeumOffice 程式不會受到任何限制，也不會有資訊傳給營運者。
+        </p>
+
+        <h3 id="art7">第 7 條（資料當事人的權利與行使方式）</h3>
+        <ul>
+          <li>
+            使用者可以隨時要求查閱營運者所處理的本人個人資料，或要求更正、刪除、停止處理。寄信到 pblsketch@gmail.com 提出即可，自收到請求之日起 10 天內告知處理結果。
+          </li>
+          <li>也可以透過法定代理人或受委任的人提出請求。</li>
+          <li>
+            告知提交問卷的時間，或提問的時間與內容，就能找到相關紀錄並處理。營運者不接收姓名或帳戶資訊，所以確認本人身分時只使用這些資訊。
+          </li>
+          <li>
+            儲存在電腦上的文件、設定與對話紀錄由使用者自行管理。對話紀錄可以在應用程式中刪除，刪除應用程式資料夾（<code>%APPDATA%\IeumOffice</code>）就會全部刪除。
+          </li>
+        </ul>
+
+        <h3 id="art8">第 8 條（未滿 14 歲兒童的個人資料）</h3>
+        <ul>
+          <li>
+            IeumOffice 是供包括教師在內的成人在工作上使用的程式。沒有註冊程序，營運者也不接收學生資訊，因此不蒐集未滿 14 歲兒童的個人資料。
+          </li>
+          <li>
+            含有學生作文或學生資訊的文件，只會儲存在開啟該文件的電腦上，不會傳給營運者。
+          </li>
+          <li>
+            AI 功能以使用者自行連結的 AI 公司帳戶運作，並遵守該公司所定的年齡限制（例如：Anthropic 的 Claude 須年滿 18 歲）。把含有學生資訊的文件交給 AI 時，建議先用「對 AI 隱藏」功能遮蔽姓名等識別資訊，或刪除後再使用。
+          </li>
+          <li>
+            問卷、電子郵件與提問小幫手是為成人使用者設置的管道。若得知未滿 14 歲的兒童傳送了個人資料，會視為未取得法定代理人同意的資訊，立即銷毀。
+          </li>
+        </ul>
+
+        <h3 id="art9">第 9 條（安全維護措施）</h3>
+        <ul>
+          <li>
+            管理措施：將處理的項目限縮在第 2 條所列範圍，問卷回覆、郵件與提問紀錄只由營運者一人查閱，不與他人共享。
+          </li>
+          <li>
+            技術措施：網站與問卷、郵件、AI 服務之間的傳輸以 HTTPS 加密。提問紀錄在儲存前會遮蔽電子郵件、電話號碼、居民登錄號碼、卡號格式的文字，且不留下連線位址（IP）。程式不會傳送任何東西到營運者的伺服器，Google 雲端硬碟的登入權杖以作業系統的保護功能加密後儲存在電腦上。
+          </li>
+          <li>
+            實體措施：營運者沒有自行營運的伺服器或機房，保管依循第 6 條受託者資料中心的保護機制。
+          </li>
+        </ul>
+
+        <h3 id="art10">第 10 條（個人資料保護負責人與權益受侵害之救濟）</h3>
+        <ul>
+          <li>個人資料保護負責人：박준일（IeumOffice 開發者）· pblsketch@gmail.com</li>
+          <li>由個人開發者營運，因此沒有另設代表電話，詢問以電子郵件受理。</li>
+        </ul>
+        <p>關於個人資料侵害的檢舉或諮詢，也可以向下列韓國機關提出。</p>
+        <ul>
+          <li>個人資料糾紛調解委員會：1833-6972，<a href="https://www.kopico.go.kr" rel="noopener">www.kopico.go.kr</a></li>
+          <li>個人資料侵害申報中心：118，<a href="https://privacy.kisa.or.kr" rel="noopener">privacy.kisa.or.kr</a></li>
+          <li>大檢察廳：1301，<a href="https://www.spo.go.kr" rel="noopener">www.spo.go.kr</a></li>
+          <li>警察廳：182，<a href="https://ecrm.police.go.kr" rel="noopener">ecrm.police.go.kr</a></li>
+        </ul>
+
+        <h3 id="art11">第 11 條（政策的變更）</h3>
+        <p>
+          變更本政策時，會在本頁公告變更內容與施行日期，並更新最上方的最後更新日期。變更紀錄可以在<a href="https://github.com/pblsketch/ieumoffice-site/commits/main/public/privacy.html" rel="noopener">本頁的變更紀錄</a>中查看。本逐條政策自 2026 年 10 月 29 日起施行。
+        </p>
+      </section>
+
+      <h2>傳送到電腦以外的資料</h2>
+      <p>
+        資料離開電腦的情形只有下列幾種，而且即使在這些情形下，也是從你的電腦<b>直接</b>傳送到下列服務。各服務如何處理收到的資料，依該服務的條款與你在那裡的帳戶設定而定。
+      </p>
+      <ul>
+        <li>
+          <b>AI 對話。</b>你送出的文字、請求所處理的文件內容、附加的檔案與圖片、技能（選擇的技能或
+          AI 使用的技能內容，以及允許 AI 自行使用的技能之標題與說明）、對話紀錄，會傳送給 AI 提供者（你的 Claude・ChatGPT 訂閱、你選擇的 API 金鑰提供者，或免費連結的 OpenRouter・Google）。每次傳送都直接以你的帳戶進行。
+        </li>
+        <li>
+          <b>搜尋・圖片。</b>AI 或 <code>ieumoffice search</code> 搜尋網路時，搜尋字詞會傳送到搜尋服務；以網址插入圖片時，請求會傳送到代管該圖片的網站。
+        </li>
+        <li>
+          <b>檢查新版本。</b>已安裝的應用程式會向 GitHub 請求公開的版本發布清單。
+        </li>
+        <li>
+          <b>匯入技能。</b>只有在「設定 → 技能」中以 GitHub 網址匯入技能、確認代理程式視窗提議的安裝，或按下檢查更新時，才會從 GitHub 下載該公開儲存庫的檔案。不會傳送登入資訊。
+        </li>
+        <li>
+          <b>傳送意見回饋。</b>只有在你按下時，才會顯示並複製產品版本、作業系統、介面語言，然後開啟 Google 表單。不會放入文件內容、路徑或帳戶。
+        </li>
+        <li>
+          <b>Google 雲端硬碟</b>（有連結時）。下面另行說明。
+        </li>
+      </ul>
+      <p class="note">
+        其他傳送途徑（OpenRouter 連結、Gemini 金鑰確認、PDF AI 閱讀・翻譯、產生圖片、圖片・影片分析、Markdown 圖片上傳、建立視窗、代理程式模式等）都完整列在
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/PRIVACY.md" rel="noopener">PRIVACY.md</a> 的表格中。
+      </p>
+
+      <h2 id="google-drive">Google 雲端硬碟</h2>
+      <p>
+        連結 Google 雲端硬碟是選用功能，只有在「設定 → 整合」中按下 <b>連結 Google 雲端硬碟</b>時才會開始。登入是在系統瀏覽器中開啟的 Google 自家畫面上進行。
+        IeumOffice 不在應用程式內建立 Google 登入表單，也不接收或儲存你的 Google 密碼。
+      </p>
+
+      <h3>IeumOffice 讀取的 Google 使用者資料</h3>
+      <p>
+        IeumOffice 只要求一個權限範圍（<code>https://www.googleapis.com/auth/drive.file</code>），它只能存取你所選的檔案。只能開啟、修改你在 Google 檔案選擇視窗中選取的檔案，以及 IeumOffice 建立的檔案，看不到雲端硬碟中的其他檔案。透過這項權限讀取以下資料。
+      </p>
+      <ul>
+        <li>
+          <b>帳戶顯示</b>：已連結帳戶的名稱與電子郵件地址。只用來在設定畫面中顯示連結的是哪個帳戶。
+        </li>
+        <li>
+          <b>檔案資訊</b>：你所選檔案的名稱、類型、大小、修改時間、檢查碼、上層資料夾 ID、是否可編輯。用於應用程式的「已選擇的檔案」清單、清單內的搜尋，以及 AI 的搜尋。
+        </li>
+        <li>
+          <b>檔案內容</b>：你開啟的檔案、附加到 AI 視窗的檔案，以及你開啟此功能時 AI 讀取的檔案內容。
+        </li>
+      </ul>
+      <p>
+        寫入雲端硬碟只有一種情形：你按下<b>儲存</b>時。這時會把修改過的文件上傳到該雲端硬碟檔案，或在你選擇時（或將 Google 文件儲存為 Office 檔案時），以新檔案上傳到它旁邊或「我的雲端硬碟」。
+        IeumOffice 不會刪除、移動或共用雲端硬碟檔案，也不會存取 Gmail、聯絡人等其他 Google 服務的資料。也不會彙整雲端硬碟資料來製作統計或匿名資料。
+      </p>
+
+      <h3>用途</h3>
+      <p>
+        讀取的資料只用於你在畫面上看到的功能：顯示檔案清單與搜尋結果、在編輯器中開啟檔案、把修改過的文件儲存到雲端硬碟，以及在你開啟此功能時，讓 AI 在所選檔案中查找、閱讀並回答請求。不用於廣告、販售、貸款與信用判斷或使用者分析，IeumOffice 也不會用它來建立或訓練 AI 模型。本專案沒有伺服器，不會收到雲端硬碟資料，所以包括製作者在內，沒有任何人會看到你的雲端硬碟資料。
+      </p>
+
+      <h3>會傳給誰</h3>
+      <ul>
+        <li><b>Google</b>：雲端硬碟的請求以你的帳戶，從你的電腦直接傳送到 Google。</li>
+        <li>
+          <b>你選擇的 AI 提供者</b>：只有在你把從雲端硬碟開啟的文件交給 AI、把雲端硬碟檔案附加到
+          AI 視窗，或開啟讓 AI 查找並閱讀所選檔案的功能時，找到的檔案清單與讀取的文字才會傳送給該對話的
+          AI 提供者。提供者是 Anthropic（Claude）、OpenAI（ChatGPT・Codex）、你輸入之 API 金鑰的提供者中你所選的那一個，傳送以你的帳戶從電腦直接進行。對 AI 隱藏的部分會維持隱藏狀態傳送。
+        </li>
+        <li>
+          <b>除此之外不會傳給任何人。</b>不會轉交或販售給 IeumOffice、製作者、廣告商、資料仲介業者或其他第三方。
+        </li>
+      </ul>
+      <p>
+        Google 不允許將雲端硬碟資料交給會用它來訓練模型的 AI 服務。因此
+        IeumOffice 這樣處理：
+      </p>
+      <ul>
+        <li>
+          連結雲端硬碟之前，會請你確認已在與雲端硬碟檔案搭配使用的 AI 帳戶中關閉模型訓練，並一併顯示關閉的位置（Claude 是「設定 → 隱私權」，ChatGPT・Codex 是「設定 →
+          資料控管」中的「為所有人改善模型」）。確認之前，無法連結、選擇檔案，也無法把雲端硬碟檔案交給 AI。
+        </li>
+        <li>
+          Anthropic 與 OpenAI 的 API（金鑰提供者）預設不會將透過 API 收到的內容用於訓練。
+        </li>
+        <li>
+          免費 AI 連結（Gemini、OpenRouter 免費模型）無法關閉訓練，所以不會收到雲端硬碟檔案。使用免費連結期間，從雲端硬碟附加檔案、AI 讀取雲端硬碟，以及從雲端硬碟開啟的文件所發出的
+          AI 請求都會停止。
+        </li>
+      </ul>
+
+      <h3>保護</h3>
+      <ul>
+        <li>不經過本專案的伺服器，電腦與 Google 之間以 HTTPS 加密往來。</li>
+        <li>
+          登入使用 PKCE，以及只在這台電腦內開啟的位址（<code>127.0.0.1</code>），防止其他程式攔截登入結果。
+        </li>
+        <li>
+          維持登入的權杖（更新權杖）以作業系統的保護機制（Windows 的使用者帳戶保護、macOS 鑰匙圈、
+          Linux 的桌面金鑰圈）加密後儲存。在無法加密的電腦上不會儲存。存取權杖只放在記憶體中，也不會把權杖與檔案內容傳給編輯器畫面或寫入記錄檔。
+        </li>
+        <li>
+          AI 的雲端硬碟工具只能讀取。AI 無法修改、刪除、移動或共用雲端硬碟檔案。
+        </li>
+        <li>
+          為了防止被文件中的文字操控的 AI 把雲端硬碟內容送到外面，雲端硬碟內容進入對話之後，該對話就不再使用網路搜尋、圖片搜尋、以網址取得圖片、以網址讀取頁面。
+        </li>
+      </ul>
+
+      <h3>保存與刪除</h3>
+      <ul>
+        <li>
+          登入權杖會保存在這台電腦上，直到你中斷連結為止。按下<b>中斷連結</b>，就會刪除權杖檔案，並向 Google 請求撤銷權杖。也可以隨時在 Google 帳戶的<a href="https://myaccount.google.com/connections" rel="noopener">第三方連結</a>中移除存取權。
+        </li>
+        <li>
+          從雲端硬碟開啟的檔案在電腦上的副本（應用程式資料夾中的 <code>drive-cache</code>），若一個月未開啟且沒有尚未上傳的變更，會在啟動應用程式時刪除。為了附加給 AI 而下載的檔案會在一週後刪除。
+        </li>
+        <li>
+          進入 AI 對話的雲端硬碟內容會留在這台電腦的對話紀錄中，刪除該對話時會一併刪除。已傳給 AI 提供者的內容，依該提供者的保存政策處理。
+        </li>
+        <li>
+          刪除應用程式資料夾（以 Windows 為例是 <code>%APPDATA%\IeumOffice</code>），上述內容就會全部刪除。本專案沒有另外持有雲端硬碟資料，所以在這台電腦以外沒有需要刪除的東西。
+        </li>
+      </ul>
+
+      <h3>遵守 Google API 資料政策</h3>
+      <p>
+        IeumOffice 對於從 Google API 收到之資訊的使用，以及將其傳輸至其他應用程式，均遵守
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener"
+          >Google API Services User Data Policy</a
+        >（包括 Limited Use 要求）。對於從 Google Workspace API 收到的原始或衍生使用者資料的使用，遵守
+        <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy" rel="noopener"
+          >Google Workspace API User Data and Developer Policy</a
+        >（包括 Limited Use 要求），IeumOffice 不會使用這些資料開發、改善或訓練通用 AI 或機器學習模型。
+      </p>
+
+      <h2>留在電腦上的資料</h2>
+      <ul>
+        <li>文件檔案，以及編輯器放在文件旁的輔助檔案。</li>
+        <li>AI 對話紀錄與設定（應用程式資料夾，以 Windows 為例是 <code>%APPDATA%\IeumOffice</code>）。</li>
+        <li>
+          雲端硬碟登入資訊（<code>google-drive.json</code>）：以作業系統的保護機制（Windows 的使用者帳戶保護、macOS 鑰匙圈、Linux 的桌面金鑰圈）加密後儲存，中斷連結時刪除。在無法使用加密的電腦上不會儲存，關閉應用程式時連結就會中斷。
+        </li>
+        <li>從雲端硬碟開啟之檔案在電腦上的副本（應用程式資料夾中的 <code>drive-cache</code>），以及 AI 附加檔案用的暫存資料夾。</li>
+        <li>
+          在應用程式中直接連結 ChatGPT 時的連結資訊（<code>chatgpt-connection.json</code>）：OpenAI 發給本應用程式的登入，以及指向這份安裝與 OpenAI 帳戶的 ID。不儲存電子郵件地址。在 Windows 上以使用者帳戶保護加密，在 Linux 上以桌面金鑰圈加密；在 Mac 與沒有金鑰圈的 Linux 上則以未加密狀態儲存。中斷連結時，會向 OpenAI 請求結束連結，並從這台電腦刪除。它與 Codex 程式的登入是分開的，應用程式也看不到 ChatGPT 密碼。
+        </li>
+      </ul>
+      <p class="note">
+        什麼資料留在哪裡、何時刪除的完整清單，也在 PRIVACY.md 的「What stays on your PC」一節中。
+      </p>
+
+      <h2 id="ask">本網站的提問小幫手</h2>
+      <p>
+        以上是關於 IeumOffice 應用程式的內容。介紹網站（ieumoffice.com）右下角的<b>提出問題</b>視窗與應用程式分開運作。在這個視窗送出問題時，問題以及同一視窗中先前的對話（最近幾輪）會經由網站的伺服器函式（Vercel）傳送到 Anthropic 的 Claude。
+        Claude 會根據在 IeumOffice 說明與指南頁面中找到的內容撰寫回答。
+      </p>
+      <ul>
+        <li>
+          為了找出小幫手不知道的問題並補充說明資料，問題與回答、作為依據的說明頁標題、時間，會在儲存庫擁有者的 Google 試算表中保存 <b>90 天</b>，之後刪除。不留下連線位址（IP）或瀏覽器資訊，看起來像電子郵件、電話號碼、韓國居民登錄號碼、卡號的文字會在儲存前遮蔽。紀錄只有儲存庫擁有者會看。如果有想刪除的問題，請透過下方的聯絡方式或
+          pblsketch@gmail.com 告知送出的時間與問題。
+        </li>
+        <li>瀏覽器中不會儲存任何東西。對話只存在於該頁面，關閉頁面就會消失。</li>
+        <li>
+          Anthropic <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organizations-data" rel="noopener">表示</a>，透過 API 收到的輸入與輸出預設不會用於 AI 訓練，並會在 30 天內刪除。
+        </li>
+        <li>
+          為了防止短時間內湧入過多問題，伺服器會暫時計算每個連線位址（IP）的提問次數。這個次數只存在於伺服器記憶體中，之後就會消失。
+        </li>
+        <li>請不要寫入個人資料或文件內容。</li>
+      </ul>
+
+      <h2>聯絡</h2>
+      <p>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener"
+          >github.com/pblsketch/ieumoffice/issues</a
+        > 或<a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">意見回饋問卷</a>。
+      </p>
+    </main>
+  </body>
+</html>

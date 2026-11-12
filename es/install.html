@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Si la instalación se atasca · IeumOffice</title>
+    <meta name="description" content="Si Edge no deja descargarlo, o si al abrir el instalador te bloquea «Windows protegió su PC» o Control inteligente de aplicaciones, elige la pantalla que estás viendo y te mostramos en imágenes dónde hacer clic." />
+    <link rel="canonical" href="https://ieumoffice.com/es/install" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/es/install" />
+    <meta property="og:title" content="Si la instalación se atasca · IeumOffice" />
+    <meta property="og:description" content="Elige la pantalla que estás viendo y te mostramos en imágenes dónde hacer clic." />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-install">
+    <a class="skip" href="#main">Saltar al contenido</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/es/" aria-label="IeumOffice, ir al inicio">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones de la página">
+        <a href="/es/updates">Novedades</a>
+        <a href="/es/story">Por qué lo hice</a>
+        <a href="/es/install" aria-current="page">Ayuda de instalación</a>
+        <a href="/es/connect">Conectar la IA</a>
+        <a href="/es/#formats">Documentos</a>
+        <a href="/es/#hwp">Hangul</a>
+        <a href="/es/#ai">IA</a>
+      </nav>
+      <a class="btn btn-small" href="/es/#download">Descargar</a>
+    </header>
+
+    <main id="main">
+      <header class="install-head">
+        <p class="eyebrow">Ayuda de instalación</p>
+        <h1>Si la instalación se atasca</h1>
+        <p class="install-lede">
+          Elige la imagen que más se parezca a lo que ves ahora en la pantalla. Un puntero se mueve y te muestra dónde hacer
+          clic.
+        </p>
+      </header>
+
+      <!-- symptom picker: people recognise the screen in front of them, not its name -->
+      <nav class="symptoms" aria-label="Elegir la pantalla que estás viendo">
+        <a class="symptom" href="#edge">
+          <span class="symptom-pic symptom-pic-edge" aria-hidden="true">
+            <i class="sp-bar"></i><i class="sp-panel"><b></b><s></s><s></s></i>
+          </span>
+          <b>Edge no deja descargarlo</b>
+          <span>«no se descarga normalmente»</span>
+        </a>
+        <a class="symptom" href="#pc-protect">
+          <span class="symptom-pic symptom-pic-blue" aria-hidden="true">
+            <i class="sp-blue"><b></b><s></s><s></s></i>
+          </span>
+          <b>Sale una ventana azul de advertencia</b>
+          <span>«Windows protegió su PC»</span>
+        </a>
+        <a class="symptom" href="#smart-app-control">
+          <span class="symptom-pic symptom-pic-sac" aria-hidden="true">
+            <i class="sp-sac"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>Lo bloqueó Control inteligente de aplicaciones</b>
+          <span>«una aplicación que puede no ser segura»</span>
+        </a>
+        <a class="symptom" href="#find-file">
+          <span class="symptom-pic symptom-pic-folder" aria-hidden="true">
+            <i class="sp-folder"></i>
+          </span>
+          <b>No encuentro el archivo descargado</b>
+          <span>Abrir la carpeta Descargas</span>
+        </a>
+        <a class="symptom" href="#installer">
+          <span class="symptom-pic symptom-pic-setup" aria-hidden="true">
+            <i class="sp-setup"><b></b><s></s><u></u></i>
+          </span>
+          <b>¿Qué pulso en el instalador?</b>
+          <span>Siguiente → Instalar → Terminar</span>
+        </a>
+      </nav>
+      <p class="symptoms-more">
+        Si usas Mac o Linux: <a class="text-link" href="#mac">la primera vez que lo abres en Mac</a> ·
+        <a class="text-link" href="#linux">instalar en Linux</a>
+      </p>
+
+      <!-- Edge: "not commonly downloaded" -->
+      <section class="guide" id="edge" aria-labelledby="edge-title">
+        <div class="guide-head">
+          <p class="guide-tag">Microsoft Edge</p>
+          <h2 id="edge-title">Aparece «no se descarga normalmente»</h2>
+          <p>
+            IeumOffice es un programa gratuito y nuevo, así que Edge todavía no conoce bien el archivo. El archivo no tiene
+            ningún problema: si haces clic en este orden, se descarga.
+          </p>
+        </div>
+        <div class="player" data-player="edge">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <!-- browser frame -->
+              <div class="ms-window">
+                <div class="ms-tabs">
+                  <span class="ms-tab"><i class="ms-fav"></i>IeumOffice - Del Hangul al PDF</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ms-toolbar">
+                  <span class="ms-nav">‹ › ↻</span>
+                  <span class="ms-url">ieumoffice.com</span>
+                  <span class="ms-dlbtn" data-t="dlbtn">
+                    <svg viewBox="0 0 20 20"><path d="M10 3v9m0 0-4-4m4 4 4-4M4 16h12" /></svg>
+                  </span>
+                  <span class="ms-dots">···</span>
+                </div>
+                <div class="ms-page">
+                  <p class="mp-eyebrow">Instalación</p>
+                  <p class="mp-title">Se instala en tres pasos.</p>
+                  <span class="mp-btn" data-t="site-btn">↓ Descargar para Windows</span>
+                </div>
+              </div>
+
+              <!-- download flyout -->
+              <div class="ms-flyout" data-frame>
+                <div class="mf-head">
+                  <b>Descargas</b>
+                  <span class="mf-icons">
+                    <svg viewBox="0 0 20 20"><path d="M3 6h5l2 2h7v7H3z" /></svg>
+                    <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" /><path d="m13 13 4 4" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M4 10h.01M10 10h.01M16 10h.01" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M7 3h6l-1 5 3 3H5l3-3zM10 11v6" /></svg>
+                  </span>
+                </div>
+                <div class="mf-item" data-t="item">
+                  <span class="mf-icon"></span>
+                  <div class="mf-text">
+                    <b class="mf-name">IeumOffice-Setup.exe</b>
+                    <span class="mf-warn">
+                      <i class="mf-warn-icon">!</i>
+                      IeumOffice-Setup.exe no se descarga normalmente. Asegúrate de que confías en él antes de
+                      abrirlo.
+                    </span>
+                    <span class="mf-open" data-t="open">Abrir archivo</span>
+                  </div>
+                  <span class="mf-actions">
+                    <svg class="mf-trash" viewBox="0 0 20 20"><path d="M4 6h12M8 6V4h4v2M6 6l1 11h6l1-11" /></svg>
+                    <i class="mf-more" data-t="more">···</i>
+                  </span>
+                </div>
+                <ul class="mf-menu">
+                  <li data-t="keep">Conservar</li>
+                  <li>Notificar que este archivo es seguro</li>
+                  <li>Más información</li>
+                  <li>Copiar vínculo de descarga</li>
+                </ul>
+              </div>
+
+              <!-- SmartScreen confirmation inside Edge -->
+              <div class="ms-dialog" data-frame>
+                <p class="md-title">Asegúrate de que confías en IeumOffice-Setup.exe antes de abrirlo.</p>
+                <p class="md-body">
+                  Microsoft Defender SmartScreen no pudo comprobar si este archivo es seguro porque no se descarga
+                  normalmente. Asegúrate de que confías en el archivo o en su origen antes de abrirlo.
+                </p>
+                <div class="md-foot">
+                  <div class="md-left">
+                    <span class="md-more" data-t="showmore">Mostrar más <i>⌄</i></span>
+                    <span class="md-continue" data-t="continue">Conservar de todos modos</span>
+                  </div>
+                  <span class="md-btn">Notificar que esta aplicación es segura</span>
+                  <span class="md-btn md-btn-primary">Eliminar</span>
+                </div>
+              </div>
+
+              <!-- pointer, click ripple and target ring -->
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>Al pulsar el botón <b>Descargar</b>, se abre el panel de descargas en la esquina superior derecha de Edge.</li>
+            <li>Si ves «no se descarga normalmente», pon el puntero sobre el nombre del archivo y pulsa <b>···</b> (los tres puntos).</li>
+            <li>En el menú, pulsa la primera opción, <b>Conservar</b>.</li>
+            <li>Cuando aparezca el cuadro de confirmación, no pulses el botón azul <b>Eliminar</b>: pulsa <b>Mostrar más</b>, abajo a la izquierda.</li>
+            <li>Pulsa la opción nueva, <b>Conservar de todos modos</b>.</li>
+            <li>Ahora pulsa <b>Abrir archivo</b> y empieza la instalación.</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="Paso anterior">‹ Anterior</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="Pausa">❚❚ Pausa</button>
+            <button type="button" class="pb-btn" data-next aria-label="Paso siguiente">Siguiente ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          Si al abrir el archivo sale una ventana azul, sigue con <a class="text-link" href="#pc-protect">Aparece «Windows protegió su PC»</a>.
+        </p>
+        <p class="demo-note">La pantalla está redibujada de forma simplificada para explicarlo. Según la versión de Edge, los textos o su posición pueden variar un poco.</p>
+      </section>
+
+      <!-- SmartScreen when the installer starts -->
+      <section class="guide" id="pc-protect" aria-labelledby="pc-title">
+        <div class="guide-head">
+          <p class="guide-tag">Windows</p>
+          <h2 id="pc-title">Aparece «Windows protegió su PC»</h2>
+          <p>
+            La ventana azul que sale al abrir el instalador aparece porque Windows no había visto antes este programa. Aunque
+            solo haya un botón, <b>No ejecutar</b>, no la cierres.
+          </p>
+        </div>
+        <p class="guide-alt">
+          ¿La ventana no es azul, sino blanca, y dice <b>«Control inteligente de aplicaciones bloqueó…»</b>? Esa ventana no
+          tiene <b>Más información</b>. Sigue con <a class="text-link" href="#smart-app-control">Si lo bloqueó Control inteligente de aplicaciones</a>.
+        </p>
+        <div class="player" data-player="pc-protect">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="ss-window" data-frame>
+                <div class="ss-bar"><span class="ss-close">✕</span></div>
+                <div class="ss-body">
+                  <p class="ss-title">Windows protegió su PC</p>
+                  <p class="ss-text">
+                    Microsoft Defender SmartScreen impidió el inicio de una aplicación no reconocida. Si ejecuta esta
+                    aplicación, puede poner en peligro su PC.
+                  </p>
+                  <span class="ss-more" data-t="moreinfo">Más información</span>
+                  <dl class="ss-info">
+                    <div><dt>Aplicación:</dt><dd>IeumOffice-Setup.exe</dd></div>
+                    <div data-t="publisher"><dt>Editor:</dt><dd>Editor desconocido</dd></div>
+                  </dl>
+                </div>
+                <div class="ss-buttons">
+                  <span class="ss-btn ss-run" data-t="run">Ejecutar de todas formas</span>
+                  <span class="ss-btn">No ejecutar</span>
+                </div>
+              </div>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>Pulsa <b>Más información</b>, debajo del texto de la ventana azul.</li>
+            <li>«Editor: Editor desconocido» aparece porque es un programa gratuito hecho por una persona. Pulsa el botón nuevo de abajo, <b>Ejecutar de todas formas</b>.</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="Paso anterior">‹ Anterior</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="Pausa">❚❚ Pausa</button>
+            <button type="button" class="pb-btn" data-next aria-label="Paso siguiente">Siguiente ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          Después se abre el instalador. Sigue con <a class="text-link" href="#installer">Qué pulsar en el instalador</a>.
+        </p>
+      </section>
+
+      <!-- Smart App Control: the white "blocked" dialog on new Windows 11 PCs -->
+      <section class="guide" id="smart-app-control" aria-labelledby="sac-title">
+        <div class="guide-head">
+          <p class="guide-tag">Windows 11</p>
+          <h2 id="sac-title">Aparece «Control inteligente de aplicaciones bloqueó…»</h2>
+          <p>
+            Es una ventana que sale a menudo en portátiles recién comprados o en PC con Windows recién instalado. IeumOffice
+            se distribuye gratis y no tiene una firma con la que Windows pueda comprobar quién lo publica. Por eso Windows 11
+            lo bloquea no solo al instalarlo, sino también al ejecutarlo. Esta ventana no tiene botón <b>Ejecutar</b>, y
+            tampoco hay forma de permitir solo este programa. Si desactivas Control inteligente de aplicaciones, se puede
+            instalar y ejecutar. Pero si lo vuelves a activar, IeumOffice queda bloqueado, así que tiene que quedarse
+            desactivado mientras uses IeumOffice.
+          </p>
+        </div>
+        <div class="player" data-player="sac">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+
+              <!-- the dialog from the new PC -->
+              <div class="sac-window" data-frame>
+                <div class="sac-head">
+                  <svg class="sac-shield" viewBox="0 0 24 24">
+                    <path d="M12 2.6 4.7 5.8v6c0 4.9 3.1 8 7.3 9.4 4.2-1.4 7.3-4.5 7.3-9.4v-6z" />
+                    <path class="sac-check" d="m8.9 11.7 2.1 2.1 4.1-4.1" />
+                  </svg>
+                  <b>Control inteligente de aplicaciones bloqueó una aplicación que puede no ser segura.</b>
+                </div>
+                <div class="sac-body">
+                  <p>
+                    Esta aplicación se bloqueó para proteger tu dispositivo y tus datos. Microsoft revisa las aplicaciones
+                    para comprobar que son seguras.
+                  </p>
+                  <p class="sac-path">C:\Users\Tu nombre\Downloads\IeumOffice-Setup.exe</p>
+                  <p class="sac-learn">Más información sobre Control inteligente de aplicaciones</p>
+                </div>
+                <div class="sac-foot">
+                  <span class="sac-btn sac-primary" data-t="sac-ok">Aceptar</span>
+                  <span class="sac-btn">Obtener aplicaciones en Microsoft Store</span>
+                </div>
+              </div>
+
+              <!-- Windows Security -->
+              <div class="ws-window" data-frame>
+                <div class="ws-bar">
+                  <svg class="ws-shield" viewBox="0 0 24 24">
+                    <path d="M12 2.6 4.7 5.8v6c0 4.9 3.1 8 7.3 9.4 4.2-1.4 7.3-4.5 7.3-9.4v-6z" />
+                  </svg>
+                  <b>Seguridad de Windows</b>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ws-body">
+                  <ul class="ws-nav">
+                    <li>Inicio</li>
+                    <li>Protección antivirus y contra amenazas</li>
+                    <li>Protección de cuentas</li>
+                    <li>Firewall y protección de red</li>
+                    <li data-t="ws-appbrowser">Control de aplicaciones y navegador</li>
+                    <li>Rendimiento y estado del dispositivo</li>
+                    <li>Opciones de familia</li>
+                  </ul>
+                  <div class="ws-page">
+                    <div class="ws-home">
+                      <p class="ws-title">Tu PC está protegido</p>
+                      <p class="ws-sub">Último examen: hoy, 9:12</p>
+                      <div class="ws-tiles"><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="ws-appbrowser">
+                      <p class="ws-title">Control de aplicaciones y navegador</p>
+                      <p class="ws-sub">Microsoft Defender SmartScreen</p>
+                      <div class="ws-card">
+                        <b>Control inteligente de aplicaciones</b>
+                        <p>Protege tu PC de aplicaciones que no son de confianza.</p>
+                        <span class="ws-link" data-t="ws-sac">Configuración de Control inteligente de aplicaciones</span>
+                      </div>
+                    </div>
+                    <div class="ws-settings">
+                      <p class="ws-back">‹ Control inteligente de aplicaciones</p>
+                      <p class="ws-title">Configuración de Control inteligente de aplicaciones</p>
+                      <div class="ws-option ws-on">
+                        <i></i><b>Activado</b><span>Bloquea las aplicaciones malintencionadas y las que no son de confianza.</span>
+                      </div>
+                      <div class="ws-option">
+                        <i></i><b>Evaluación</b><span>Comprueba si encaja con este PC antes de decidir si se activa.</span>
+                      </div>
+                      <div class="ws-option ws-off" data-t="sac-off">
+                        <i></i><b>Desactivado</b><span>No comprueba las aplicaciones. La protección se reduce.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>Cuando aparezca la ventana de bloqueo, pulsa <b>Aceptar</b> para cerrarla.</li>
+            <li>Escribe <b>Seguridad de Windows</b> en la búsqueda junto al botón Inicio, ábrela y pulsa <b>Control de aplicaciones y navegador</b> a la izquierda.</li>
+            <li>Pulsa <b>Configuración de Control inteligente de aplicaciones</b>.</li>
+            <li>Elige <b>Desactivado</b>. Ahora, si vuelves a abrir el instalador descargado, empieza la instalación.</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="Paso anterior">‹ Anterior</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="Pausa">❚❚ Pausa</button>
+            <button type="button" class="pb-btn" data-next aria-label="Paso siguiente">Siguiente ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          Control inteligente de aplicaciones bloquea los programas desconocidos descargados de internet. Al desactivarlo
+          pierdes esa protección, pero puedes usar IeumOffice. La Protección antivirus y contra amenazas (Defender) de
+          Seguridad de Windows sigue activada, así que el análisis de virus continúa. Si más adelante lo vuelves a activar,
+          IeumOffice dejará de ejecutarse.
+        </p>
+        <p class="guide-next">
+          Si después de desactivarlo aparece la ventana azul «Windows protegió su PC», pulsa en ella <b>Más información →
+          Ejecutar de todas formas</b>. Lo explicamos en <a class="text-link" href="#pc-protect">Aparece «Windows protegió su PC»</a>.
+        </p>
+        <p class="demo-note">
+          Aunque pulses <b>Obtener aplicaciones en Microsoft Store</b>, IeumOffice no aparece: no está publicado en la Store.
+          En algunos PC aparece el aviso de que, una vez desactivado, no se puede volver atrás. Léelo antes de desactivarlo.
+          Si después de cambiar la configuración sigue bloqueado, reinicia el PC. Si el PC te lo dio tu empresa o tu centro
+          educativo, puede que no puedas cambiar esta configuración; avisa a quien administra el PC. La pantalla está
+          redibujada para explicarlo, así que puede variar un poco según la versión de Windows.
+        </p>
+      </section>
+
+      <!-- finding the downloaded file -->
+      <section class="guide" id="find-file" aria-labelledby="find-title">
+        <div class="guide-head">
+          <p class="guide-tag">Edge · Chrome</p>
+          <h2 id="find-title">No encuentro el archivo descargado</h2>
+          <p>El archivo descargado está en la lista de descargas del navegador y en la carpeta <b>Descargas</b> de tu PC.</p>
+        </div>
+        <div class="player" data-player="find-file">
+          <div class="player-screen" data-screen>
+            <div class="stage is-kept" data-stage aria-hidden="true">
+              <div class="ms-window">
+                <div class="ms-tabs">
+                  <span class="ms-tab"><i class="ms-fav"></i>IeumOffice - Del Hangul al PDF</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ms-toolbar">
+                  <span class="ms-nav">‹ › ↻</span>
+                  <span class="ms-url">ieumoffice.com</span>
+                  <span class="ms-dlbtn">
+                    <svg viewBox="0 0 20 20"><path d="M10 3v9m0 0-4-4m4 4 4-4M4 16h12" /></svg>
+                  </span>
+                  <span class="ms-dots">···</span>
+                </div>
+                <div class="ms-page">
+                  <p class="mp-eyebrow">Instalación</p>
+                  <p class="mp-title">Se instala en tres pasos.</p>
+                  <span class="mp-btn">↓ Descargar para Windows</span>
+                </div>
+              </div>
+              <div class="ms-flyout" data-frame>
+                <div class="mf-head">
+                  <b>Descargas</b>
+                  <span class="mf-icons">
+                    <span class="mf-folder" data-t="folder"><svg viewBox="0 0 20 20"><path d="M3 6h5l2 2h7v7H3z" /></svg></span>
+                    <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" /><path d="m13 13 4 4" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M4 10h.01M10 10h.01M16 10h.01" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M7 3h6l-1 5 3 3H5l3-3zM10 11v6" /></svg>
+                  </span>
+                </div>
+                <div class="mf-item">
+                  <span class="mf-icon"></span>
+                  <div class="mf-text">
+                    <b class="mf-name">IeumOffice-Setup.exe</b>
+                    <span class="mf-open" data-t="open">Abrir archivo</span>
+                  </div>
+                </div>
+              </div>
+              <!-- File Explorer on the Downloads folder -->
+              <div class="ex-window" data-frame>
+                <div class="ex-bar"><b>Descargas</b><span class="ms-caption"><i></i><i></i><i></i></span></div>
+                <div class="ex-body">
+                  <ul class="ex-side">
+                    <li>Inicio</li>
+                    <li>Escritorio</li>
+                    <li class="is-on">Descargas</li>
+                    <li>Documentos</li>
+                    <li>Imágenes</li>
+                  </ul>
+                  <div class="ex-list">
+                    <p class="ex-head"><span>Nombre</span><span>Fecha de modificación</span><span>Tamaño</span></p>
+                    <p class="ex-group">Hoy</p>
+                    <p class="ex-row"><span data-t="exfile"><i class="ex-ico"></i>IeumOffice-Setup.exe</span><span>Hoy</span><span>180 MB</span></p>
+                    <p class="ex-row ex-dim"><span><i class="ex-ico ex-ico-doc"></i>circular_familias.hwp</span><span>Ayer</span><span>48 KB</span></p>
+                  </div>
+                </div>
+              </div>
+              <span class="keys" data-keys></span>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>En la ventana del navegador, mantén pulsada la tecla <b>Ctrl</b> y pulsa <b>J</b>: se abre la lista de descargas.</li>
+            <li>En la lista, pulsa <b>Abrir archivo</b> debajo del archivo que empieza por IeumOffice-Setup.</li>
+            <li>Si no está en la lista, pulsa el <b>botón con forma de carpeta</b> de arriba. Cuando se abra la carpeta Descargas, haz <b>doble clic</b> en el archivo.</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="Paso anterior">‹ Anterior</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="Pausa">❚❚ Pausa</button>
+            <button type="button" class="pb-btn" data-next aria-label="Paso siguiente">Siguiente ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- the installer's own pages -->
+      <section class="guide" id="installer" aria-labelledby="installer-title">
+        <div class="guide-head">
+          <p class="guide-tag">Instalador</p>
+          <h2 id="installer-title">¿Qué pulso en el instalador?</h2>
+          <p>En el instalador no hace falta cambiar nada: basta con pulsar, uno tras otro, los botones de abajo a la derecha.</p>
+        </div>
+        <div class="player" data-player="installer">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="in-window" data-frame>
+                <div class="in-bar">
+                  <svg class="in-icon" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span>Instalación de IeumOffice</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <!-- page 1: who to install for -->
+                <div class="in-page in-mode">
+                  <div class="in-head">
+                    <div><b>Elegir opciones de instalación</b><span>¿Quién va a usar este programa?</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <p>Elija si quiere instalar este programa para todos los usuarios de este equipo o solo para usted.</p>
+                    <p class="in-radio">Cualquier persona que use este equipo (todos los usuarios)</p>
+                    <p class="in-radio is-on" data-t="me">Solo para mí (mi nombre de usuario)</p>
+                  </div>
+                </div>
+                <!-- page 2: folder -->
+                <div class="in-page in-dir">
+                  <div class="in-head">
+                    <div><b>Elegir lugar de instalación</b><span>Elija la carpeta en la que instalar IeumOffice.</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <p>Carpeta de destino</p>
+                    <p class="in-path"><span>C:\Users\Tu nombre\AppData\Local\Programs\IeumOffice</span><span class="in-btn">Examinar...</span></p>
+                  </div>
+                </div>
+                <!-- page 3: copying -->
+                <div class="in-page in-progress">
+                  <div class="in-head">
+                    <div><b>Instalando</b><span>Espere mientras se instala IeumOffice.</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <span class="in-bar-track"><i></i></span>
+                  </div>
+                </div>
+                <!-- page 4: done -->
+                <div class="in-page in-finish">
+                  <span class="in-side"><svg viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg></span>
+                  <div class="in-finish-body">
+                    <b>Instalación de IeumOffice completada</b>
+                    <p>IeumOffice se ha instalado correctamente.</p>
+                    <p>Pulse «Terminar» para cerrar el instalador.</p>
+                    <p class="in-check" data-t="launch">Ejecutar IeumOffice</p>
+                  </div>
+                </div>
+                <div class="in-foot">
+                  <span class="in-version">IeumOffice</span>
+                  <span class="in-btn in-back">&lt; Atrás</span>
+                  <span class="in-btn in-next" data-t="next">Siguiente &gt;</span>
+                  <span class="in-btn in-install" data-t="install">Instalar</span>
+                  <span class="in-btn in-done" data-t="finish">Terminar</span>
+                  <span class="in-btn">Cancelar</span>
+                </div>
+              </div>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>En «Elegir opciones de instalación», deja marcada la opción que ya viene elegida, <b>Solo para mí (tu nombre)</b>, y pulsa <b>Siguiente</b>.</li>
+            <li>En «Elegir lugar de instalación» tampoco cambies nada y pulsa <b>Instalar</b>.</li>
+            <li>Espera 1 o 2 minutos hasta que se llene la barra verde.</li>
+            <li>Con <b>Ejecutar IeumOffice</b> marcado, pulsa <b>Terminar</b> y se abre IeumOffice.</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="Paso anterior">‹ Anterior</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="Pausa">❚❚ Pausa</button>
+            <button type="button" class="pb-btn" data-next aria-label="Paso siguiente">Siguiente ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          Si eliges «todos los usuarios», aparece además una ventana de confirmación de administrador. Si eres la única persona
+          que usa el PC, lo más sencillo es dejar la opción que viene elegida. Cuando se abra IeumOffice, sigue la guía de
+          primer inicio para conectar la IA. Puedes ver cómo se hace, en imágenes, en
+          <a class="text-link" href="/es/connect">Conectar la IA</a>.
+        </p>
+      </section>
+
+      <!-- Mac and Linux -->
+      <section class="guide guide-other" id="other" aria-labelledby="other-title">
+        <div class="guide-head">
+          <p class="guide-tag">Mac · Linux</p>
+          <h2 id="other-title">Instalar en Mac y Linux</h2>
+        </div>
+        <details class="mac-guide" id="mac">
+          <summary>La primera vez que lo abres en Mac <span class="tag">beta</span></summary>
+          <div class="mac-guide-body">
+            <p>
+              Funciona con macOS 12 o posterior. Mira el chip en el menú Apple → <b>Acerca de este Mac</b>. Si empieza por
+              <b>Apple M</b>, descarga el archivo para Apple Silicon; si dice <b>Intel</b>, el archivo para Intel. Es una beta
+              gratuita sin firma de desarrollador de Apple, así que la primera vez tienes que permitirla tú.
+            </p>
+            <ol>
+              <li>Abre el <code>.dmg</code> descargado y arrastra IeumOffice a la carpeta <b>Aplicaciones</b>.</li>
+              <li>Abre IeumOffice desde la carpeta Aplicaciones. Si aparece una advertencia, pulsa <b>OK</b>.</li>
+              <li>Abre <b>Ajustes del Sistema → Privacidad y seguridad</b>, pulsa <b>Abrir igualmente</b> junto a «Se ha bloqueado “IeumOffice”», más abajo, y escribe la contraseña del Mac.</li>
+              <li>En la ventana que vuelve a aparecer, pulsa <b>Abrir</b>. A partir de entonces se abre directamente.</li>
+            </ol>
+            <p>Si aparece que «está dañado y no se puede abrir», no lo muevas a la papelera: ejecuta esta línea en Terminal y vuelve a abrirlo.</p>
+            <pre><code>xattr -dr com.apple.quarantine /Applications/IeumOffice.app</code></pre>
+            <p>
+              Desde la 0.12.11, si la aplicación está en la carpeta Aplicaciones, basta con pulsar <b>Actualizar ahora</b> →
+              <b>Reiniciar e instalar</b> en la ventana de actualización para pasar a la versión nueva y volver a abrirla. Si
+              usas la 0.12.10 o anterior, esta vez descarga aquí la 0.12.11 e instálala encima. Si abres la aplicación
+              directamente desde la imagen de disco, la ventana de actualización abre la página de descarga. Si la aplicación
+              no se actualiza sola, vuelve a descargarla aquí e instálala encima.
+              Claude Code y Codex se instalan siguiendo la «Guía oficial de instalación» de la tarjeta de conexión de IA (<a class="text-link" href="/es/connect#mac">conectar la IA en Mac</a>).
+            </p>
+            <ul class="mac-files">
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-download-mac><b>Descargar para Apple Silicon</b></a>
+                <span data-download-mac-file> — Apple Silicon · beta</span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-download-mac-intel><b>Descargar para Mac con Intel</b></a>
+                <span data-download-mac-intel-file> — Intel · beta</span>
+              </li>
+            </ul>
+          </div>
+        </details>
+        <details class="mac-guide" id="linux">
+          <summary>Instalar en Linux <span class="tag">beta</span></summary>
+          <div class="mac-guide-body">
+            <p>
+              Hay tres archivos para Linux de 64 bits (x86_64). Descarga el que corresponda a tu distribución.
+            </p>
+            <ul class="linux-files">
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-appimage><b>AppImage</b></a>
+                <span> — Sin instalar nada: dale permiso de ejecución (<code>chmod +x</code>) y ábrelo. Se actualiza solo.</span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-deb><b>Paquete .deb</b></a>
+                <span> — Familia Ubuntu y Debian: <code>sudo apt install ./ieumoffice_*_amd64.deb</code></span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-rpm><b>Paquete .rpm</b></a>
+                <span> — Familia Fedora, RHEL y openSUSE: <code>sudo dnf install ./ieumoffice-*.x86_64.rpm</code></span>
+              </li>
+            </ul>
+            <p>
+              <code>.deb</code> y <code>.rpm</code> se instalan en <code>/opt/IeumOffice</code> y enlazan el comando de
+              terminal <code>/usr/bin/ieumoffice</code>. Cuando sale una versión nueva, la aplicación te avisa, y la
+              <code>AppImage</code> se actualiza directamente desde la aplicación. Claude Code y Codex se instalan siguiendo la
+              «Guía oficial de instalación» de la tarjeta de conexión de IA.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="guide guide-help">
+        <p>
+          Si aun así no funciona, cuéntanos en <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Enviar comentarios</a>
+          en qué pantalla te quedaste. Si adjuntas una captura de esa pantalla, lo encontraremos antes.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">Creado por <b>박준일</b> (profesor de lengua coreana en el instituto femenino Onyang) · <a href="/es/story">Por qué lo hice</a></p>
+          <p>
+            IeumOffice es una versión modificada del proyecto de código abierto
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a> (Apache-2.0), y su editor de Hangul
+            se basa en <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a> (MIT). Las fuentes de este sitio son
+            Wanted Sans y Gowun Batang (SIL OFL 1.1).
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces externos">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">Versiones</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">Informar de un problema</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Enviar comentarios</a>
+        <a href="/es/connect">Ayuda para conectar la IA</a>
+        <a href="/es/faq">Preguntas frecuentes</a>
+        <a href="/es/#opensource">Código abierto</a>
+        <a href="/es/privacy.html">Privacidad</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">Licencia</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          Gratis para todos. Se ofrece tal cual, sin garantías.
+          <a href="/es/legal.html">Aviso legal</a> (licencias y marcas) · Contacto:
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/install.js"></script>
+  </body>
+</html>

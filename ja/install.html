@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>インストールでつまずいたとき · IeumOffice</title>
+    <meta name="description" content="Edge でダウンロードできないとき、インストーラーを開いたときに「Windows によって PC が保護されました」やスマート アプリ コントロールに止められたときは、いま見えている画面を選ぶと、どこを押せばよいかを画面で確認できます。" />
+    <link rel="canonical" href="https://ieumoffice.com/ja/install" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/ja/install" />
+    <meta property="og:title" content="インストールでつまずいたとき · IeumOffice" />
+    <meta property="og:description" content="いま見えている画面を選ぶと、どこを押せばよいかを画面でお見せします。" />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-install">
+    <a class="skip" href="#main">本文へスキップ</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/ja/" aria-label="IeumOffice トップへ">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="ページ案内">
+        <a href="/ja/updates">アップデート情報</a>
+        <a href="/ja/story">開発の経緯</a>
+        <a href="/ja/install" aria-current="page">インストールのヘルプ</a>
+        <a href="/ja/connect">AI の接続</a>
+        <a href="/ja/#formats">文書</a>
+        <a href="/ja/#hwp">ハングル</a>
+        <a href="/ja/#ai">AI</a>
+      </nav>
+      <a class="btn btn-small" href="/ja/#download">ダウンロード</a>
+    </header>
+
+    <main id="main">
+      <header class="install-head">
+        <p class="eyebrow">インストールのヘルプ</p>
+        <h1>インストールでつまずいたとき</h1>
+        <p class="install-lede">
+          いま画面に見えているものに似た絵を選んでください。どこを押せばよいかを、マウスポインターが実際に動いてお見せします。
+        </p>
+      </header>
+
+      <!-- symptom picker: people recognise the screen in front of them, not its name -->
+      <nav class="symptoms" aria-label="いま見えている画面を選ぶ">
+        <a class="symptom" href="#edge">
+          <span class="symptom-pic symptom-pic-edge" aria-hidden="true">
+            <i class="sp-bar"></i><i class="sp-panel"><b></b><s></s><s></s></i>
+          </span>
+          <b>Edge でダウンロードできない</b>
+          <span>「一般的にダウンロードされていません」</span>
+        </a>
+        <a class="symptom" href="#pc-protect">
+          <span class="symptom-pic symptom-pic-blue" aria-hidden="true">
+            <i class="sp-blue"><b></b><s></s><s></s></i>
+          </span>
+          <b>青い警告画面が出る</b>
+          <span>「Windows によって PC が保護されました」</span>
+        </a>
+        <a class="symptom" href="#smart-app-control">
+          <span class="symptom-pic symptom-pic-sac" aria-hidden="true">
+            <i class="sp-sac"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>スマート アプリ コントロールにブロックされた</b>
+          <span>「安全でない可能性のあるアプリ」</span>
+        </a>
+        <a class="symptom" href="#find-file">
+          <span class="symptom-pic symptom-pic-folder" aria-hidden="true">
+            <i class="sp-folder"></i>
+          </span>
+          <b>ダウンロードしたファイルが見つからない</b>
+          <span>ダウンロード フォルダーを開く</span>
+        </a>
+        <a class="symptom" href="#installer">
+          <span class="symptom-pic symptom-pic-setup" aria-hidden="true">
+            <i class="sp-setup"><b></b><s></s><u></u></i>
+          </span>
+          <b>インストーラーで何を押せばいい？</b>
+          <span>次へ → インストール → 完了</span>
+        </a>
+      </nav>
+      <p class="symptoms-more">
+        Mac や Linux の場合は <a class="text-link" href="#mac">Mac で初めて開くとき</a> ·
+        <a class="text-link" href="#linux">Linux でインストールするとき</a>
+      </p>
+
+      <!-- Edge: "not commonly downloaded" -->
+      <section class="guide" id="edge" aria-labelledby="edge-title">
+        <div class="guide-head">
+          <p class="guide-tag">Microsoft Edge</p>
+          <h2 id="edge-title">「一般的にダウンロードされていません」と表示される</h2>
+          <p>
+            IeumOffice は新しく出た無料のプログラムなので、Edge はまだよく知らないファイルとして扱います。ファイルに問題はないので、下の順に押せばダウンロードできます。
+          </p>
+        </div>
+        <div class="player" data-player="edge">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <!-- browser frame -->
+              <div class="ms-window">
+                <div class="ms-tabs">
+                  <span class="ms-tab"><i class="ms-fav"></i>IeumOffice - ハングルから PDF まで</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ms-toolbar">
+                  <span class="ms-nav">‹ › ↻</span>
+                  <span class="ms-url">ieumoffice.com</span>
+                  <span class="ms-dlbtn" data-t="dlbtn">
+                    <svg viewBox="0 0 20 20"><path d="M10 3v9m0 0-4-4m4 4 4-4M4 16h12" /></svg>
+                  </span>
+                  <span class="ms-dots">···</span>
+                </div>
+                <div class="ms-page">
+                  <p class="mp-eyebrow">インストール</p>
+                  <p class="mp-title">インストールは 3 ステップ。</p>
+                  <span class="mp-btn" data-t="site-btn">↓ Windows 版をダウンロード</span>
+                </div>
+              </div>
+
+              <!-- download flyout -->
+              <div class="ms-flyout" data-frame>
+                <div class="mf-head">
+                  <b>ダウンロード</b>
+                  <span class="mf-icons">
+                    <svg viewBox="0 0 20 20"><path d="M3 6h5l2 2h7v7H3z" /></svg>
+                    <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" /><path d="m13 13 4 4" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M4 10h.01M10 10h.01M16 10h.01" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M7 3h6l-1 5 3 3H5l3-3zM10 11v6" /></svg>
+                  </span>
+                </div>
+                <div class="mf-item" data-t="item">
+                  <span class="mf-icon"></span>
+                  <div class="mf-text">
+                    <b class="mf-name">IeumOffice-Setup.exe</b>
+                    <span class="mf-warn">
+                      <i class="mf-warn-icon">!</i>
+                      IeumOffice-Setup.exe は一般的にダウンロードされていません。開く前に、IeumOffice-Setup.exe が信頼できることを確認してください。
+                    </span>
+                    <span class="mf-open" data-t="open">ファイルを開く</span>
+                  </div>
+                  <span class="mf-actions">
+                    <svg class="mf-trash" viewBox="0 0 20 20"><path d="M4 6h12M8 6V4h4v2M6 6l1 11h6l1-11" /></svg>
+                    <i class="mf-more" data-t="more">···</i>
+                  </span>
+                </div>
+                <ul class="mf-menu">
+                  <li data-t="keep">保存</li>
+                  <li>このファイルが安全であることを報告する</li>
+                  <li>詳細情報</li>
+                  <li>ダウンロード リンクのコピー</li>
+                </ul>
+              </div>
+
+              <!-- SmartScreen confirmation inside Edge -->
+              <div class="ms-dialog" data-frame>
+                <p class="md-title">開く前に、IeumOffice-Setup.exe が信頼できることを確認してください</p>
+                <p class="md-body">
+                  このファイルは一般的にダウンロードされていないため、Microsoft Defender SmartScreen では安全かどうかを確認できませんでした。開く前に、ファイルまたはそのダウンロード元が信頼できることを確認してください。
+                </p>
+                <div class="md-foot">
+                  <div class="md-left">
+                    <span class="md-more" data-t="showmore">詳細表示 <i>⌄</i></span>
+                    <span class="md-continue" data-t="continue">保持する</span>
+                  </div>
+                  <span class="md-btn">このアプリが安全であることを報告する</span>
+                  <span class="md-btn md-btn-primary">削除</span>
+                </div>
+              </div>
+
+              <!-- pointer, click ripple and target ring -->
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li><b>ダウンロード</b>ボタンを押すと、Edge の右上にダウンロードの一覧が開きます。</li>
+            <li>「一般的にダウンロードされていません」と表示されたら、ファイル名のあたりにマウスポインターを合わせて <b>···</b>（点 3 つ）を押します。</li>
+            <li>メニューのいちばん上の <b>保存</b> を押します。</li>
+            <li>確認画面が出たら、青い <b>削除</b> ではなく、左下の <b>詳細表示</b> を押します。</li>
+            <li>新しく出てきた <b>保持する</b> を押します。</li>
+            <li>あとは <b>ファイルを開く</b> を押すとインストールが始まります。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          ファイルを開いて青い画面が出たら、続けて <a class="text-link" href="#pc-protect">「Windows によって PC が保護されました」と表示される</a>をご覧ください。
+        </p>
+        <p class="demo-note">画面は説明のために簡単に描き直したものです。Edge のバージョンによって、文字や位置が少し違うことがあります。</p>
+      </section>
+
+      <!-- SmartScreen when the installer starts -->
+      <section class="guide" id="pc-protect" aria-labelledby="pc-title">
+        <div class="guide-head">
+          <p class="guide-tag">Windows</p>
+          <h2 id="pc-title">「Windows によって PC が保護されました」と表示される</h2>
+          <p>
+            インストーラーを開いたときに青い画面が出るのは、Windows が初めて見るプログラムだからです。ボタンが<b>実行しない</b> ひとつだけでも、閉じないでください。
+          </p>
+        </div>
+        <p class="guide-alt">
+          画面が青ではなく、白い背景に <b>「スマート アプリ コントロールにより … ブロックされました」</b>と表示されていますか？ その画面には<b>詳細情報</b>がありません。続けて <a class="text-link" href="#smart-app-control">スマート アプリ コントロールにブロックされたとき</a>をご覧ください。
+        </p>
+        <div class="player" data-player="pc-protect">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="ss-window" data-frame>
+                <div class="ss-bar"><span class="ss-close">✕</span></div>
+                <div class="ss-body">
+                  <p class="ss-title">Windows によって PC が保護されました</p>
+                  <p class="ss-text">
+                    Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました。このアプリを実行すると、PC に問題が起こる可能性があります。
+                  </p>
+                  <span class="ss-more" data-t="moreinfo">詳細情報</span>
+                  <dl class="ss-info">
+                    <div><dt>アプリ:</dt><dd>IeumOffice-Setup.exe</dd></div>
+                    <div data-t="publisher"><dt>発行元:</dt><dd>不明な発行元</dd></div>
+                  </dl>
+                </div>
+                <div class="ss-buttons">
+                  <span class="ss-btn ss-run" data-t="run">実行</span>
+                  <span class="ss-btn">実行しない</span>
+                </div>
+              </div>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>青い画面の文章の下にある <b>詳細情報</b> を押します。</li>
+            <li>「発行元: 不明な発行元」となっているのは、個人が作った無料のプログラムだからです。下に新しく出てきた <b>実行</b> を押します。</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          次にインストーラーの画面が開きます。続けて <a class="text-link" href="#installer">インストーラーで押すもの</a>をご覧ください。
+        </p>
+      </section>
+
+      <!-- Smart App Control: the white "blocked" dialog on new Windows 11 PCs -->
+      <section class="guide" id="smart-app-control" aria-labelledby="sac-title">
+        <div class="guide-head">
+          <p class="guide-tag">Windows 11</p>
+          <h2 id="sac-title">「スマート アプリ コントロールによりブロックされました」と表示される</h2>
+          <p>
+            新しく買ったノート PC や、Windows を新しくインストールした PC でよく出る画面です。IeumOffice は無料で配布しているプログラムなので、Windows が発行元を確認できる署名がありません。そのため、インストールするときだけでなく、実行するときも Windows 11 が止めます。この画面には <b>実行</b> ボタンもなく、このプログラムだけを個別に許可する方法もありません。スマート アプリ コントロールをオフにすれば、インストールと実行ができます。ただし、もう一度オンにすると IeumOffice が止められるので、
+            IeumOffice を使っている間はオフのままにしておく必要があります。
+          </p>
+        </div>
+        <div class="player" data-player="sac">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+
+              <!-- the dialog from the new PC -->
+              <div class="sac-window" data-frame>
+                <div class="sac-head">
+                  <svg class="sac-shield" viewBox="0 0 24 24">
+                    <path d="M12 2.6 4.7 5.8v6c0 4.9 3.1 8 7.3 9.4 4.2-1.4 7.3-4.5 7.3-9.4v-6z" />
+                    <path class="sac-check" d="m8.9 11.7 2.1 2.1 4.1-4.1" />
+                  </svg>
+                  <b>スマート アプリ コントロールにより、安全でない可能性のあるアプリがブロックされました。</b>
+                </div>
+                <div class="sac-body">
+                  <p>
+                    デバイスとデータを保護するため、このアプリはブロックされました。Microsoft はアプリを確認して、安全かどうかを判断します。
+                  </p>
+                  <p class="sac-path">C:\Users\ユーザー名\Downloads\IeumOffice-Setup.exe</p>
+                  <p class="sac-learn">スマート アプリ コントロールの詳細</p>
+                </div>
+                <div class="sac-foot">
+                  <span class="sac-btn sac-primary" data-t="sac-ok">OK</span>
+                  <span class="sac-btn">Microsoft Store からアプリを入手</span>
+                </div>
+              </div>
+
+              <!-- Windows Security -->
+              <div class="ws-window" data-frame>
+                <div class="ws-bar">
+                  <svg class="ws-shield" viewBox="0 0 24 24">
+                    <path d="M12 2.6 4.7 5.8v6c0 4.9 3.1 8 7.3 9.4 4.2-1.4 7.3-4.5 7.3-9.4v-6z" />
+                  </svg>
+                  <b>Windows セキュリティ</b>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ws-body">
+                  <ul class="ws-nav">
+                    <li>ホーム</li>
+                    <li>ウイルスと脅威の防止</li>
+                    <li>アカウントの保護</li>
+                    <li>ファイアウォールとネットワーク保護</li>
+                    <li data-t="ws-appbrowser">アプリとブラウザー コントロール</li>
+                    <li>デバイスのパフォーマンスと正常性</li>
+                    <li>ファミリー オプション</li>
+                  </ul>
+                  <div class="ws-page">
+                    <div class="ws-home">
+                      <p class="ws-title">PC は保護されています</p>
+                      <p class="ws-sub">前回のスキャン: 今日 9:12</p>
+                      <div class="ws-tiles"><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="ws-appbrowser">
+                      <p class="ws-title">アプリとブラウザー コントロール</p>
+                      <p class="ws-sub">Microsoft Defender SmartScreen</p>
+                      <div class="ws-card">
+                        <b>スマート アプリ コントロール</b>
+                        <p>信頼されていないアプリから PC を保護します。</p>
+                        <span class="ws-link" data-t="ws-sac">スマート アプリ コントロールの設定</span>
+                      </div>
+                    </div>
+                    <div class="ws-settings">
+                      <p class="ws-back">‹ スマート アプリ コントロール</p>
+                      <p class="ws-title">スマート アプリ コントロールの設定</p>
+                      <div class="ws-option ws-on">
+                        <i></i><b>オン</b><span>悪意のあるアプリや信頼されていないアプリをブロックします。</span>
+                      </div>
+                      <div class="ws-option">
+                        <i></i><b>評価</b><span>この PC に合うかどうかを確かめてから、オンにするかを決めます。</span>
+                      </div>
+                      <div class="ws-option ws-off" data-t="sac-off">
+                        <i></i><b>オフ</b><span>アプリを確認しません。保護が弱くなります。</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>ブロックの画面が出たら <b>OK</b> を押して閉じます。</li>
+            <li>スタート ボタンの横の検索に <b>Windows セキュリティ</b> と入力して開き、左側の <b>アプリとブラウザー コントロール</b> を押します。</li>
+            <li><b>スマート アプリ コントロールの設定</b> を押します。</li>
+            <li><b>オフ</b> を選びます。これで、ダウンロードしたインストーラーをもう一度開くとインストールが始まります。</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          スマート アプリ コントロールは、インターネットから入手した見慣れないプログラムを止める機能です。オフにするとその保護は弱くなりますが、
+          IeumOffice を使えるようになります。Windows セキュリティのウイルスと脅威の防止（Defender）はオンのまま残るので、ウイルスのスキャンは続きます。あとでもう一度オンにすると、IeumOffice は実行できなくなります。
+        </p>
+        <p class="guide-next">
+          オフにしたあとで青い「Windows によって PC が保護されました」の画面が続けて出たら、その画面では <b>詳細情報 → 実行</b> を押せば大丈夫です。手順は <a class="text-link" href="#pc-protect">「Windows によって PC が保護されました」と表示される</a>にあります。
+        </p>
+        <p class="demo-note">
+          <b>Microsoft Store からアプリを入手</b> を押しても IeumOffice は出てきません。Store には公開していないプログラムです。PC によっては「一度オフにすると元に戻せない」という案内が出ます。オフにする前に読んでください。設定を変えたあとも止められる場合は、PC を一度再起動してみてください。会社や学校から渡された PC では、この設定を変えられないことがあるので、PC を管理している人に伝えてください。画面は説明のために描き直したものなので、Windows のバージョンによって少し違うことがあります。
+        </p>
+      </section>
+
+      <!-- finding the downloaded file -->
+      <section class="guide" id="find-file" aria-labelledby="find-title">
+        <div class="guide-head">
+          <p class="guide-tag">Edge · Chrome</p>
+          <h2 id="find-title">ダウンロードしたファイルが見つからない</h2>
+          <p>ダウンロードしたファイルは、ブラウザーのダウンロード一覧と、PC の <b>ダウンロード</b> フォルダーにあります。</p>
+        </div>
+        <div class="player" data-player="find-file">
+          <div class="player-screen" data-screen>
+            <div class="stage is-kept" data-stage aria-hidden="true">
+              <div class="ms-window">
+                <div class="ms-tabs">
+                  <span class="ms-tab"><i class="ms-fav"></i>IeumOffice - ハングルから PDF まで</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ms-toolbar">
+                  <span class="ms-nav">‹ › ↻</span>
+                  <span class="ms-url">ieumoffice.com</span>
+                  <span class="ms-dlbtn">
+                    <svg viewBox="0 0 20 20"><path d="M10 3v9m0 0-4-4m4 4 4-4M4 16h12" /></svg>
+                  </span>
+                  <span class="ms-dots">···</span>
+                </div>
+                <div class="ms-page">
+                  <p class="mp-eyebrow">インストール</p>
+                  <p class="mp-title">インストールは 3 ステップ。</p>
+                  <span class="mp-btn">↓ Windows 版をダウンロード</span>
+                </div>
+              </div>
+              <div class="ms-flyout" data-frame>
+                <div class="mf-head">
+                  <b>ダウンロード</b>
+                  <span class="mf-icons">
+                    <span class="mf-folder" data-t="folder"><svg viewBox="0 0 20 20"><path d="M3 6h5l2 2h7v7H3z" /></svg></span>
+                    <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" /><path d="m13 13 4 4" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M4 10h.01M10 10h.01M16 10h.01" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M7 3h6l-1 5 3 3H5l3-3zM10 11v6" /></svg>
+                  </span>
+                </div>
+                <div class="mf-item">
+                  <span class="mf-icon"></span>
+                  <div class="mf-text">
+                    <b class="mf-name">IeumOffice-Setup.exe</b>
+                    <span class="mf-open" data-t="open">ファイルを開く</span>
+                  </div>
+                </div>
+              </div>
+              <!-- File Explorer on the Downloads folder -->
+              <div class="ex-window" data-frame>
+                <div class="ex-bar"><b>ダウンロード</b><span class="ms-caption"><i></i><i></i><i></i></span></div>
+                <div class="ex-body">
+                  <ul class="ex-side">
+                    <li>ホーム</li>
+                    <li>デスクトップ</li>
+                    <li class="is-on">ダウンロード</li>
+                    <li>ドキュメント</li>
+                    <li>ピクチャ</li>
+                  </ul>
+                  <div class="ex-list">
+                    <p class="ex-head"><span>名前</span><span>更新日時</span><span>サイズ</span></p>
+                    <p class="ex-group">今日</p>
+                    <p class="ex-row"><span data-t="exfile"><i class="ex-ico"></i>IeumOffice-Setup.exe</span><span>今日</span><span>180MB</span></p>
+                    <p class="ex-row ex-dim"><span><i class="ex-ico ex-ico-doc"></i>学級だより.hwp</span><span>昨日</span><span>48KB</span></p>
+                  </div>
+                </div>
+              </div>
+              <span class="keys" data-keys></span>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>ブラウザーのウィンドウで、キーボードの <b>Ctrl</b> を押したまま <b>J</b> を押すと、ダウンロードの一覧が開きます。</li>
+            <li>一覧で、IeumOffice-Setup で始まるファイルの下にある <b>ファイルを開く</b> を押します。</li>
+            <li>一覧にない場合は、上の <b>フォルダーの形のボタン</b> を押します。ダウンロード フォルダーが開いたら、ファイルを <b>ダブルクリック</b> します。</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- the installer's own pages -->
+      <section class="guide" id="installer" aria-labelledby="installer-title">
+        <div class="guide-head">
+          <p class="guide-tag">インストーラー</p>
+          <h2 id="installer-title">インストーラーでは何を押せばいいですか？</h2>
+          <p>インストーラーでは何も変えずに、右下のボタンを順に押すだけで大丈夫です。</p>
+        </div>
+        <div class="player" data-player="installer">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="in-window" data-frame>
+                <div class="in-bar">
+                  <svg class="in-icon" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span>IeumOffice セットアップ</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <!-- page 1: who to install for -->
+                <div class="in-page in-mode">
+                  <div class="in-head">
+                    <div><b>インストール オプションの選択</b><span>このプログラムを使うのは誰ですか？</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <p>このプログラムをすべてのユーザーが使えるようにするか、自分だけが使えるようにするかを選んでください。</p>
+                    <p class="in-radio">このコンピューターを使うすべての人（すべてのユーザー）</p>
+                    <p class="in-radio is-on" data-t="me">自分のみ（自分のユーザー名）</p>
+                  </div>
+                </div>
+                <!-- page 2: folder -->
+                <div class="in-page in-dir">
+                  <div class="in-head">
+                    <div><b>インストール先の選択</b><span>IeumOffice をインストールするフォルダーを選んでください。</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <p>インストール先フォルダー</p>
+                    <p class="in-path"><span>C:\Users\ユーザー名\AppData\Local\Programs\IeumOffice</span><span class="in-btn">参照...</span></p>
+                  </div>
+                </div>
+                <!-- page 3: copying -->
+                <div class="in-page in-progress">
+                  <div class="in-head">
+                    <div><b>インストール中</b><span>IeumOffice をインストールしています。しばらくお待ちください。</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <span class="in-bar-track"><i></i></span>
+                  </div>
+                </div>
+                <!-- page 4: done -->
+                <div class="in-page in-finish">
+                  <span class="in-side"><svg viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg></span>
+                  <div class="in-finish-body">
+                    <b>IeumOffice のセットアップの完了</b>
+                    <p>IeumOffice のインストールが完了しました。</p>
+                    <p>セットアップを終了するには「完了」を押してください。</p>
+                    <p class="in-check" data-t="launch">IeumOffice を実行(R)</p>
+                  </div>
+                </div>
+                <div class="in-foot">
+                  <span class="in-version">IeumOffice</span>
+                  <span class="in-btn in-back">&lt; 戻る</span>
+                  <span class="in-btn in-next" data-t="next">次へ &gt;</span>
+                  <span class="in-btn in-install" data-t="install">インストール</span>
+                  <span class="in-btn in-done" data-t="finish">完了</span>
+                  <span class="in-btn">キャンセル</span>
+                </div>
+              </div>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>「インストール オプションの選択」では、最初から選ばれている <b>自分のみ（自分の名前）</b> をそのままにして <b>次へ</b> を押します。</li>
+            <li>「インストール先の選択」もそのままにして <b>インストール</b> を押します。</li>
+            <li>緑のバーがいっぱいになるまで 1〜2 分待ちます。</li>
+            <li><b>IeumOffice を実行</b> にチェックが入ったまま <b>完了</b> を押すと、IeumOffice が開きます。</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          「すべてのユーザー」を選ぶと、管理者の確認画面がもう一度出ます。ひとりで使う PC なら、選ばれているままにしておくほうが簡単です。IeumOffice が開いたら、初回起動時の案内に沿って AI を接続します。手順は
+          <a class="text-link" href="/ja/connect">AI を接続</a>で画面を見ながら確認できます。
+        </p>
+      </section>
+
+      <!-- Mac and Linux -->
+      <section class="guide guide-other" id="other" aria-labelledby="other-title">
+        <div class="guide-head">
+          <p class="guide-tag">Mac · Linux</p>
+          <h2 id="other-title">Mac と Linux でインストールするとき</h2>
+        </div>
+        <details class="mac-guide" id="mac">
+          <summary>Mac で初めて開くとき <span class="tag">ベータ</span></summary>
+          <div class="mac-guide-body">
+            <p>
+              macOS 12 以降で使えます。アップルメニュー → <b>この Mac について</b> でチップを確認してください。<b>Apple M</b> で始まっていれば Apple Silicon 用のファイルを、<b>Intel</b> なら Intel 用のファイルをダウンロードします。Apple の開発者署名がない無料のベータ版なので、最初の 1 回だけ自分で許可します。
+            </p>
+            <ol>
+              <li>ダウンロードした <code>.dmg</code> を開き、IeumOffice を <b>アプリケーション</b> フォルダーにドラッグします。</li>
+              <li>アプリケーション フォルダーから IeumOffice を開きます。警告が出たら <b>完了</b> を押します。</li>
+              <li><b>システム設定 → プライバシーとセキュリティ</b> を開き、下のほうにある「“IeumOffice”の使用はブロックされました」の横の <b>このまま開く</b> を押して、Mac のパスワードを入力します。</li>
+              <li>もう一度出る画面で <b>開く</b> を押します。次回からはすぐに開きます。</li>
+            </ol>
+            <p>「“IeumOffice”は壊れているため開けません」と表示されたら、ゴミ箱に入れずに、ターミナルで下の 1 行を実行してからもう一度開きます。</p>
+            <pre><code>xattr -dr com.apple.quarantine /Applications/IeumOffice.app</code></pre>
+            <p>
+              0.12.11 からは、アプリケーション フォルダーに置いたアプリは、アップデートの画面で <b>今すぐ更新</b> → <b>再起動してインストール</b> を押すと新しいバージョンに替わり、もう一度開きます。0.12.10 以前を使っている場合は、今回だけここから 0.12.11 をダウンロードして上書きインストールしてください。ディスクイメージから直接開いたアプリでは、アップデートの画面がダウンロードページを開きます。アプリが自動で替わらない場合は、ここからもう一度ダウンロードして上書きインストールすれば大丈夫です。
+              Claude Code や Codex は、AI の接続カードの「公式のインストール手順」に沿ってインストールします（<a class="text-link" href="/ja/connect#mac">Mac での AI の接続</a>）。
+            </p>
+            <ul class="mac-files">
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-download-mac><b>Apple Silicon 版をダウンロード</b></a>
+                <span data-download-mac-file> — Apple Silicon · ベータ</span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-download-mac-intel><b>Intel Mac 版をダウンロード</b></a>
+                <span data-download-mac-intel-file> — Intel · ベータ</span>
+              </li>
+            </ul>
+          </div>
+        </details>
+        <details class="mac-guide" id="linux">
+          <summary>Linux でインストールするとき <span class="tag">ベータ</span></summary>
+          <div class="mac-guide-body">
+            <p>
+              64 ビット（x86_64）の Linux 向けに 3 種類のファイルを用意しています。使っているディストリビューションに合うものを選んでダウンロードしてください。
+            </p>
+            <ul class="linux-files">
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-appimage><b>AppImage</b></a>
+                <span> — インストールせずに、実行権限（<code>chmod +x</code>）を付けるだけですぐに開けます。自動でアップデートします。</span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-deb><b>.deb パッケージ</b></a>
+                <span> — Ubuntu・Debian 系：<code>sudo apt install ./ieumoffice_*_amd64.deb</code></span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-rpm><b>.rpm パッケージ</b></a>
+                <span> — Fedora・RHEL・openSUSE 系：<code>sudo dnf install ./ieumoffice-*.x86_64.rpm</code></span>
+              </li>
+            </ul>
+            <p>
+              <code>.deb</code> と <code>.rpm</code> は <code>/opt/IeumOffice</code> にインストールされ、ターミナルのコマンド
+              <code>/usr/bin/ieumoffice</code> をリンクします。新しいバージョンが出るとアプリが知らせ、
+              <code>AppImage</code> はアプリの中でそのままアップデートされます。Claude Code や Codex は、AI の接続カードの「公式のインストール手順」に沿ってインストールします。
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="guide guide-help">
+        <p>
+          それでもうまくいかない場合は、<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>から、どの画面でつまずいたかを教えてください。その画面のスクリーンショットも一緒に送っていただくと、早く原因を見つけられます。
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">作者 <b>박준일</b>（温陽女子高等学校の国語（韓国語）教師） · <a href="/ja/story">開発の経緯</a></p>
+          <p>
+            IeumOffice はオープンソースプロジェクト
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a>（Apache-2.0）をもとに手を加えて作ったプログラムで、ハングルエディターは <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a>（MIT）をもとにしています。このサイトのフォントは Wanted Sans と Gowun Batang（SIL OFL 1.1）です。
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="外部リンク">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">リリース</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">問題を報告</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>
+        <a href="/ja/connect">AI 接続のヘルプ</a>
+        <a href="/ja/faq">よくある質問</a>
+        <a href="/ja/#opensource">オープンソース</a>
+        <a href="/ja/privacy.html">個人情報</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">ライセンス</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          誰でも無料で使えます。現状のまま提供し、特に保証はしません。<a href="/ja/legal.html">法的情報</a>（ライセンス・商標） · お問い合わせ
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/install.js"></script>
+  </body>
+</html>

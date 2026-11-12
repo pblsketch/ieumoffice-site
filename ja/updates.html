@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>アップデート情報 · IeumOffice</title>
+    <meta name="description" content="IeumOffice のバージョンごとに新しく入った機能をまとめました。" />
+    <meta name="author" content="박준일" />
+    <link rel="canonical" href="https://ieumoffice.com/ja/updates" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/ja/updates" />
+    <meta property="og:title" content="IeumOffice アップデート情報" />
+    <meta property="og:description" content="バージョンごとに新しく入った機能をまとめました。" />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-updates">
+    <a class="skip" href="#main">本文へスキップ</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/ja/" aria-label="IeumOffice トップへ">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="ページ案内">
+        <a href="/ja/updates" aria-current="page">アップデート情報</a>
+        <a href="/ja/story">開発の経緯</a>
+        <a href="/ja/#formats">文書</a>
+        <a href="/ja/#hwp">ハングル</a>
+        <a href="/ja/#ai">AI</a>
+        <a href="/ja/#cost">費用</a>
+        <a href="/ja/#privacy">個人情報</a>
+      </nav>
+      <a class="btn btn-small" href="/ja/#download">ダウンロード</a>
+    </header>
+
+    <main id="main">
+      <section class="updates-head">
+        <p class="eyebrow">アップデート情報</p>
+        <h1>新しいバージョンで変わったこと</h1>
+        <p class="section-lede">
+          バージョンごとに新しく入った機能をまとめました。修正した問題まで含めた全項目の一覧は、各バージョンのいちばん下のリンクから見られます。IeumOffice をインストールしておけば、新しいバージョンが出たときにアプリが自動で知らせます。
+        </p>
+      </section>
+
+      <!-- Newest first. Each release adds one <article> at the top (README "after releasing a new version"). -->
+
+      <article class="release" id="v0.12.12">
+        <p class="release-meta"><b>0.12.12</b><time datetime="2026-11-09">2026年11月9日</time></p>
+        <div class="split-head">
+          <h2>PDF をハングル文書に、<br />FreeMind のマインドマップを開く</h2>
+          <p>
+            PDF エディターで「HWP に変換」を押すと、PDF をハングル文書に取り込んで編集できます。マインドマップエディターは
+            FreeMind・Freeplane で作ったマインドマップファイル（.mm）も開きます。Hancell で作った Excel ファイルの書式を変えると保存に失敗していた問題も修正しました。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-from-pdf-done-01212-1600.webp" srcset="/shots/hwp-from-pdf-done-01212-1600.webp 1600w, /shots/hwp-from-pdf-done-01212-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="「ブックフェア_案内.pdf」を「HWP に変換」で取り込んだハングルのタブ。「2026 秋の路地ブックフェア」の表紙と、日程・会場・入場・お問い合わせの欄が PDF と同じ見た目でハングルの編集画面に入っており、上にはハングルエディターのツールバー、下のステータスバーにはページ数と文字数が見えます。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>PDF をハングル文書に</b> PDF エディターの「PDF 変換」メニューで「HWP に変換」を押すと、その PDF が新しいハングルのタブで開きます。続いて表示される「PDF の取り込み」画面で「取り込む」を押すと PDF の内容がハングル文書になり、そこで編集してからハングルのファイルとして保存します。元の PDF は変わりません。文字が入った PDF で確認しており、紙をスキャンして作った PDF はまだ確認していません。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/mindmap-mm-01212-1600.webp" srcset="/shots/mindmap-mm-01212-1600.webp 1600w, /shots/mindmap-mm-01212-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="「読書サークル_計画.mm」をマインドマップエディターで開いたところ。中央の「読書サークルの1年の計画」から、一緒に読む本、集まりの方法、活動、持ち物の枝が伸びていて、上の通知バーに「FreeMind・Freeplane のファイル（.mm）から取り込んだ新しいマップです。保存すると新しいファイルとして保存され、元の .mm ファイルはそのままです。」という案内があります。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>FreeMind・Freeplane のマインドマップ</b> FreeMind や Freeplane で作ったマインドマップファイル（.mm）を開くと、新しいマップとして取り込みます。保存すると同じフォルダーに同じ名前の XMind ファイル（.xmind）ができ、元の .mm ファイルは変わりません。画像は取り込まず、画像の名前だけをトピックのタイトルとして残します。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>ハングルの文字数</dt>
+            <dd>ハングルエディターの左下のステータスバーに文字数が表示され、範囲を選択すると選んだ部分の文字数も一緒に表示されます。Ctrl+PageUp で文書の先頭へ、Ctrl+PageDown で文書の末尾へ移動します。</dd>
+          </div>
+          <div>
+            <dt>PDF の表示倍率と似たフォント</dt>
+            <dd>PDF の表示タブの「PDF を開くとき」で 100% を選べます。自分で拡大・縮小したファイルは、その倍率を個別に覚えます。PDF の文字を「元のフォント」で編集するとき、文書に埋め込まれたフォントにない文字は、PC にインストールされている似たフォントで描きます。そのため、明朝系のフォントで書かれた韓国語の PDF を編集しても、編集した部分だけがゴシックに変わることはありません。</dd>
+          </div>
+          <div>
+            <dt>AI が作るスライドのフォント</dt>
+            <dd>「設定 → 一般」の「AI スライドのフォント」で、AI がスライドを作るときに使う基本のフォントを選びます。自動、ゴシック、明朝、見出しのみ明朝のいずれかを選び、ゴシックと明朝に使うフォントも個別に決めます。韓国語画面での初期値はゴシック（Pretendard）です。</dd>
+          </div>
+          <div>
+            <dt>使う AI を選ぶ</dt>
+            <dd>「設定 → AI」の Claude・Codex カードで「このアプリでは使わない」を押すと、IeumOffice はそのプログラムを実行しません。プログラムとログインはそのまま残るのでターミナルでは引き続き使え、「再び使う」を押すと元に戻ります。PDF 翻訳、AI ページ読み取り、AI 要点表示を始めるときは、確認画面で使う AI を選びます。</dd>
+          </div>
+          <div>
+            <dt>重い文書の通知</dt>
+            <dd>「ドキュメントのリソース使用量が過大です」の画面に「今回は再通知しない」ができました。押すと、その文書が開いている間は再び確認しません。メモリーの多い PC では、この画面が出にくくなりました。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Hancell で作った Excel ファイル（.xlsx）でセルの書式を変えると保存がいつも失敗していた問題、Ubuntu 20.04 のような古い Linux で
+          Excel・CSV ファイルが開けなかった問題、npm で Codex をインストールした Windows PC で PDF を開くたびに黒いコンソール画面が点滅していた問題、30ページを超えるハングル文書で AI の取り消しを押すと自分で入力した文字まで元に戻っていた問題も修正しました。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.12" rel="noopener">0.12.12 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.11">
+        <p class="release-meta"><b>0.12.11</b><time datetime="2026-11-05">2026年11月5日</time></p>
+        <div class="split-head">
+          <h2>ダイアグラムエディター、<br />マインドマップの文字・線の書式</h2>
+          <p>
+            draw.io ファイル（.drawio）をタブで開いて、フローチャートや構成図を編集するダイアグラムエディターができました。マインドマップではトピックの文字と枝の線の形・色を変えられます。PDF と電子書籍（EPUB）の翻訳には、難しい文章をやさしい言葉で書き直す「やさしい解説」が入りました。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/diagram-01211-1600.webp" srcset="/shots/diagram-01211-1600.webp 1600w, /shots/diagram-01211-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ダイアグラムエディターで「ブックフェア_申込処理.drawio」を開いたところ。参加申込書の受付からブース番号の割り当てまでつながるフローチャートがあり、左に図形の一覧、右に書式パネル、下に「参加申込の処理」と「イベント当日」のページタブが見えます。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>ダイアグラム</b> draw.io ファイル（.drawio、.dio、.drawio.svg、.drawio.png）を開くとタブで開き、編集して保存すると開いたときの形式のまま保存されます。新しいダイアグラムはホームの「ダイアグラム」から作ります。図形の一覧（Ctrl+Shift+K）から図形をドラッグして置き、右の書式パネルの「スタイル」・「テキスト」で色と文字を変え、下のタブでページを分けます。ファイルメニューから PNG・SVG・PDF に書き出したり、印刷したりします。Visio ファイル（.vsdx）を開くと新しいダイアグラムとして取り込み、元の Visio ファイルは変わりません。描画画面はこの PC の中だけで動き、AI 画面を使わなければインターネットには何も送りません。隣の AI 画面にフローチャートや組織図を描くよう頼むこともでき、AI が描いたものは Ctrl+Z で元に戻せます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/mindmap-format-01211-1600.webp" srcset="/shots/mindmap-format-01211-1600.webp 1600w, /shots/mindmap-format-01211-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ブックフェアのアイデアのマインドマップで「広報」トピックを選び、右の書式パネルの「線」で形を角の丸い折れ線に変えたところ。広報の枝の線だけが折れ線に変わり、書式パネルに太さ、色、線の種類を選ぶ欄が見えます。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>マインドマップの文字・線の書式</b> トピックを選んでツールバーの「書式」を押すと、右に書式パネルが開きます。「文字」では太字・斜体・下線・取り消し線、文字の色、サイズ、フォント、配置を変えます。タイトルを編集している途中で一部の文字だけを選ぶと、太字・斜体・下線・取り消し線・文字の色はその文字にだけかかります。「線」では枝の線を曲線・直線・折れ線などに変え、太さと色、実線・破線のような線の種類を選びます。関連線、サマリーの括弧、囲み枠を選ぶと、同じパネルでその形と色を変えられます。トピックの端のハンドルをドラッグすると枠の幅が変わり、ツールバーの「画像を挿入」でトピックに画像を付けます。下線や枠の幅など一部の書式は、XMind では違って見えることがあります。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>やさしい解説</dt>
+            <dd>PDF の「対訳表示」の「表示」、「文書を翻訳」画面の「方式」、電子書籍（EPUB）の翻訳画面で「やさしい解説」（EPUB では「やさしい言葉版」）を選ぶと、AI が文章を日常の言葉と短い文で書き直します。別の言語に訳さずに、同じ言語のままやさしく書き直すこともできます。Word とハングルでは、文章を選んでから右クリックメニューの「やさしい言葉で説明」を押すと AI 画面に書き直した文が表示され、文書は変わりません。PDF の「文書を翻訳」でやさしい解説を選ぶと、結果は Markdown か EPUB のファイルで出力されます。</dd>
+          </div>
+          <div>
+            <dt>名前を付けて保存するときに形式を選ぶ</dt>
+            <dd>「名前を付けて保存」画面のファイルの種類の一覧で、そのエディターが書き出せる形式を直接選べます。Word は PDF・HTML・Markdown・ページ画像（PNG）、ハングルは PDF、Excel は CSV・PDF、PDF は Word・PowerPoint・Excel・EPUB・PNG などです。このときはコピーが作られるだけで、開いている文書は元のファイルのままです。次に「保存」を押すと元のファイルに保存されます。マインドマップは SVG 画像としても書き出せます。</dd>
+          </div>
+          <div>
+            <dt>Mac アプリのアップデート（ベータ）</dt>
+            <dd>アプリケーションフォルダーに置いた Mac アプリは、アップデート画面で「今すぐ更新」→「再起動してインストール」を押すと新しいバージョンに置き換わり、再び開きます。この機能は 0.12.11 で初めて入ったため、今回だけは 0.12.11 のインストールファイル（dmg）をダウンロードして上書きインストールする必要があります。アプリが自分で置き換わるのは次のバージョンからです。</dd>
+          </div>
+          <div>
+            <dt>ハングルで PC にないフォント</dt>
+            <dd>文書で使われているフォントがこの PC にないと、フォントメニューでそのフォントの横に「この PC にない」が付き、カーソルのある文字のフォントがないときはフォント欄に点線の下線が付きます。そのようなファイルを開くと、通知バーで一度知らせます。画面では別のフォントで表示されても、ファイルには元のフォント名がそのまま保存されます。</dd>
+          </div>
+          <div>
+            <dt>PDF・Excel</dt>
+            <dd>PDF の文字選択バーに黄・緑・水色の蛍光ペンができ、ペンを右クリックすると色を変えられます。「ページに合わせる」の隣の「手のひらツール」をオンにしてドラッグすると、画面が動きます。Excel でセル範囲をコピーし、画像を受け付けるメッセンジャーやスライドエディターに貼り付けると、セルの見た目のまま画像として入ります。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          0.12.10 で、パスワード付きの PDF がすべて「ファイルを開けませんでした」で終わっていた問題、PDF の署名がいつも赤色で入っていた問題、
+          Excel で .xls ファイルを開くと中央揃えと罫線が抜けていた問題、Mac のハングルエディターで ⌘C・⌘X が効かなかった問題も修正しました。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.11" rel="noopener">0.12.11 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.10">
+        <p class="release-meta"><b>0.12.10</b><time datetime="2026-11-01">2026年11月1日</time></p>
+        <div class="split-head">
+          <h2>ハングルの表にセルを貼り付け、<br />スライドの選択ウィンドウ</h2>
+          <p>
+            ハングルの表のセルに、別の表からコピーしたセルを貼り付けるとき、上書きするか、行や列を新しく挿入するかを選べるようになりました。スライドには選択ウィンドウ、F4 での繰り返し、スポイト、図形の結合ができました。AI 画面では、モデルが答える前にどれだけ深く考えるかを選べます。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-cell-paste-01210-1600.webp" srcset="/shots/hwp-cell-paste-01210-1600.webp 1600w, /shots/hwp-cell-paste-01210-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="参加申込書の表のセルにカーソルを置き、Excel からコピーした2行を貼り付けたところ「Paste Cells」画面が表示された様子。上・下・左・右への挿入と上書きのどれかを選べるようになっています。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>セルの貼り付け</b> Excel や別の表からコピーしたセルを、ハングルの表のセルにカーソルを置いて貼り付けると「Paste Cells」（セルの貼り付け）画面が表示されます。「Overwrite」は、カーソルのあるセルからコピーしたセルの数だけ内容を置き換えます。「Insert above・Insert below」は行を、「Insert to the left・Insert to the right」は列を新しく作って挿入します。0.12.9 までは、このように貼り付けるとコピーした内容がすべて1つのセルに入っていました。表の外の本文に貼り付けると、結合したセルもそのまま残った表が入ります。文字をトリプルクリックするとその段落全体が、ダブルクリックしたままドラッグすると単語単位で選択されます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/slides-selection-01210-1600.webp" srcset="/shots/slides-selection-01210-1600.webp 1600w, /shots/slides-selection-01210-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ブックフェアの発表スライドの横に選択ウィンドウを開いたところ。スライドにあるテキストボックスと図形が名前付きで一覧に表示され、選択した行に目の形のボタンがあります。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>スライドの選択ウィンドウ</b> ホームタブの「選択ウィンドウ」を押すか Alt+F10 を押すと、今のスライドにあるテキストボックスと図形が一覧で表示されます。一覧で押したものが選択されるので、ほかの図形に隠れてマウスでつかみにくいものも選べます。目の形のボタンで非表示にしたり再び表示したりでき、名前をダブルクリックして変更します。F4 は、直前に行った書式の変更や配置をもう一度行います。フォントの色・図形の塗りつぶしメニューのスポイトは、画面に見えている色をそのまま取り込みます。図形の結合（接合・単純型抜き・切り出し・重なり抽出・型抜き/合成）で、複数の図形を1つにまとめられます。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>思考の深さ</dt>
+            <dd>AI 画面でモデルを選ぶ一覧の下に「思考の深さ」ができました。「既定」、「低」、「中」、「高」のように、そのモデルが対応する段階から選びます。深いほど回答が遅くなり、サブスクリプションの使用量や API の料金を多く使います。Claude・Codex のサブスクリプション、Anthropic・OpenRouter・DeepSeek・xAI のキー、Ollama で、モデルが段階の一覧を知らせるときにだけ表示されます。</dd>
+          </div>
+          <div>
+            <dt>ハングルの表のショートカット</dt>
+            <dd>F5 でセルを選択した状態で、P は表/セルのプロパティ、L・C はセルの罫線・背景（各セルごと）、B・F はセルの罫線・背景（1つのセルのように）、A は「Table Auto Fill」（表の自動入力）を開きます。Hancom Hangul と同じキーです。結合したセルがある表でも、Ctrl・Alt・Shift+矢印キーと H・W で行と列のサイズを変えられます。以前は、結合したセルが1つでもあるとこれらのキーが動作しませんでした。</dd>
+          </div>
+          <div>
+            <dt>Excel のスペルチェック・パスワード付き PDF</dt>
+            <dd>Excel で F7 を押すと、シートのスペルチェックを行います。パスワード付きの PDF を開いて編集でき、保存してもパスワードはそのまま残ります。「注釈 → 保護」でパスワードを新しく設定したり、変更したり、解除したりします。PDF のファイルサイズを小さくする機能もできました。</dd>
+          </div>
+          <div>
+            <dt>Markdown・マインドマップ</dt>
+            <dd>Markdown で <code>[[</code> を入力すると、ノートを集めたフォルダー（保管庫）のノートの一覧が表示され、1つ選ぶとそのノートへのリンクが入ります。マインドマップでは、PNG・JPG・GIF の画像（10MB まで）をトピックの上にドラッグ＆ドロップするとそのトピックに付き、右クリックメニューで削除します。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          ハングルで段落の後ろに付いた表がその下の行の文字を覆っていた問題、ハングルエディターで PC にインストールされたフォントを使うには「ローカルフォントを検出」を別に押す必要があった問題、0.12.9 でスキャンした PDF を開くと画面が真っ白になっていた問題も修正しました。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.10" rel="noopener">0.12.10 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.9">
+        <p class="release-meta"><b>0.12.9</b><time datetime="2026-10-30">2026年10月30日</time></p>
+        <div class="split-head">
+          <h2>文脈はフォルダーに、<br />ファイルはドライブから。</h2>
+          <p>
+            今回のバージョンでは、人と仕事をつなぐことに力を入れました。フォルダーを1つプロジェクトとして選ぶと、指示と記憶、会話がそのフォルダーにたまり、ハングルで交わした会話をスライドで続けられます。Google ドライブで選んだファイルもすぐに開いて編集し、保存し直せます。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/projects-0129-1600.webp" srcset="/shots/projects-0129-1600.webp 1600w, /shots/projects-0129-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ホームのプロジェクト画面。「秋のブックフェア準備」プロジェクトを作り、指示欄に案内文と報告書をどう書くかを書いて保存したところです。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>プロジェクト</b> AI 画面の入力欄の下の「プロジェクト」でフォルダーを選ぶと、そのフォルダーに書いておいた指示（例：「報告書は箇条書きで」）と、AI が会話しながらためた記憶が、リクエストのたびに一緒に送られます。AI はフォルダーの中のファイルを探して読み、新しく作った文書はそのフォルダーに保存します。指示と記憶、会話はそのフォルダーの中にたまるので、フォルダーを移動しても、別の PC で開いてもついてきます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/project-picker-0129-1600.webp" srcset="/shots/project-picker-0129-1600.webp 1600w, /shots/project-picker-0129-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ハングルエディターの AI 画面で、入力欄の下の「プロジェクトなし」ボタンを押して開いた一覧。最近のプロジェクト「秋のブックフェア準備」と、新しいプロジェクト、フォルダーを追加、プロジェクトなしが見えます。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>どのエディターでも</b> ハングル・Word・Excel・PowerPoint・PDF など、すべてのエディターの AI 画面の入力欄の下でプロジェクトを選びます。新しく作ることも、使っていたフォルダーを追加することもでき、プロジェクトなしで今までどおり文書ごとに個別に尋ねてもかまいません。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Google ドライブから開く</dt>
+            <dd>「設定 → 連携」でドライブを接続し、ホームの<b>Google ドライブから選ぶ</b>を押すと、Google の選択画面が表示されます。選んだファイルはタブで開き、保存するとドライブにアップロードし直されます。アプリは選んだファイルだけを開き、ドライブ全体は見ません。AI 画面でもドライブのファイルを選んで添付できます。</dd>
+          </div>
+          <div>
+            <dt>ハングルの印刷プレビュー・文書チェック</dt>
+            <dd>印刷（Ctrl+P）を押すと、まずプレビューが開きます。韓国の行政安全部の行政文書作成ガイドラインに沿っているかをチェックする画面もでき、フォントはその画面ですぐに変えられます。</dd>
+          </div>
+          <div>
+            <dt>ハングルの表にまとめて貼り付け</dt>
+            <dd>表の複数のセルをドラッグして選択して貼り付けると、Excel からコピーした値がセルごとに入ります。文字数を数える文書情報（Ctrl+Q,I）、カーブした引用符、入力済みの単語の漢字変換も追加しました。</dd>
+          </div>
+          <div>
+            <dt>Excel・PDF</dt>
+            <dd>Excel に What-If のデータテーブルとピボットグラフができ、PDF ではしおりを編集し、別の PDF と文字を比較できます。韓国語画面の Excel は、曜日と日付を韓国語で表示します。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          IeumOffice が作った HWPX ファイルにセルを縦に結合した表が入っていると Hancom Hangul で開けなかった問題、ハングルで画像と表をコピーして貼り付けると違う場所に貼り付けられていた問題も修正しました。電子書籍（EPUB）は端末のサイズでプレビューできます。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.9" rel="noopener">0.12.9 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.8">
+        <p class="release-meta"><b>0.12.8</b><time datetime="2026-10-28">2026年10月28日</time></p>
+        <div class="split-head">
+          <h2>Claude は最後まで、<br />ChatGPT はすぐに。</h2>
+          <p>
+            Claude のサブスクリプションで文書を編集するとき、作業が途中で止まったり、1回に数分かかったりしていた問題を修正しました。
+            ChatGPT のプランは、Codex プログラムをインストールせずにアプリから直接接続します。HTML 文書には数式を入れて編集できます。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/html-math-1600.webp" srcset="/shots/html-math-1600.webp 1600w, /shots/html-math-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="HTML エディターで数式の挿入画面を開いたところ。上の欄に割引価格を求める式が分数と括弧で表示され、下に数式テンプレートのボタン、LaTeX のソース、プレビューがあります。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>HTML の数式</b> リボンの「数式を挿入」を押すと数式画面が開きます。上の欄に直接書くか LaTeX で書き、分数・行列・積分などのテンプレート14種類と数式キーボードで入れることもできます。保存して開き直しても数式を編集でき、インターネットにつながっていなくても数式が表示されます。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>ChatGPT にすぐ接続</dt>
+            <dd>接続アシスタントで「ChatGPT を使っています」を選び、<b>ChatGPT で続行</b>を押すと、ブラウザーに ChatGPT のログイン画面が開きます。ログインしてから、このアプリがプランを使うことを許可すれば完了です。手順は<a href="/ja/connect#chatgpt">接続のヘルプ</a>にあります。</dd>
+          </div>
+          <div>
+            <dt>Excel の数式バー</dt>
+            <dd>複数行が入ったセルを選んでも、数式バーが広がってシートを押し下げることはありません。下のハンドルをドラッグして高さを変えると、別のセルを選んでもその高さのままです。</dd>
+          </div>
+          <div>
+            <dt>初回起動時に止まっていた PC</dt>
+            <dd>Windows セキュリティの「コントロールされたフォルダー アクセス」（ランサムウェア防止）をオンにした PC で初めて開くと、応答なしや灰色の画面で止まっていた問題を修正しました。ドキュメントフォルダーに書き込めない場合はユーザーフォルダーの下の <code>IeumOffice</code> に保存し、そのことと解除の方法を一度知らせます。</dd>
+          </div>
+          <div>
+            <dt>コマンドだけのパッケージ（Linux）</dt>
+            <dd>デスクトップアプリなしでターミナルのコマンドだけをインストールするパッケージを、ベータとして一緒に出します。画面のないサーバーや AI エージェントの作業環境で文書を作ったり読んだりするときに使います。インストール方法は <a href="https://github.com/pblsketch/ieumoffice/blob/main/README.md#linux-베타" rel="noopener">README の「Linux（ベータ）」</a>にあります。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Word の数式画面と表の画面でチェックボックスが大きく描かれていた問題、ターミナルのコマンドで Excel を PDF に変換すると計算セルが空になっていた問題も修正しました。チャットに貼り付けた画像は、Excel のシートにも入るようになりました。0.12.7 からアップデートすると、今回初めてインストールの進行画面が表示され、インストールが終わるとアプリと開いていた文書が再び開きます。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.8" rel="noopener">0.12.8 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.7">
+        <p class="release-meta"><b>0.12.7</b><time datetime="2026-10-28">2026年10月28日</time></p>
+        <div class="split-head">
+          <h2>コメントは文書の横に、<br />画像は AI が。</h2>
+          <p>
+            ハングル文書のコメントの一覧が、AI アシスタントの画面を隠さずに文書の横のパネルに開きます。AI に頼めば、ハングルとマインドマップにも画像を入れてくれます。学校や官公庁のサイトからダウンロードした Excel の表ファイル（.xls）も開けるようになりました。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-memo-side-1600.webp" srcset="/shots/hwp-memo-side-1600.webp 1600w, /shots/hwp-memo-side-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ハングルエディターの画面。左に AI アシスタントの画面、中央にコメントが3つあるコメントパネル、右に参加申込書の文書が並んでいます。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>文書の横のコメントパネル</b> 画面の左上の「コメント」ボタンを押すと、コメントの一覧が文書のすぐ横のパネルに開きます。AI アシスタントの画面と一緒に広げておけます。パネルの端をドラッグすると幅が変わり、開いておいたパネルは次回も開いたまま表示されます。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>AI が画像を入れる</dt>
+            <dd>ハングルとマインドマップでも、AI が写真を探して入れたり、チャットに貼り付けた画像を文書に入れたりします。Word では、チャットに貼り付けた画像を入れられます。文書にあった画像には手を付けず、新しい画像だけを入れます。</dd>
+          </div>
+          <div>
+            <dt>ウェブからダウンロードした Excel ファイル</dt>
+            <dd>サイトから .xls という名前でダウンロードした表ファイルを開きます。値、結合したセル、セル内の改行、複数のシートはそのまま取り込みます。フォントと色は取り込みません。</dd>
+          </div>
+          <div>
+            <dt>ログインが止まったとき</dt>
+            <dd>Claude にログインしている途中でブラウザーがコードだけを表示して止まった場合、接続カードの「ログインウィンドウを開く」で、アプリの中でログインを完了できます（Windows のみ）。手順は<a href="/ja/connect#login-unfinished">接続のヘルプ</a>にあります。</dd>
+          </div>
+          <div>
+            <dt>ハングルの画面の見た目</dt>
+            <dd>表/セルのプロパティ、文字・段落の書式、ページ設定、検索、コメントの挿入など、ハングルエディターで表示される画面を同じ見た目にそろえました。ダークテーマでも、テーマの色に合わせて表示されます。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Hancom 2014 で保存した一部のハングル文書で表紙のタイトル行が重なっていた問題と、アップデートしたあと開いていた文書が再び開かなかった問題を修正しました。0.12.6 からアップデートするときは、「再起動してインストール」を押したあと、アプリが再び表示されるまで1〜3分お待ちください。次のアップデートからは、インストールの間、進み具合を知らせる画面が表示されます。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.7" rel="noopener">0.12.7 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.6">
+        <span id="v0.12.5" aria-hidden="true"></span>
+        <p class="release-meta"><b>0.12.5〜0.12.6</b><time datetime="2026-10-27">2026年10月27日</time></p>
+        <div class="split-head">
+          <h2>ハングルのコメント、<br />そして自分の PC の AI。</h2>
+          <p>
+            ハングル文書にコメントを付け、Hancom Hangul のように書式のコピーと表のショートカットが使えます。自分の PC や社内ネットワークで動かす
+            AI モデル（Ollama など）も接続できるようになりました。Word の差し込み印刷、PowerPoint の A4・縦向きスライドのように、ほかのエディターにも新しい機能が入りました。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-memo-menu-1600.webp" srcset="/shots/hwp-memo-menu-1600.webp 1600w, /shots/hwp-memo-menu-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ハングルエディターで参加申込書のタイトルを選んで右クリックした画面。メニューのいちばん下にコメントがあり、左のコメント画面にコメントが3つあります。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>ハングルのコメント</b> 文字を選んで右クリックし「コメント」を選ぶと、その場所にコメントを付けます。コメント画面で、文書に付いたコメントを読み、編集し、削除します。Hancom Hangul で付けたコメントもそのまま開き、保存し直せます。AI アシスタントはコメントを読むだけで、コメントが付いた文字を消す前にはまず確認します。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/local-ai-1600.webp" srcset="/shots/local-ai-1600.webp 1600w, /shots/local-ai-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="設定の AI 画面でローカル AI サーバーを追加しているところ。サーバーの種類に Ollama を選び、名前とアドレスを入力しました。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>自分の PC の AI を接続</b> 「設定 → AI」の「ローカル AI」で Ollama のような AI サーバーのアドレスを登録し、接続テストで会話ができるかを確認します。登録しただけでは使う AI は変わらず、自分で選んだサーバーだけを使います。送る内容がモデルの扱える長さを超えそうなときはまず確認し、サーバーのアドレスが PC の外のインターネットのアドレスであれば、文書がそちらに送られることを知らせます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-format-copy-1600.webp" srcset="/shots/hwp-format-copy-1600.webp 1600w, /shots/hwp-format-copy-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ハングルエディターで書式のコピー画面を開いたところ。文字の書式、段落の書式、両方、文字スタイル、段落スタイルから選びます。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>書式のコピー</b> <kbd>Alt</kbd>+<kbd>C</kbd> で、文字の書式、段落の書式、スタイルのどれをコピーするかを選び、別の場所に適用します。表ではセルの罫線と背景もコピーします。Hancom Hangul のように、コピーした書式は次にコピーするまで残るので、何か所にも続けて適用できます。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>ハングルの表のショートカット</dt>
+            <dd>表のセルで <kbd>Ctrl</kbd>+<kbd>Enter</kbd> で行を挿入し、<kbd>F5</kbd> でセルを選び、<kbd>Ctrl</kbd>・<kbd>Shift</kbd>+矢印キーで行と列のサイズを変えます。ハングルのタブの発表モードは <kbd>Ctrl</kbd>+<kbd>F5</kbd> で開きます。</dd>
+          </div>
+          <div>
+            <dt>様式の入力</dt>
+            <dd>AI が様式の欄を埋めるとき、案内文の青い斜体を消して黒い文字で書きます。□ のボックスは、その場で ☑ に変えます。</dd>
+          </div>
+          <div>
+            <dt>PDF・ハングルの自動保存</dt>
+            <dd>画面上部の「自動保存」をオンにすると、編集した内容を30秒ごとに文書ファイルに保存します。</dd>
+          </div>
+          <div>
+            <dt>ほかのエディター</dt>
+            <dd>Word に差し込み印刷と2つの文書の比較、Excel にメモ内の画像、PowerPoint に A4・縦向きのスライドサイズ、PDF にリンクの挿入が入りました。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          書式と罫線の多い Excel のシートが重かった問題、テキストボックスを描いたハングルのファイルが Hancom Hangul で開けなかった問題、ヘッダーに画像があると横の文字が消えていた問題、ハングルの表のセルで F5 がセルの選択ではなく全画面表示をオンにしていた問題を修正しました。アップデートがインストールされなかった場合は、次に起動したときに知らせ、インストール画面を再び開きます。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.6" rel="noopener">0.12.6 で修正した内容まですべて見る</a>
+          · <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.5" rel="noopener">0.12.5</a>
+        </p>
+      </article>
+      <article class="release" id="v0.12.4">
+        <p class="release-meta"><b>0.12.4</b><time datetime="2026-10-24">2026年10月24日</time></p>
+        <div class="split-head">
+          <h2>ハングル文書を<br />もっとうまく扱います。</h2>
+          <p>
+            ハングルのタブのショートカットと機能を Hancom Hangul 2024 に合わせました。ページ番号の挿入、表のかんたん計算式、日付の挿入といった機能が入り、AI がスタイルを作ったり編集したりします。EPUB 電子書籍を開いて編集・翻訳するエディターも新しく入れました。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-1600.webp" srcset="/shots/hwp-1600.webp 1600w, /shots/hwp-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ハングルエディターで秋のブックフェアの参加申込書を開いた画面" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>ハングル文書</b> Ctrl+N の連続キー、配置のキー、日付の挿入（<kbd>Ctrl</kbd>+<kbd>K</kbd>,<kbd>D</kbd>）、表のかんたん計算式など、よく使う機能を Hancom と同じキーで使えます。ページ番号も Hancom と同じ見た目で入れられ、AI にスタイルを作ったり直したりするよう頼めます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/epub-1600.webp" srcset="/shots/epub-1600.webp 1600w, /shots/epub-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="EPUB 電子書籍を開いた画面。左に目次、中央にイベント案内の章、右に AI アシスタントの画面があります。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>EPUB 電子書籍</b> 本のファイルを開くと目次と本文が表示され、本文をクリックしてそのまま編集できます。編集した段落だけを保存し直すので、本の残りの部分は元のままです。AI アシスタントにこの章を要約するよう頼んだり、別の言語に翻訳して翻訳版のファイルとして保存したりできます。原文と訳文を一緒に収めた対訳版も作れます。翻訳する前に、その文書を扱う権利があるか確認してください。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>ハングルのタブのショートカット</dt>
+            <dd>Hancom Hangul 2024 と同じにそろえました。<kbd>Ctrl</kbd>+<kbd>N</kbd> の連続キー、配置のキー、<kbd>Alt</kbd>+<kbd>N</kbd>・<kbd>O</kbd>・<kbd>S</kbd>・<kbd>V</kbd>・<kbd>P</kbd> のファイルのキーが効きます。</dd>
+          </div>
+          <div>
+            <dt>ハングルの機能</dt>
+            <dd>ページ番号の挿入、標準の書式、逆方向の検索、表のかんたん計算式（横・縦の合計・平均・積）、行と列の追加が入りました。</dd>
+          </div>
+          <div>
+            <dt>ハングルのスタイル</dt>
+            <dd>AI が段落スタイルと文字スタイルを作ったり編集したりします。文書にあったスタイルはそのまま残して編集します。</dd>
+          </div>
+          <div>
+            <dt>発表モードと復元用のコピー</dt>
+            <dd>すべてのエディターで <kbd>F5</kbd> で発表モードが開き、突然終了しても、開いていたタブと分割した画面まで元に戻ります。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          ハングル文書で文字を入力するときの引っかかりを減らし、Claude のログイン画面で先に進めなくなる問題と、winget でインストールした
+          Codex がアップデートから抜け出せなくなる問題を修正しました。PDF を Word に変換したり翻訳したりするとき、余白の縦書きの文字が本文に紛れ込み、行末の単語が分かれていた問題も直しました。
+        </p>
+        <p class="credit">
+          EPUB は、固定レイアウトの本と DRM がかかった本は編集・翻訳しません。固定レイアウトの本は読むことだけができます。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.4" rel="noopener">0.12.4 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.3">
+        <p class="release-meta"><b>0.12.3</b><time datetime="2026-10-22">2026年10月22日</time></p>
+        <div class="split-head">
+          <h2>よくやる作業は<br />スキルで呼び出して使います。</h2>
+          <p>
+            議事録の整理やお知らせの作成のように、よくやる作業をスキルとして保存しておき、AI 画面で呼び出して使います。AI の入力欄で
+            @ を入力すると、開いている文書を選んですぐに添付できます。AI をまだ接続していなければ、接続する手順を1段階ずつ案内します。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/skills-slash-1600.webp" srcset="/shots/skills-slash-1600.webp 1600w, /shots/skills-slash-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Word エディターの AI 画面の入力欄で / を入力し、議事録の整理、お知らせ・会報・FAQ の作成などのスキルの一覧を開いた画面" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>スキル</b> スキルは、AI に任せる作業をあらかじめ書いておいた作業手順書です。AI の入力欄で <kbd>/</kbd> を入力すると一覧が表示され、選んだスキルに書かれた内容が質問と一緒に AI に送られます。議事録の整理、お知らせ・会報・FAQ の作成、そして英語の文章を整えるスキル2つが、最初から入っています。</p>
+        <div class="new-pair">
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/skills-settings-1600.webp" srcset="/shots/skills-settings-1600.webp 1600w, /shots/skills-settings-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="設定のスキル画面。基本のスキル5つがオンになっていて、上に追加と新規作成のボタンがあります。" loading="lazy" />
+            </div>
+            <figcaption><b>自分のスキルを作る</b> 「設定 → スキル」で、スキルを新しく作ったり追加したり、オン・オフを切り替えたりします。AI との作業を終えたあとに「今の作業をスキルにして」と頼むと、保存する内容をまず見せ、確認を受けてから保存します。今の文書を様式として入れておくと、次にそのスキルを使うときに様式のコピーが新しいタブで開きます。</figcaption>
+          </figure>
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/doc-mention-1600.webp" srcset="/shots/doc-mention-1600.webp 1600w, /shots/doc-mention-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="ハングルエディターの AI 画面の入力欄で @ を入力し、開いている文書の一覧を開いた画面" loading="lazy" />
+            </div>
+            <figcaption><b>@ で文書を添付</b> AI の入力欄で <kbd>@</kbd> を入力すると、開いている文書と最近の文書が表示され、選ぶとすぐに添付されます。質問を書いている途中で添付ボタンを探さなくても済みます。</figcaption>
+          </figure>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>AI 接続アシスタント</dt>
+            <dd>接続された AI がない場合、今使っている AI があるかをまず尋ね、選んだもの1つだけについて、インストールからログインまで順番に案内します。</dd>
+          </div>
+          <div>
+            <dt>ハングルの保存形式を選ぶ</dt>
+            <dd>「名前を付けて保存」で、HWP と HWPX のうち好きな形式を選びます。</dd>
+          </div>
+          <div>
+            <dt>PDF の複数ページをまとめて</dt>
+            <dd>左のサムネイルで <kbd>Ctrl</kbd> か <kbd>Shift</kbd> を押しながら複数のページを選び、回転・削除・別に保存・移動をまとめて行います。</dd>
+          </div>
+          <div>
+            <dt>スライドの文字をまとめて大きく</dt>
+            <dd>PowerPoint でテキストボックスを複数選んでから「フォントサイズの拡大/縮小」を押すと、選んだボックスの文字が一緒に変わります。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          ファイルのアイコンも新しく描きました。ハングル文書でタイトルのボックス・画像・脚注が本文と重なって見えていた問題を修正し、
+          Excel ファイルを編集して保存するときに元のファイルが空のファイルになってしまうことを防ぎました。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.3" rel="noopener">0.12.3 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.2">
+        <p class="release-meta"><b>0.12.2</b><time datetime="2026-10-20">2026年10月20日</time></p>
+        <div class="split-head">
+          <h2>2つの文書を並べて、<br />PDF には蛍光ペンを。</h2>
+          <p>
+            画面を2つに分けて、2つの文書を一緒に見られます。PDF を読みながら蛍光ペンと下線、メモを残し、一か所に集めて見ることができ、ファイルを開かずにスペースキーを押すだけで内容をプレビューすることもできます。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/split-1600.webp" srcset="/shots/split-1600.webp 1600w, /shots/split-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="画面を2つに分け、左に Word の企画書、右に Excel の予算表を開いた画面" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>画面の分割</b> 文書のタブをウィンドウの右端か下端にドラッグして離すと、画面が2つに分かれます。タブを右クリックして「右に分割」を選んでもかまいません。AI 画面は1つだけ開き、今見ている側の文書を扱います。</p>
+        <div class="new-pair">
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/pdf-reading-1600.webp" srcset="/shots/pdf-reading-1600.webp 1600w, /shots/pdf-reading-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="PDF の案内文に蛍光ペンと下線を引き、左の注釈一覧に集めて見た画面" loading="lazy" />
+            </div>
+            <figcaption><b>PDF の蛍光ペンとメモ</b> 文字を選んでから <kbd>H</kbd> を押すとハイライト、<kbd>U</kbd> は下線、<kbd>N</kbd> は付箋です。印を付けた箇所は横の一覧に集まるので、あとで探しやすくなります。外国語の文書は、AI による訳文を原文の横に置いて読めます。</figcaption>
+          </figure>
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/quicklook-1600.webp" srcset="/shots/quicklook-1600.webp 1600w, /shots/quicklook-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="ホームのファイル一覧で、スペースキーで Word の企画書の内容をプレビューした画面" loading="lazy" />
+            </div>
+            <figcaption><b>スペースキーでプレビュー</b> ファイル一覧でファイルを選んでスペースキーを押すと、ファイルを開かずに内容を見られます。IeumOffice が起動していれば、Windows のエクスプローラーでも使えます。</figcaption>
+          </figure>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>開いている文書を AI に見せる</dt>
+            <dd>今開いている文書や最近開いた文書を選んで、AI 画面に添付します。ファイルを探し直す必要はありません。</dd>
+          </div>
+          <div>
+            <dt>AI がリンクを読みます</dt>
+            <dd>質問にウェブのアドレスを一緒に書くと、AI がそのページの内容を読んで答えます。</dd>
+          </div>
+          <div>
+            <dt>スライドのメモをまとめて見る</dt>
+            <dd>PowerPoint に付いたメモを、すべてのスライドについてまとめて見られます。AI もメモを読んで答えられます。</dd>
+          </div>
+          <div>
+            <dt>パスワード付きファイルを開く</dt>
+            <dd>パスワードをかけた Excel・PowerPoint のファイルを開くと、空白の画面ではなくパスワードを尋ねます。保存するときも同じパスワードをかけ直します。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.2" rel="noopener">0.12.2 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.1">
+        <p class="release-meta"><b>0.12.1</b><time datetime="2026-10-16">2026年10月16日</time></p>
+        <div class="split-head">
+          <h2>AI にフォルダーごと任せる<br />エージェントモード。</h2>
+          <p>
+            作業するフォルダーを選ぶと、AI がそのフォルダーのファイルと開いている文書を一緒に読んで編集します。PC にインストールされた Claude
+            Code や Codex で動きます。LibreOffice の文書形式である ODT も開けるようになり、PDF の結合・分割などのツールを1つの画面に集めました。
+          </p>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>エージェントモード</dt>
+            <dd>ホームの左の「エージェント」から始めます。AI が PC で何かを実行する前に毎回確認するかどうかを、自分で決めます。</dd>
+          </div>
+          <div>
+            <dt>ODT 文書</dt>
+            <dd>.odt ファイルを Word エディターで開いて編集し、再び .odt で保存します。</dd>
+          </div>
+          <div>
+            <dt>PDF ツール画面</dt>
+            <dd>PDF の結合・分割・回転、サイズの縮小、パスワードの設定・解除、壊れたファイルの修復を行います。AI を使わず、ファイルを外に送ることもありません。</dd>
+          </div>
+          <div>
+            <dt>ウェブの発表資料のスライド一覧</dt>
+            <dd>ウェブページ（HTML）で作った複数枚の発表資料を開くと、1枚ずつ一覧で表示されます。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.1" rel="noopener">0.12.1 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.0">
+        <p class="release-meta"><b>0.12.0</b><time datetime="2026-10-15">2026年10月15日</time></p>
+        <div class="split-head">
+          <h2>最初の公開。</h2>
+          <p>
+            Word・Excel・PowerPoint・PDF・Markdown・HTML の文書を1つのウィンドウで開いて編集する、最初の公開バージョンです。AI 機能はすでに使っている Claude や Codex のサブスクリプションで使い、サブスクリプションがなければ無料の AI を接続して使えます。
+          </p>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>ハングルエディター</dt>
+            <dd>HWP・HWPX 文書を開いて編集し、元の形式で保存します。</dd>
+          </div>
+          <div>
+            <dt>マインドマップエディター</dt>
+            <dd>XMind ファイルを開いて編集し、同じファイルに保存します。</dd>
+          </div>
+          <div>
+            <dt>新しい文書を作る</dt>
+            <dd>手持ちの資料を選ぶと、AI が発表資料、マインドマップ、ウェブページを作ってくれます。</dd>
+          </div>
+          <div>
+            <dt>PDF の変換と翻訳</dt>
+            <dd>PDF を電子書籍（EPUB）や Markdown の文章に変換します。スキャンしたページの文字を AI で読み取ったり、文書全体を翻訳したりすることもできます。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.0" rel="noopener">0.12.0 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">作者 <b>박준일</b>（温陽女子高等学校の国語（韓国語）教師） · <a href="/ja/story">開発の経緯</a></p>
+          <p>
+            IeumOffice はオープンソースプロジェクト
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a>（Apache-2.0）をもとに手を加えて作ったプログラムで、ハングルエディターは<a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a>（MIT）をもとにしています。このサイトのフォントは Wanted Sans と Gowun Batang（SIL OFL 1.1）です。
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="外部リンク">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">リリース</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">問題を報告</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>
+        <a href="/ja/faq">よくある質問</a>
+        <a href="/ja/#opensource">オープンソース</a>
+        <a href="/ja/privacy.html">個人情報</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">ライセンス</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          誰でも無料で使えます。現状のまま提供し、特に保証はしません。<a href="/ja/legal.html">法的情報</a>（ライセンス・商標） · お問い合わせ
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/updates.js"></script>
+  </body>
+</html>

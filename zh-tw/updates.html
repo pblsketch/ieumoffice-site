@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>更新消息 · IeumOffice</title>
+    <meta name="description" content="彙整 IeumOffice 每個版本新加入的功能。" />
+    <meta name="author" content="박준일" />
+    <link rel="canonical" href="https://ieumoffice.com/zh-tw/updates" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/zh-tw/updates" />
+    <meta property="og:title" content="IeumOffice 更新消息" />
+    <meta property="og:description" content="彙整每個版本新加入的功能。" />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-updates">
+    <a class="skip" href="#main">跳到主要內容</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/zh-tw/" aria-label="IeumOffice 首頁">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="頁面導覽">
+        <a href="/zh-tw/updates" aria-current="page">更新消息</a>
+        <a href="/zh-tw/story">製作故事</a>
+        <a href="/zh-tw/#formats">文件</a>
+        <a href="/zh-tw/#hwp">Hangul</a>
+        <a href="/zh-tw/#ai">AI</a>
+        <a href="/zh-tw/#cost">費用</a>
+        <a href="/zh-tw/#privacy">個人資料</a>
+      </nav>
+      <a class="btn btn-small" href="/zh-tw/#download">下載</a>
+    </header>
+
+    <main id="main">
+      <section class="updates-head">
+        <p class="eyebrow">更新消息</p>
+        <h1>新版本有哪些不同</h1>
+        <p class="section-lede">
+          這裡彙整每個版本新加入的功能。包含修正問題在內的完整清單，可以從每個版本最下方的連結查看。只要安裝了 IeumOffice，有新版本時應用程式會自動通知你。
+        </p>
+      </section>
+
+      <!-- Newest first. Each release adds one <article> at the top (see the site README, "after releasing a new version"). -->
+
+      <article class="release" id="v0.12.12">
+        <p class="release-meta"><b>0.12.12</b><time datetime="2026-11-09">2026 年 11 月 9 日</time></p>
+        <div class="split-head">
+          <h2>把 PDF 轉成 Hangul 文件，<br />開啟 FreeMind 心智圖</h2>
+          <p>
+            在 PDF 編輯器中按「PDF 轉 HWP」，就能把 PDF 匯入成 Hangul 文件來修改。心智圖編輯器也能開啟用 FreeMind・Freeplane 製作的心智圖檔案（.mm）。另外也修正了更改 Hancell 所建立 Excel 檔案的格式後，儲存就會失敗的問題。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-from-pdf-done-01212-1600.webp" srcset="/shots/hwp-from-pdf-done-01212-1600.webp 1600w, /shots/hwp-from-pdf-done-01212-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="用「PDF 轉 HWP」匯入「書展_說明.pdf」後的 Hangul 分頁。「2026 秋季巷弄書展」封面，以及日程、地點、入場、洽詢等欄位，以和 PDF 相同的樣子出現在 Hangul 編輯畫面中；上方是 Hangul 編輯器的工具列，下方狀態列顯示頁數與字數。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>把 PDF 轉成 Hangul 文件</b> 在 PDF 編輯器的「PDF 轉換」選單中按「PDF 轉 HWP」，這份 PDF 就會在新的 Hangul 分頁中開啟。在接著出現的「PDF 匯入」視窗中按「匯入」，PDF 的內容就會變成 Hangul 文件，修改後再儲存為 Hangul 檔案。原本的 PDF 不會改變。我們用含有文字的 PDF 確認過，掃描紙本製成的 PDF 還沒有確認。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/mindmap-mm-01212-1600.webp" srcset="/shots/mindmap-mm-01212-1600.webp 1600w, /shots/mindmap-mm-01212-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在心智圖編輯器中開啟「讀書會_計畫.mm」的畫面。中央的「讀書會一年計畫」延伸出要一起讀的書、聚會方式、活動、準備物品等分支，上方通知列顯示「這是從 FreeMind・Freeplane 檔案（.mm）匯入的新地圖。儲存時會存成新檔案，原本的 .mm 檔案保持不變。」" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>FreeMind・Freeplane 心智圖</b> 開啟用 FreeMind 或 Freeplane 製作的心智圖檔案（.mm），會匯入成新的地圖。儲存時，會在同一個資料夾中產生同名的 XMind 檔案（.xmind），原本的 .mm 檔案不會改變。圖片不會匯入，只把圖片名稱留作主題標題。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul 字數</dt>
+            <dd>Hangul 編輯器左下角的狀態列會顯示字數，選取區塊時也會一併顯示選取的字數。Ctrl+PageUp 移到文件開頭，Ctrl+PageDown 移到文件結尾。</dd>
+          </div>
+          <div>
+            <dt>PDF 縮放比例與相似字型</dt>
+            <dd>在 PDF 檢視分頁的「開啟 PDF 時」中可以選擇 100%。自己放大・縮小過的檔案，會另外記住那個比例。以「保留原始字型」修改 PDF 文字時，文件內嵌字型中沒有的字，會用電腦上安裝的相似字型來繪製。因此修改以明體類字型寫成的韓文 PDF 時，不會只有修改的部分變成黑體。</dd>
+          </div>
+          <div>
+            <dt>AI 製作的投影片字型</dt>
+            <dd>在「設定 → 一般」的「AI 投影片字型」中，選擇 AI 製作投影片時使用的預設字型。可從自動、黑體、明體、僅標題用明體中擇一，也可以分別指定黑體與明體要用的字型。韓文介面的初始值是黑體（Pretendard）。</dd>
+          </div>
+          <div>
+            <dt>選擇要用的 AI</dt>
+            <dd>在「設定 → AI」的 Claude・Codex 卡片中按「不在本應用程式中使用」，IeumOffice 就不會執行該程式。程式與登入維持原樣，所以在終端機中仍可繼續使用；按「重新使用」即可恢復。開始 PDF 翻譯、AI 頁面閱讀、AI 重點標示時，會在確認視窗中選擇要用的 AI。</dd>
+          </div>
+          <div>
+            <dt>大型文件通知</dt>
+            <dd>「文件佔用資源過高」視窗多了「本次不再提醒」。按下後，在那份文件開啟期間不會再詢問。在記憶體較大的電腦上，這個視窗會比較少出現。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          另外也修正了：在 Hancell 建立的 Excel 檔案（.xlsx）中更改儲存格格式後，儲存總是失敗；在 Ubuntu 20.04 這類較舊的 Linux 上無法開啟 Excel・CSV 檔案；在以 npm 安裝 Codex 的 Windows 電腦上，每次開啟 PDF 都會閃過黑色主控台視窗；在超過 30 頁的 Hangul 文件中按 AI 復原時，連自己打的字也會一起被復原。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.12" rel="noopener">查看 0.12.12 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.11">
+        <p class="release-meta"><b>0.12.11</b><time datetime="2026-11-05">2026 年 11 月 5 日</time></p>
+        <div class="split-head">
+          <h2>圖表編輯器，<br />心智圖文字・線條格式</h2>
+          <p>
+            新增了圖表編輯器，可以在分頁中開啟 draw.io 檔案（.drawio），修改流程圖或架構圖。在心智圖中，可以更改主題文字與分支線條的樣式・顏色。PDF 與電子書（EPUB）翻譯加入了「淺顯解釋」，把艱深的文字改寫成淺白的話。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/diagram-01211-1600.webp" srcset="/shots/diagram-01211-1600.webp 1600w, /shots/diagram-01211-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在圖表編輯器中開啟「書展_報名處理.drawio」的畫面。有一張從受理報名表到分配攤位編號的流程圖，左邊是圖形庫，右邊是格式面板，下方可看到「報名處理」與「活動當天」兩個頁面分頁。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>圖表</b> 開啟 draw.io 檔案（.drawio、.dio、.drawio.svg、.drawio.png）時會以分頁開啟，修改後儲存，會以開啟時的格式原樣儲存。新圖表從首頁的「圖表」建立。從圖形庫（Ctrl+Shift+K）拖曳圖形放上去，在右側格式面板的「樣式」・「文字」中更改顏色與文字，用下方的分頁區分頁面。可以從檔案選單匯出成 PNG・SVG・PDF 或列印。開啟 Visio 檔案（.vsdx）會匯入成新圖表，原本的 Visio 檔案不會改變。繪圖畫面只在這台電腦內運作，不使用 AI 視窗就不會透過網路傳送任何東西。也可以請旁邊的 AI 視窗畫流程圖或組織圖，AI 畫的內容可以用 Ctrl+Z 復原。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/mindmap-format-01211-1600.webp" srcset="/shots/mindmap-format-01211-1600.webp 1600w, /shots/mindmap-format-01211-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在書展點子心智圖中選取「宣傳」主題，並在右側格式面板的「線條」中把樣式改成圓角折線的畫面。只有宣傳分支的線條變成折線，格式面板中可以看到選擇粗細、顏色、線條種類的欄位。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>心智圖文字・線條格式</b> 選取主題後按工具列的「格式」，右側會開啟格式面板。在「文字」中可以更改粗體・斜體・底線・刪除線、文字顏色、大小、字型、對齊。編輯標題時只選取其中幾個字，粗體・斜體・底線・刪除線・文字顏色就只會套用到那幾個字。在「線條」中可以把分支線改成曲線・直線・折線等，並選擇粗細、顏色，以及實線・虛線等線條種類。選取關聯線、摘要括號、外框時，可以在同一個面板中更改它們的樣式與顏色。拖曳主題邊緣的控點可以改變方塊寬度，用工具列的「插入圖片」可以在主題上加圖片。底線或方塊寬度等部分格式，在 XMind 中可能顯示得不一樣。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>淺顯解釋</dt>
+            <dd>在 PDF「譯文對照」的「顯示內容」、「文件翻譯」視窗的「方式」，或電子書（EPUB）翻譯視窗中選擇「淺顯解釋」，AI 會用日常詞彙與短句改寫文字。也可以不翻成其他語言，用同一種語言改寫。在 Word 與 Hangul 中選取文字後，按右鍵選單的「用淺白的話解釋」，解釋會出現在 AI 視窗中，文件不會改變。在 PDF「文件翻譯」中選擇淺顯解釋時，結果會輸出為 Markdown 或 EPUB 檔案。</dd>
+          </div>
+          <div>
+            <dt>另存新檔時選擇格式</dt>
+            <dd>在「另存新檔」視窗的檔案類型清單中，可以直接選擇該編輯器能匯出的格式。Word 是 PDF・HTML・Markdown・頁面圖片（PNG），Hangul 是 PDF，Excel 是 CSV・PDF，PDF 是 Word・PowerPoint・Excel・EPUB・PNG 等。這時只會建立副本，開著的文件仍是原本的檔案。下次按「儲存」時，會存到原本的檔案。心智圖也可以匯出成 SVG 圖片。</dd>
+          </div>
+          <div>
+            <dt>Mac 應用程式更新（Beta）</dt>
+            <dd>放在「應用程式」資料夾中的 Mac 應用程式，在更新視窗中按「立即更新」→「立即重新啟動安裝」，就會換成新版本並重新開啟。這項功能在 0.12.11 才首次加入，所以這一次需要下載 0.12.11 的安裝檔（dmg）覆蓋安裝。應用程式自行更新要從下一個版本開始。</dd>
+          </div>
+          <div>
+            <dt>Hangul 中電腦上沒有的字型</dt>
+            <dd>文件中使用的字型若不在這台電腦上，字型選單中該字型旁會標示「這台電腦上沒有」；游標所在文字的字型不存在時，字型欄會出現虛線底線。開啟這類檔案時，會以通知列提醒一次。畫面上即使以其他字型顯示，檔案中仍會照原樣儲存原本的字型名稱。</dd>
+          </div>
+          <div>
+            <dt>PDF・Excel</dt>
+            <dd>PDF 文字選取列新增了黃、綠、天藍色螢光筆，在筆上按右鍵可以換顏色。開啟「符合頁面」旁的「手形工具」後拖曳，畫面就會移動。在 Excel 中複製儲存格範圍，貼到可接收圖片的通訊軟體或投影片編輯器時，會以儲存格原本的樣子貼成圖片。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          另外也修正了：在 0.12.10 中，有密碼的 PDF 一律以「無法開啟檔案」結束；PDF 簽名總是以紅色加入；在 Excel 中開啟 .xls 檔案時，置中對齊與框線會不見；在 Mac 的 Hangul 編輯器中 ⌘C・⌘X 無法使用。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.11" rel="noopener">查看 0.12.11 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.10">
+        <p class="release-meta"><b>0.12.10</b><time datetime="2026-11-01">2026 年 11 月 1 日</time></p>
+        <div class="split-head">
+          <h2>在 Hangul 表格中貼上儲存格，<br />投影片選取窗格</h2>
+          <p>
+            把從其他表格複製的儲存格貼到 Hangul 表格的儲存格時，可以選擇要覆寫，還是新插入列或欄。投影片新增了選取窗格、用 F4 重複上一步、滴管，以及圖形合併。在 AI 視窗中，可以選擇模型回答前要思考多深。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-cell-paste-01210-1600.webp" srcset="/shots/hwp-cell-paste-01210-1600.webp 1600w, /shots/hwp-cell-paste-01210-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="把游標放在報名表表格的一個儲存格中，貼上從 Excel 複製的兩列後，出現「貼上儲存格」視窗的畫面。可以在上方・下方・左方・右方插入，以及覆寫之中選擇。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>貼上儲存格</b> 把從 Excel 或其他表格複製的儲存格，貼到 Hangul 表格中游標所在的儲存格時，會出現「貼上儲存格」視窗（非韓文介面中顯示為英文「Paste Cells」）。「覆寫」會從游標所在的儲存格開始，依複製的儲存格數量替換內容。「在上方・下方插入」會新增列，「在左方・右方插入」會新增欄再放入。到 0.12.9 為止，這樣貼上時，複製的內容會全部塞進一個儲存格。貼到表格外的本文時，會貼入連合併儲存格都保持原樣的表格。在文字上按三下會選取整個段落，按兩下後拖曳會以詞為單位選取。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/slides-selection-01210-1600.webp" srcset="/shots/slides-selection-01210-1600.webp 1600w, /shots/slides-selection-01210-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在書展簡報投影片旁開啟選取窗格的畫面。投影片上的文字方塊與圖形連同名稱列成清單，選取的那一列有眼睛圖示的按鈕。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>投影片選取窗格</b> 按常用分頁的「選取窗格」或 Alt+F10，就會列出目前投影片上的文字方塊與圖形。在清單中按下的項目會被選取，所以被其他圖形擋住、難以用滑鼠點到的物件也能選。用眼睛圖示的按鈕隱藏或重新顯示，按兩下名稱可以改名。F4 會把剛才做的格式變更或對齊再做一次。字型色彩・圖形填滿選單中的滴管，可以直接吸取畫面上看到的顏色。用圖形合併（聯集・組合・分割・交集・減去）可以把多個圖形合成一個。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>思考深度</dt>
+            <dd>AI 視窗中選擇模型的清單下方新增了「思考深度」。可從該模型支援的等級中選擇，例如「預設」、「低」、「中」、「高」。越深回答越慢，也會耗用更多訂閱用量或 API 費用。只有在 Claude・Codex 訂閱、Anthropic・OpenRouter・DeepSeek・xAI 金鑰、Ollama 的模型會提供等級清單時才會顯示。</dd>
+          </div>
+          <div>
+            <dt>Hangul 表格快速鍵</dt>
+            <dd>用 F5 選取儲存格後，P 開啟表格/儲存格屬性，L・C 開啟儲存格框線・背景（每個儲存格分別套用），B・F 開啟儲存格框線・背景（視為一個儲存格），A 開啟表格自動填入。按鍵與 Hancom Hangul 相同。在有合併儲存格的表格中，也可以用 Ctrl・Alt・Shift+方向鍵與 H・W 調整列與欄的大小。以前只要有一個合併儲存格，這些按鍵就無法使用。</dd>
+          </div>
+          <div>
+            <dt>Excel 拼字檢查・有密碼的 PDF</dt>
+            <dd>在 Excel 中按 F7 會檢查工作表的拼字。可以開啟並修改有密碼的 PDF，儲存後密碼仍會保留。在「註解 → 保護」中可以新增、變更或移除密碼。也新增了縮小 PDF 檔案大小的功能。</dd>
+          </div>
+          <div>
+            <dt>Markdown・心智圖</dt>
+            <dd>在 Markdown 中輸入 <code>[[</code>，會出現存放筆記的資料夾（筆記庫）中的筆記清單，選一則就會插入前往該筆記的連結。在心智圖中，把 PNG・JPG・GIF 圖片（10MB 以內）拖曳到主題上，就會附加到該主題，可以用右鍵選單刪除。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          另外也修正了：在 Hangul 中接在段落後面的表格會蓋住下一行的文字；在 Hangul 編輯器中要使用電腦上安裝的字型，必須另外按「偵測本機字型」；在 0.12.9 中開啟掃描的 PDF 時，視窗會變成一片白。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.10" rel="noopener">查看 0.12.10 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.9">
+        <p class="release-meta"><b>0.12.9</b><time datetime="2026-10-30">2026 年 10 月 30 日</time></p>
+        <div class="split-head">
+          <h2>脈絡放在資料夾，<br />檔案從雲端硬碟開啟。</h2>
+          <p>
+            這個版本著重在串連人與工作。選一個資料夾作為專案，指示、記憶與對話就會累積在那個資料夾裡，在 Hangul 中進行的對話可以在投影片中接著進行。從 Google 雲端硬碟選擇的檔案，也能直接開啟、修改並重新儲存。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/projects-0129-1600.webp" srcset="/shots/projects-0129-1600.webp 1600w, /shots/projects-0129-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="首頁的專案畫面。建立了「秋季書展準備」專案，並在指示欄中寫下說明文與報告的寫法後儲存。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>專案</b> 在 AI 視窗輸入欄下方的「專案」中選擇資料夾，那個資料夾中寫好的指示（例如：「報告用條列式」）以及 AI 在對話中累積的記憶，每次提出請求時都會一起送出。AI 會在資料夾中查找並閱讀檔案，新建立的文件會儲存在那個資料夾。指示、記憶與對話都累積在那個資料夾裡，所以即使移動資料夾或在其他電腦上開啟，也會跟著過去。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/project-picker-0129-1600.webp" srcset="/shots/project-picker-0129-1600.webp 1600w, /shots/project-picker-0129-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在 Hangul 編輯器 AI 視窗的輸入欄下方，按「不使用專案」按鈕所開啟的清單。可以看到最近的專案「秋季書展準備」、新增專案、新增資料夾、不使用專案。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>在任何編輯器中</b> 在 Hangul・Word・Excel・PowerPoint・PDF 等所有編輯器的 AI 視窗輸入欄下方選擇專案。可以新建，也可以加入原本在用的資料夾；也可以不使用專案，像現在一樣每份文件分開詢問。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>從 Google 雲端硬碟開啟</dt>
+            <dd>在「設定 → 整合」中連結雲端硬碟，再按首頁的<b>從 Google 雲端硬碟選擇</b>，就會出現 Google 的選擇視窗。選好的檔案會以分頁開啟，儲存後會重新上傳到雲端硬碟。應用程式只開啟你選的檔案，看不到整個雲端硬碟。在 AI 視窗中也可以選擇雲端硬碟檔案附加。</dd>
+          </div>
+          <div>
+            <dt>Hangul 預覽列印・文件檢查</dt>
+            <dd>按列印（Ctrl+P）會先開啟預覽。也新增了檢查文件是否符合韓國行政安全部《行政文件撰寫指南》的視窗，字型可以在那個視窗中直接更改。</dd>
+          </div>
+          <div>
+            <dt>一次貼到 Hangul 表格中</dt>
+            <dd>拖曳選取表格中的多個儲存格後貼上，從 Excel 複製的值會分別填入每個儲存格。也加入了計算字數的文件資訊（Ctrl+Q,I）、彎引號，以及將已輸入的詞轉換為漢字。</dd>
+          </div>
+          <div>
+            <dt>Excel・PDF</dt>
+            <dd>Excel 新增了 What-If 資料表與樞紐分析圖，PDF 可以修改書籤，並與其他 PDF 比較文字。韓文介面的 Excel 會以韓文顯示星期與日期。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          另外也修正了：IeumOffice 建立的 HWPX 檔案中若有垂直合併儲存格的表格，Hancom Hangul 就無法開啟；在 Hangul 中複製貼上圖片與表格時，會貼到奇怪的位置。電子書（EPUB）可以用閱讀器的大小預覽。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.9" rel="noopener">查看 0.12.9 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.8">
+        <p class="release-meta"><b>0.12.8</b><time datetime="2026-10-28">2026 年 10 月 28 日</time></p>
+        <div class="split-head">
+          <h2>Claude 做到最後，<br />ChatGPT 直接連結。</h2>
+          <p>
+            修正了用 Claude 訂閱修改文件時，工作中途停止，或一次就要花上好幾分鐘的問題。
+            ChatGPT 方案不必安裝 Codex 程式，就能在應用程式中直接連結。HTML 文件可以插入並修改公式。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/html-math-1600.webp" srcset="/shots/html-math-1600.webp 1600w, /shots/html-math-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在 HTML 編輯器中開啟插入公式視窗的畫面。上方欄位以分數與括號顯示計算折扣價的式子，下方有公式範本按鈕、LaTeX 原始碼與預覽。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>HTML 公式</b> 按功能區的「插入公式」就會開啟公式視窗。可以直接在上方欄位輸入或用 LaTeX 撰寫，也可以用分數・矩陣・積分等 14 種範本與數學鍵盤輸入。儲存後重新開啟仍可修改公式，沒有網路也能顯示公式。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>直接連結 ChatGPT</dt>
+            <dd>在連線引導中選擇「我在用 ChatGPT」並按<b>使用 ChatGPT 繼續</b>，瀏覽器中就會開啟 ChatGPT 登入畫面。登入後允許本應用程式使用你的方案，就完成了。步驟請見<a href="/zh-tw/connect#chatgpt">連線說明</a>。</dd>
+          </div>
+          <div>
+            <dt>Excel 資料編輯列</dt>
+            <dd>選取含有多行內容的儲存格時，資料編輯列也不會撐開把工作表往下推。拖曳下方的控點改變高度後，即使選取其他儲存格，高度也會維持不變。</dd>
+          </div>
+          <div>
+            <dt>第一次開啟時當住的電腦</dt>
+            <dd>修正了在開啟 Windows 安全性「受控資料夾存取」（防勒索軟體）的電腦上第一次開啟時，會出現沒有回應或灰色畫面而當住的問題。無法寫入「文件」資料夾時，會儲存到使用者資料夾下的 <code>IeumOffice</code>，並告知一次這件事與解除方法。</dd>
+          </div>
+          <div>
+            <dt>只有指令的套件（Linux）</dt>
+            <dd>以 Beta 形式一併推出不含桌面應用程式、只安裝終端機指令的套件。用於在沒有畫面的伺服器或 AI 代理程式的工作空間中建立與讀取文件。安裝方法請見 <a href="https://github.com/pblsketch/ieumoffice/blob/main/README.md#linux-베타" rel="noopener">README 的「Linux（Beta）」</a>。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          另外也修正了：Word 的公式視窗與表格視窗中核取方塊畫得太大；用終端機指令把 Excel 轉成 PDF 時，計算儲存格會變成空白。貼到聊天中的圖片現在也能放進 Excel 工作表。從 0.12.7 更新時，這次會第一次出現安裝進度視窗，安裝完成後應用程式與原本開著的文件會重新開啟。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.8" rel="noopener">查看 0.12.8 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.7">
+        <p class="release-meta"><b>0.12.7</b><time datetime="2026-10-28">2026 年 10 月 28 日</time></p>
+        <div class="split-head">
+          <h2>批註放在文件旁，<br />圖片交給 AI。</h2>
+          <p>
+            Hangul 文件的批註清單不再擋住 AI 小幫手視窗，而是在文件旁的窗格中開啟。只要請 AI 幫忙，它也能在 Hangul 與心智圖中插入圖片。從學校或政府機關網站下載的 Excel 表格檔案（.xls）現在也能開啟。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-memo-side-1600.webp" srcset="/shots/hwp-memo-side-1600.webp 1600w, /shots/hwp-memo-side-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Hangul 編輯器畫面。左邊是 AI 小幫手視窗，中間是有三則批註的批註窗格，右邊是報名表文件，三者並排。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>文件旁的批註窗格</b> 按畫面左上方的「批註」按鈕，批註清單就會在文件旁的窗格中開啟。可以和 AI 小幫手視窗同時展開。拖曳窗格邊緣可以改變寬度，開著的窗格下次也會維持開啟。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>AI 插入圖片</dt>
+            <dd>在 Hangul 與心智圖中，AI 也會找照片插入，或把貼到聊天中的圖片放進文件。在 Word 中可以插入貼到聊天中的圖片。文件中原有的圖片不會動到，只會加入新圖片。</dd>
+          </div>
+          <div>
+            <dt>從網站下載的 Excel 檔案</dt>
+            <dd>可以開啟從網站以 .xls 名稱下載的表格檔案。值、合併儲存格、儲存格內換行、多個工作表都會照原樣匯入。字型與顏色不會匯入。</dd>
+          </div>
+          <div>
+            <dt>登入卡住時</dt>
+            <dd>登入 Claude 時，如果瀏覽器只顯示代碼就停住，可以用連線卡片上的「開啟登入視窗」在應用程式內完成登入（僅限 Windows）。步驟請見<a href="/zh-tw/connect#login-unfinished">連線說明</a>。</dd>
+          </div>
+          <div>
+            <dt>Hangul 視窗外觀</dt>
+            <dd>表格/儲存格屬性、字元・段落格式、頁面設定、尋找、插入批註等 Hangul 編輯器中開啟的視窗，都統一成相同的外觀。在深色主題下也會配合主題色彩顯示。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          修正了在部分以 Hancom 2014 儲存的 Hangul 文件中，封面標題行重疊的問題，以及更新後原本開著的文件沒有重新開啟的問題。從 0.12.6 更新時，按「立即重新啟動安裝」後，請等候 1～3 分鐘，直到應用程式重新出現。從下一次更新開始，安裝期間會出現顯示進度的視窗。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.7" rel="noopener">查看 0.12.7 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.6">
+        <span id="v0.12.5" aria-hidden="true"></span>
+        <p class="release-meta"><b>0.12.5～0.12.6</b><time datetime="2026-10-27">2026 年 10 月 27 日</time></p>
+        <div class="split-head">
+          <h2>Hangul 批註，<br />以及自己電腦上的 AI。</h2>
+          <p>
+            可以在 Hangul 文件中加上批註，也能像 Hancom Hangul 一樣使用複製格式與表格快速鍵。在自己電腦或公司內網中執行的 AI 模型（Ollama 等）也可以連結了。Word 的合併列印、PowerPoint 的 A4・直式投影片等，其他編輯器也加入了新功能。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-memo-menu-1600.webp" srcset="/shots/hwp-memo-menu-1600.webp 1600w, /shots/hwp-memo-menu-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在 Hangul 編輯器中選取報名表的標題並按右鍵的畫面。選單最下方有批註，左邊的批註視窗中有三則批註。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Hangul 批註</b> 選取文字後按右鍵並選擇「批註」，就會在那個位置加上批註。在批註視窗中可以閱讀、修改、刪除文件中的批註。在 Hancom Hangul 中加上的批註也能照原樣開啟並重新儲存。AI 小幫手只會讀取批註，要刪除附有批註的文字前會先詢問。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/local-ai-1600.webp" srcset="/shots/local-ai-1600.webp 1600w, /shots/local-ai-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在設定的 AI 畫面中新增本機 AI 伺服器的畫面。伺服器類型選擇 Ollama，並填好名稱與位址。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>連結自己電腦上的 AI</b> 在「設定 → AI」的「本機 AI」中登錄 Ollama 等 AI 伺服器的位址，並用連線測試確認能否對話。只登錄並不會改變使用的 AI，只會使用你親自選擇的伺服器。要傳送的內容可能超過模型能處理的長度時會先詢問；伺服器位址若是電腦以外的網路位址，會告知文件將傳送到那裡。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-format-copy-1600.webp" srcset="/shots/hwp-format-copy-1600.webp 1600w, /shots/hwp-format-copy-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在 Hangul 編輯器中開啟複製格式視窗的畫面。可在字元格式、段落格式、兩者、字元樣式、段落樣式中選擇。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>複製格式</b> 用 <kbd>Alt</kbd>+<kbd>C</kbd> 選擇要複製字元格式、段落格式或樣式，再套用到其他地方。在表格中也會複製儲存格的框線與背景。和 Hancom Hangul 一樣，複製的格式會保留到下次複製為止，可以接連套用到好幾個地方。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul 表格快速鍵</dt>
+            <dd>在表格儲存格中用 <kbd>Ctrl</kbd>+<kbd>Enter</kbd> 插入列，用 <kbd>F5</kbd> 選取儲存格，用 <kbd>Ctrl</kbd>・<kbd>Shift</kbd>+方向鍵調整列與欄的大小。Hangul 分頁的簡報模式用 <kbd>Ctrl</kbd>+<kbd>F5</kbd> 開啟。</dd>
+          </div>
+          <div>
+            <dt>填寫表單</dt>
+            <dd>AI 填寫表單欄位時，會刪除說明文字的藍色斜體，改用黑色文字書寫。□ 方框會在原處換成 ☑。</dd>
+          </div>
+          <div>
+            <dt>PDF・Hangul 自動儲存</dt>
+            <dd>開啟畫面上方的「自動儲存」，就會每 30 秒把修改內容存到文件檔案中。</dd>
+          </div>
+          <div>
+            <dt>其他編輯器</dt>
+            <dd>Word 加入了合併列印與比較兩份文件，Excel 加入了附註中的圖片，PowerPoint 加入了 A4・直式投影片尺寸，PDF 加入了插入連結。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          修正了：格式與框線很多的 Excel 工作表會卡頓；畫了文字方塊的 Hangul 檔案 Hancom Hangul 無法開啟；頁首有圖片時旁邊的文字會消失；在 Hangul 表格儲存格中按 F5 會開啟全螢幕而不是選取儲存格。更新沒有安裝成功時，下次開啟會告知並重新開啟安裝視窗。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.6" rel="noopener">查看 0.12.6 的完整修正內容</a>
+          · <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.5" rel="noopener">0.12.5</a>
+        </p>
+      </article>
+      <article class="release" id="v0.12.4">
+        <p class="release-meta"><b>0.12.4</b><time datetime="2026-10-24">2026 年 10 月 24 日</time></p>
+        <div class="split-head">
+          <h2>更好地處理<br />Hangul 文件。</h2>
+          <p>
+            Hangul 分頁的快速鍵與功能已配合 Hancom Hangul 2024 調整。加入了頁碼、表格的簡易計算式、插入日期等功能，AI 也能建立並修改樣式。另外新增了可以開啟、修改與翻譯 EPUB 電子書的編輯器。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-1600.webp" srcset="/shots/hwp-1600.webp 1600w, /shots/hwp-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在 Hangul 編輯器中開啟秋季書展報名表的畫面" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Hangul 文件</b> Ctrl+N 連續鍵、對齊鍵、插入日期（<kbd>Ctrl</kbd>+<kbd>K</kbd>,<kbd>D</kbd>）、表格的簡易計算式等常用功能，都能用與 Hancom 相同的按鍵操作。頁碼也能以與 Hancom 相同的樣式插入，還可以請 AI 建立或修改樣式。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/epub-1600.webp" srcset="/shots/epub-1600.webp 1600w, /shots/epub-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="開啟 EPUB 電子書的畫面。左邊是目錄，中間是活動說明章節，右邊是 AI 小幫手視窗。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>EPUB 電子書</b> 開啟書籍檔案會顯示目錄與內文，點一下內文就能直接修改。只重新儲存修改過的段落，書的其餘部分保持原樣。可以請 AI 小幫手摘要這一章，或翻譯成其他語言並儲存為譯本檔案。也能製作原文與譯文並列的對照版。翻譯前請確認你有這份文件的權利。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul 分頁快速鍵</dt>
+            <dd>已調整成與 Hancom Hangul 2024 相同。<kbd>Ctrl</kbd>+<kbd>N</kbd> 連續鍵、對齊鍵，以及 <kbd>Alt</kbd>+<kbd>N</kbd>・<kbd>O</kbd>・<kbd>S</kbd>・<kbd>V</kbd>・<kbd>P</kbd> 檔案鍵都能使用。</dd>
+          </div>
+          <div>
+            <dt>Hangul 功能</dt>
+            <dd>加入了頁碼、一般格式、反向尋找、表格的簡易計算式（橫向・縱向合計・平均・乘積），以及新增列與欄。</dd>
+          </div>
+          <div>
+            <dt>Hangul 樣式</dt>
+            <dd>AI 會建立並修改段落樣式與字元樣式。文件中原有的樣式會保留，只做修改。</dd>
+          </div>
+          <div>
+            <dt>簡報模式與復原副本</dt>
+            <dd>在所有編輯器中都能用 <kbd>F5</kbd> 開啟簡報模式；應用程式突然關閉時，連開著的分頁與分割畫面都會恢復。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          減少了在 Hangul 文件中打字時的卡頓，並修正了在 Claude 登入視窗中卡住的問題，以及用 winget 安裝的
+          Codex 一直無法完成更新的問題。也修正了把 PDF 轉成 Word 或翻譯時，邊界的直書文字混進內文、行尾的詞被拆開的問題。
+        </p>
+        <p class="credit">
+          EPUB 不會修改或翻譯固定版面的書與有 DRM 的書。固定版面的書只能閱讀。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.4" rel="noopener">查看 0.12.4 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.3">
+        <p class="release-meta"><b>0.12.3</b><time datetime="2026-10-22">2026 年 10 月 22 日</time></p>
+        <div class="split-head">
+          <h2>常做的事，<br />存成技能來叫用。</h2>
+          <p>
+            整理會議紀錄、撰寫公告這類常做的事，可以存成技能，在 AI 視窗中叫用。在 AI 輸入欄中輸入 @，就能選擇開著的文件直接附加。如果還沒連結 AI，會一步一步引導你完成連結。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/skills-slash-1600.webp" srcset="/shots/skills-slash-1600.webp 1600w, /shots/skills-slash-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在 Word 編輯器 AI 視窗的輸入欄中輸入 /，開啟整理會議紀錄、撰寫公告・電子報・FAQ 等技能清單的畫面" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>技能</b> 技能是預先寫好、要交給 AI 做的工作說明。在 AI 輸入欄中輸入 <kbd>/</kbd> 就會出現清單，所選技能中寫的內容會和問題一起送給 AI。預設內建整理會議紀錄、撰寫公告・電子報・FAQ，以及兩個潤飾英文文章的技能。</p>
+        <div class="new-pair">
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/skills-settings-1600.webp" srcset="/shots/skills-settings-1600.webp 1600w, /shots/skills-settings-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="設定中的技能畫面。五個預設技能已開啟，上方有新增與建立按鈕。" loading="lazy" />
+            </div>
+            <figcaption><b>建立自己的技能</b> 在「設定 → 技能」中建立或新增技能，並開啟或關閉。和 AI 完成工作後說「把剛才做的工作做成技能」，AI 會先顯示要儲存的內容，經你確認後再儲存。把目前的文件放進去當作範本，下次使用那個技能時，範本副本會在新分頁中開啟。</figcaption>
+          </figure>
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/doc-mention-1600.webp" srcset="/shots/doc-mention-1600.webp 1600w, /shots/doc-mention-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="在 Hangul 編輯器 AI 視窗的輸入欄中輸入 @，開啟已開啟文件清單的畫面" loading="lazy" />
+            </div>
+            <figcaption><b>用 @ 附加文件</b> 在 AI 輸入欄中輸入 <kbd>@</kbd>，就會出現開著的文件與最近的文件，選了就直接附加。寫問題寫到一半，不必再去找附件按鈕。</figcaption>
+          </figure>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>AI 連線引導</dt>
+            <dd>沒有連結任何 AI 時，會先問你目前有沒有在用的 AI，再針對你選的那一個，從安裝到登入依序引導。</dd>
+          </div>
+          <div>
+            <dt>選擇 Hangul 儲存格式</dt>
+            <dd>在「另存新檔」中，可以從 HWP 與 HWPX 中選擇想要的格式。</dd>
+          </div>
+          <div>
+            <dt>一次處理多個 PDF 頁面</dt>
+            <dd>在左側預覽中按住 <kbd>Ctrl</kbd> 或 <kbd>Shift</kbd> 選取多個頁面，一次完成旋轉・刪除・另存・移動。</dd>
+          </div>
+          <div>
+            <dt>投影片文字一起放大</dt>
+            <dd>在 PowerPoint 中選取多個文字方塊後按「放大/縮小字型」，所選方塊的文字會一起改變。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          檔案圖示也重新繪製了。修正了 Hangul 文件中標題方塊・圖片・註腳與內文重疊顯示的問題，也避免了修改並儲存 Excel 檔案時原始檔案變成空檔案的情形。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.3" rel="noopener">查看 0.12.3 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.2">
+        <p class="release-meta"><b>0.12.2</b><time datetime="2026-10-20">2026 年 10 月 20 日</time></p>
+        <div class="split-head">
+          <h2>兩份文件並排，<br />PDF 加上螢光筆。</h2>
+          <p>
+            可以把畫面分成兩格，同時查看兩份文件。閱讀 PDF 時可以留下螢光筆、底線與備忘，並集中在一處查看；不必開啟檔案，只要按空白鍵就能預覽內容。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/split-1600.webp" srcset="/shots/split-1600.webp 1600w, /shots/split-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="把畫面分成兩格，左邊開啟 Word 企劃書、右邊開啟 Excel 預算表的畫面" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>分割畫面</b> 把文件分頁拖曳到視窗的右緣或下緣放開，畫面就會分成兩半。也可以在分頁上按滑鼠右鍵，選擇「向右分割」。AI 視窗只會開一個，處理你目前正在看的那一側文件。</p>
+        <div class="new-pair">
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/pdf-reading-1600.webp" srcset="/shots/pdf-reading-1600.webp 1600w, /shots/pdf-reading-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="在 PDF 說明文上畫了螢光筆與底線，並集中在左側註解清單中查看的畫面" loading="lazy" />
+            </div>
+            <figcaption><b>PDF 螢光筆與備忘</b> 選取文字後按 <kbd>H</kbd> 是螢光筆，<kbd>U</kbd> 是底線，<kbd>N</kbd> 是備忘。標示過的地方會集中在旁邊的清單中，方便再次找到。外文文件可以把 AI 譯文放在原文旁邊閱讀。</figcaption>
+          </figure>
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/quicklook-1600.webp" srcset="/shots/quicklook-1600.webp 1600w, /shots/quicklook-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="在首頁的檔案清單中用空白鍵預覽 Word 企劃書內容的畫面" loading="lazy" />
+            </div>
+            <figcaption><b>空白鍵預覽</b> 在檔案清單中選取檔案後按空白鍵，不必開啟檔案就能看到內容。IeumOffice 開著時，在 Windows 檔案總管中也能使用。</figcaption>
+          </figure>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>把開著的文件給 AI 看</dt>
+            <dd>選擇目前開著的文件或最近開過的文件，附加到 AI 視窗。不必再去找檔案。</dd>
+          </div>
+          <div>
+            <dt>AI 會讀連結</dt>
+            <dd>在問題中一併寫上網址，AI 會讀取那個頁面的內容再回答。</dd>
+          </div>
+          <div>
+            <dt>集中查看投影片註解</dt>
+            <dd>可以一次查看 PowerPoint 所有投影片上的註解。AI 也能讀取註解並回答。</dd>
+          </div>
+          <div>
+            <dt>開啟有密碼的檔案</dt>
+            <dd>開啟設有密碼的 Excel・PowerPoint 檔案時，會詢問密碼，而不是顯示空白畫面。儲存時也會重新設上相同的密碼。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.2" rel="noopener">查看 0.12.2 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.1">
+        <p class="release-meta"><b>0.12.1</b><time datetime="2026-10-16">2026 年 10 月 16 日</time></p>
+        <div class="split-head">
+          <h2>把整個資料夾交給 AI 的<br />代理程式模式。</h2>
+          <p>
+            選擇要處理的資料夾，AI 就會一起讀取並修改那個資料夾中的檔案與開著的文件。它以電腦上安裝的 Claude
+            Code 或 Codex 運作。也能開啟 LibreOffice 的文件格式 ODT，並把 PDF 合併・分割等工具集中到同一個視窗。
+          </p>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>代理程式模式</dt>
+            <dd>從首頁左側的「代理程式」開始。由你自己決定 AI 在電腦上執行任何東西之前，是否每次都要先詢問。</dd>
+          </div>
+          <div>
+            <dt>ODT 文件</dt>
+            <dd>在 Word 編輯器中開啟 .odt 檔案，修改後再儲存回 .odt。</dd>
+          </div>
+          <div>
+            <dt>PDF 工具視窗</dt>
+            <dd>可以合併・分割・旋轉 PDF、縮小檔案大小、設定・移除密碼、修復損壞的檔案。不使用 AI，也不會把檔案傳送出去。</dd>
+          </div>
+          <div>
+            <dt>網頁簡報的頁面清單</dt>
+            <dd>開啟以網頁（HTML）製作的多頁簡報時，會顯示每一頁的清單。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.1" rel="noopener">查看 0.12.1 的完整修正內容</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.0">
+        <p class="release-meta"><b>0.12.0</b><time datetime="2026-10-15">2026 年 10 月 15 日</time></p>
+        <div class="split-head">
+          <h2>首次公開。</h2>
+          <p>
+            這是能在一個視窗中開啟並修改 Word・Excel・PowerPoint・PDF・Markdown・HTML 文件的首個公開版本。AI 功能使用你已經在用的 Claude 或 Codex 訂閱；沒有訂閱的話，也可以連結免費 AI 來使用。
+          </p>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul 編輯器</dt>
+            <dd>開啟並修改 HWP・HWPX 文件，再以原本的格式儲存。</dd>
+          </div>
+          <div>
+            <dt>心智圖編輯器</dt>
+            <dd>開啟並修改 XMind 檔案，再儲存成同一個檔案。</dd>
+          </div>
+          <div>
+            <dt>建立新文件</dt>
+            <dd>選擇手上的資料，AI 就會幫你製作簡報、心智圖、網頁。</dd>
+          </div>
+          <div>
+            <dt>PDF 轉換與翻譯</dt>
+            <dd>把 PDF 轉成電子書（EPUB）或 Markdown 文章。也可以用 AI 讀取掃描頁面的文字，或翻譯整份文件。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.0" rel="noopener">查看 0.12.0 的完整修正內容</a>
+        </p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">製作者 <b>박준일</b>（溫陽女子高中韓國語文教師） · <a href="/zh-tw/story">製作故事</a></p>
+          <p>
+            IeumOffice 是以開源專案
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a>（Apache-2.0）為基礎修改而成的程式，
+            Hangul 編輯器則以 <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a>（MIT）為基礎。本網站的字型是 Wanted Sans 與 Gowun Batang（SIL OFL 1.1）。
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="外部連結">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">版本發布</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">回報問題</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">傳送意見回饋</a>
+        <a href="/zh-tw/faq">常見問題</a>
+        <a href="/zh-tw/#opensource">開源</a>
+        <a href="/zh-tw/privacy.html">個人資料</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">授權</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          任何人都能免費使用，按「現狀」提供，不另提供擔保。<a href="/zh-tw/legal.html">法律聲明</a>（授權・商標）· 聯絡
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/updates.js"></script>
+  </body>
+</html>

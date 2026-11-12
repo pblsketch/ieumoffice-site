@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>よくある質問 · IeumOffice</title>
+    <meta name="description" content="IeumOffice を使っていてつまずきやすいところをまとめました。スマートフォン・iPad への対応、インストールとアンインストール、ハングル（HWP）の保存エラー、PDF へのスクリーンショット、Excel との互換性、企業での利用、ローカル LLM まで、1 ページで答えます。" />
+    <link rel="canonical" href="https://ieumoffice.com/ja/faq" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/ja/faq" />
+    <meta property="og:title" content="よくある質問 · IeumOffice" />
+    <meta property="og:description" content="スマートフォン・iPad への対応、インストールとアンインストール、ハングル（HWP）の保存エラー、PDF へのスクリーンショット、Excel との互換性まで、1 ページで答えます。" />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-faq">
+    <a class="skip" href="#main">本文へスキップ</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/ja/" aria-label="IeumOffice トップへ">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="ページ案内">
+        <a href="/ja/updates">アップデート情報</a>
+        <a href="/ja/story">開発の経緯</a>
+        <a href="/ja/install">インストールのヘルプ</a>
+        <a href="/ja/connect">AI の接続</a>
+        <a href="/ja/faq" aria-current="page">よくある質問</a>
+        <a href="/ja/#formats">文書</a>
+        <a href="/ja/#hwp">ハングル</a>
+        <a href="/ja/#ai">AI</a>
+      </nav>
+      <a class="btn btn-small" href="/ja/#download">ダウンロード</a>
+    </header>
+
+    <main id="main">
+      <header class="install-head">
+        <p class="eyebrow">ヘルプ</p>
+        <h1>よくある質問</h1>
+        <p class="install-lede">
+          IeumOffice を使っていてつまずきやすいところをまとめました。0.12.12 時点の内容です。ここにないことは <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>からお知らせください。
+        </p>
+      </header>
+
+      <nav class="faq-toc" aria-label="質問の一覧">
+        <a href="#platforms">対応環境</a>
+        <a href="#cost">費用</a>
+        <a href="#portable">ポータブル版</a>
+        <a href="#install-remove">インストールと削除</a>
+        <a href="#first-run-freeze">初回起動で止まる</a>
+        <a href="#hwp-save">ハングルの保存エラー</a>
+        <a href="#markdown-links">Markdown のリンク</a>
+        <a href="#pdf-capture">PDF へのスクリーンショット・貼り付け</a>
+        <a href="#excel-compat">Excel との互換性</a>
+        <a href="#excel-row-height">Excel の行の高さ</a>
+        <a href="#chatgpt">ChatGPT の接続</a>
+        <a href="#gemini">Gemini の有料プラン</a>
+        <a href="#business">企業での利用</a>
+        <a href="#hwp-compare">Hancom Hangul との比較</a>
+        <a href="#local-llm">ローカル LLM</a>
+        <a href="#ai-retry">AI の再試行</a>
+        <a href="#updates">アップデート情報</a>
+      </nav>
+
+      <div class="faq-list">
+        <section class="guide" id="platforms">
+          <div class="guide-head">
+            <p class="guide-tag">対応環境</p>
+            <h2>スマートフォン・モバイル版・iPad・Android でも使えますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              いいえ。IeumOffice は PC にインストールするデスクトップのプログラムです。スマートフォン（携帯電話）、モバイル版、iPhone、Android、iPad、タブレットで使うアプリはなく、Web ブラウザーで開く版もありません。タブレットやモバイルのアプリとしてはインストールできません。
+            </p>
+            <table>
+              <thead>
+                <tr><th>OS</th><th>対応</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Windows 10・11（64 ビット）</td><td>正式</td></tr>
+                <tr><td>macOS（Apple Silicon・Intel）</td><td>ベータ</td></tr>
+                <tr><td>Linux x64（AppImage・deb・rpm）</td><td>ベータ</td></tr>
+                <tr><td>iPad・iPhone・Android</td><td>非対応</td></tr>
+              </tbody>
+            </table>
+            <h3>Mac（ベータ）でも使えますか？</h3>
+            <p>
+              使えます。Mac は Apple Silicon と Intel のどちらもベータ版として配布しています。Apple Silicon は M1 以降、
+              Intel は 0.12.4 からです。インストーラーはダウンロードページで選びます。
+            </p>
+            <h3>Intel Mac はいつから使えますか？</h3>
+            <p>
+              Intel Mac は 0.12.4 から、Apple Silicon と一緒にベータ版として配布しています。ダウンロードページで
+              Intel Mac 用のインストーラーを選べます。Mac と Linux はベータ版なので、開発者が直接確かめられていない部分があり、利用者からの報告で確認しています。
+            </p>
+            <h3>Windows 7 や 32 ビット版 Windows でも使えますか？</h3>
+            <p>
+              対応していません。対応しているのは Windows 10・11 の 64 ビット版だけです。32 ビット版 Windows と Windows 7
+              以前にはインストールできません。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="cost">
+          <div class="guide-head">
+            <p class="guide-tag">費用</p>
+            <h2>本当に無料ですか？ 費用はどうなっていますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              プログラムは無料です。文書の編集・保存に有料の制限はなく、アカウントやサブスクリプションも必要ありません。IeumOffice が別にお金を受け取ることはありません。
+            </p>
+            <p>
+              AI 機能は、すでに使っている Claude・ChatGPT のサブスクリプションか、自分で入力した API キーで動きます。サブスクリプション料金はその会社に払うもので、IeumOffice に追加で払うお金はありません。API キー（OpenRouter・Gemini）を使うと、その会社に使った分の料金がかかることがあり、無料枠のあるキーもあります。
+            </p>
+            <p>
+              アプリが勝手に有料の API キーや従量課金の接続に切り替えることはありません。上限に達すると、リクエストを止めて理由を知らせます。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="portable">
+          <div class="guide-head">
+            <p class="guide-tag">インストール</p>
+            <h2>インストールせずに使えるポータブル版はありますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              ありません。インストールせずに実行するポータブル版（圧縮ファイル）や、USB メモリに入れて持ち歩く版は、まだ作っていません。
+            </p>
+            <p>
+              Windows では、インストーラー（.exe）で一度インストールしてから、スタートメニューやデスクトップから起動します。
+              Mac は .dmg を開いてアプリケーション フォルダーに移し、Linux は AppImage を実行するか、
+              .deb・.rpm でインストールします。
+            </p>
+            <p>
+              インストールでつまずいたら、<a class="text-link" href="/ja/install">インストールのヘルプ</a>で、いま見えている画面を選んで確かめてください。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="install-remove">
+          <div class="guide-head">
+            <p class="guide-tag">インストール</p>
+            <h2>プログラムはどうやって削除しますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Windows では <b>設定 → アプリ → インストールされているアプリ</b> で IeumOffice を探し、<b>アンインストール</b> を押します。
+              Mac では <b>Finder → アプリケーション</b> で IeumOffice をゴミ箱に移します。Linux では、インストールした方法に合わせて <code>sudo apt remove ieumoffice</code>、
+              <code>sudo dnf remove ieumoffice</code> を使うか、AppImage のファイルを削除します。
+            </p>
+            <p>
+              アンインストールが途中で止まったり、もう一度インストールできなかったりする場合は、同じバージョンをもう一度インストールしてから、アンインストールをやり直してみてください。それでもだめなら、<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>からどの画面で止まったかを教えてください。
+            </p>
+            <p>
+              設定と最近使った文書の記録は、ユーザーデータのフォルダーに残ることがあります（Windows
+              <code>%APPDATA%\IeumOffice</code>、Mac
+              <code>~/Library/Application Support/IeumOffice</code>、Linux
+              <code>~/.config/IeumOffice</code>）。完全に消すには、アンインストールしたあとでこのフォルダーを自分で削除します。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="first-run-freeze">
+          <div class="guide-head">
+            <p class="guide-tag">インストール</p>
+            <h2>初めて起動すると「応答なし」や灰色の画面で止まります</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Windows セキュリティの <b>コントロールされたフォルダー アクセス</b>（ランサムウェア防止）がオンになっている PC で起きていた問題です。この機能がドキュメント フォルダーに新しいフォルダーを作らせないため、0.12.7 までは、こうした PC でアプリが初めて起動するときに止まることがありました。
+              0.12.8 に更新するか、新しくインストールすれば直ります。
+            </p>
+            <p>
+              0.12.8 からは、ドキュメント フォルダーに書き込めない場合、ユーザー フォルダーの下の <code>IeumOffice</code> フォルダーに新しいファイルを保存し、「ドキュメント フォルダーに保存できません」という案内を一度表示します。これまでどおりドキュメント フォルダーに保存するには、Windows セキュリティの <b>コントロールされたフォルダー アクセスによるアプリの許可</b> に IeumOffice を追加してから、アプリを再起動します。<b>設定 → 一般 → 保存先</b> で別のフォルダーを選んでもかまいません。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="hwp-save">
+          <div class="guide-head">
+            <p class="guide-tag">ハングル</p>
+            <h2>ハングル（HWP）の保存ができず、「保存しませんでした」と表示されます</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              IeumOffice は保存するとき、まず新しいファイルを書き出し、そのファイルを読み直して画面と同じかどうかを確かめます。読み直した内容が画面と違えば、元のファイルを上書きせずに止まります。そのため<b>元のファイルはそのまま残っています。</b> ファイルが壊れたという意味ではなく、画面と違う結果で元のファイルを壊さないように止めたのです。この確認は <b>.hwp で保存するときだけ</b>行います。<b>.hwpx</b> は別の形式なので、この確認は行いません。
+            </p>
+            <ol>
+              <li><b>名前を付けて保存</b> でファイルの種類を <b>HWPX</b> に変えて、新しいファイルに保存します。保存したら、Hancom Hangul で開いて確かめてください。</li>
+              <li>それでも .hwp で保存する必要がある場合は、<b>名前を付けて保存</b> で <b>HWP</b> を選んで新しいファイルに保存してみます。同じ確認でまた止まることがあります。</li>
+              <li>だめなら、<b>PDF として書き出す</b> でいまの画面の内容を残します。</li>
+              <li>それでもだめなら、<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>からその文書を送ってください。個人情報を消したり置き換えたりしたコピーでもかまいません。</li>
+            </ol>
+            <p>
+              アプリが突然終了した場合は、次に起動したときに復元用のコピーを提案します。復元用のコピーはユーザーデータのフォルダーの
+              <code>hwp-autosave</code> に残ります。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="markdown-links">
+          <div class="guide-head">
+            <p class="guide-tag">Markdown</p>
+            <h2>Markdown でリンクをクリックしても開きません</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Markdown エディターでリンクを <b>普通にクリック</b> すると、リンクの文字を直せるようにカーソルが入ります。リンクを開くには <b>Ctrl を押しながらクリック</b> してください（Mac では <b>⌘ を押しながらクリック</b>）。プレゼンテーション表示（F5）のような読み取り専用のときは、普通にクリックしても開きます。
+            </p>
+            <p>
+              既定のブラウザーで開くのは、Web アドレス（http・https）とメールアドレス（mailto）だけです。文書の中の相対パス、<code>file://</code> のアドレス、ソース表示（<b>Ctrl+E</b>）のリンクは、まだ開きません。
+            </p>
+            <p>
+              リンクにマウスポインターを合わせると指の形になるのに、編集中は 1 回のクリックで開かないのは、リンクの文字をその場で直せるようにするためです。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="pdf-capture">
+          <div class="guide-head">
+            <p class="guide-tag">PDF</p>
+            <h2>PDF にスクリーンショットの画像を貼り付けたり、ページをコピーしたりできますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              まだできません。PDF の編集画面で <b>Ctrl+V</b> でクリップボードのスクリーンショット画像を貼り付ける機能と、ページをまとめてクリップボードにコピーする機能は、まだ入れていません。
+            </p>
+            <p>いまは次の 2 つの方法が使えます。</p>
+            <ul>
+              <li><b>画像/スタンプの挿入</b> で、スクリーンショットを保存した画像ファイルを PDF に入れます。</li>
+              <li><b>PDF ツール → 画像を書き出す</b> で、ページを PNG ファイルとして保存します。</li>
+            </ul>
+            <p>
+              スクリーンショット画像の貼り付けとページのコピーは、フィードバックで要望が届いています。さらに必要な場合は、フィードバックを送るからお知らせください。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="excel-compat">
+          <div class="guide-head">
+            <p class="guide-tag">Excel</p>
+            <h2>Excel のファイルはどこまで互換性がありますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              日常的な .xlsx の作業はできます。セルの編集、数式、書式、テーブル、グラフ（9 種類）、ピボットテーブル、条件付き書式、並べ替え・フィルター、データの入力規則、シート・ブックの保護に対応しています。.csv と .tsv も表として開き、元の形式で保存します。
+            </p>
+            <p>ただし、Excel のすべての機能に同じように対応しているわけではありません。</p>
+            <ul>
+              <li><b>VBA マクロ</b> は実行しません。.xlsm ファイルを開いて保存するとき、マクロが保存されている部分は消さずにそのまま残します。</li>
+              <li>外部データ接続、一部の高度なピボット・グラフ・OLE オブジェクトは、Excel と結果が違うことがあります。</li>
+              <li>保存するときは結果を読み直し、読めなければ元のファイルを上書きしません。大切な文書は、保存したあとで一度 Excel で開いて確かめてください。</li>
+            </ul>
+            <p>
+              互換性のない機能があれば、<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>からファイルと一緒にお知らせください。個人情報を消したり置き換えたりしたコピーでもかまいません。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="excel-row-height">
+          <div class="guide-head">
+            <p class="guide-tag">Excel</p>
+            <h2>Excel で行の高さをそろえるにはどうすればいいですか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              セルの高さ（行の高さ）をそろえるには、行番号（1、2、3…）を複数選んでから、リボンの<b>書式 → 行の高さ…</b> を選んで同じ値を入れます。これで、選んだ行の高さがそろいます。内容に合わせてそろえるには <b>書式 → 行の高さの自動調整</b> を使います。
+            </p>
+            <p>
+              列の幅も同じように <b>書式 → 列の幅…</b> でそろえます。行番号の境界をドラッグして合わせたり、境界をダブルクリックして自動で合わせたりもできます。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="chatgpt">
+          <div class="guide-head">
+            <p class="guide-tag">AI の接続</p>
+            <h2>ChatGPT のプランで使えますか？ Codex プログラムは必要ですか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              使えます。0.12.8 からは Codex プログラムがなくても大丈夫です。接続の案内で <b>ChatGPT を使っています</b> を選び、<b>ChatGPT で続行</b> を押すと、ブラウザーで ChatGPT のログイン画面が開きます。ログインして、このアプリがプランを使うことを許可すれば接続されます。設定 → AI の <b>ChatGPT</b> のカードでも同じことができます。画面で見るには <a class="text-link" href="/ja/connect#chatgpt">AI 接続のヘルプ</a>をご覧ください。
+            </p>
+            <p>
+              この PC で Codex プログラムをすでに使っているなら、Codex で接続してもかまいません。エージェントモードとターミナルのコマンドには、これまでどおり Claude Code か Codex のプログラムが必要です。
+            </p>
+            <p>
+              <b>使用する AI</b> が <b>自動</b> なら、接続されているものの中から Claude、ChatGPT、Codex の順に選びます。料金が発生する API キーや従量課金のログインは、自動では選びません。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="projects">
+          <div class="guide-head">
+            <p class="guide-tag">AI</p>
+            <h2>文書ごとに同じ背景の説明を AI に書き直す必要がありますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              0.12.9 からは、プロジェクトにまとめれば済みます。AI ウィンドウの入力欄の下にある <b>プロジェクト</b> で <b>新しいプロジェクト</b> を作るか、<b>フォルダーを追加</b> で使っていたフォルダーを選んでください。ホームの <b>プロジェクト</b> 画面に書いておいた指示と、AI が会話の中で積み重ねた記憶が、そのプロジェクトでのリクエストのたびに一緒に送られます。AI はフォルダー内のファイルを探して読み、同じプロジェクトの会話は別のエディターでも続きます。
+            </p>
+            <p>
+              指示・記憶・会話は、そのフォルダーの中の <code>.ieumoffice</code> フォルダーにたまります。AI に見せたくないファイルは、プロジェクト画面の <b>ファイル</b> で外せます。プロジェクトを選ばなければ、これまでどおり文書ごとに別々に会話します。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="google-drive">
+          <div class="guide-head">
+            <p class="guide-tag">ファイル</p>
+            <h2>Google ドライブにあるファイルを開けますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              0.12.9 から開けます。設定 → <b>連携</b> で Google ドライブを接続してから、ホームの <b>Google ドライブから選ぶ</b> を押すと、Google のファイル選択画面が開きます。選んだファイルはタブで開き、保存するとドライブにアップロードし直されます。AI ウィンドウで添付するときも、ドライブのファイルを選べます。
+            </p>
+            <p>
+              アプリが開くのは、選択画面で選んだファイルとアプリが作ったファイルだけで、ドライブ全体は見ません。ドライブのファイルを
+              AI に渡す前には、いま使っている AI のアカウントでモデルの学習をオフにしているかを一度確認します。無料の AI の接続には、ドライブのファイルを渡しません。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="gemini">
+          <div class="guide-head">
+            <p class="guide-tag">AI の接続</p>
+            <h2>Gemini の有料プランで接続できますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Gemini Advanced（Google One AI Premium）のサブスクリプションは、IeumOffice の AI の接続には直接使えません。「無料で使う」で接続する Gemini は、Google AI Studio で作成した <b>API キー</b> です。
+            </p>
+            <p>
+              有料の Gemini API キーを入れると、使った分の料金が Google から請求されることがあり、無料枠のあるキーもあります。アプリが勝手に有料の API キーに切り替えることはありません。
+            </p>
+            <p>
+              Gemini Advanced のサブスクリプションを使っている場合は、いまのところ Claude か ChatGPT のサブスクリプションを接続するか、
+              Google AI Studio で API キーを作成して接続する必要があります。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="business">
+          <div class="guide-head">
+            <p class="guide-tag">ライセンス</p>
+            <h2>会社・企業・機関で業務に使ってもいいですか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              かまいません。IeumOffice は Apache License 2.0 で配布している無料のオープンソースです。会社（企業）、学校、公共機関でも、別途サブスクリプションなしで業務に使えます。文書の編集・保存の機能に有料の制限はありません。
+            </p>
+            <p>
+              AI 機能は、各利用者の Claude・ChatGPT のサブスクリプションか、自分で入力した API キーで動きます。会社のアカウントで管理する場合は、その会社の利用規約を確認してください。アプリは利用統計を送らず、文書は PC に残ります。
+            </p>
+            <p>
+              ライセンスの全文は <a class="text-link" href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">GitHub の LICENSE</a> にあります。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="hwp-compare">
+          <div class="guide-head">
+            <p class="guide-tag">ハングル</p>
+            <h2>Hancom Hangul とは何が違いますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              IeumOffice のハングルエディターは .hwp と .hwpx を開いて保存し、文字・表・スタイル・ショートカットキーなどの基本的な編集ができます。Hancom Hangul 2024 のショートカットキーに多く合わせてあり、AI で文書を直したり、PDF に書き出したりもできます。
+            </p>
+            <p>
+              Hancom Office のすべての機能を同じように再現しているわけではありません。変更履歴は現在の内容で開き、履歴の記録は保存されません。一部のオブジェクト・フィールド・ページのレイアウトは、Hancom Hangul と違うことがあります。
+            </p>
+            <p>
+              大切な文書は、IeumOffice で保存したあと、一度 Hancom Hangul で開いて確かめてください。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="local-llm">
+          <div class="guide-head">
+            <p class="guide-tag">AI の接続</p>
+            <h2>ローカル LLM で使えますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              使えます（0.12.6 から）。IeumOffice がモデルを直接動かすのではなく、自分の PC や社内ネットワークで動いている
+              AI サーバー（Ollama など）に接続します。<b>設定 → AI</b> の <b>ローカル AI</b> でサーバーのアドレスを登録し、接続テストで会話ができるかを確かめます。
+            </p>
+            <p>
+              登録しただけでは使う AI は変わらず、自分で選んだサーバーだけを使います。サーバーのアドレスが PC の外のインターネット上のアドレスなら、文書がそちらに送られることを知らせます。インターネットがなくても、文書の編集と保存はできます。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="ai-retry">
+          <div class="guide-head">
+            <p class="guide-tag">AI</p>
+            <h2>AI が「正しい呼び出しを送り直します」と言います</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              AI が文書を直すツールを間違った形式で送ると、アプリがそのリクエストを送り直すように案内します。少し待てば、もう一度答えることが多いです。
+            </p>
+            <p>
+              同じリクエストで何度も繰り返される場合は、リクエストを少し変えてみるか、どんなリクエストだったかを<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>からお知らせください。画面と会話の記録を一緒に送っていただくと、原因を見つけやすくなります。
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="updates">
+          <div class="guide-head">
+            <p class="guide-tag">アップデート</p>
+            <h2>アップデート情報をメールで受け取れますか？</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              メールや SMS でアップデート情報を送るサービスはありません。IeumOffice はメールアドレスを集めていません。
+            </p>
+            <p>
+              新しいバージョンは、アプリが 4 時間ごとに確認します。タブバーの <b>☰ メニュー → 更新を確認…</b>（Mac では<b>ヘルプ → 更新を確認…</b>）ですぐに確認でき、新しいバージョンがあればアプリの中で知らせます。自動で確認しないようにするには、<b>設定 → 情報</b> で <b>アップデートを自動で確認</b> をオフにします。GitHub の Releases ページからもダウンロードできます。
+            </p>
+            <p>
+              GitHub で新しいリリースの通知を受け取りたい場合は、リポジトリの <b>Watch → Custom → Releases</b> を選んでください。
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="guide guide-help">
+        <p>
+          ここにない質問は、<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>からお知らせください。どの画面でつまずいたか、何をしようとしていたかを書いていただくと、早く原因を見つけられます。
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">作者 <b>박준일</b>（温陽女子高等学校の国語（韓国語）教師） · <a href="/ja/story">開発の経緯</a></p>
+          <p>
+            IeumOffice はオープンソースプロジェクト
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a>（Apache-2.0）をもとに手を加えて作ったプログラムで、ハングルエディターは <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a>（MIT）をもとにしています。このページのフォントは Wanted Sans と Gowun Batang（SIL OFL 1.1）です。
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="外部リンク">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">リリース</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">問題を報告</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>
+        <a href="/ja/connect">AI 接続のヘルプ</a>
+        <a href="/ja/faq">よくある質問</a>
+        <a href="/ja/#opensource">オープンソース</a>
+        <a href="/ja/privacy.html">個人情報</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">ライセンス</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          誰でも無料で使えます。現状のまま提供し、いかなる保証もしません。<a href="/ja/legal.html">法的情報</a>（ライセンス・商標） · お問い合わせ
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/faq.js"></script>
+  </body>
+</html>

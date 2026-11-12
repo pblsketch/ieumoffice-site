@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>安裝卡住時 · IeumOffice</title>
+    <meta name="description" content="Edge 無法下載，或開啟安裝檔時被「Windows 已保護您的電腦」或智慧型應用程式控制擋下時，選擇你現在看到的畫面，就能看到該按哪裡。" />
+    <link rel="canonical" href="https://ieumoffice.com/zh-tw/install" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/zh-tw/install" />
+    <meta property="og:title" content="安裝卡住時 · IeumOffice" />
+    <meta property="og:description" content="選擇你現在看到的畫面，就用畫面告訴你該按哪裡。" />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-install">
+    <a class="skip" href="#main">跳到主要內容</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/zh-tw/" aria-label="IeumOffice 首頁">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="頁面導覽">
+        <a href="/zh-tw/updates">更新消息</a>
+        <a href="/zh-tw/story">製作故事</a>
+        <a href="/zh-tw/install" aria-current="page">安裝說明</a>
+        <a href="/zh-tw/connect">AI 連線</a>
+        <a href="/zh-tw/#formats">文件</a>
+        <a href="/zh-tw/#hwp">Hangul</a>
+        <a href="/zh-tw/#ai">AI</a>
+      </nav>
+      <a class="btn btn-small" href="/zh-tw/#download">下載</a>
+    </header>
+
+    <main id="main">
+      <header class="install-head">
+        <p class="eyebrow">安裝說明</p>
+        <h1>安裝卡住時</h1>
+        <p class="install-lede">
+          請選擇和你現在畫面上看到的最像的圖。滑鼠游標會實際移動，告訴你該按哪裡。
+        </p>
+      </header>
+
+      <!-- symptom picker: people recognise the screen in front of them, not its name -->
+      <nav class="symptoms" aria-label="選擇你現在看到的畫面">
+        <a class="symptom" href="#edge">
+          <span class="symptom-pic symptom-pic-edge" aria-hidden="true">
+            <i class="sp-bar"></i><i class="sp-panel"><b></b><s></s><s></s></i>
+          </span>
+          <b>Edge 無法下載</b>
+          <span>「通常不會下載」</span>
+        </a>
+        <a class="symptom" href="#pc-protect">
+          <span class="symptom-pic symptom-pic-blue" aria-hidden="true">
+            <i class="sp-blue"><b></b><s></s><s></s></i>
+          </span>
+          <b>跳出藍色警告視窗</b>
+          <span>「Windows 已保護您的電腦」</span>
+        </a>
+        <a class="symptom" href="#smart-app-control">
+          <span class="symptom-pic symptom-pic-sac" aria-hidden="true">
+            <i class="sp-sac"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>被智慧型應用程式控制封鎖</b>
+          <span>「可能不安全的應用程式」</span>
+        </a>
+        <a class="symptom" href="#find-file">
+          <span class="symptom-pic symptom-pic-folder" aria-hidden="true">
+            <i class="sp-folder"></i>
+          </span>
+          <b>找不到下載的檔案</b>
+          <span>開啟「下載」資料夾</span>
+        </a>
+        <a class="symptom" href="#installer">
+          <span class="symptom-pic symptom-pic-setup" aria-hidden="true">
+            <i class="sp-setup"><b></b><s></s><u></u></i>
+          </span>
+          <b>安裝視窗要按什麼？</b>
+          <span>下一步 → 安裝 → 完成</span>
+        </a>
+      </nav>
+      <p class="symptoms-more">
+        使用 Mac 或 Linux 的話：<a class="text-link" href="#mac">在 Mac 上第一次開啟時</a> ·
+        <a class="text-link" href="#linux">在 Linux 上安裝時</a>
+      </p>
+
+      <!-- Edge: "not commonly downloaded" -->
+      <section class="guide" id="edge" aria-labelledby="edge-title">
+        <div class="guide-head">
+          <p class="guide-tag">Microsoft Edge</p>
+          <h2 id="edge-title">出現「通常不會下載」</h2>
+          <p>
+            IeumOffice 是剛推出的免費程式，Edge 還不太認得這個檔案。檔案本身沒有問題，照下面的順序按就能下載。
+          </p>
+        </div>
+        <div class="player" data-player="edge">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <!-- browser frame -->
+              <div class="ms-window">
+                <div class="ms-tabs">
+                  <span class="ms-tab"><i class="ms-fav"></i>IeumOffice - 從 Hangul 到 PDF</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ms-toolbar">
+                  <span class="ms-nav">‹ › ↻</span>
+                  <span class="ms-url">ieumoffice.com</span>
+                  <span class="ms-dlbtn" data-t="dlbtn">
+                    <svg viewBox="0 0 20 20"><path d="M10 3v9m0 0-4-4m4 4 4-4M4 16h12" /></svg>
+                  </span>
+                  <span class="ms-dots">···</span>
+                </div>
+                <div class="ms-page">
+                  <p class="mp-eyebrow">安裝</p>
+                  <p class="mp-title">安裝只要三步。</p>
+                  <span class="mp-btn" data-t="site-btn">↓ 下載 Windows 版</span>
+                </div>
+              </div>
+
+              <!-- download flyout -->
+              <div class="ms-flyout" data-frame>
+                <div class="mf-head">
+                  <b>下載</b>
+                  <span class="mf-icons">
+                    <svg viewBox="0 0 20 20"><path d="M3 6h5l2 2h7v7H3z" /></svg>
+                    <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" /><path d="m13 13 4 4" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M4 10h.01M10 10h.01M16 10h.01" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M7 3h6l-1 5 3 3H5l3-3zM10 11v6" /></svg>
+                  </span>
+                </div>
+                <div class="mf-item" data-t="item">
+                  <span class="mf-icon"></span>
+                  <div class="mf-text">
+                    <b class="mf-name">IeumOffice-Setup.exe</b>
+                    <span class="mf-warn">
+                      <i class="mf-warn-icon">!</i>
+                      通常不會下載 IeumOffice-Setup.exe。開啟之前，請確定您信任
+                      IeumOffice-Setup.exe。
+                    </span>
+                    <span class="mf-open" data-t="open">開啟檔案</span>
+                  </div>
+                  <span class="mf-actions">
+                    <svg class="mf-trash" viewBox="0 0 20 20"><path d="M4 6h12M8 6V4h4v2M6 6l1 11h6l1-11" /></svg>
+                    <i class="mf-more" data-t="more">···</i>
+                  </span>
+                </div>
+                <ul class="mf-menu">
+                  <li data-t="keep">保留</li>
+                  <li>向 Microsoft 回報此檔案安全</li>
+                  <li>深入了解</li>
+                  <li>複製下載連結</li>
+                </ul>
+              </div>
+
+              <!-- SmartScreen confirmation inside Edge -->
+              <div class="ms-dialog" data-frame>
+                <p class="md-title">開啟 IeumOffice-Setup.exe 之前，請確定您信任它。</p>
+                <p class="md-body">
+                  因為這個檔案通常不會被下載，Microsoft Defender SmartScreen 無法確認它是否安全。開啟之前，請確定您信任這個檔案或它的來源。
+                </p>
+                <div class="md-foot">
+                  <div class="md-left">
+                    <span class="md-more" data-t="showmore">顯示更多 <i>⌄</i></span>
+                    <span class="md-continue" data-t="continue">仍要保留</span>
+                  </div>
+                  <span class="md-btn">回報此應用程式安全</span>
+                  <span class="md-btn md-btn-primary">刪除</span>
+                </div>
+              </div>
+
+              <!-- pointer, click ripple and target ring -->
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>按下<b>下載</b>按鈕後，Edge 右上角會開啟下載視窗。</li>
+            <li>看到「通常不會下載」時，把滑鼠移到檔名上，按 <b>···</b>（三個點）。</li>
+            <li>在選單中按最上面的<b>保留</b>。</li>
+            <li>出現確認視窗時，不要按藍色的<b>刪除</b>，請按左下角的<b>顯示更多</b>。</li>
+            <li>按新出現的<b>仍要保留</b>。</li>
+            <li>現在按<b>開啟檔案</b>，就會開始安裝。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          開啟檔案後跳出藍色視窗的話，請接著看<a class="text-link" href="#pc-protect">出現「Windows 已保護您的電腦」</a>。
+        </p>
+        <p class="demo-note">畫面是為了說明而簡化重繪的。依 Edge 版本不同，文字或位置可能略有差異。</p>
+      </section>
+
+      <!-- SmartScreen when the installer starts -->
+      <section class="guide" id="pc-protect" aria-labelledby="pc-title">
+        <div class="guide-head">
+          <p class="guide-tag">Windows</p>
+          <h2 id="pc-title">出現「Windows 已保護您的電腦」</h2>
+          <p>
+            開啟安裝檔時跳出藍色視窗，是因為 Windows 第一次看到這個程式。即使按鈕只有<b>不要執行</b>一個，也請不要關閉。
+          </p>
+        </div>
+        <p class="guide-alt">
+          視窗不是藍色，而是白底寫著<b>「智慧型應用程式控制已封鎖……」</b>嗎？那個視窗沒有<b>其他資訊</b>。請接著看<a class="text-link" href="#smart-app-control">被智慧型應用程式控制封鎖時</a>。
+        </p>
+        <div class="player" data-player="pc-protect">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="ss-window" data-frame>
+                <div class="ss-bar"><span class="ss-close">✕</span></div>
+                <div class="ss-body">
+                  <p class="ss-title">Windows 已保護您的電腦</p>
+                  <p class="ss-text">
+                    Microsoft Defender SmartScreen 已防止某個無法辨識的應用程式啟動。執行此應用程式可能會讓您的電腦暴露在風險中。
+                  </p>
+                  <span class="ss-more" data-t="moreinfo">其他資訊</span>
+                  <dl class="ss-info">
+                    <div><dt>應用程式:</dt><dd>IeumOffice-Setup.exe</dd></div>
+                    <div data-t="publisher"><dt>發行者:</dt><dd>未知的發行者</dd></div>
+                  </dl>
+                </div>
+                <div class="ss-buttons">
+                  <span class="ss-btn ss-run" data-t="run">仍要執行</span>
+                  <span class="ss-btn">不要執行</span>
+                </div>
+              </div>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>按藍色視窗文字下方的<b>其他資訊</b>。</li>
+            <li>顯示「發行者: 未知的發行者」，是因為這是個人製作的免費程式。按下方新出現的<b>仍要執行</b>。</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          接下來會開啟安裝視窗。請接著看<a class="text-link" href="#installer">安裝視窗要按什麼</a>。
+        </p>
+      </section>
+
+      <!-- Smart App Control: the white "blocked" dialog on new Windows 11 PCs -->
+      <section class="guide" id="smart-app-control" aria-labelledby="sac-title">
+        <div class="guide-head">
+          <p class="guide-tag">Windows 11</p>
+          <h2 id="sac-title">出現「智慧型應用程式控制已封鎖」</h2>
+          <p>
+            這是新買的筆電或剛重灌 Windows 的電腦常會跳出的視窗。IeumOffice 是免費發行的程式，沒有能讓 Windows 確認發行者的簽章，所以不只安裝時，執行時 Windows 11 也會擋下。這個視窗沒有<b>執行</b>按鈕，也沒有只允許這個程式的方法。關閉智慧型應用程式控制後，就能安裝和執行。不過再次開啟的話，IeumOffice 又會被擋下，所以使用 IeumOffice 期間必須維持關閉。
+          </p>
+        </div>
+        <div class="player" data-player="sac">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+
+              <!-- the dialog from the new PC -->
+              <div class="sac-window" data-frame>
+                <div class="sac-head">
+                  <svg class="sac-shield" viewBox="0 0 24 24">
+                    <path d="M12 2.6 4.7 5.8v6c0 4.9 3.1 8 7.3 9.4 4.2-1.4 7.3-4.5 7.3-9.4v-6z" />
+                    <path class="sac-check" d="m8.9 11.7 2.1 2.1 4.1-4.1" />
+                  </svg>
+                  <b>智慧型應用程式控制已封鎖可能不安全的應用程式。</b>
+                </div>
+                <div class="sac-body">
+                  <p>
+                    為了保護您的裝置和資料，已封鎖此應用程式。Microsoft 會檢閱應用程式，確認是否安全。
+                  </p>
+                  <p class="sac-path">C:\Users\我的名字\Downloads\IeumOffice-Setup.exe</p>
+                  <p class="sac-learn">深入了解智慧型應用程式控制</p>
+                </div>
+                <div class="sac-foot">
+                  <span class="sac-btn sac-primary" data-t="sac-ok">確定</span>
+                  <span class="sac-btn">從 Microsoft Store 取得應用程式</span>
+                </div>
+              </div>
+
+              <!-- Windows Security -->
+              <div class="ws-window" data-frame>
+                <div class="ws-bar">
+                  <svg class="ws-shield" viewBox="0 0 24 24">
+                    <path d="M12 2.6 4.7 5.8v6c0 4.9 3.1 8 7.3 9.4 4.2-1.4 7.3-4.5 7.3-9.4v-6z" />
+                  </svg>
+                  <b>Windows 安全性</b>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ws-body">
+                  <ul class="ws-nav">
+                    <li>首頁</li>
+                    <li>病毒與威脅防護</li>
+                    <li>帳戶防護</li>
+                    <li>防火牆與網路保護</li>
+                    <li data-t="ws-appbrowser">應用程式與瀏覽器控制</li>
+                    <li>裝置效能與健康情況</li>
+                    <li>家長監護選項</li>
+                  </ul>
+                  <div class="ws-page">
+                    <div class="ws-home">
+                      <p class="ws-title">您的電腦受到保護</p>
+                      <p class="ws-sub">上次掃描：今天上午 9:12</p>
+                      <div class="ws-tiles"><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="ws-appbrowser">
+                      <p class="ws-title">應用程式與瀏覽器控制</p>
+                      <p class="ws-sub">Microsoft Defender SmartScreen</p>
+                      <div class="ws-card">
+                        <b>智慧型應用程式控制</b>
+                        <p>保護您的電腦不受不受信任的應用程式影響。</p>
+                        <span class="ws-link" data-t="ws-sac">智慧型應用程式控制設定</span>
+                      </div>
+                    </div>
+                    <div class="ws-settings">
+                      <p class="ws-back">‹ 智慧型應用程式控制</p>
+                      <p class="ws-title">智慧型應用程式控制設定</p>
+                      <div class="ws-option ws-on">
+                        <i></i><b>開啟</b><span>封鎖惡意與不受信任的應用程式。</span>
+                      </div>
+                      <div class="ws-option">
+                        <i></i><b>評估</b><span>先確認是否適合這台電腦，再決定是否開啟。</span>
+                      </div>
+                      <div class="ws-option ws-off" data-t="sac-off">
+                        <i></i><b>關閉</b><span>不檢查應用程式。保護會減少。</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>跳出封鎖視窗時，按<b>確定</b>關閉。</li>
+            <li>在開始按鈕旁的搜尋輸入 <b>Windows 安全性</b>並開啟，再按左側的<b>應用程式與瀏覽器控制</b>。</li>
+            <li>按<b>智慧型應用程式控制設定</b>。</li>
+            <li>選擇<b>關閉</b>。現在再次開啟下載的安裝檔，就會開始安裝。</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          智慧型應用程式控制是擋下從網路下載的陌生程式的功能。關閉後這項保護會減少，但就能使用
+          IeumOffice；Windows 安全性的病毒與威脅防護（Defender）仍維持開啟，會繼續掃描病毒。之後再次開啟的話，IeumOffice 就無法執行。
+        </p>
+        <p class="guide-next">
+          關閉後如果接著跳出藍色的「Windows 已保護您的電腦」視窗，在那個視窗按<b>其他資訊 → 仍要執行</b>即可。做法請見<a class="text-link" href="#pc-protect">出現「Windows 已保護您的電腦」</a>。
+        </p>
+        <p class="demo-note">
+          按<b>從 Microsoft Store 取得應用程式</b>也找不到 IeumOffice，因為它沒有上架到 Store。有些電腦會提示「關閉後就無法再改回來」，關閉前請先讀一下。改了設定之後還是被擋下，請重新啟動一次電腦。如果是公司或學校配發的電腦，可能無法變更這項設定，請告知管理電腦的人。畫面是為了說明而重繪的，依 Windows 版本不同可能略有差異。
+        </p>
+      </section>
+
+      <!-- finding the downloaded file -->
+      <section class="guide" id="find-file" aria-labelledby="find-title">
+        <div class="guide-head">
+          <p class="guide-tag">Edge · Chrome</p>
+          <h2 id="find-title">找不到下載的檔案</h2>
+          <p>下載的檔案在瀏覽器的下載清單中，以及電腦的<b>下載</b>資料夾裡。</p>
+        </div>
+        <div class="player" data-player="find-file">
+          <div class="player-screen" data-screen>
+            <div class="stage is-kept" data-stage aria-hidden="true">
+              <div class="ms-window">
+                <div class="ms-tabs">
+                  <span class="ms-tab"><i class="ms-fav"></i>IeumOffice - 從 Hangul 到 PDF</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="ms-toolbar">
+                  <span class="ms-nav">‹ › ↻</span>
+                  <span class="ms-url">ieumoffice.com</span>
+                  <span class="ms-dlbtn">
+                    <svg viewBox="0 0 20 20"><path d="M10 3v9m0 0-4-4m4 4 4-4M4 16h12" /></svg>
+                  </span>
+                  <span class="ms-dots">···</span>
+                </div>
+                <div class="ms-page">
+                  <p class="mp-eyebrow">安裝</p>
+                  <p class="mp-title">安裝只要三步。</p>
+                  <span class="mp-btn">↓ 下載 Windows 版</span>
+                </div>
+              </div>
+              <div class="ms-flyout" data-frame>
+                <div class="mf-head">
+                  <b>下載</b>
+                  <span class="mf-icons">
+                    <span class="mf-folder" data-t="folder"><svg viewBox="0 0 20 20"><path d="M3 6h5l2 2h7v7H3z" /></svg></span>
+                    <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" /><path d="m13 13 4 4" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M4 10h.01M10 10h.01M16 10h.01" /></svg>
+                    <svg viewBox="0 0 20 20"><path d="M7 3h6l-1 5 3 3H5l3-3zM10 11v6" /></svg>
+                  </span>
+                </div>
+                <div class="mf-item">
+                  <span class="mf-icon"></span>
+                  <div class="mf-text">
+                    <b class="mf-name">IeumOffice-Setup.exe</b>
+                    <span class="mf-open" data-t="open">開啟檔案</span>
+                  </div>
+                </div>
+              </div>
+              <!-- File Explorer on the Downloads folder -->
+              <div class="ex-window" data-frame>
+                <div class="ex-bar"><b>下載</b><span class="ms-caption"><i></i><i></i><i></i></span></div>
+                <div class="ex-body">
+                  <ul class="ex-side">
+                    <li>首頁</li>
+                    <li>桌面</li>
+                    <li class="is-on">下載</li>
+                    <li>文件</li>
+                    <li>圖片</li>
+                  </ul>
+                  <div class="ex-list">
+                    <p class="ex-head"><span>名稱</span><span>修改日期</span><span>大小</span></p>
+                    <p class="ex-group">今天</p>
+                    <p class="ex-row"><span data-t="exfile"><i class="ex-ico"></i>IeumOffice-Setup.exe</span><span>今天</span><span>180MB</span></p>
+                    <p class="ex-row ex-dim"><span><i class="ex-ico ex-ico-doc"></i>家長通知單.hwp</span><span>昨天</span><span>48KB</span></p>
+                  </div>
+                </div>
+              </div>
+              <span class="keys" data-keys></span>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>在瀏覽器視窗中按住鍵盤的 <b>Ctrl</b> 再按 <b>J</b>，就會開啟下載清單。</li>
+            <li>在清單中，按以 IeumOffice-Setup 開頭的檔案下方的<b>開啟檔案</b>。</li>
+            <li>清單中沒有的話，按上方的<b>資料夾圖示按鈕</b>。「下載」資料夾開啟後，<b>快速按兩下</b>檔案。</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- the installer's own pages -->
+      <section class="guide" id="installer" aria-labelledby="installer-title">
+        <div class="guide-head">
+          <p class="guide-tag">安裝視窗</p>
+          <h2 id="installer-title">安裝視窗要按什麼？</h2>
+          <p>在安裝視窗中什麼都不用改，只要依序按右下角的按鈕。</p>
+        </div>
+        <div class="player" data-player="installer">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="win-desktop">
+                <span class="win-taskbar"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="in-window" data-frame>
+                <div class="in-bar">
+                  <svg class="in-icon" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span>IeumOffice 安裝</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <!-- page 1: who to install for -->
+                <div class="in-page in-mode">
+                  <div class="in-head">
+                    <div><b>選擇安裝選項</b><span>誰可以使用這個程式？</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <p>請選擇要讓所有使用者都能使用這個程式，還是只有你自己能使用。</p>
+                    <p class="in-radio">使用這台電腦的所有人（所有使用者）</p>
+                    <p class="in-radio is-on" data-t="me">只有我（我的使用者名稱）</p>
+                  </div>
+                </div>
+                <!-- page 2: folder -->
+                <div class="in-page in-dir">
+                  <div class="in-head">
+                    <div><b>選取安裝位置</b><span>選取要安裝 IeumOffice 的資料夾。</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <p>目標資料夾</p>
+                    <p class="in-path"><span>C:\Users\我的名字\AppData\Local\Programs\IeumOffice</span><span class="in-btn">瀏覽...</span></p>
+                  </div>
+                </div>
+                <!-- page 3: copying -->
+                <div class="in-page in-progress">
+                  <div class="in-head">
+                    <div><b>正在安裝</b><span>IeumOffice 正在安裝，請稍候。</span></div>
+                    <svg class="in-logo" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  </div>
+                  <div class="in-body">
+                    <span class="in-bar-track"><i></i></span>
+                  </div>
+                </div>
+                <!-- page 4: done -->
+                <div class="in-page in-finish">
+                  <span class="in-side"><svg viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg></span>
+                  <div class="in-finish-body">
+                    <b>IeumOffice 安裝完成</b>
+                    <p>IeumOffice 已安裝完成。</p>
+                    <p>按「完成」結束安裝程式。</p>
+                    <p class="in-check" data-t="launch">執行 IeumOffice(R)</p>
+                  </div>
+                </div>
+                <div class="in-foot">
+                  <span class="in-version">IeumOffice</span>
+                  <span class="in-btn in-back">&lt; 上一步</span>
+                  <span class="in-btn in-next" data-t="next">下一步 &gt;</span>
+                  <span class="in-btn in-install" data-t="install">安裝</span>
+                  <span class="in-btn in-done" data-t="finish">完成</span>
+                  <span class="in-btn">取消</span>
+                </div>
+              </div>
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+          <ol class="player-steps" data-steps>
+            <li>在「選擇安裝選項」中，保留已選好的<b>只有我（我的名字）</b>，按<b>下一步</b>。</li>
+            <li>「選取安裝位置」也維持原樣，按<b>安裝</b>。</li>
+            <li>等待 1～2 分鐘，直到綠色進度列跑滿。</li>
+            <li>在<b>執行 IeumOffice</b> 已勾選的狀態下按<b>完成</b>，IeumOffice 就會開啟。</li>
+          </ol>
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          選擇「所有使用者」的話，會再跳出一次系統管理員確認視窗。如果電腦只有你一個人用，維持已選好的設定比較簡單。IeumOffice 開啟後，照著首次執行引導連結 AI。做法可以在<a class="text-link" href="/zh-tw/connect">連結 AI</a>中用畫面查看。
+        </p>
+      </section>
+
+      <!-- Mac and Linux -->
+      <section class="guide guide-other" id="other" aria-labelledby="other-title">
+        <div class="guide-head">
+          <p class="guide-tag">Mac · Linux</p>
+          <h2 id="other-title">在 Mac 和 Linux 上安裝時</h2>
+        </div>
+        <details class="mac-guide" id="mac">
+          <summary>在 Mac 上第一次開啟時 <span class="tag">測試版</span></summary>
+          <div class="mac-guide-body">
+            <p>
+              適用於 macOS 12 以上。請在蘋果選單 →<b>關於這台 Mac</b>中確認晶片。以 <b>Apple M</b> 開頭的話，下載 Apple Silicon 版檔案；如果是 <b>Intel</b>，就下載 Intel 版檔案。這是沒有 Apple 開發者簽章的免費測試版，所以只有第一次需要你自己允許。
+            </p>
+            <ol>
+              <li>打開下載的 <code>.dmg</code>，把 IeumOffice 拖到<b>應用程式</b>資料夾。</li>
+              <li>在應用程式資料夾中打開 IeumOffice。跳出警告視窗時，按<b>完成</b>。</li>
+              <li>打開<b>系統設定 → 隱私權與安全性</b>，在下方「已阻擋『IeumOffice』」旁按<b>強制打開</b>，然後輸入 Mac 的密碼。</li>
+              <li>在再次跳出的視窗中按<b>打開</b>。之後就能直接打開。</li>
+            </ol>
+            <p>如果顯示「已損毀，無法打開」，請不要丟到垃圾桶，在終端機執行下面這一行之後再打開。</p>
+            <pre><code>xattr -dr com.apple.quarantine /Applications/IeumOffice.app</code></pre>
+            <p>
+              從 0.12.11 起，放在應用程式資料夾中的 App，只要在更新視窗中按<b>立即更新</b> →<b>立即重新啟動安裝</b>，就會換成新版本並重新開啟。如果你用的是 0.12.10 以下的版本，這一次請在這裡下載 0.12.11 覆蓋安裝。直接從磁碟映像檔打開的 App，更新視窗會開啟下載頁面。App 沒有自行更新的話，在這裡重新下載覆蓋安裝即可。
+              Claude Code 或 Codex 請依照 AI 連線卡片上的「官方安裝說明」安裝（<a class="text-link" href="/zh-tw/connect#mac">在 Mac 上連結 AI</a>）。
+            </p>
+            <ul class="mac-files">
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-download-mac><b>下載 Apple Silicon 版</b></a>
+                <span data-download-mac-file> — Apple Silicon · 測試版</span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-download-mac-intel><b>下載 Intel Mac 版</b></a>
+                <span data-download-mac-intel-file> — Intel · 測試版</span>
+              </li>
+            </ul>
+          </div>
+        </details>
+        <details class="mac-guide" id="linux">
+          <summary>在 Linux 上安裝時 <span class="tag">測試版</span></summary>
+          <div class="mac-guide-body">
+            <p>
+              提供三種 64 位元（x86_64）Linux 用的檔案。請選擇適合你所用發行版的檔案下載。
+            </p>
+            <ul class="linux-files">
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-appimage><b>AppImage</b></a>
+                <span> — 不必安裝，只要給予執行權限（<code>chmod +x</code>）就能直接開啟。會自行更新。</span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-deb><b>.deb 套件</b></a>
+                <span> — Ubuntu、Debian 系列：<code>sudo apt install ./ieumoffice_*_amd64.deb</code></span>
+              </li>
+              <li>
+                <a class="text-link" href="https://github.com/pblsketch/ieumoffice/releases" data-linux-rpm><b>.rpm 套件</b></a>
+                <span> — Fedora、RHEL、openSUSE 系列：<code>sudo dnf install ./ieumoffice-*.x86_64.rpm</code></span>
+              </li>
+            </ul>
+            <p>
+              <code>.deb</code> 和 <code>.rpm</code> 會安裝到 <code>/opt/IeumOffice</code>，並連結終端機指令
+              <code>/usr/bin/ieumoffice</code>。有新版本時，App 會通知你；
+              <code>AppImage</code> 則能在 App 中直接更新。Claude Code 或 Codex 請依照 AI 連線卡片上的「官方安裝說明」安裝。
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="guide guide-help">
+        <p>
+          還是不行的話，請透過<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">傳送意見回饋</a>告訴我們卡在哪個畫面。附上那個畫面的截圖，能更快找出原因。
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">製作者 <b>박준일</b>（溫陽女子高中韓國語文教師） · <a href="/zh-tw/story">製作故事</a></p>
+          <p>
+            IeumOffice 是以開源專案
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a>（Apache-2.0）為基礎修改而成的程式，
+            Hangul 編輯器以 <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a>（MIT）為基礎。本網站的字型是 Wanted Sans 和 Gowun Batang（SIL OFL 1.1）。
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="外部連結">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">版本發布</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">回報問題</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">傳送意見回饋</a>
+        <a href="/zh-tw/connect">AI 連線說明</a>
+        <a href="/zh-tw/faq">常見問題</a>
+        <a href="/zh-tw/#opensource">開源</a>
+        <a href="/zh-tw/privacy.html">個人資料</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">授權</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          任何人都能免費使用，依現狀提供，不另作任何保證。<a href="/zh-tw/legal.html">法律聲明</a>（授權・商標） · 聯絡
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/install.js"></script>
+  </body>
+</html>

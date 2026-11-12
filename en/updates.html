@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Updates · IeumOffice</title>
+    <meta name="description" content="What each version of IeumOffice added." />
+    <meta name="author" content="박준일" />
+    <link rel="canonical" href="https://ieumoffice.com/en/updates" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/en/updates" />
+    <meta property="og:title" content="IeumOffice updates" />
+    <meta property="og:description" content="What each version added." />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-updates">
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/en/" aria-label="IeumOffice home">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="Site sections">
+        <a href="/en/updates" aria-current="page">Updates</a>
+        <a href="/en/story">The story</a>
+        <a href="/en/#formats">Documents</a>
+        <a href="/en/#hwp">Hangul</a>
+        <a href="/en/#ai">AI</a>
+        <a href="/en/#cost">Cost</a>
+        <a href="/en/#privacy">Privacy</a>
+      </nav>
+      <a class="btn btn-small" href="/en/#download">Download</a>
+    </header>
+
+    <main id="main">
+      <section class="updates-head">
+        <p class="eyebrow">Updates</p>
+        <h1>What changed in new versions</h1>
+        <p class="section-lede">
+          Here is what each version added. The full list, including fixed problems, is behind the link at the
+          bottom of each version. Once IeumOffice is installed, the app tells you when a new version is out.
+        </p>
+      </section>
+
+      <!-- Newest first. Each release adds one <article> at the top (see the README section on what to do after a release). -->
+
+      <article class="release" id="v0.12.12">
+        <p class="release-meta"><b>0.12.12</b><time datetime="2026-11-09">November 9, 2026</time></p>
+        <div class="split-head">
+          <h2>PDF to Hangul,<br />and FreeMind mind maps</h2>
+          <p>
+            In the PDF editor, press "PDF to HWP" to bring a PDF into a Hangul (HWP) document and edit it. The mind
+            map editor also opens mind map files (.mm) made with FreeMind or Freeplane. Saving an Excel file made
+            with Hancom Hancell no longer fails after you change its formatting.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-from-pdf-done-01212-1600.webp" srcset="/shots/hwp-from-pdf-done-01212-1600.webp 1600w, /shots/hwp-from-pdf-done-01212-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="A Hangul tab with a book fair notice PDF brought in through &quot;PDF to HWP&quot;. The cover of the 2026 autumn alley book fair and its schedule, venue, admission and contact boxes appear in the Hangul editor looking the same as in the PDF. The Hangul editor's toolbar is at the top, and the status bar at the bottom shows the page count and character count." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>PDF to Hangul</b> In the PDF editor's "PDF Converter" menu, press "PDF to HWP" and the PDF opens in a new Hangul tab. In the "Import PDF" window that follows, press "Import": the PDF's content becomes a Hangul document, which you edit and then save as a Hangul file. The original PDF does not change. This was tested with PDFs that contain text; PDFs made by scanning paper have not been tested yet.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/mindmap-mm-01212-1600.webp" srcset="/shots/mindmap-mm-01212-1600.webp 1600w, /shots/mindmap-mm-01212-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="A reading club plan (.mm file) opened in the mind map editor. Branches for books to read together, how to meet, activities and things to bring spread from the central topic, the reading club's plan for the year. The notice bar at the top says the map was brought in from a FreeMind/Freeplane file (.mm), that saving makes a new file, and that the original .mm file stays as it is." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>FreeMind and Freeplane mind maps</b> Open a mind map file (.mm) made with FreeMind or Freeplane and it comes in as a new map. When you save, an XMind file (.xmind) with the same name appears in the same folder, and the original .mm file does not change. Pictures are not brought in; only their names stay, as topic titles.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Character count in Hangul</dt>
+            <dd>The status bar at the bottom left of the Hangul editor shows the character count, and when you select a block it also shows how many characters are selected. Ctrl+PageUp goes to the start of the document and Ctrl+PageDown to the end.</dd>
+          </div>
+          <div>
+            <dt>PDF zoom and similar fonts</dt>
+            <dd>Under "On open" on the PDF View tab you can now choose 100%. Files you zoomed in or out yourself remember their own zoom. When you edit PDF text with "Keep original font", characters missing from the font embedded in the document are drawn with a similar font installed on your PC. So when you edit a Korean PDF set in a serif (Batang or Myeongjo) font, the edited part no longer turns into a sans-serif font.</dd>
+          </div>
+          <div>
+            <dt>Fonts for slides the AI makes</dt>
+            <dd>Under "AI slide fonts" in Settings → General, choose the default fonts the AI uses when it makes slides. Pick Auto, Sans serif, Serif or Serif titles, and set which fonts to use for sans serif and serif. With the Korean display language the starting choice is sans serif (Pretendard).</dd>
+          </div>
+          <div>
+            <dt>Choosing which AI to use</dt>
+            <dd>Press "Don't use in this app" on the Claude or Codex card in Settings → AI, and IeumOffice will not run that program. The program and its sign-in stay as they are, so you can keep using it in a terminal; press "Use again" to go back. When you start PDF translation, AI page reading or AI highlights, you choose the AI to use in the confirmation window.</dd>
+          </div>
+          <div>
+            <dt>Heavy document warning</dt>
+            <dd>The "Document is using too many resources" window now has "Don't Remind Again". Press it and you won't be asked again while that document is open. On PCs with a lot of memory this window appears less often.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Also fixed: saving always failed after changing cell formatting in an Excel file (.xlsx) made with Hancom
+          Hancell; Excel and CSV files would not open on older Linux such as Ubuntu 20.04; a black console window
+          flashed every time you opened a PDF on a Windows PC where Codex was installed with npm; and in Hangul
+          documents over 30 pages, AI undo also undid text you had typed yourself.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.12" rel="noopener">See everything in 0.12.12, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.11">
+        <p class="release-meta"><b>0.12.11</b><time datetime="2026-11-05">November 5, 2026</time></p>
+        <div class="split-head">
+          <h2>A diagram editor,<br />and mind map text and line formatting</h2>
+          <p>
+            A new diagram editor opens draw.io files (.drawio) in a tab, so you can edit flowcharts and structure
+            diagrams. In mind maps you can change the look and color of topic text and branch lines. PDF and EPUB
+            translation now has "Plain language", which rewrites difficult text in plain words.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/diagram-01211-1600.webp" srcset="/shots/diagram-01211-1600.webp 1600w, /shots/diagram-01211-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="A book fair application process (.drawio file) opened in the diagram editor. A flowchart runs from receiving an application form to assigning a booth number. The shape library is on the left, the format panel on the right, and page tabs for handling applications and for the day of the event are at the bottom." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Diagrams</b> Open a draw.io file (.drawio, .dio, .drawio.svg, .drawio.png) and it opens in a tab; when you save after editing, it is saved in the format you opened. Make a new diagram from "Diagram" on Home. Drag shapes from the shape library (Ctrl+Shift+K), change colors and text under "Style" and "Text" in the format panel on the right, and split pages with the tabs at the bottom. Export to PNG, SVG or PDF, or print, from the File menu. Open a Visio file (.vsdx) and it comes in as a new diagram; the original Visio file does not change. The drawing screen runs only on this PC and sends nothing over the internet unless you use the AI panel. You can ask the AI panel beside it to draw a flowchart or an org chart, and undo what the AI drew with Ctrl+Z.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/mindmap-format-01211-1600.webp" srcset="/shots/mindmap-format-01211-1600.webp 1600w, /shots/mindmap-format-01211-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="A book fair ideas mind map with the publicity topic selected and its line changed to a rounded elbow line under &quot;Line&quot; in the format panel on the right. Only the publicity branch now has an elbow line, and the panel shows boxes for line width, color and line style." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Mind map text and line formatting</b> Select a topic and press "Format" on the toolbar to open the format panel on the right. Under "Text" you change bold, italic, underline, strikethrough, text color, size, font and alignment. If you select just a few characters while editing a title, bold, italic, underline, strikethrough and text color apply only to those characters. Under "Line" you change a branch line to a curve, straight line, elbow line and so on, and choose its width, color and style, such as solid or dashed. Select a relationship, a summary bracket or a boundary to change its shape and color in the same panel. Drag the handle on a topic's edge to change the box width, and attach a picture to a topic with "Insert picture" on the toolbar. Some formatting, such as underline or box width, may look different in XMind.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Plain language</dt>
+            <dd>Choose "Plain language" under "Show" in PDF "Translation side by side", under "Mode" in the "Translate document" window, or in the EPUB translation window, and the AI rewrites the text in everyday words and short sentences. You can also rewrite it in the same language instead of translating it. In Word and Hangul, select text and press "Explain in plain words" in the right-click menu; the explanation appears in the AI panel and the document does not change. If you choose plain language in PDF "Translate document", the result comes out as a Markdown or EPUB file.</dd>
+          </div>
+          <div>
+            <dt>Choosing a format in Save As</dt>
+            <dd>In the "Save As" window's file type list, pick any format that editor can export: PDF, HTML, Markdown and page pictures (PNG) for Word, PDF for Hangul, CSV and PDF for Excel, and Word, PowerPoint, Excel, EPUB, PNG and more for PDF. This only makes a copy; the open document stays on its original file, and the next "Save" saves to the original file. Mind maps can also be exported as SVG pictures.</dd>
+          </div>
+          <div>
+            <dt>Mac app updates (beta)</dt>
+            <dd>For a Mac app kept in the Applications folder, press "Update Now" → "Restart &amp; Install" in the update window and it changes to the new version and reopens. This first arrived in 0.12.11, so this one time you need to download the 0.12.11 installer (dmg) and install over the old app. The app updates itself from the next version on.</dd>
+          </div>
+          <div>
+            <dt>Fonts in Hangul that aren't on this PC</dt>
+            <dd>If a font used in the document isn't on this PC, "Not on this PC" appears next to it in the font menu, and when the font of the character at the cursor is missing, the font box gets a dotted underline. When you open such a file, a notice bar tells you once. Even if the screen shows a different font, the file keeps the original font name when saved.</dd>
+          </div>
+          <div>
+            <dt>PDF and Excel</dt>
+            <dd>The PDF text selection bar now has yellow, green and sky-blue highlighters; right-click a pen to change its color. Turn on the "Hand tool" next to "Fit page" and drag to move the view. In Excel, copy a range of cells and paste it into a messenger or slide editor that takes pictures, and it goes in as a picture that looks just like the cells.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Also fixed: in 0.12.10 every password-protected PDF ended with "Failed to open file"; PDF signatures were
+          always red; opening an .xls file in Excel lost center alignment and borders; and ⌘C and ⌘X did not work in
+          the Hangul editor on Mac.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.11" rel="noopener">See everything in 0.12.11, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.10">
+        <p class="release-meta"><b>0.12.10</b><time datetime="2026-11-01">November 1, 2026</time></p>
+        <div class="split-head">
+          <h2>Pasting cells into Hangul tables,<br />and a slide Selection Pane</h2>
+          <p>
+            When you paste cells copied from another table into a cell of a Hangul table, you can choose whether to
+            overwrite or to insert new rows or columns. Slides gained a Selection Pane, repeat with F4, an
+            eyedropper, and merge shapes. In the AI panel you can choose how deeply the model thinks before it
+            answers.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-cell-paste-01210-1600.webp" srcset="/shots/hwp-cell-paste-01210-1600.webp 1600w, /shots/hwp-cell-paste-01210-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The Paste Cells window that appears after placing the cursor in a cell of an application form table and pasting two rows copied from Excel. It offers inserting above, below, left or right, or overwriting." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Paste Cells</b> Put the cursor in a cell of a Hangul table and paste cells copied from Excel or another table, and the "Paste Cells" window appears. "Overwrite" replaces the content from the cursor's cell onward, as many cells as you copied. "Insert above/below" makes new rows, and "Insert left/right" makes new columns. Up to 0.12.9, pasting this way put everything you copied into a single cell. Paste into body text outside a table and you get a table with its merged cells intact. Triple-click text to select the whole paragraph, or double-click and drag to select word by word.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/slides-selection-01210-1600.webp" srcset="/shots/slides-selection-01210-1600.webp 1600w, /shots/slides-selection-01210-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The Selection Pane open beside a book fair presentation slide. The text boxes and shapes on the slide are listed with their names, and the selected row has an eye button." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Slide Selection Pane</b> Press "Selection Pane" on the Home tab, or Alt+F10, and the text boxes and shapes on the current slide are listed. Whatever you click in the list is selected, so you can pick things hidden behind other shapes that are hard to grab with the mouse. Hide or show them with the eye button, and double-click a name to change it. F4 repeats the formatting change or alignment you just made. The eyedropper in the font color and shape fill menus picks up any color you see on screen. Merge shapes (union, combine, fragment, intersect, subtract) joins several shapes into one.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Effort</dt>
+            <dd>"Effort" now appears under the model list in the AI panel. Choose among the levels that model takes, such as "Default", "Low", "Medium" and "High". Higher levels answer more slowly and use more of your subscription or API credit. It shows only when the model reports its list of levels: Claude and Codex subscriptions, Anthropic, OpenRouter, DeepSeek and xAI keys, and Ollama.</dd>
+          </div>
+          <div>
+            <dt>Hangul table shortcuts</dt>
+            <dd>With cells selected with F5, P opens Table/Cell Properties, L and C open cell border and fill (for each cell), B and F open cell border and fill (as one cell), and A opens table auto fill. These are the same keys as in Hancom Hangul. In tables with merged cells, Ctrl/Alt/Shift+arrow keys and H and W now change row and column sizes too. Before, these keys did nothing if the table had even one merged cell.</dd>
+          </div>
+          <div>
+            <dt>Excel spell check and password-protected PDFs</dt>
+            <dd>Press F7 in Excel to check the sheet's spelling. You can open and edit password-protected PDFs, and the password stays when you save. Under Annotate → Protect you add, change or remove a password. There is also a new feature to make PDF files smaller.</dd>
+          </div>
+          <div>
+            <dt>Markdown and mind maps</dt>
+            <dd>In Markdown, type <code>[[</code> to see a list of notes in the folder that holds your notes (the vault); pick one to insert a link to that note. In mind maps, drag a PNG, JPG or GIF picture (up to 10MB) onto a topic to attach it, and remove it from the right-click menu.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Also fixed: in Hangul, a table attached after a paragraph covered the text on the line below; the Hangul
+          editor needed a separate "Detect local fonts" press before you could use fonts installed on your PC; and
+          in 0.12.9 the window went white when you opened a scanned PDF.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.10" rel="noopener">See everything in 0.12.10, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.9">
+        <p class="release-meta"><b>0.12.9</b><time datetime="2026-10-30">October 30, 2026</time></p>
+        <div class="split-head">
+          <h2>Context in a folder,<br />files from Drive.</h2>
+          <p>
+            This version focuses on connecting people and their work. Choose a folder as a project, and
+            instructions, memory and chats build up in that folder; a chat started in Hangul carries on in Slides.
+            Files you choose in Google Drive also open right away to be edited and saved back.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/projects-0129-1600.webp" srcset="/shots/projects-0129-1600.webp 1600w, /shots/projects-0129-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The Projects screen on Home. A project for preparing an autumn book fair has been made, and instructions on how to write notices and reports have been typed into the instructions box and saved." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Projects</b> Choose a folder under "Project" below the AI panel's input box, and the instructions written for that folder (for example, "write reports as bullet points") and the memory the AI built up in chats go along with every request. The AI finds and reads files in the folder and saves new documents there. Instructions, memory and chats are kept inside that folder, so they follow it if you move the folder or open it on another PC.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/project-picker-0129-1600.webp" srcset="/shots/project-picker-0129-1600.webp 1600w, /shots/project-picker-0129-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The list opened from the &quot;No project&quot; button below the input box of the Hangul editor's AI panel. It shows the recent project for the autumn book fair, New project, Add folder and No project." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>In every editor</b> Choose a project below the input box of the AI panel in every editor: Hangul, Word, Excel, PowerPoint, PDF and the rest. You can make a new one or add a folder you already use, or skip projects and ask about each document separately, as before.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Opening from Google Drive</dt>
+            <dd>Connect Drive in Settings → Integrations, press <b>Choose from Google Drive</b> on Home, and Google's picker appears. The files you choose open in tabs and go back up to Drive when you save. The app opens only the files you choose and does not see the rest of your Drive. You can also pick Drive files and attach them in the AI panel.</dd>
+          </div>
+          <div>
+            <dt>Hangul print preview and document check</dt>
+            <dd>Print (Ctrl+P) now opens a preview first. A new window checks the document against the Korean Ministry of the Interior and Safety's guidelines for administrative documents, and you can change fonts right in that window.</dd>
+          </div>
+          <div>
+            <dt>Pasting into Hangul tables in one go</dt>
+            <dd>Drag to select several cells of a table and paste, and values copied from Excel go into each cell. Also added: document info that counts characters (Ctrl+Q,I), curly quotes, and converting words already typed into Hanja (Chinese characters).</dd>
+          </div>
+          <div>
+            <dt>Excel and PDF</dt>
+            <dd>Excel gained What-If data tables and pivot charts; in PDF you can edit bookmarks and compare text with another PDF. With the Korean display language, Excel shows days of the week and dates in Korean.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Also fixed: Hancom Hangul could not open HWPX files made by IeumOffice that contained a table with
+          vertically merged cells, and pictures and tables copied and pasted in Hangul landed in the wrong place.
+          EPUB books can be previewed at e-reader size.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.9" rel="noopener">See everything in 0.12.9, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.8">
+        <p class="release-meta"><b>0.12.8</b><time datetime="2026-10-28">October 28, 2026</time></p>
+        <div class="split-head">
+          <h2>Claude sees it through,<br />ChatGPT connects directly.</h2>
+          <p>
+            We fixed the problem where editing documents with a Claude subscription stopped partway or took
+            several minutes at a time. ChatGPT plans now connect directly in the app without installing the Codex
+            program. HTML documents can now hold equations you can edit.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/html-math-1600.webp" srcset="/shots/html-math-1600.webp 1600w, /shots/html-math-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The insert equation window open in the HTML editor. The top box shows a formula for a discounted price with fractions and parentheses, and below are template buttons, the LaTeX source and a preview." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>HTML equations</b> Press "Insert equation" on the ribbon to open the equation window. Type directly in the top box or write LaTeX, or insert one of 14 templates such as fractions, matrices and integrals, or use the math keyboard. You can still edit equations after saving and reopening, and they display without an internet connection.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Connecting ChatGPT directly</dt>
+            <dd>In the connect guide, choose "I use ChatGPT" and press <b>Continue with ChatGPT</b>, and the ChatGPT sign-in page opens in your browser. Sign in and allow this app to use your plan, and you're done. The steps are in the <a href="/en/connect#chatgpt">connection help</a>.</dd>
+          </div>
+          <div>
+            <dt>Excel formula bar</dt>
+            <dd>Selecting a cell with several lines no longer makes the formula bar grow and push the sheet down. Drag the handle at the bottom to change its height, and that height stays when you select other cells.</dd>
+          </div>
+          <div>
+            <dt>PCs that froze on first launch</dt>
+            <dd>On PCs with Windows Security's "Controlled folder access" (ransomware protection) turned on, the app froze on first launch with "Not responding" or a gray screen. That is fixed. If the app cannot write to the Documents folder, it saves to <code>IeumOffice</code> under your user folder and tells you once, along with how to fix it.</dd>
+          </div>
+          <div>
+            <dt>Command-line-only package (Linux)</dt>
+            <dd>A package that installs only the terminal command, without the desktop app, is now released alongside as a beta. Use it to create and read documents on servers with no screen or in an AI agent's workspace. Installation steps are in <a href="https://github.com/pblsketch/ieumoffice/blob/main/README.md#linux-베타" rel="noopener">"Linux (beta)" in the README</a>.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Also fixed: check boxes were drawn too large in Word's equation and table windows, and converting Excel to
+          PDF with the terminal command left formula cells empty. Pictures attached in chat now go into Excel sheets
+          too. If you update from 0.12.7, an installation progress window appears for the first time, and when
+          installation finishes, the app and the documents you had open reopen.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.8" rel="noopener">See everything in 0.12.8, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.7">
+        <p class="release-meta"><b>0.12.7</b><time datetime="2026-10-28">October 28, 2026</time></p>
+        <div class="split-head">
+          <h2>Memos beside the document,<br />pictures from the AI.</h2>
+          <p>
+            The memo list of a Hangul document now opens in a pane beside the document instead of covering the AI
+            assistant panel. Ask the AI and it puts pictures into Hangul documents and mind maps too. Excel table
+            files (.xls) downloaded from school or government websites now open as well.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-memo-side-1600.webp" srcset="/shots/hwp-memo-side-1600.webp 1600w, /shots/hwp-memo-side-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The Hangul editor with the AI assistant panel on the left, a memo pane with three memos in the middle and an application form document on the right, side by side." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Memo pane beside the document</b> Press the "Memos" button at the top left of the screen and the memo list opens in a pane right beside the document. You can keep it open together with the AI assistant panel. Drag the pane's edge to change its width; a pane you leave open stays open next time.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Pictures from the AI</dt>
+            <dd>In Hangul and mind maps too, the AI finds and inserts photos, or puts pictures attached in chat into the document. In Word, it can insert pictures attached in chat. It leaves the document's existing pictures alone and only adds new ones.</dd>
+          </div>
+          <div>
+            <dt>Excel files downloaded from the web</dt>
+            <dd>Table files downloaded from websites with an .xls name now open. Values, merged cells, line breaks inside cells and multiple sheets come in as they are. Fonts and colors are not brought in.</dd>
+          </div>
+          <div>
+            <dt>When sign-in gets stuck</dt>
+            <dd>If the browser only shows a code and stops while you sign in to Claude, you can finish signing in inside the app with "Open the sign-in window" on the connection card (Windows only). The steps are in the <a href="/en/connect#login-unfinished">connection help</a>.</dd>
+          </div>
+          <div>
+            <dt>Hangul window look</dt>
+            <dd>Windows that open in the Hangul editor, such as Table/Cell Properties, character and paragraph shape, page setup, find and add memo, now share the same look. In the dark theme they follow the theme colors too.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Fixed: in some Hangul documents saved with Hancom 2014, the cover title lines overlapped, and documents you
+          had open did not reopen after an update. When updating from 0.12.6, after pressing "Restart &amp; Install",
+          please wait 1 to 3 minutes for the app to come back. From the next update on, a window shows the progress
+          while it installs.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.7" rel="noopener">See everything in 0.12.7, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.6">
+        <span id="v0.12.5" aria-hidden="true"></span>
+        <p class="release-meta"><b>0.12.5–0.12.6</b><time datetime="2026-10-27">October 27, 2026</time></p>
+        <div class="split-head">
+          <h2>Hangul memos,<br />and AI on your own PC.</h2>
+          <p>
+            Add memos to Hangul documents, and use format copy and table shortcuts as in Hancom Hangul. You can now
+            also connect AI models running on your PC or your organization's network (Ollama and others). Other
+            editors gained new features too, such as mail merge in Word and A4 and portrait slides in PowerPoint.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-memo-menu-1600.webp" srcset="/shots/hwp-memo-menu-1600.webp 1600w, /shots/hwp-memo-menu-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The Hangul editor after selecting the title of an application form and right-clicking. Memo is at the bottom of the menu, and the memo pane on the left holds three memos." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Hangul memos</b> Select text, right-click and choose "Memo" to add a memo at that spot. In the memo pane you read, edit and delete the document's memos. Memos added in Hancom Hangul open as they are and are saved back. The AI assistant only reads memos, and asks first before deleting text that has a memo attached.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/local-ai-1600.webp" srcset="/shots/local-ai-1600.webp 1600w, /shots/local-ai-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Adding a local AI server on the AI screen in Settings. Ollama is chosen as the server type, and a name and address are filled in." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Connecting AI on your PC</b> Under "Local AI" in Settings → AI, register the address of an AI server such as Ollama, and use the connection test to check that it can chat. Registering alone does not change which AI you use; only a server you choose yourself is used. If what you are about to send looks longer than the model can handle, the app asks first, and if the server address is an internet address outside your PC, it tells you the document will go there.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-format-copy-1600.webp" srcset="/shots/hwp-format-copy-1600.webp 1600w, /shots/hwp-format-copy-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The format copy window open in the Hangul editor. You choose among character shape, paragraph shape, both, character style and paragraph style." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Format copy</b> With <kbd>Alt</kbd>+<kbd>C</kbd>, choose whether to copy the character shape, paragraph shape or style, and apply it somewhere else. In tables it also copies a cell's borders and fill. As in Hancom Hangul, the copied format stays until you copy again, so you can apply it to several places in a row.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul table shortcuts</dt>
+            <dd>In a table cell, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> adds a row, <kbd>F5</kbd> selects cells, and <kbd>Ctrl</kbd>/<kbd>Shift</kbd>+arrow keys change row and column sizes. Presentation mode in the Hangul tab opens with <kbd>Ctrl</kbd>+<kbd>F5</kbd>.</dd>
+          </div>
+          <div>
+            <dt>Filling in forms</dt>
+            <dd>When the AI fills in a form, it removes the blue italic of the guide text and writes in black. □ boxes are changed to ☑ in place.</dd>
+          </div>
+          <div>
+            <dt>PDF and Hangul AutoSave</dt>
+            <dd>Turn on "AutoSave" at the top of the screen and your changes are saved to the document file every 30 seconds.</dd>
+          </div>
+          <div>
+            <dt>Other editors</dt>
+            <dd>Word gained mail merge and comparing two documents, Excel pictures in comments, PowerPoint A4 and portrait slide sizes, and PDF inserting links.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Fixed: Excel sheets with lots of formatting and borders were sluggish; Hancom Hangul could not open Hangul
+          files with drawn text boxes; text beside a picture in the header disappeared; and F5 in a Hangul table cell
+          turned on full screen instead of selecting the cell. If an update fails to install, the app tells you the
+          next time it starts and opens the installer again.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.6" rel="noopener">See everything in 0.12.6, including fixes</a>
+          · <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.5" rel="noopener">0.12.5</a>
+        </p>
+      </article>
+      <article class="release" id="v0.12.4">
+        <p class="release-meta"><b>0.12.4</b><time datetime="2026-10-24">October 24, 2026</time></p>
+        <div class="split-head">
+          <h2>Better handling<br />of Hangul documents.</h2>
+          <p>
+            The Hangul tab's shortcuts and features now match Hancom Hangul 2024. Features such as page numbering,
+            simple table formulas and inserting the date have arrived, and the AI creates and edits styles. A new
+            editor opens EPUB e-books so you can edit and translate them.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-1600.webp" srcset="/shots/hwp-1600.webp 1600w, /shots/hwp-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="An autumn book fair application form opened in the Hangul editor" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Hangul documents</b> Use common features with the same keys as Hancom: Ctrl+N key sequences, alignment keys, insert date (<kbd>Ctrl</kbd>+<kbd>K</kbd>,<kbd>D</kbd>) and simple table formulas. Page numbers go in with the same look as in Hancom, and you can ask the AI to create or edit styles.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/epub-1600.webp" srcset="/shots/epub-1600.webp 1600w, /shots/epub-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="An EPUB e-book opened, with the table of contents on the left, an event information chapter in the middle and the AI assistant panel on the right." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>EPUB e-books</b> Open a book file and you see its table of contents and text; click the text to edit it directly. Only the paragraphs you changed are saved again, so the rest of the book stays as it was. Ask the AI assistant to summarize a chapter, or translate the book into another language and save it as a translated file. You can also make a bilingual edition with the original and translation together. Before translating, make sure you have the rights to the document.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul tab shortcuts</dt>
+            <dd>Now the same as Hancom Hangul 2024. <kbd>Ctrl</kbd>+<kbd>N</kbd> key sequences, alignment keys and the file keys <kbd>Alt</kbd>+<kbd>N</kbd>/<kbd>O</kbd>/<kbd>S</kbd>/<kbd>V</kbd>/<kbd>P</kbd> work.</dd>
+          </div>
+          <div>
+            <dt>Hangul features</dt>
+            <dd>Added page numbering, normal shape, reverse find, simple table formulas (row and column sums, averages, products) and adding rows and columns.</dd>
+          </div>
+          <div>
+            <dt>Hangul styles</dt>
+            <dd>The AI creates and edits paragraph styles and character styles. It edits without touching the styles already in the document.</dd>
+          </div>
+          <div>
+            <dt>Presentation mode and recovery copies</dt>
+            <dd>Every editor opens presentation mode with <kbd>F5</kbd>, and if the app suddenly closes, your open tabs and split views come back.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Typing in Hangul documents is less sluggish. We fixed getting stuck in the Claude sign-in window and Codex
+          installed with winget being unable to get out of an update. When converting or translating a PDF to Word,
+          vertical text in the margins no longer slips into the body, and words at line ends are no longer split.
+        </p>
+        <p class="credit">
+          EPUB does not edit or translate fixed-layout books or books with DRM. Fixed-layout books are read-only.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.4" rel="noopener">See everything in 0.12.4, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.3">
+        <p class="release-meta"><b>0.12.3</b><time datetime="2026-10-22">October 22, 2026</time></p>
+        <div class="split-head">
+          <h2>Call up the things you do often<br />as skills.</h2>
+          <p>
+            Save tasks you do often, such as tidying meeting minutes or writing notices, as skills and call them up
+            in the AI panel. Type @ in the AI input box to pick an open document and attach it right away. If you
+            haven't connected an AI yet, the app walks you through connecting one step by step.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/skills-slash-1600.webp" srcset="/shots/skills-slash-1600.webp 1600w, /shots/skills-slash-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The skill list opened by typing / in the AI input box of the Word editor, with skills such as tidying meeting minutes and writing notices, newsletters and FAQs" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Skills</b> A skill is a written set of instructions for a task you hand to the AI. Type <kbd>/</kbd> in the AI input box to see the list; the text of the skill you pick goes to the AI along with your question. Built in are skills for tidying meeting minutes, writing notices, newsletters and FAQs, and two for polishing English writing.</p>
+        <div class="new-pair">
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/skills-settings-1600.webp" srcset="/shots/skills-settings-1600.webp 1600w, /shots/skills-settings-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="The Skills screen in Settings. Five built-in skills are turned on, with Add and New buttons at the top." loading="lazy" />
+            </div>
+            <figcaption><b>Making your own skills</b> In Settings → Skills, create or add skills and turn them on or off. After finishing a task with the AI, say "make what we just did into a skill" and it first shows what it will save, then saves it once you confirm. If you add the current document as a template, the next time you use that skill a copy of the template opens in a new tab.</figcaption>
+          </figure>
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/doc-mention-1600.webp" srcset="/shots/doc-mention-1600.webp 1600w, /shots/doc-mention-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="The list of open documents shown by typing @ in the AI input box of the Hangul editor" loading="lazy" />
+            </div>
+            <figcaption><b>Attaching documents with @</b> Type <kbd>@</kbd> in the AI input box to see open and recent documents; pick one and it is attached right away. You don't have to stop writing your question to look for the attach button.</figcaption>
+          </figure>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>AI connect guide</dt>
+            <dd>If no AI is connected, the app first asks which AI you already use, then guides you through just that one, from installation to sign-in.</dd>
+          </div>
+          <div>
+            <dt>Choosing the Hangul save format</dt>
+            <dd>In "Save As", choose HWP or HWPX.</dd>
+          </div>
+          <div>
+            <dt>Several PDF pages at once</dt>
+            <dd>In the thumbnails on the left, hold <kbd>Ctrl</kbd> or <kbd>Shift</kbd> to select several pages, then rotate, delete, save separately or move them in one go.</dd>
+          </div>
+          <div>
+            <dt>Growing slide text together</dt>
+            <dd>In PowerPoint, select several text boxes and press "Increase/Decrease Font Size", and the text in all the selected boxes changes together.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          File icons were redrawn. We fixed title boxes, pictures and footnotes overlapping body text in Hangul
+          documents, and prevented the original file from becoming empty when you edit and save an Excel file.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.3" rel="noopener">See everything in 0.12.3, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.2">
+        <p class="release-meta"><b>0.12.2</b><time datetime="2026-10-20">October 20, 2026</time></p>
+        <div class="split-head">
+          <h2>Two documents side by side,<br />highlighters for PDF.</h2>
+          <p>
+            Split the screen in two to see two documents together. While reading a PDF you can leave highlights,
+            underlines and notes and see them all in one place, and you can preview a file's content with just the
+            space bar, without opening it.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/split-1600.webp" srcset="/shots/split-1600.webp 1600w, /shots/split-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The screen split in two, with a Word proposal on the left and an Excel budget sheet on the right" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Split view</b> Drag a document tab to the right edge or bottom edge of the window and drop it, and the screen splits in two. You can also right-click a tab and choose "Split Right". Only one AI panel opens, and it works on the document in the side you are looking at.</p>
+        <div class="new-pair">
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/pdf-reading-1600.webp" srcset="/shots/pdf-reading-1600.webp 1600w, /shots/pdf-reading-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="Highlights and underlines on a PDF notice, gathered in the annotation list on the left" loading="lazy" />
+            </div>
+            <figcaption><b>PDF highlights and notes</b> Select text and press <kbd>H</kbd> to highlight, <kbd>U</kbd> to underline, or <kbd>N</kbd> for a note. Marked spots gather in the list beside it, so they are easy to find again. For documents in another language, you can read an AI translation next to the original.</figcaption>
+          </figure>
+          <figure>
+            <div class="window window-flat">
+              <img src="/shots/quicklook-1600.webp" srcset="/shots/quicklook-1600.webp 1600w, /shots/quicklook-2880.webp 2880w" sizes="(min-width: 1230px) 580px, 96vw" alt="Previewing a Word proposal with the space bar from the file list on Home" loading="lazy" />
+            </div>
+            <figcaption><b>Space bar preview</b> Select a file in the file list and press the space bar to see its content without opening it. While IeumOffice is running, this works in Windows File Explorer too.</figcaption>
+          </figure>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Showing open documents to the AI</dt>
+            <dd>Pick a document you have open or opened recently and attach it in the AI panel. No need to look for the file again.</dd>
+          </div>
+          <div>
+            <dt>The AI reads links</dt>
+            <dd>Include a web address in your question and the AI reads that page before answering.</dd>
+          </div>
+          <div>
+            <dt>All slide comments in one view</dt>
+            <dd>See the comments on a PowerPoint file across all slides at once. The AI can read the comments and answer too.</dd>
+          </div>
+          <div>
+            <dt>Opening password-protected files</dt>
+            <dd>Open a password-protected Excel or PowerPoint file and you are asked for the password instead of seeing a blank screen. The same password is set again when you save.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.2" rel="noopener">See everything in 0.12.2, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.1">
+        <p class="release-meta"><b>0.12.1</b><time datetime="2026-10-16">October 16, 2026</time></p>
+        <div class="split-head">
+          <h2>Agent mode: hand the AI<br />a whole folder.</h2>
+          <p>
+            Choose a folder to work in, and the AI reads and edits the files in that folder together with your open
+            documents. It runs on Claude Code or Codex installed on your PC. ODT, the LibreOffice document format,
+            now opens too, and PDF tools such as merge and split are gathered in one window.
+          </p>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Agent mode</dt>
+            <dd>Start from "Agent" on the left of Home. You decide whether the AI asks you each time before it runs anything on your PC.</dd>
+          </div>
+          <div>
+            <dt>ODT documents</dt>
+            <dd>Open an .odt file in the Word editor, edit it, and save it back as .odt.</dd>
+          </div>
+          <div>
+            <dt>PDF tools window</dt>
+            <dd>Merge, split and rotate PDFs, reduce file size, add or remove passwords, and repair broken files. It uses no AI and sends no files anywhere.</dd>
+          </div>
+          <div>
+            <dt>Slide list for web presentations</dt>
+            <dd>Open a multi-slide presentation made as a web page (HTML) and you see a list of its slides.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.1" rel="noopener">See everything in 0.12.1, including fixes</a>
+        </p>
+      </article>
+
+      <article class="release" id="v0.12.0">
+        <p class="release-meta"><b>0.12.0</b><time datetime="2026-10-15">October 15, 2026</time></p>
+        <div class="split-head">
+          <h2>First release.</h2>
+          <p>
+            The first public version, which opens and edits Word, Excel, PowerPoint, PDF, Markdown and HTML
+            documents in one window. AI features run on the Claude or Codex subscription you already have, and if
+            you have no subscription you can connect a free AI.
+          </p>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul editor</dt>
+            <dd>Opens and edits HWP and HWPX documents and saves them in their original format.</dd>
+          </div>
+          <div>
+            <dt>Mind map editor</dt>
+            <dd>Opens and edits XMind files and saves them to the same file.</dd>
+          </div>
+          <div>
+            <dt>Making new documents</dt>
+            <dd>Choose material you have, and the AI makes presentations, mind maps and web pages from it.</dd>
+          </div>
+          <div>
+            <dt>PDF conversion and translation</dt>
+            <dd>Turns PDFs into e-books (EPUB) or Markdown text. The AI can also read the text of scanned pages or translate a whole document.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.12.0" rel="noopener">See everything in 0.12.0, including fixes</a>
+        </p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">Made by <b>박준일</b> (Korean-language teacher at Onyang Girls' High School) · <a href="/en/story">The story</a></p>
+          <p>
+            IeumOffice is a modified version of the open-source project
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a> (Apache-2.0), and its
+            Hangul editor is built on <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a> (MIT).
+            This site uses the fonts Wanted Sans and Gowun Batang (SIL OFL 1.1).
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="External links">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">Releases</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">Report a problem</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Send feedback</a>
+        <a href="/en/faq">FAQ</a>
+        <a href="/en/#opensource">Open source</a>
+        <a href="/en/privacy.html">Privacy</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">License</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          Free for everyone, provided as is, with no warranty.
+          <a href="/en/legal.html">Legal notice</a> (licenses, trademarks) · Contact
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/updates.js"></script>
+  </body>
+</html>

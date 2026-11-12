@@ -62,6 +62,14 @@
     {
       "source": "/privacy",
       "destination": "/privacy.html"
+    },
+    {
+      "source": "/:lang(en|ja|zh-tw|es)",
+      "destination": "/:lang/index.html"
+    },
+    {
+      "source": "/:lang(en|ja|zh-tw|es)/:page(updates|story|install|connect|faq|privacy)",
+      "destination": "/:lang/:page.html"
     }
   ],
   "headers": [

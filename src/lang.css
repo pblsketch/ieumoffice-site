@@ -1,0 +1,165 @@
+/* languages: the menu in the top bar, the offer bar (src/lang-switch.js), and
+   the type settings for Japanese and Chinese pages */
+
+/* the site font has no kana or Han glyphs, so those come from the system.
+   The Japanese and Chinese fonts are named before system-ui: on a Korean
+   Windows system-ui would hand the kana to Malgun Gothic, which sets them in
+   evenly spaced full-width boxes. keep-all would forbid every break inside a
+   CJK sentence. */
+:root:lang(ja) {
+  --font: 'Wanted Sans Variable', 'Wanted Sans', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', 'Yu Gothic', Meiryo, 'Noto Sans JP', system-ui, sans-serif;
+  --serif: 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
+}
+:root:lang(zh-TW) {
+  --font: 'Wanted Sans Variable', 'Wanted Sans', 'PingFang TC', 'Microsoft JhengHei UI', 'Microsoft JhengHei', 'Noto Sans TC', system-ui, sans-serif;
+  --serif: 'Noto Serif TC', 'Songti TC', PMingLiU, serif;
+}
+:root:lang(ja) body,
+:root:lang(zh-TW) body {
+  word-break: normal;
+  line-break: strict;
+}
+/* proportional kana in headings, the way Japanese pages set large type */
+:root:lang(ja) :is(h1, h2, h3, .hero-title, .btn, .eyebrow) {
+  font-feature-settings: 'palt';
+}
+
+.lang-menu {
+  position: relative;
+  font-size: var(--t-sm);
+  font-weight: 560;
+}
+.nav-links + .lang-menu {
+  margin-left: -6px;
+}
+.lang-menu summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  list-style: none;
+  cursor: pointer;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+.lang-menu summary::-webkit-details-marker {
+  display: none;
+}
+.lang-menu summary:hover,
+.lang-menu[open] summary {
+  opacity: 1;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+.lang-menu svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+.lang-menu ul {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 150px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--ink);
+  box-shadow:
+    0 1px 0 var(--line),
+    0 18px 40px -18px rgba(28, 23, 102, 0.45);
+}
+.lang-menu a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.lang-menu a:hover {
+  background: var(--paper);
+}
+.lang-menu a[aria-current] {
+  font-weight: 720;
+  color: var(--indigo);
+}
+
+.lang-offer {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 54;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(520px, calc(100vw - 40px));
+  padding: 12px 44px 12px 18px;
+  border-radius: 16px;
+  background: var(--indigo-night);
+  color: var(--white);
+  box-shadow: 0 20px 50px -20px rgba(28, 23, 102, 0.8);
+}
+.lang-offer p {
+  margin: 0;
+  font-size: var(--t-sm);
+  line-height: 1.5;
+}
+.lang-offer .btn {
+  flex: none;
+  white-space: nowrap;
+}
+.lang-offer-close {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  translate: 0 -50%;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.lang-offer-close:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+  .nav .lang-menu {
+    margin-left: auto;
+  }
+  .nav .lang-menu + .btn-small {
+    margin-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .lang-offer {
+    left: 12px;
+    right: 12px;
+    bottom: 80px;
+    max-width: none;
+  }
+}
+@media (max-width: 420px) {
+  .lang-menu summary span {
+    display: none;
+  }
+}
+
+/* the redrawn Windows and app screens of the help pages (install.css .stage)
+   set the Korean Windows UI font; each language gets its own Windows UI font */
+:root:lang(ja) .stage {
+  font-family: 'Segoe UI', 'Yu Gothic UI', Meiryo, 'Hiragino Sans', sans-serif;
+  word-break: normal;
+}
+:root:lang(zh-TW) .stage {
+  font-family: 'Segoe UI', 'Microsoft JhengHei UI', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+  word-break: normal;
+}

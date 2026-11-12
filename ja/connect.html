@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI を接続 · IeumOffice</title>
+    <meta name="description" content="Claude のサブスクリプション、ChatGPT のプラン、または無料の AI を IeumOffice に接続する方法を画面でお見せします。ChatGPT はプログラムなしで、ログインするだけで接続できます。使っているものを選ぶと、どこを押すかをマウスポインターが実際に動いて示します。" />
+    <link rel="canonical" href="https://ieumoffice.com/ja/connect" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/ja/connect" />
+    <meta property="og:title" content="AI を接続 · IeumOffice" />
+    <meta property="og:description" content="使っている AI を選ぶと、接続するときにどこを押すかを画面でお見せします。" />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-install page-connect">
+    <a class="skip" href="#main">本文へスキップ</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/ja/" aria-label="IeumOffice トップへ">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="ページ案内">
+        <a href="/ja/updates">アップデート情報</a>
+        <a href="/ja/story">開発の経緯</a>
+        <a href="/ja/install">インストールのヘルプ</a>
+        <a href="/ja/connect" aria-current="page">AI の接続</a>
+        <a href="/ja/#formats">文書</a>
+        <a href="/ja/#ai">AI</a>
+      </nav>
+      <a class="btn btn-small" href="/ja/#download">ダウンロード</a>
+    </header>
+
+    <main id="main">
+      <header class="install-head">
+        <p class="eyebrow">AI 接続のヘルプ</p>
+        <h1>AI を接続</h1>
+        <p class="install-lede">
+          IeumOffice の AI は、いま使っている Claude や ChatGPT のサブスクリプションで動きます。サブスクリプションがなければ、無料の AI を接続すれば使えます。下から自分に合うものを選ぶと、どこを押すかをマウスポインターが実際に動いてお見せします。
+        </p>
+      </header>
+
+      <!-- the same question the app asks while nothing is connected -->
+      <p class="connect-question">いま使っている AI はありますか？</p>
+      <nav class="symptoms" aria-label="使っている AI を選ぶ">
+        <a class="symptom" href="#claude">
+          <span class="symptom-pic symptom-pic-ai" aria-hidden="true">
+            <i class="sp-card"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>Claude の有料サブスクリプションがあります</b>
+          <span>Pro または Max プラン</span>
+        </a>
+        <a class="symptom" href="#chatgpt">
+          <span class="symptom-pic symptom-pic-ai" aria-hidden="true">
+            <i class="sp-card sp-card-alt"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>ChatGPT を使っています</b>
+          <span>プログラムなしで、ログインするだけで接続</span>
+        </a>
+        <a class="symptom" href="#free">
+          <span class="symptom-pic symptom-pic-ai" aria-hidden="true">
+            <i class="sp-card sp-card-free"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>まだありません</b>
+          <span>無料の AI を 1 分ほどで接続</span>
+        </a>
+        <a class="symptom" href="#stuck">
+          <span class="symptom-pic symptom-pic-stuck" aria-hidden="true">
+            <i class="sp-card sp-card-stuck"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>接続の途中でつまずいた</b>
+          <span>ログインで止まる、バージョンが古い など</span>
+        </a>
+      </nav>
+      <p class="symptoms-more">
+        接続の画面は 3 か所にあります。初回起動時の案内の <b>AI を接続</b> のステップ、AI がひとつも接続されていない
+        <b>AI ウィンドウ</b>、そしてホームの左下の <b>設定 → AI</b> です。どこから始めても手順は同じです。
+      </p>
+
+      <!-- Claude subscription -->
+      <section class="guide" id="claude" aria-labelledby="claude-title">
+        <div class="guide-head">
+          <p class="guide-tag">Claude のサブスクリプション</p>
+          <h2 id="claude-title">Claude のサブスクリプションで接続する</h2>
+          <p>
+            Claude の <b>Pro</b> または <b>Max</b> プランが必要です。無料の Claude アカウントでは接続できません。IeumOffice は
+            PC にインストールした <b>Claude Code</b> というプログラムを通して回答を受け取るので、最初に 1 回だけそのプログラムをインストールしてログインします。API キーは不要です。
+          </p>
+        </div>
+        <div class="player" data-player="claude">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="io-window">
+                <div class="io-bar">
+                  <svg class="io-mark" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span class="io-tab">学級だより.docx</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="io-body">
+                  <div class="io-doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <aside class="io-panel" data-frame>
+                    <p class="io-panel-title">AI アシスタント</p>
+                    <p class="cg-title">AI を接続して始めましょう</p>
+                    <div class="cg-ask">
+                      <p class="cg-q">いま使っている AI はありますか？</p>
+                      <span class="cg-path" data-t="path"><b>Claude の有料サブスクリプションがあります</b><span>Pro または Max プランが必要です。</span></span>
+                      <span class="cg-path"><b>ChatGPT を使っています</b><span>ChatGPT のアカウントでログインし、そのプランの範囲で使います。</span></span>
+                      <span class="cg-path"><b>まだありません</b><span>無料の AI を 1 分ほどで接続できます。</span></span>
+                    </div>
+                    <div class="cg-open">
+                      <p class="cg-need">Pro または Max プランが必要です。無料の Claude アカウントでは接続できません。</p>
+                      <ol class="cg-steps">
+                        <li class="cg-s-install"><i>1</i>プログラムのインストール</li>
+                        <li class="cg-s-login"><i>2</i>ログイン</li>
+                        <li class="cg-s-ready"><i>3</i>接続完了</li>
+                      </ol>
+                      <div class="cg-card">
+                        <p class="cg-card-head">
+                          <i class="cg-ai">✦</i><b>Claude</b>
+                          <span data-c="install">未インストール</span>
+                          <span data-c="login">未ログイン</span>
+                          <span data-c="signing">ログイン中…</span>
+                        </p>
+                        <p class="cg-note" data-c="install">Anthropic の公式インストールコマンドが新しいターミナルウィンドウで実行されます。</p>
+                        <p class="cg-note" data-c="login">押すとブラウザーが開きます。Anthropic のアカウントでログインして「許可」を押すと、自動で接続されます。</p>
+                        <p class="cg-note" data-c="signing">開いたブラウザーで Anthropic のアカウントにログインし、アクセスを許可してください。終わると自動で接続されます。</p>
+                        <p class="cg-btns" data-c="install"><span class="cg-btn" data-t="install">インストール</span><span class="cg-link">公式のインストール手順</span></p>
+                        <p class="cg-btns" data-c="login"><span class="cg-btn" data-t="login">ログイン</span><span class="cg-link">ブラウザにコードが表示されましたか？</span></p>
+                        <p class="cg-btns" data-c="signing"><span class="cg-link">ブラウザーが開きませんか？</span></p>
+                      </div>
+                      <p class="cg-back">別の方法を選ぶ</p>
+                    </div>
+                    <div class="cg-chat"><span class="cg-input"><s></s></span><span class="cg-model" data-t="model">自動 · Claude</span><span class="cg-send">↑</span></div>
+                  </aside>
+                </div>
+              </div>
+
+              <!-- the vendor's install command in a terminal window -->
+              <div class="ps-window" data-frame>
+                <div class="ps-bar"><span>Windows PowerShell</span><span class="ps-close" data-t="close">✕</span></div>
+                <div class="ps-body">
+                  <p>PS C:\Users\ユーザー名&gt; <b>irm https://claude.ai/install.ps1 | iex</b></p>
+                  <p class="ps-run"><i></i></p>
+                  <p class="ps-out"><s></s><s></s><s></s></p>
+                </div>
+              </div>
+
+              <!-- the vendor's sign-in page in the browser -->
+              <div class="br-window" data-frame>
+                <div class="br-bar"><span class="ms-nav">‹ › ↻</span><span class="ms-url">claude.ai</span></div>
+                <div class="br-page">
+                  <div class="br-box">
+                    <p class="br-title">Claude Code を接続</p>
+                    <s></s><s></s>
+                    <span class="br-done">✓</span>
+                    <span class="br-btn" data-t="allow">許可</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>AI ウィンドウに「いま使っている AI はありますか？」と表示されたら、<b>Claude の有料サブスクリプションがあります</b> を押します。</li>
+            <li>カードに「未インストール」と表示されていたら <b>インストール</b> を押します。新しいウィンドウが開き、Anthropic の公式インストールが自動で進みます。</li>
+            <li>ウィンドウの文字が止まったらインストールは完了です。ウィンドウを閉じて IeumOffice に戻ると、カードが「未ログイン」に変わります。</li>
+            <li><b>ログイン</b> を押すとブラウザーが開きます。サブスクリプション中の Claude アカウントでログインして <b>許可</b> を押します。</li>
+            <li>IeumOffice に戻ると接続の案内が消え、文字を入力する欄が出ます。その下に <b>自動 · Claude</b> と表示されたら完了です。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          すでに Claude Code をインストールして使っている場合は、ステップ 1 のあとすぐに「未ログイン」か「接続済み」と表示されます。ブラウザーが開かない場合は <a class="text-link" href="#login-stuck">「ログイン中…」のまま止まる</a>をご覧ください。
+        </p>
+        <p class="demo-note">
+          画面は説明のために簡単に描き直したものです。ブラウザーのログイン画面のボタンは、言語の設定によって <b>許可</b>、<b>承認</b>、<b>Authorize</b> のいずれかで表示されます。
+        </p>
+      </section>
+
+      <!-- ChatGPT connected directly in the app (0.12.8, decision 0081); the app's help link for this path is /connect#chatgpt -->
+      <section class="guide" id="chatgpt" aria-labelledby="chatgpt-title">
+        <div class="guide-head">
+          <p class="guide-tag">ChatGPT</p>
+          <h2 id="chatgpt-title">ChatGPT のプランで接続する</h2>
+          <p>
+            ChatGPT は、プログラムをインストールせずに IeumOffice から直接接続します。ブラウザーに開く ChatGPT のログイン画面でログインし、このアプリがプランを使うことを許可すれば完了です。無料プランでも接続はできますが、使える量がわずかなので、すぐに止まります。IeumOffice 0.12.8 から使えます。
+          </p>
+        </div>
+        <div class="player" data-player="chatgpt">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="io-window">
+                <div class="io-bar">
+                  <svg class="io-mark" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span class="io-tab">学級だより.docx</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="io-body">
+                  <div class="io-doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <aside class="io-panel" data-frame>
+                    <p class="io-panel-title">AI アシスタント</p>
+                    <p class="cg-title">AI を接続して始めましょう</p>
+                    <div class="cg-ask">
+                      <p class="cg-q">いま使っている AI はありますか？</p>
+                      <span class="cg-path"><b>Claude の有料サブスクリプションがあります</b><span>Pro または Max プランが必要です。</span></span>
+                      <span class="cg-path" data-t="path"><b>ChatGPT を使っています</b><span>ChatGPT のアカウントでログインし、そのプランの範囲で使います。</span></span>
+                      <span class="cg-path"><b>まだありません</b><span>無料の AI を 1 分ほどで接続できます。</span></span>
+                    </div>
+                    <div class="cg-open">
+                      <p class="cg-need">ChatGPT のアカウントでログインし、そのプランの範囲で使います。インストールは不要です。</p>
+                      <ol class="cg-steps">
+                        <li class="cg-s-login"><i>1</i>ログイン</li>
+                        <li class="cg-s-ready"><i>2</i>接続完了</li>
+                      </ol>
+                      <div class="cg-card">
+                        <p class="cg-card-head">
+                          <i class="cg-ai">✦</i><b>ChatGPT</b>
+                          <span data-c="login">未ログイン</span>
+                          <span data-c="signing">ログイン中…</span>
+                        </p>
+                        <p class="cg-note" data-c="login">ブラウザーで ChatGPT のログイン画面が開きます。ログインして、このアプリが ChatGPT のプランを使うことを許可すると、自動で接続されます。</p>
+                        <p class="cg-note" data-c="signing">開いたブラウザーで ChatGPT のアカウントにログインし、このアプリがプランを使うことを許可してください。終わると自動で接続されます。</p>
+                        <p class="cg-btns" data-c="login"><span class="cg-btn" data-t="login">ChatGPT で続行</span></p>
+                        <p class="cg-btns" data-c="signing"><span class="cg-link">ログインをキャンセル</span></p>
+                      </div>
+                      <p class="cg-link cg-alt" data-c="login">この PC で Codex プログラムをすでに使っていますか？Codex で接続</p>
+                      <p class="cg-back">別の方法を選ぶ</p>
+                    </div>
+                    <div class="cg-chat"><span class="cg-input"><s></s></span><span class="cg-model" data-t="model">自動 · ChatGPT</span><span class="cg-send">↑</span></div>
+                  </aside>
+                </div>
+              </div>
+
+              <!-- OpenAI's ChatGPT sign-in in the browser, then the page the app shows when it is done -->
+              <div class="br-window" data-frame>
+                <div class="br-bar"><span class="ms-nav">‹ › ↻</span><span class="ms-url">auth.openai.com</span></div>
+                <div class="br-page">
+                  <div class="br-box">
+                    <p class="br-title"><span class="br-before">ChatGPT でログイン</span><span class="br-after">接続済み</span></p>
+                    <s class="br-before"></s><s class="br-before"></s>
+                    <span class="br-done">✓</span>
+                    <p class="br-after br-note">このタブを閉じてアプリに戻ってください。</p>
+                    <span class="br-btn" data-t="allow">続行</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>AI ウィンドウに「いま使っている AI はありますか？」と表示されたら、<b>ChatGPT を使っています</b> を押します。</li>
+            <li>カードに「未ログイン」と表示されていたら <b>ChatGPT で続行</b> を押します。ブラウザーで ChatGPT のログイン画面が開きます。</li>
+            <li>使っている ChatGPT のアカウントでログインし、このアプリが ChatGPT のプランを使うことを許可します。ブラウザーに <b>接続済み</b> と表示されたら、そのタブを閉じます。</li>
+            <li>IeumOffice に戻ると接続の案内が消え、文字を入力する欄が出ます。欄の下に <b>自動</b> と使っているモデルの名前が表示されたら完了です。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          接続すると、<b>設定 → AI</b> の ChatGPT のカードに <b>使用量を管理</b> が表示されます。押すと ChatGPT の設定の使用量の画面が開き、このアプリが使った量を見たり、このアプリだけが使える上限を決めたりできます。接続を解除するには、同じカードの<b>ログアウト</b> を押します。解除されるのはこのアプリの接続だけで、この PC のほかのプログラムはそのままです。
+        </p>
+        <p class="demo-note">
+          画面は説明のために簡単に描き直したものです。ブラウザーのログイン画面は OpenAI のものなので、実際の見た目やボタンの名前が違うことがあります。エージェントモードとターミナルのコマンドは、直接接続した ChatGPT を使いません。そちらでも
+          ChatGPT のプランを使うには、下のように Codex プログラムで接続してください。
+        </p>
+      </section>
+
+      <!-- ChatGPT through the Codex program: a way inside the ChatGPT answer since 0.12.8, the whole ChatGPT answer before it -->
+      <section class="guide" id="codex" aria-labelledby="codex-title">
+        <div class="guide-head">
+          <p class="guide-tag">ChatGPT · Codex</p>
+          <h2 id="codex-title">Codex プログラムで接続する</h2>
+          <p>
+            この PC で OpenAI の <b>Codex</b> プログラムをすでに使っているなら、Codex で接続してもかまいません。まだない場合は、最初に 1 回だけインストールして ChatGPT のアカウントでログインします。IeumOffice 0.12.7 までは、<b>ChatGPT を使っています</b> を押すとすぐにこの
+            Codex のカードが出ます。
+          </p>
+        </div>
+        <div class="player" data-player="codex">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="io-window">
+                <div class="io-bar">
+                  <svg class="io-mark" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span class="io-tab">学級だより.docx</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="io-body">
+                  <div class="io-doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <aside class="io-panel" data-frame>
+                    <p class="io-panel-title">AI アシスタント</p>
+                    <p class="cg-title">AI を接続して始めましょう</p>
+                    <div class="cg-ask">
+                      <p class="cg-q">いま使っている AI はありますか？</p>
+                      <span class="cg-path"><b>Claude の有料サブスクリプションがあります</b><span>Pro または Max プランが必要です。</span></span>
+                      <span class="cg-path" data-t="path"><b>ChatGPT を使っています</b><span>ChatGPT のアカウントでログインし、そのプランの範囲で使います。</span></span>
+                      <span class="cg-path"><b>まだありません</b><span>無料の AI を 1 分ほどで接続できます。</span></span>
+                    </div>
+                    <div class="cg-open">
+                      <!-- the direct way comes first; its link leads to the Codex way -->
+                      <div class="cg-direct">
+                        <p class="cg-need">ChatGPT のアカウントでログインし、そのプランの範囲で使います。インストールは不要です。</p>
+                        <ol class="cg-steps">
+                          <li class="cg-s-now"><i>1</i>ログイン</li>
+                          <li><i>2</i>接続完了</li>
+                        </ol>
+                        <div class="cg-card">
+                          <p class="cg-card-head"><i class="cg-ai">✦</i><b>ChatGPT</b><span>未ログイン</span></p>
+                          <p class="cg-btns"><span class="cg-btn">ChatGPT で続行</span></p>
+                        </div>
+                        <p class="cg-link" data-t="use-codex">この PC で Codex プログラムをすでに使っていますか？Codex で接続</p>
+                      </div>
+                      <div class="cg-via">
+                        <p class="cg-need">ChatGPT のアカウントで OpenAI の Codex プログラムにログインして使います。</p>
+                        <ol class="cg-steps">
+                          <li class="cg-s-install"><i>1</i>プログラムのインストール</li>
+                          <li class="cg-s-login"><i>2</i>ログイン</li>
+                          <li class="cg-s-ready"><i>3</i>接続完了</li>
+                        </ol>
+                        <div class="cg-card">
+                          <p class="cg-card-head">
+                            <i class="cg-ai">✦</i><b>Codex</b>
+                            <span data-c="install">未インストール</span>
+                            <span data-c="login">未ログイン</span>
+                            <span data-c="signing">ログイン中…</span>
+                          </p>
+                          <p class="cg-note" data-c="install">OpenAI の公式インストールコマンドが新しいターミナルウィンドウで実行されます。</p>
+                          <p class="cg-note" data-c="login">押すとブラウザーが開きます。OpenAI のアカウントでログインして「許可」を押すと、自動で接続されます。</p>
+                          <p class="cg-note" data-c="signing">開いたブラウザーで OpenAI のアカウントにログインし、アクセスを許可してください。終わると自動で接続されます。</p>
+                          <p class="cg-btns" data-c="install"><span class="cg-btn" data-t="install">インストール</span><span class="cg-link">公式のインストール手順</span></p>
+                          <p class="cg-btns" data-c="login"><span class="cg-btn" data-t="login">ログイン</span><span class="cg-link">ブラウザにコードが表示されましたか？</span></p>
+                          <p class="cg-btns" data-c="signing"><span class="cg-link">ブラウザーが開きませんか？</span></p>
+                        </div>
+                      </div>
+                      <p class="cg-back">別の方法を選ぶ</p>
+                    </div>
+                    <div class="cg-chat"><span class="cg-input"><s></s></span><span class="cg-model" data-t="model">自動 · Codex</span><span class="cg-send">↑</span></div>
+                  </aside>
+                </div>
+              </div>
+
+              <div class="ps-window" data-frame>
+                <div class="ps-bar"><span>Windows PowerShell</span><span class="ps-close" data-t="close">✕</span></div>
+                <div class="ps-body">
+                  <p>PS C:\Users\ユーザー名&gt; <b>winget install OpenAI.Codex</b></p>
+                  <p class="ps-run"><i></i></p>
+                  <p class="ps-out"><s></s><s></s><s></s></p>
+                </div>
+              </div>
+
+              <div class="br-window" data-frame>
+                <div class="br-bar"><span class="ms-nav">‹ › ↻</span><span class="ms-url">auth.openai.com</span></div>
+                <div class="br-page">
+                  <div class="br-box">
+                    <p class="br-title">Codex にログイン</p>
+                    <s></s><s></s>
+                    <span class="br-done">✓</span>
+                    <span class="br-btn" data-t="allow">続行</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>AI ウィンドウに「いま使っている AI はありますか？」と表示されたら、<b>ChatGPT を使っています</b> を押します。</li>
+            <li>ChatGPT のカードの下にある <b>この PC で Codex プログラムをすでに使っていますか？Codex で接続</b> を押すと、Codex のカードに変わります。</li>
+            <li>カードに「未インストール」と表示されていたら <b>インストール</b> を押します。新しいウィンドウが開き、OpenAI の公式インストールが進みます。</li>
+            <li>ウィンドウの文字が止まったらインストールは完了です。ウィンドウを閉じて IeumOffice に戻ると、カードが「未ログイン」に変わります。</li>
+            <li><b>ログイン</b> を押すとブラウザーが開きます。使っている ChatGPT のアカウントでログインし、案内に沿って続けて押します。</li>
+            <li>ブラウザーにログインが完了したという画面が出たら、IeumOffice に戻ります。文字を入力する欄の下に <b>自動</b> と使っているモデルの名前が表示されたら完了です。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          Codex がすでに接続されていれば、最初から Codex のカードが表示されます。インストールのウィンドウに <code>[Y] Yes [N] No</code> のように尋ねる行が出たら、キーボードで <b>Y</b> を押してから <b>Enter</b> を押します。Windows が初めてプログラムをダウンロードするときに、利用規約への同意を求めているものです。気が変わったら、Codex のカードの下の <b>Codex を使わず、アプリで直接接続</b> を押すと、<a class="text-link" href="#chatgpt">直接接続する方法</a>に戻ります。
+        </p>
+        <p class="demo-note">
+          画面は説明のために簡単に描き直したものです。IeumOffice で Codex を選べる場所には、「アプリ内で Codex のサブスクリプションを使うことは、OpenAI が公式に推奨している方法ではありません」という案内も表示されます。この点を理解したうえで選んでください。
+        </p>
+      </section>
+
+      <!-- no subscription: free AI -->
+      <section class="guide" id="free" aria-labelledby="free-title">
+        <div class="guide-head">
+          <p class="guide-tag">無料の AI</p>
+          <h2 id="free-title">サブスクリプションがなければ無料の AI で</h2>
+          <p>
+            サブスクリプションがなくても、<b>OpenRouter</b> や <b>Google Gemini</b> の無料の AI を接続してすぐに使えます。サブスクリプションのモデルより性能は低く、1 日に送れるリクエストの数に上限があります。いちばん簡単なのは、ボタンひとつで済む OpenRouter です。
+          </p>
+        </div>
+        <div class="player" data-player="free">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="io-window">
+                <div class="io-bar">
+                  <svg class="io-mark" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span class="io-tab">学級だより.docx</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="io-body">
+                  <div class="io-doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <aside class="io-panel" data-frame>
+                    <p class="io-panel-title">AI アシスタント</p>
+                    <p class="cg-title">AI を接続して始めましょう</p>
+                    <div class="cg-ask">
+                      <p class="cg-q">いま使っている AI はありますか？</p>
+                      <span class="cg-path"><b>Claude の有料サブスクリプションがあります</b><span>Pro または Max プランが必要です。</span></span>
+                      <span class="cg-path"><b>ChatGPT を使っています</b><span>ChatGPT のアカウントでログインし、そのプランの範囲で使います。</span></span>
+                      <span class="cg-path" data-t="path"><b>まだありません</b><span>無料の AI を 1 分ほどで接続できます。</span></span>
+                    </div>
+                    <div class="cg-open">
+                      <p class="cg-need">
+                        無料の AI を 1 分ほどで接続できます。無料で使っている間に送った内容は、その会社の AI の改善に使われることがあります。
+                      </p>
+                      <p class="cg-btns"><span class="cg-btn" data-t="connect-free">無料の AI を接続</span></p>
+                      <p class="cg-back">別の方法を選ぶ</p>
+                    </div>
+                    <div class="cg-chat"><span class="cg-input"><s></s></span><span class="cg-model" data-t="model">OpenRouter</span><span class="cg-send">↑</span></div>
+                  </aside>
+                </div>
+              </div>
+
+              <!-- Settings › AI, "use for free" -->
+              <div class="st-window" data-frame>
+                <div class="st-bar"><b>設定</b><span class="ms-caption"><i></i><i></i><i></i></span></div>
+                <div class="st-body">
+                  <ul class="st-side">
+                    <li>一般</li>
+                    <li class="is-on">AI</li>
+                    <li>フォント</li>
+                    <li>情報</li>
+                  </ul>
+                  <div class="st-main">
+                    <p class="st-title">無料で使う</p>
+                    <p class="st-desc">サブスクリプションがなくても、無料の AI を接続してすぐに始められます。無料で使える量には 1 日あたりの上限があります。</p>
+                    <div class="fr-card">
+                      <p class="fr-head">
+                        <b>OpenRouter</b><i class="fr-badge">無料</i>
+                        <span class="fr-off">未接続</span>
+                        <span class="fr-wait">ブラウザーを待っています…</span>
+                        <span class="fr-on">接続済み · 使用中</span>
+                      </p>
+                      <p class="fr-desc">ボタンひとつで接続できます。ブラウザーで OpenRouter に登録またはログインし、アクセスを許可してください。</p>
+                      <p class="fr-quota"><s></s></p>
+                      <p class="cg-btns fr-actions"><span class="cg-btn" data-t="or-connect">ブラウザーで接続</span></p>
+                    </div>
+                    <div class="fr-card">
+                      <p class="fr-head"><b>Google Gemini</b><i class="fr-badge">無料</i><span>未接続</span></p>
+                      <p class="fr-desc">Google アカウントでキーを作成し、ここに貼り付けます。18 歳以上の方のみ利用できます。</p>
+                      <p class="cg-btns"><span class="cg-btn cg-btn-plain">キーを作成</span><span class="fr-input">Gemini のキーを貼り付けてください</span><span class="cg-btn cg-btn-plain">接続</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="br-window" data-frame>
+                <div class="br-bar"><span class="ms-nav">‹ › ↻</span><span class="ms-url">openrouter.ai</span></div>
+                <div class="br-page">
+                  <div class="br-box">
+                    <p class="br-title">IeumOffice の接続を許可</p>
+                    <s></s><s></s>
+                    <span class="br-done">✓</span>
+                    <span class="br-btn" data-t="allow">許可</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>AI ウィンドウに「いま使っている AI はありますか？」と表示されたら、<b>まだありません</b> を押します。</li>
+            <li><b>無料の AI を接続</b> を押すと、設定の「無料で使う」が開きます。</li>
+            <li>OpenRouter のカードの <b>ブラウザーで接続</b> を押します。ブラウザーで OpenRouter に登録またはログインしてから <b>許可</b> を押します。</li>
+            <li>ブラウザーに接続できたという画面が出たら、そのタブを閉じて戻ります。カードに <b>接続済み · 使用中</b> と、今日の残りの無料リクエスト数が表示されます。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="前のステップ">‹ 前へ</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="一時停止">❚❚ 一時停止</button>
+            <button type="button" class="pb-btn" data-next aria-label="次のステップ">次へ ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          初回起動時の案内で <b>まだありません</b> を選ぶと、ステップ 2 を経ずに、これらのカードがその場ですぐに表示されます。
+        </p>
+        <details class="mac-guide" id="gemini">
+          <summary>Google Gemini で接続するとき</summary>
+          <div class="mac-guide-body">
+            <ol>
+              <li>Gemini のカードの <b>キーを作成</b> を押すと Google AI Studio が開きます。Google アカウントでログインしてキーを作成し、コピーします。</li>
+              <li>IeumOffice に戻り、「Gemini のキーを貼り付けてください」の欄に貼り付けて <b>接続</b> を押します。</li>
+            </ol>
+            <p>
+              18 歳以上の方のみ利用できます。課金が有効な Google プロジェクトで作成したキーは料金が発生することがあるので、課金を有効にしていないプロジェクトで作成してください。
+            </p>
+          </div>
+        </details>
+        <p class="demo-note">
+          無料で使っている間に送った内容は、その会社の AI の改善に使われることがあります。個人情報を含む文書には注意してください。今日使える量を使い切ると、AI ウィンドウがそのことと、再び使える時刻を知らせます。
+        </p>
+      </section>
+
+      <!-- when it does not work -->
+      <section class="guide guide-other" id="stuck" aria-labelledby="stuck-title">
+        <div class="guide-head">
+          <p class="guide-tag">つまずいたとき</p>
+          <h2 id="stuck-title">接続の途中でつまずいたとき</h2>
+          <p>カードに表示されている言葉を探して開いてみてください。</p>
+        </div>
+
+        <details class="mac-guide" id="login-stuck">
+          <summary>「ログイン中…」のまま止まる</summary>
+          <div class="mac-guide-body">
+            <p>
+              ブラウザーにログイン画面が出ているなら、そこでログインして許可を押せば大丈夫です。時間がかかってもかまいません。このときはカードの下のリンクや <b>ログインウィンドウを開く</b> ボタンを押さないでください。押すと、進めていたログインが止まり、最初からやり直しになります。
+            </p>
+            <p>ブラウザーがまったく開かなかった場合は、次のようにします。</p>
+            <ol>
+              <li>カードの下のリンクか、25 秒たつと出る <b>ログインウィンドウを開く</b> ボタンを押します。黒いウィンドウがひとつ開きます。このときブラウザーが開いたら、そこでログインして許可を押してください。ウィンドウが自動で閉じて接続されます。</li>
+              <li>それでもブラウザーが開かない場合は、黒いウィンドウに表示された <b>https://</b> で始まるアドレスをマウスでドラッグして選択し、右クリックしてコピーします。ブラウザーのアドレスバーに貼り付けると、ログイン画面が開きます。</li>
+              <li>ログインして許可を押すと、ブラウザーにコードが表示されます。コード全体をコピーします。コピーボタンがあれば、それを押してください。</li>
+              <li>黒いウィンドウの中で <b>一度</b> 右クリックして貼り付け、<b>Enter</b> を押します。貼り付けたコードがウィンドウに表示されなくても正常です。</li>
+              <li>ウィンドウが閉じて、カードが「接続済み」に変われば完了です。</li>
+            </ol>
+            <p>
+              ウィンドウに <b>Invalid code</b> と表示されたら、コードが最後までコピーされていません。コードの途中に <code>#</code> があり、その前後が両方とも入っている必要があります。ウィンドウを閉じずに、コードをもう一度コピーして同じウィンドウに貼り付けてください。
+            </p>
+            <p>最初からやり直すには、カードの <b>ログインをキャンセル</b> を押してから、<b>ログイン</b> をもう一度押します。</p>
+            <p>
+              ChatGPT のカード（直接接続）には黒いログインウィンドウはありません。ブラウザーでログインし、許可まで済ませてください。ブラウザーが開かなかったか、やり直したい場合は、<b>ログインをキャンセル</b> を押してから <b>ChatGPT で続行</b> をもう一度押します。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="login-unfinished">
+          <summary>「ログインが完了していません」と表示される</summary>
+          <div class="mac-guide-body">
+            <p>
+              ブラウザーがログインを終えず、コードだけを表示したまま止まると、この案内が出ます。そのコードは、アプリではなくログインウィンドウに貼り付ける必要があります。すでに表示されたコードは使えないので、最初からログインし直します。
+            </p>
+            <ol>
+              <li>カードの <b>ログインウィンドウを開く</b> ボタンを押します。黒いログインウィンドウが開きます。ウィンドウではなくブラウザーでやり直すには、<b>ブラウザでやり直す</b> を押します。</li>
+              <li>上の <a href="#login-stuck">「ログイン中…」のまま止まる</a>の 2〜5 と同じように、ブラウザーでログインしてから、表示されたコードをそのウィンドウに貼り付けます。</li>
+            </ol>
+            <p>
+              まだログインしていないカードにも <b>ブラウザにコードが表示されましたか？</b> のリンクがあるので、最初からこのウィンドウでログインすることもできます。このログインウィンドウは Windows でのみ使えます（IeumOffice 0.12.7 から）。
+            </p>
+            <p>
+              ChatGPT のカードで「ログインが完了していません」と表示された場合は、このアプリに ChatGPT のプランの使用を許可しなかったか、
+              10 分以内にログインを終えられなかったということです。ログインウィンドウは不要で、<b>ChatGPT で続行</b> をもう一度押せば最初から始まります。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="update">
+          <summary>「プログラムが古すぎます」と表示される</summary>
+          <div class="mac-guide-body">
+            <p>
+              PC にある Claude Code や Codex が古いバージョンです。カードの <b>更新</b> を押すと、その会社の公式の更新が新しいウィンドウで実行されます。そのウィンドウで更新が終わったら IeumOffice に戻ってください。アプリが自動でもう一度確認します。
+            </p>
+            <p>
+              カードに「このアプリが実行するファイル」も表示されている場合は、まさにそのファイルを更新する必要があります。WSL（Ubuntu）や別のフォルダーにインストールされたコピーを更新しても、このファイルは変わりません。更新ボタンがない場合は、Windows PowerShell でカードに書かれたコマンドを実行します。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="metered">
+          <summary>「ログイン済みですが、サブスクリプションではありません」と表示される</summary>
+          <div class="mac-guide-body">
+            <p>
+              プログラムが、サブスクリプションのアカウントではなく、API キーや使った分だけ料金を払うアカウントでログインしています。このとき <b>それでも使用</b> を押すと、リクエストのたびにそのアカウントに料金がかかります。押すまでは、IeumOffice はその接続を使いません。
+            </p>
+            <p>
+              サブスクリプションで使うには、<b>設定 → AI</b> のカードで <b>別のアカウントでログイン</b> を押し、サブスクリプション中のアカウントでログインし直してから<b>再確認</b> を押します。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="check-failed">
+          <summary>「接続を確認できませんでした」と表示される</summary>
+          <div class="mac-guide-body">
+            <p>
+              プログラムから時間内に応答がなかったか、確認の途中で問題が起きた場合です。しばらくしてから <b>再確認</b> を押します。会社や学校のように、プロキシを通してインターネットに出る PC では、PowerShell で <code>claude</code> や
+              <code>codex</code> が動くかを先に確かめてください。そこで動かなければ、IeumOffice でも動きません。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="claude-free">
+          <summary>Claude の無料アカウントしかない</summary>
+          <div class="mac-guide-body">
+            <p>
+              Claude は Pro か Max のプランでないと接続できません。無料アカウントでログインしても接続されません。サブスクリプションに加入するつもりがなければ、<a class="text-link" href="#free">無料の AI</a> を接続してください。カードの <b>別の方法を選ぶ</b> を押すと、最初の質問に戻ります。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="mac">
+          <summary>Mac で接続するとき <span class="tag">ベータ</span></summary>
+          <div class="mac-guide-body">
+            <p>
+              Mac では、カードに <b>インストール</b> ボタンの代わりに <b>公式のインストール手順</b> が表示されます。押すとその会社のインストールの説明が開くので、そこに書かれているとおりにターミナルで Claude Code や Codex をインストールします。インストールしてから IeumOffice に戻ると、カードが「未ログイン」に変わり、そのあとは Windows と同じです。<b>ログイン</b> を押して、ブラウザーでログインすれば完了です。
+            </p>
+            <p>古いバージョンと表示されたら、ターミナルでカードに書かれた更新のコマンドを実行します。</p>
+            <p>ChatGPT を直接接続する場合は、インストールするプログラムがないので、Mac でも Windows と同じ手順です。</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="guide guide-help">
+        <p>
+          それでもうまくいかない場合は、接続画面の下のほうにある <b>サポート用の情報をコピー</b> を押してから、<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>に貼り付けて送ってください。コピーされるのは接続の状態とプログラムのバージョンだけで、アカウントとファイルのパスは含まれません。
+        </p>
+        <p>
+          IeumOffice は Claude Code や Codex のログイン情報を読んだり保存したりしません。ログインはその会社のプログラムと Web
+          ページでのみ行い、ChatGPT のパスワードも IeumOffice は見ません。ChatGPT を直接接続すると、OpenAI がこのアプリに発行したログイン情報ひとつだけをこの PC に置き（Windows では暗号化して保存します）、接続を解除すると OpenAI に接続の終了を求めてから削除します。サブスクリプションの上限に達したら、リクエストを止めて知らせるだけで、料金が発生する接続に勝手に切り替えることはありません。
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">作者 <b>박준일</b>（温陽女子高等学校の国語（韓国語）教師） · <a href="/ja/story">開発の経緯</a></p>
+          <p>
+            IeumOffice はオープンソースプロジェクト
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a>（Apache-2.0）をもとに手を加えて作ったプログラムで、ハングルエディターは <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a>（MIT）をもとにしています。このサイトのフォントは Wanted Sans と Gowun Batang（SIL OFL 1.1）です。
+          </p>
+          <p>Claude は Anthropic の、ChatGPT と Codex は OpenAI の商標です。IeumOffice は両社と関係がありません。</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="外部リンク">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">リリース</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">問題を報告</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">フィードバックを送る</a>
+        <a href="/ja/install">インストールのヘルプ</a>
+        <a href="/ja/connect">AI 接続のヘルプ</a>
+        <a href="/ja/faq">よくある質問</a>
+        <a href="/ja/#opensource">オープンソース</a>
+        <a href="/ja/privacy.html">個人情報</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">ライセンス</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          誰でも無料で使えます。現状のまま提供し、特に保証はしません。<a href="/ja/legal.html">法的情報</a>（ライセンス・商標） · お問い合わせ
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/connect.js"></script>
+  </body>
+</html>

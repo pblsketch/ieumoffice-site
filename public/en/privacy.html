@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>Privacy Policy · IeumOffice</title>
+    <meta name="description" content="IeumOffice's privacy policy: what leaves your PC and what stays on it." />
+    <link rel="canonical" href="https://ieumoffice.com/en/privacy.html" />
+    <link rel="alternate" hreflang="ko" href="https://ieumoffice.com/privacy.html" />
+    <link rel="alternate" hreflang="en" href="https://ieumoffice.com/en/privacy.html" />
+    <link rel="alternate" hreflang="ja" href="https://ieumoffice.com/ja/privacy.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://ieumoffice.com/zh-tw/privacy.html" />
+    <link rel="alternate" hreflang="es" href="https://ieumoffice.com/es/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://ieumoffice.com/privacy.html" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --fg: #191510;
+        --muted: #5b564e;
+        --line: #e4ded4;
+        --bg: #fdfcf9;
+        --accent: #0b57d0;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fg: #ece7de;
+          --muted: #a8a196;
+          --line: #3a352d;
+          --bg: #17140f;
+          --accent: #8ab4f8;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "Wanted Sans Variable", "Wanted Sans", system-ui, -apple-system, "Segoe UI",
+          "Malgun Gothic", sans-serif;
+        line-height: 1.7;
+        word-break: keep-all;
+      }
+      main {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 3.5rem 1.25rem 5rem;
+      }
+      a { color: var(--accent); }
+      h1 { font-size: 1.75rem; line-height: 1.3; margin: 0 0 0.5rem; }
+      h2 { font-size: 1.2rem; margin: 2.5rem 0 0.75rem; }
+      h3 { font-size: 1rem; margin: 1.75rem 0 0.5rem; }
+      p, li { font-size: 0.98rem; }
+      .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+      hr { border: 0; border-top: 1px solid var(--line); margin: 3.5rem 0; }
+      table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+      th, td { border: 1px solid var(--line); padding: 0.5rem 0.6rem; text-align: left; font-size: 0.9rem; vertical-align: top; }
+      th { background: color-mix(in srgb, var(--line) 35%, transparent); }
+      code { font-family: ui-monospace, Consolas, monospace; font-size: 0.88em; }
+      .note { color: var(--muted); font-size: 0.92rem; }
+      .back { display: inline-block; margin-bottom: 2rem; font-size: 0.95rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="/en/">← IeumOffice</a>
+      <p class="meta langs"><a href="/privacy.html" hreflang="ko" lang="ko">한국어</a> · <a href="/en/privacy.html" hreflang="en" lang="en" aria-current="page">English</a> · <a href="/ja/privacy.html" hreflang="ja" lang="ja">日本語</a> · <a href="/zh-tw/privacy.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a> · <a href="/es/privacy.html" hreflang="es" lang="es">Español</a></p>
+      <h1>IeumOffice Privacy Policy</h1>
+      <p class="meta">
+        Last updated: October 29, 2026 · <a href="#articles">Policy by article</a> · Complete list of data flows:
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/PRIVACY.md" rel="noopener">PRIVACY.md</a>
+      </p>
+      <p class="note">
+        This is a translation for your convenience. If it differs from the
+        <a href="/privacy.html" hreflang="ko">Korean original</a>, the Korean original applies.
+      </p>
+
+      <p>
+        IeumOffice is a desktop program that opens, edits and saves documents on your own PC.
+        The project runs no server of its own, so the app sends nothing to IeumOffice or to its
+        maintainers. It has no usage analytics or telemetry.
+      </p>
+
+      <section id="articles">
+        <h2>Privacy policy by article</h2>
+        <p class="note">
+          This policy is set out under Article 30 of Korea's Personal Information Protection Act. Schools
+          can cite these article numbers when they check the required standards for learning-support
+          software. The sections after it explain the same points in more detail, feature by feature.
+        </p>
+
+        <h3 id="art1">Article 1 (General provisions and how data is handled)</h3>
+        <p>
+          The developer of IeumOffice (the "operator") handles users' personal information according to this
+          policy in running the IeumOffice program and its website (ieumoffice.com).
+        </p>
+        <ul>
+          <li>
+            IeumOffice is a desktop program you install and use on your own PC, and the operator runs no server.
+            There is no sign-up or login, and no usage analytics or telemetry.
+          </li>
+          <li>
+            Documents, settings and AI chat history are stored only on your PC (on Windows,
+            <code>%APPDATA%\IeumOffice</code>) and are not sent to the operator. Even if you open a document with
+            students' writing or a class list, the operator does not receive its content.
+          </li>
+          <li>
+            When you use AI features, document content is sent directly from your PC, under your own account, to the
+            AI service you chose (Anthropic's Claude, OpenAI's ChatGPT or Codex, the provider of an API key you
+            entered, and so on). This transfer happens under your own agreement with that company, and the operator
+            cannot receive or see it. Parts of a document you hid from AI are not sent.
+          </li>
+          <li>
+            The only personal information the operator handles directly is what users choose to send: the feedback
+            survey, email inquiries and the question helper on the website. Article 2 lists the items. Posts on
+            GitHub Issues are published publicly on GitHub and follow GitHub's policies.
+          </li>
+        </ul>
+
+        <h3 id="art2">Article 2 (Personal information handled)</h3>
+        <table>
+          <thead>
+            <tr><th>Channel</th><th>Items</th><th>How it is collected</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Feedback survey</td>
+              <td>Required: type of feedback<br />Optional: details, app information (version, operating system, display language), an email address for a reply</td>
+              <td>Entered by the user in a Google Form</td>
+            </tr>
+            <tr>
+              <td>Email inquiries</td>
+              <td>The sender's email address and display name, the message and its attachments</td>
+              <td>Mail the user sends to pblsketch@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Website question helper</td>
+              <td>Question, answer, titles of the help pages used as sources, time (text that looks like an email address, phone number, Korean resident registration number or card number is masked before it is stored)</td>
+              <td>Entered by the user in the question window</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          The IeumOffice program sends no personal information to the operator. The website uses no cookies or
+          visitor analytics tools, and the question helper's log keeps no IP addresses or browser details. The
+          operator does not collect unique identifiers such as resident registration numbers, or sensitive
+          information.
+        </p>
+
+        <h3 id="art3">Article 3 (Purposes)</h3>
+        <ul>
+          <li>Feedback survey: checking and reproducing bugs, improving features, and replying if you left an email address</li>
+          <li>Email inquiries: reading the inquiry and replying</li>
+          <li>Question helper: answering questions, and finding the questions it could not answer so the help pages can be filled in</li>
+        </ul>
+        <p>
+          The information is not used for any other purpose, and never for advertising, sale or user profiling. If
+          the purpose changes, the operator takes the necessary steps under Article 18 of the Personal Information
+          Protection Act, such as asking for separate consent.
+        </p>
+
+        <h3 id="art4">Article 4 (Retention and destruction)</h3>
+        <ul>
+          <li>Feedback survey responses and email inquiries: destroyed one year after handling (such as a reply) is finished.</li>
+          <li>Question helper log: deleted automatically after 90 days.</li>
+          <li>If you ask for deletion, the information is destroyed without delay, even before that period ends.</li>
+        </ul>
+        <p>
+          Destruction means permanently deleting the rows of the survey response sheet and the mail so that they
+          cannot be recovered. Nothing is kept on paper. No other law requires any of this information to be kept.
+        </p>
+
+        <h3 id="art5">Article 5 (Provision to third parties)</h3>
+        <p>
+          The operator does not provide personal information to third parties, except in the cases set out in
+          Articles 17 and 18 of the Personal Information Protection Act (your separate consent, a specific provision
+          of law, compliance with a legal obligation, and so on). The AI transfers in Article 1 are sent by you, from
+          your own account, to a service you chose; they are not provided by the operator.
+        </p>
+
+        <h3 id="art6">Article 6 (Outsourcing and transfer abroad)</h3>
+        <p>The operator entrusts the handling of personal information to the services below, which are located outside Korea.</p>
+        <table>
+          <thead>
+            <tr><th>Recipient (contact)</th><th>Task entrusted</th><th>Items transferred</th><th>Country, timing, method</th><th>Retention</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google LLC<br />(<a href="https://support.google.com/policies/contact/general_privacy_form" rel="noopener">privacy inquiry form</a>)</td>
+              <td>Storing survey responses and question logs (Google Forms, Google Sheets), receiving inquiry mail (Gmail)</td>
+              <td>The survey, mail and question log items in Article 2</td>
+              <td>Google data centers in the United States and elsewhere / sent over the network when you submit the survey, send mail or ask a question</td>
+              <td>The periods in Article 4</td>
+            </tr>
+            <tr>
+              <td>Vercel Inc.<br />(privacy@vercel.com)</td>
+              <td>Hosting the website, running the question helper's server function</td>
+              <td>The question and the recent conversation in the same window</td>
+              <td>Vercel data centers in the United States and elsewhere / sent over the network when you ask a question</td>
+              <td>Not stored (discarded as soon as it is processed)</td>
+            </tr>
+            <tr>
+              <td>Anthropic PBC<br />(privacy@anthropic.com)</td>
+              <td>Writing the question helper's answers (Claude)</td>
+              <td>The question and the recent conversation in the same window</td>
+              <td>United States / sent over the network when you ask a question</td>
+              <td>Deleted within 30 days (Anthropic's API policy), not used for training</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          If you do not want your information transferred abroad, don't use the survey, email or the question helper.
+          You can still use the IeumOffice program without any limit, and no information goes to the operator.
+        </p>
+
+        <h3 id="art7">Article 7 (Your rights and how to use them)</h3>
+        <ul>
+          <li>
+            You can ask at any time to see, correct or delete the personal information the operator handles about
+            you, or to stop its handling. Send the request to pblsketch@gmail.com; you will be told the result within
+            10 days of receipt.
+          </li>
+          <li>You can also make a request through a legal representative or someone you have authorized.</li>
+          <li>
+            Tell us when you submitted the survey, or when you asked a question and what it was, and the record will
+            be found and handled. The operator does not receive names or account information, so only that
+            information is used to confirm it is you.
+          </li>
+          <li>
+            You manage the documents, settings and chat history stored on your PC yourself. You can delete chat
+            history in the app, and deleting the data folder (<code>%APPDATA%\IeumOffice</code>) removes all of it.
+          </li>
+        </ul>
+
+        <h3 id="art8">Article 8 (Personal information of children under 14)</h3>
+        <ul>
+          <li>
+            IeumOffice is made for adults, including teachers, to use for their work. There is no sign-up and the
+            operator does not receive student information, so it collects no personal information of children under
+            14.
+          </li>
+          <li>
+            Documents with students' writing or student information are stored only on the PC that opened them and do
+            not go to the operator.
+          </li>
+          <li>
+            AI features run on the AI company account you connected yourself and follow that company's age limits
+            (for example, Anthropic's Claude is for users 18 and older). When you hand a document with student
+            information to AI, we recommend hiding names and other identifying details with Hide from AI, or
+            deleting them, first.
+          </li>
+          <li>
+            The survey, email and question helper are channels for adult users. If we learn that a child under 14 has
+            sent personal information, we treat it as information given without a legal representative's consent and
+            destroy it without delay.
+          </li>
+        </ul>
+
+        <h3 id="art9">Article 9 (Security measures)</h3>
+        <ul>
+          <li>
+            Administrative: the items handled are kept to the minimum in Article 2, and only the operator reads survey
+            responses, mail and question logs, which are not shared with anyone else.
+          </li>
+          <li>
+            Technical: traffic between the site and the survey, mail and AI services is encrypted with HTTPS. Before a
+            question is logged, text in the form of an email address, phone number, resident registration number or
+            card number is masked, and no IP address is kept. The program sends nothing to an operator server, and
+            the Google Drive sign-in token is encrypted with the operating system's protection and stored on your PC.
+          </li>
+          <li>
+            Physical: the operator runs no server or server room of its own; storage relies on the data center
+            protection of the processors in Article 6.
+          </li>
+        </ul>
+
+        <h3 id="art10">Article 10 (Privacy officer and remedies)</h3>
+        <ul>
+          <li>Privacy officer: 박준일 (developer of IeumOffice) · pblsketch@gmail.com</li>
+          <li>IeumOffice is run by an individual developer, so there is no separate phone line; inquiries are taken by email.</li>
+        </ul>
+        <p>You can also report a privacy violation or ask for advice at these Korean agencies.</p>
+        <ul>
+          <li>Personal Information Dispute Mediation Committee: 1833-6972, <a href="https://www.kopico.go.kr" rel="noopener">www.kopico.go.kr</a></li>
+          <li>Personal Information Infringement Report Center: 118, <a href="https://privacy.kisa.or.kr" rel="noopener">privacy.kisa.or.kr</a></li>
+          <li>Supreme Prosecutors' Office: 1301, <a href="https://www.spo.go.kr" rel="noopener">www.spo.go.kr</a></li>
+          <li>Korean National Police Agency: 182, <a href="https://ecrm.police.go.kr" rel="noopener">ecrm.police.go.kr</a></li>
+        </ul>
+
+        <h3 id="art11">Article 11 (Changes to this policy)</h3>
+        <p>
+          If this policy changes, the changes and their effective date are posted on this page, and the last-updated
+          date at the top is revised. You can see past changes in
+          <a href="https://github.com/pblsketch/ieumoffice-site/commits/main/public/privacy.html" rel="noopener">this page's change history</a>.
+          This article-by-article policy takes effect on October 29, 2026.
+        </p>
+      </section>
+
+      <h2>What leaves your PC</h2>
+      <p>
+        Data leaves your PC only in the cases below, and even then it goes <b>directly</b> from your PC to the
+        service named. How each service handles what it receives follows that service's terms and the settings of
+        your account there.
+      </p>
+      <ul>
+        <li>
+          <b>AI chat.</b> What you typed, the document content the request works on, the files and images you
+          attached, skills (the text of those you pick or the AI uses, and the title and description of those the AI
+          may use on its own), and the conversation are sent to the AI provider (your Claude or ChatGPT
+          subscription, an API-key provider you chose, or a free connection through OpenRouter or Google). Each
+          request goes directly under your own account.
+        </li>
+        <li>
+          <b>Search and pictures.</b> When the AI or <code>ieumoffice search</code> searches the web, the search terms
+          go to the search service; when you insert a picture by address, the request goes to the site that hosts it.
+        </li>
+        <li>
+          <b>Checking for a new version.</b> The installed app asks GitHub for the list of public releases.
+        </li>
+        <li>
+          <b>Importing skills.</b> Files are downloaded from a public GitHub repository only when you import a skill
+          by its GitHub address under Settings → Skills, confirm an install the agent window suggested, or press the
+          update check. No sign-in information is sent.
+        </li>
+        <li>
+          <b>Send feedback.</b> Only when you press it, the app shows and copies the product version, operating
+          system and display language, then opens a Google Form. Document content, paths and accounts are not
+          included.
+        </li>
+        <li>
+          <b>Google Drive</b> (if you connected it). Explained separately below.
+        </li>
+      </ul>
+      <p class="note">
+        Every other data flow (the OpenRouter connection, Gemini key check, PDF read by AI and translation, image
+        generation, picture and video analysis, Markdown image upload, the "Make a new document" window, agent
+        mode, and so on) is listed in the tables in
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/PRIVACY.md" rel="noopener">PRIVACY.md</a>.
+      </p>
+
+      <h2 id="google-drive">Google Drive</h2>
+      <p>
+        Connecting Google Drive is optional and starts only when you press <b>Connect Google
+        Drive</b> under Settings → Integrations. Sign-in happens on Google's own page in your system
+        browser. IeumOffice has no Google sign-in form of its own and never receives or stores your
+        Google password.
+      </p>
+
+      <h3>Google user data IeumOffice accesses</h3>
+      <p>
+        IeumOffice requests the single scope <code>https://www.googleapis.com/auth/drive.file</code>, which
+        reaches only the files you choose. It can open and edit only the files you choose in Google's file
+        picker and the files IeumOffice created; it cannot see the rest of your Drive. With it the app accesses:
+      </p>
+      <ul>
+        <li>
+          <b>Account display</b>: the connected account's name and email address, used only to show in
+          Settings which account is connected.
+        </li>
+        <li>
+          <b>File metadata</b> of the files you chose: name, type, size, modified time, checksum, parent
+          folder ID, and whether you can edit it. It is used for the app's "Files you chose" list, the
+          search within it, and the AI's search.
+        </li>
+        <li>
+          <b>File content</b>: the files you open, the files you attach to the AI panel, and, if you turned
+          it on, the files the AI reads.
+        </li>
+      </ul>
+      <p>
+        The app writes to Drive only when you press <b>Save</b>: it uploads the edited document to that
+        Drive file, or, if you choose (and when a Google document is saved as an Office file), as a new
+        file beside it or in My Drive. IeumOffice never deletes, moves or shares Drive
+        files, and it does not touch data in other Google services such as Gmail or Contacts. It creates
+        no aggregated or anonymized data from Drive.
+      </p>
+
+      <h3>How the data is used</h3>
+      <p>
+        Drive data is used only for features you see: showing file lists and search results, opening a
+        file in an editor, saving your changes back to Drive, and, if you turned it on, letting the AI
+        find and read the files you chose to answer your request. It is not used for advertising, sale, lending or
+        credit decisions, or user profiling, and IeumOffice does not use it to develop or train AI models.
+        The project runs no server and never receives Drive data, so no one, including its maintainers,
+        sees your Drive data.
+      </p>
+
+      <h3>Who receives it</h3>
+      <ul>
+        <li><b>Google</b>: Drive requests go directly from your PC to Google, under your account.</li>
+        <li>
+          <b>The AI provider you chose</b>, only when you hand a document opened from Drive to the AI,
+          attach a Drive file to the AI panel, or let the AI search and read the files you chose: the list of
+          files found and the text read go to that chat's AI provider. That is the one you picked:
+          Anthropic (Claude), OpenAI (ChatGPT or Codex), or the provider of an API key you entered. It goes
+          directly from your PC under your account. Parts you hid with Hide from AI stay hidden.
+        </li>
+        <li>
+          <b>No one else.</b> Drive data is not transferred or sold to IeumOffice, its maintainers,
+          advertisers, data brokers or any other third party.
+        </li>
+      </ul>
+      <p>
+        Google does not allow Drive data to go to an AI service that uses it to train its models. So
+        IeumOffice does the following:
+      </p>
+      <ul>
+        <li>
+          Before you can connect Drive, the app asks you to confirm that model training is off in the AI
+          accounts you use with Drive files, and shows where to turn it off (Claude: Settings → Privacy;
+          ChatGPT and Codex: Settings → Data controls → "Improve the model for everyone"). Until you
+          confirm, you cannot connect, choose files, or hand Drive files to the AI.
+        </li>
+        <li>
+          The Anthropic and OpenAI APIs (key providers) do not use API inputs for training by default.
+        </li>
+        <li>
+          Free AI connections (Gemini, OpenRouter free models) cannot turn training off, so they are never
+          given Drive files. While a free connection is in use, attaching from Drive, the AI's Drive
+          reading, and AI requests from a document opened from Drive all stop.
+        </li>
+      </ul>
+
+      <h3>How the data is protected</h3>
+      <ul>
+        <li>No project server is involved; traffic between your PC and Google is encrypted with HTTPS.</li>
+        <li>
+          Sign-in uses PKCE and an address that only opens on this PC (<code>127.0.0.1</code>), so other
+          programs cannot intercept the result.
+        </li>
+        <li>
+          The refresh token that keeps you signed in is encrypted at rest with the operating system's
+          protection (Windows' protection for your user account, the macOS keychain, or a desktop keyring on
+          Linux). Where it cannot be encrypted, it is not saved. The access token stays in memory only, and
+          tokens and file content are never passed to editor windows or written to logs.
+        </li>
+        <li>
+          The AI's Drive tools are read-only: the AI cannot change, delete, move or share Drive files.
+        </li>
+        <li>
+          So that an AI misled by text inside a document cannot carry Drive content elsewhere, once Drive
+          content is in a chat, that chat stops using web search, image search, pictures fetched by address
+          and reading a page by address.
+        </li>
+      </ul>
+
+      <h3>Retention and deletion</h3>
+      <ul>
+        <li>
+          The sign-in token stays on this PC until you disconnect. <b>Disconnect</b> deletes the token file and asks
+          Google to revoke it. You can also remove the app's access at any time under
+          <a href="https://myaccount.google.com/connections" rel="noopener">Third-party connections</a> in
+          your Google Account.
+        </li>
+        <li>
+          Copies of Drive files you opened (<code>drive-cache</code> in the data folder) are deleted when
+          the app starts if you have not opened them for a month and they hold no change still to be
+          uploaded. Files downloaded to attach to an AI chat are deleted after a week.
+        </li>
+        <li>
+          Drive content that went into an AI chat stays in that chat's history on this PC and is deleted
+          with the chat. What was sent to an AI provider follows that provider's retention policy.
+        </li>
+        <li>
+          Deleting the data folder (<code>%APPDATA%\IeumOffice</code> on Windows) removes all of the above.
+          The project keeps no Drive data of its own, so there is nothing to delete outside this PC.
+        </li>
+      </ul>
+
+      <h3>Google API data policy compliance</h3>
+      <p>
+        IeumOffice's use and transfer of information received from Google APIs to any other app will
+        adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener"
+          >Google API Services User Data Policy</a
+        >, including the Limited Use requirements. The use of raw or derived user data received from Google
+        Workspace APIs will adhere to the
+        <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy" rel="noopener"
+          >Google Workspace API User Data and Developer Policy</a
+        >, including the Limited Use requirements, and IeumOffice does not use that data to develop, improve or
+        train generalized AI or machine-learning models.
+      </p>
+
+      <h2>What stays on your PC</h2>
+      <ul>
+        <li>Your documents, and helper files some editors keep next to a document.</li>
+        <li>AI chat history and settings (the data folder, <code>%APPDATA%\IeumOffice</code> on Windows).</li>
+        <li>
+          Your Google Drive sign-in (<code>google-drive.json</code>), encrypted with the operating
+          system's protection (Windows' protection for your user account, the macOS keychain, or a
+          desktop keyring on Linux) and deleted when you disconnect. If this PC cannot encrypt it, it
+          is not saved and the connection lasts until the app closes.
+        </li>
+        <li>Copies of the Drive files you opened (<code>drive-cache</code> in the data folder) and the temporary folder for AI attachments.</li>
+        <li>
+          Your ChatGPT connection, if you connected ChatGPT in the app (<code>chatgpt-connection.json</code>):
+          the sign-in OpenAI gave this app and IDs for this installation and your OpenAI account, no email
+          address. It is encrypted with Windows' protection for your user account or, on Linux, your desktop
+          keyring; on macOS and on Linux without a keyring it is stored unencrypted. Disconnecting asks OpenAI
+          to end the sign-in and deletes it from this PC. It is separate from the Codex program's login, and the
+          app never sees your ChatGPT password.
+        </li>
+      </ul>
+      <p class="note">
+        PRIVACY.md's "What stays on your PC" section lists everything that is kept locally, where,
+        and when it is deleted.
+      </p>
+
+      <h2 id="ask">This site's question helper</h2>
+      <p>
+        Everything above is about the IeumOffice app. The <b>Ask a question</b> window at the bottom right of
+        this site (ieumoffice.com) works separately. When you send it a question, the question and the last few
+        turns of that window's conversation go through the site's server function (Vercel) to Anthropic's
+        Claude. Claude writes the answer from what it finds in IeumOffice's help and guide pages.
+      </p>
+      <ul>
+        <li>
+          To find questions the helper cannot answer and add to the help pages, the question, the
+          answer, the titles of the pages it used and the time are kept in the maintainer's Google
+          Sheet for <b>90 days</b> and then deleted. No IP address or browser details are kept, and
+          anything that looks like an email address, phone number, Korean resident registration
+          number or card number is masked before it is stored. Only the maintainer sees the log. To
+          have a question deleted, write to the contact below or pblsketch@gmail.com with when you
+          asked and what.
+        </li>
+        <li>Nothing is stored in your browser. The conversation exists only on that page and is gone when you close it.</li>
+        <li>
+          Anthropic
+          <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organizations-data" rel="noopener">states</a>
+          that it does not use API inputs and outputs to train models by default and deletes them within 30 days.
+        </li>
+        <li>
+          To stop floods of questions in a short time, the server briefly counts questions per IP address.
+          The count lives only in the server's memory and then disappears.
+        </li>
+        <li>Please don't include personal information or document content.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener"
+          >github.com/pblsketch/ieumoffice/issues</a
+        > or the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">feedback survey</a>.
+      </p>
+    </main>
+  </body>
+</html>

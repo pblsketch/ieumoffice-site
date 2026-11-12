@@ -1,15 +1,18 @@
 import './font.css'
 import './style.css'
 import './ask.js'
+import './lang-switch.js'
 import { REPO, fetchJson, getReleases, wireDownload } from './release.js'
 import { countDownloads } from '../lib/growth-count.js'
+import { LANG, path, pick, numberLocale } from './i18n.js'
+import { FORMAT_COPY } from './formats-copy.js'
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
 
 document.documentElement.classList.add('js')
 
 // the Mac and Linux guides moved to the install help page; old links still land there
-if (location.hash === '#mac' || location.hash === '#linux') location.replace(`/install${location.hash}`)
+if (location.hash === '#mac' || location.hash === '#linux') location.replace(path(`/install${location.hash}`))
 
 /* ---------- nav turns solid once the hero scrolls away ---------- */
 
@@ -27,7 +30,7 @@ updateNav()
 
 /* ---------- showcase: the app window switching tabs ---------- */
 
-const FORMATS = [
+const FORMATS_KO = [
   { id: 'home', label: '홈', icon: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg>', color: '#4338ca', title: '홈', text: '최근 문서와 폴더를 보고, 파일 이름과 내용으로 검색합니다. 새 문서도 여기서 만듭니다.', alt: '이음오피스 홈 화면' },
   { id: 'hwp', label: '한글', file: 'hwp', color: '#2e7faa', title: '한글 .hwp .hwpx', text: 'HWP·HWPX 문서를 열어 고치고, 연 형식 그대로 저장합니다. 다른 이름으로 저장에서 HWP와 HWPX를 바꿔 저장하거나 PDF 사본을 만듭니다.', alt: '한글 편집기에서 참가 신청서를 연 화면' },
   { id: 'docs', label: '워드', file: 'docx', color: '#5160be', title: '워드 .docx .odt', text: '워드와 ODT 문서를 열고 고칩니다. 저장할 때 고친 부분만 원본 파일에 반영하므로, 손대지 않은 서식은 그대로 남습니다.', alt: '워드 편집기에서 기획서를 연 화면' },
@@ -40,6 +43,14 @@ const FORMATS = [
   { id: 'epub', label: 'EPUB', file: 'epub', color: '#2f6f5e', title: 'EPUB 전자책', text: 'EPUB 책을 열어 읽고 본문을 고쳐 저장합니다. 다른 언어로 번역해 번역본 파일로 저장합니다.', alt: 'EPUB 편집기에서 가을 북페어 안내책을 연 화면' },
   { id: 'diagram', shot: 'diagram-01211', label: '다이어그램', file: 'diagram', color: '#7a8b2c', title: '다이어그램 .drawio', text: 'draw.io 파일을 열어 순서도나 구성도를 고치고 연 형식 그대로 저장합니다. Visio 파일(.vsdx)은 새 다이어그램으로 가져옵니다.', alt: '다이어그램 편집기에서 북페어 참가 신청 처리 순서도를 연 화면' },
 ]
+
+// other languages swap in their words (src/formats-copy.js); ids, icons and captures stay
+const FORMATS = FORMATS_KO.map((f) => {
+  const copy = FORMAT_COPY[LANG]?.[f.id]
+  if (!copy) return f
+  const [label, title, text, alt] = copy
+  return { ...f, label, title, text, alt }
+})
 
 const showcase = document.querySelector('[data-showcase]')
 const stage = document.querySelector('[data-stage]')
@@ -295,11 +306,64 @@ wireDownload()
 /* ---------- right after a download starts, point at the screen that may come
  * next. Shown only on a click, so it costs the page no length. */
 
+const STUCK_HINT_COPY = pick({
+  ko: {
+    edge: 'Edge에서 "일반적으로 다운로드되지 않습니다"가 뜨면',
+    windows: '설치 파일을 열 때 경고 창이 뜨면',
+    mac: 'Mac에서 처음 열 때 막히면',
+    linux: 'Linux에서 설치 방법이 궁금하면',
+    started: '받기 시작했어요.',
+    tail: '어디를 누르면 되는지 화면으로 보여 드려요.',
+    show: '화면으로 보기',
+    close: '닫기',
+  },
+  en: {
+    edge: 'If Edge says the file "isn’t commonly downloaded",',
+    windows: 'If a warning appears when you open the installer,',
+    mac: 'If your Mac blocks the app the first time you open it,',
+    linux: 'If you are wondering how to install on Linux,',
+    started: 'Your download has started.',
+    tail: 'we will show you on screen where to click.',
+    show: 'Show me',
+    close: 'Close',
+  },
+  ja: {
+    edge: 'Edge で「一般的にダウンロードされていません」と表示されたら、',
+    windows: 'インストーラーを開いたときに警告が出たら、',
+    mac: 'Mac で初めて開くときにブロックされたら、',
+    linux: 'Linux でのインストール方法が知りたければ、',
+    started: 'ダウンロードが始まりました。',
+    tail: 'どこを押せばよいかを画面でお見せします。',
+    show: '画面で見る',
+    close: '閉じる',
+  },
+  'zh-TW': {
+    edge: '如果 Edge 顯示「通常不會下載」，',
+    windows: '如果開啟安裝程式時跳出警告視窗，',
+    mac: '如果在 Mac 第一次開啟時被擋下，',
+    linux: '如果想知道在 Linux 上怎麼安裝，',
+    started: '已開始下載。',
+    tail: '我們會用畫面告訴你該按哪裡。',
+    show: '看畫面說明',
+    close: '關閉',
+  },
+  es: {
+    edge: 'Si Edge dice que el archivo «no se descarga normalmente»,',
+    windows: 'Si aparece una advertencia al abrir el instalador,',
+    mac: 'Si el Mac bloquea la app la primera vez que la abres,',
+    linux: 'Si quieres saber cómo instalar en Linux,',
+    started: 'La descarga ha empezado.',
+    tail: 'te mostramos en pantalla dónde hacer clic.',
+    show: 'Ver cómo',
+    close: 'Cerrar',
+  },
+})
+
 const STUCK_HINTS = {
-  edge: ['Edge에서 "일반적으로 다운로드되지 않습니다"가 뜨면', '/install#edge'],
-  windows: ['설치 파일을 열 때 경고 창이 뜨면', '/install#pc-protect'],
-  mac: ['Mac에서 처음 열 때 막히면', '/install#mac'],
-  linux: ['Linux에서 설치 방법이 궁금하면', '/install#linux'],
+  edge: [STUCK_HINT_COPY.edge, path('/install#edge')],
+  windows: [STUCK_HINT_COPY.windows, path('/install#pc-protect')],
+  mac: [STUCK_HINT_COPY.mac, path('/install#mac')],
+  linux: [STUCK_HINT_COPY.linux, path('/install#linux')],
 }
 
 function showStuckHint(kind) {
@@ -311,9 +375,9 @@ function showStuckHint(kind) {
     hint.dataset.stuckHint = ''
     hint.setAttribute('role', 'status')
     hint.innerHTML =
-      '<p><b>받기 시작했어요.</b> <span data-hint-text></span> 어디를 누르면 되는지 화면으로 보여 드려요.</p>' +
-      '<a class="btn btn-amber" data-hint-link>화면으로 보기</a>' +
-      '<button type="button" class="stuck-hint-close" aria-label="닫기" data-hint-close>×</button>'
+      `<p><b>${STUCK_HINT_COPY.started}</b> <span data-hint-text></span> ${STUCK_HINT_COPY.tail}</p>` +
+      `<a class="btn btn-amber" data-hint-link>${STUCK_HINT_COPY.show}</a>` +
+      `<button type="button" class="stuck-hint-close" aria-label="${STUCK_HINT_COPY.close}" data-hint-close>×</button>`
     hint.querySelector('[data-hint-close]').addEventListener('click', () => hint.classList.remove('is-on'))
     document.body.append(hint)
   }
@@ -385,7 +449,7 @@ function fillStats(strip, data) {
     const el = document.querySelector(sel)
     if (!el) continue
     if (typeof data[key] === 'number' && data[key] >= 0) {
-      el.textContent = data[key].toLocaleString('ko-KR')
+      el.textContent = data[key].toLocaleString(numberLocale)
       if (data[key] > 0) filled++
     }
   }

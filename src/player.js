@@ -9,6 +9,16 @@
 // shows a key press instead; `wait` just lets time pass. `add`/`remove`
 // change the screen.
 
+import { pick } from './i18n.js'
+
+const P = pick({
+  ko: { step: (i, n) => `${i} / ${n}단계`, pause: '멈춤', play: '계속 보기' },
+  en: { step: (i, n) => `Step ${i} of ${n}`, pause: 'Pause', play: 'Keep playing' },
+  ja: { step: (i, n) => `${i} / ${n} ステップ`, pause: '一時停止', play: '続きを見る' },
+  'zh-TW': { step: (i, n) => `第 ${i} / ${n} 步`, pause: '暫停', play: '繼續播放' },
+  es: { step: (i, n) => `Paso ${i} de ${n}`, pause: 'Pausa', play: 'Seguir viendo' },
+})
+
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
 const STAGE_W = 800
 // on phones the screen shows a slice of the stage and pans with the pointer
@@ -131,7 +141,7 @@ export function setupPlayer(root, scenes) {
       li.classList.toggle('is-current', k === i)
       li.classList.toggle('is-done', k < i)
     })
-    count.textContent = `${i + 1} / ${steps.length}단계`
+    count.textContent = P.step(i + 1, steps.length)
   }
 
   async function playStep(i, token) {
@@ -213,8 +223,8 @@ export function setupPlayer(root, scenes) {
 
   const setAuto = (on) => {
     auto = on
-    playBtn.textContent = on ? '❚❚ 멈춤' : '▶ 계속 보기'
-    playBtn.setAttribute('aria-label', on ? '멈춤' : '계속 보기')
+    playBtn.textContent = on ? `❚❚ ${P.pause}` : `▶ ${P.play}`
+    playBtn.setAttribute('aria-label', on ? P.pause : P.play)
   }
   const goTo = (i) => {
     setAuto(false)

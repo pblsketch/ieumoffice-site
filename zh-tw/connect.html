@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>連結 AI · IeumOffice</title>
+    <meta name="description" content="用畫面示範如何把 Claude 訂閱、ChatGPT 方案或免費 AI 連結到 IeumOffice。ChatGPT 不必安裝程式，只要登入。選擇你正在用的 AI，滑鼠游標會實際移動，告訴你該按哪裡。" />
+    <link rel="canonical" href="https://ieumoffice.com/zh-tw/connect" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/zh-tw/connect" />
+    <meta property="og:title" content="連結 AI · IeumOffice" />
+    <meta property="og:description" content="選擇你正在用的 AI，就用畫面告訴你連結時該按哪裡。" />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-install page-connect">
+    <a class="skip" href="#main">跳到主要內容</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/zh-tw/" aria-label="IeumOffice 首頁">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="頁面導覽">
+        <a href="/zh-tw/updates">更新消息</a>
+        <a href="/zh-tw/story">製作故事</a>
+        <a href="/zh-tw/install">安裝說明</a>
+        <a href="/zh-tw/connect" aria-current="page">AI 連線</a>
+        <a href="/zh-tw/#formats">文件</a>
+        <a href="/zh-tw/#ai">AI</a>
+      </nav>
+      <a class="btn btn-small" href="/zh-tw/#download">下載</a>
+    </header>
+
+    <main id="main">
+      <header class="install-head">
+        <p class="eyebrow">AI 連線說明</p>
+        <h1>連結 AI</h1>
+        <p class="install-lede">
+          IeumOffice 的 AI 透過你現在使用的 Claude 或 ChatGPT 訂閱運作。沒有訂閱的話，連結免費 AI 就可以。在下方選擇適合你的方式，滑鼠游標會實際移動，告訴你該按哪裡。
+        </p>
+      </header>
+
+      <!-- the same question the app asks while nothing is connected -->
+      <p class="connect-question">你現在在用哪種 AI？</p>
+      <nav class="symptoms" aria-label="選擇你正在用的 AI">
+        <a class="symptom" href="#claude">
+          <span class="symptom-pic symptom-pic-ai" aria-hidden="true">
+            <i class="sp-card"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>我有 Claude 付費訂閱</b>
+          <span>Pro 或 Max 方案</span>
+        </a>
+        <a class="symptom" href="#chatgpt">
+          <span class="symptom-pic symptom-pic-ai" aria-hidden="true">
+            <i class="sp-card sp-card-alt"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>我在用 ChatGPT</b>
+          <span>不必安裝程式，登入就能連結</span>
+        </a>
+        <a class="symptom" href="#free">
+          <span class="symptom-pic symptom-pic-ai" aria-hidden="true">
+            <i class="sp-card sp-card-free"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>兩者都還沒有</b>
+          <span>大約一分鐘連結免費 AI</span>
+        </a>
+        <a class="symptom" href="#stuck">
+          <span class="symptom-pic symptom-pic-stuck" aria-hidden="true">
+            <i class="sp-card sp-card-stuck"><b></b><s></s><s></s><u></u></i>
+          </span>
+          <b>連結時卡住了</b>
+          <span>停在登入、版本過舊等</span>
+        </a>
+      </nav>
+      <p class="symptoms-more">
+        連線畫面有三個地方：第一次執行時引導中的 <b>AI 連線</b>步驟、還沒連結任何 AI 的
+        <b>AI 面板</b>，以及首頁左下角的<b>設定 → AI</b>。從哪裡開始，步驟都一樣。
+      </p>
+
+      <!-- Claude subscription -->
+      <section class="guide" id="claude" aria-labelledby="claude-title">
+        <div class="guide-head">
+          <p class="guide-tag">Claude 訂閱</p>
+          <h2 id="claude-title">用 Claude 訂閱連結</h2>
+          <p>
+            需要 Claude <b>Pro</b> 或 <b>Max</b> 方案。免費的 Claude 帳戶無法連線。IeumOffice
+            透過安裝在電腦上的 <b>Claude Code</b> 程式取得回答，所以第一次要先安裝這個程式並登入。不需要 API 金鑰。
+          </p>
+        </div>
+        <div class="player" data-player="claude">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="io-window">
+                <div class="io-bar">
+                  <svg class="io-mark" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span class="io-tab">家長通知單.docx</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="io-body">
+                  <div class="io-doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <aside class="io-panel" data-frame>
+                    <p class="io-panel-title">AI 助理</p>
+                    <p class="cg-title">連結 AI 即可開始使用</p>
+                    <div class="cg-ask">
+                      <p class="cg-q">你現在在用哪種 AI？</p>
+                      <span class="cg-path" data-t="path"><b>我有 Claude 付費訂閱</b><span>需要 Pro 或 Max 方案。</span></span>
+                      <span class="cg-path"><b>我在用 ChatGPT</b><span>用你的 ChatGPT 帳戶登入，即可在方案範圍內使用。</span></span>
+                      <span class="cg-path"><b>兩者都還沒有</b><span>大約一分鐘就能連結免費 AI。</span></span>
+                    </div>
+                    <div class="cg-open">
+                      <p class="cg-need">需要 Pro 或 Max 方案。免費的 Claude 帳戶無法連線。</p>
+                      <ol class="cg-steps">
+                        <li class="cg-s-install"><i>1</i>安裝程式</li>
+                        <li class="cg-s-login"><i>2</i>登入</li>
+                        <li class="cg-s-ready"><i>3</i>連線完成</li>
+                      </ol>
+                      <div class="cg-card">
+                        <p class="cg-card-head">
+                          <i class="cg-ai">✦</i><b>Claude</b>
+                          <span data-c="install">尚未安裝</span>
+                          <span data-c="login">尚未登入</span>
+                          <span data-c="signing">正在登入…</span>
+                        </p>
+                        <p class="cg-note" data-c="install">將在新的終端機視窗中執行 Anthropic 的官方安裝指令。</p>
+                        <p class="cg-note" data-c="login">按下後會開啟瀏覽器。用你的 Anthropic 帳戶登入並按下允許，就會自動完成連線。</p>
+                        <p class="cg-note" data-c="signing">請在開啟的瀏覽器中登入你的 Anthropic 帳戶並允許存取。完成後會自動連線。</p>
+                        <p class="cg-btns" data-c="install"><span class="cg-btn" data-t="install">安裝</span><span class="cg-link">官方安裝說明</span></p>
+                        <p class="cg-btns" data-c="login"><span class="cg-btn" data-t="login">登入</span><span class="cg-link">瀏覽器顯示了代碼？</span></p>
+                        <p class="cg-btns" data-c="signing"><span class="cg-link">瀏覽器沒有開啟？</span></p>
+                      </div>
+                      <p class="cg-back">選擇其他方式</p>
+                    </div>
+                    <div class="cg-chat"><span class="cg-input"><s></s></span><span class="cg-model" data-t="model">自動 · Claude</span><span class="cg-send">↑</span></div>
+                  </aside>
+                </div>
+              </div>
+
+              <!-- the vendor's install command in a terminal window -->
+              <div class="ps-window" data-frame>
+                <div class="ps-bar"><span>Windows PowerShell</span><span class="ps-close" data-t="close">✕</span></div>
+                <div class="ps-body">
+                  <p>PS C:\Users\我的名字&gt; <b>irm https://claude.ai/install.ps1 | iex</b></p>
+                  <p class="ps-run"><i></i></p>
+                  <p class="ps-out"><s></s><s></s><s></s></p>
+                </div>
+              </div>
+
+              <!-- the vendor's sign-in page in the browser -->
+              <div class="br-window" data-frame>
+                <div class="br-bar"><span class="ms-nav">‹ › ↻</span><span class="ms-url">claude.ai</span></div>
+                <div class="br-page">
+                  <div class="br-box">
+                    <p class="br-title">連結 Claude Code</p>
+                    <s></s><s></s>
+                    <span class="br-done">✓</span>
+                    <span class="br-btn" data-t="allow">允許</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>AI 面板出現「你現在在用哪種 AI？」時，按<b>我有 Claude 付費訂閱</b>。</li>
+            <li>卡片上顯示「尚未安裝」時，按<b>安裝</b>。會開啟新視窗，自動進行 Anthropic 的官方安裝。</li>
+            <li>視窗中的文字停下來，就表示安裝完成。關閉視窗回到 IeumOffice，卡片會變成「尚未登入」。</li>
+            <li>按<b>登入</b>會開啟瀏覽器。用你訂閱中的 Claude 帳戶登入，然後按<b>允許</b>。</li>
+            <li>回到 IeumOffice 後，連線引導會消失，出現輸入文字的欄位。下方看到<b>自動 · Claude</b>就完成了。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          如果你已經安裝並在使用 Claude Code，第 1 步之後會直接看到「尚未登入」或「已連線」。瀏覽器沒有開啟的話，請看<a class="text-link" href="#login-stuck">停在「正在登入…」</a>。
+        </p>
+        <p class="demo-note">
+          畫面是為了說明而簡化重繪的。瀏覽器的登入畫面依語言設定不同，按鈕名稱會顯示為<b>允許</b>、<b>授權</b>或 <b>Authorize</b> 其中之一。
+        </p>
+      </section>
+
+      <!-- ChatGPT connected directly in the app (0.12.8, decision 0081); the app's help link for this path is /connect#chatgpt -->
+      <section class="guide" id="chatgpt" aria-labelledby="chatgpt-title">
+        <div class="guide-head">
+          <p class="guide-tag">ChatGPT</p>
+          <h2 id="chatgpt-title">用 ChatGPT 方案連結</h2>
+          <p>
+            ChatGPT 不必安裝程式，直接在 IeumOffice 中連結。在瀏覽器開啟的 ChatGPT 登入畫面登入，再允許這個應用程式使用你的方案就完成了。免費方案也能連結，但可用量很少，很快就會停下來。
+            IeumOffice 0.12.8 起支援。
+          </p>
+        </div>
+        <div class="player" data-player="chatgpt">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="io-window">
+                <div class="io-bar">
+                  <svg class="io-mark" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span class="io-tab">家長通知單.docx</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="io-body">
+                  <div class="io-doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <aside class="io-panel" data-frame>
+                    <p class="io-panel-title">AI 助理</p>
+                    <p class="cg-title">連結 AI 即可開始使用</p>
+                    <div class="cg-ask">
+                      <p class="cg-q">你現在在用哪種 AI？</p>
+                      <span class="cg-path"><b>我有 Claude 付費訂閱</b><span>需要 Pro 或 Max 方案。</span></span>
+                      <span class="cg-path" data-t="path"><b>我在用 ChatGPT</b><span>用你的 ChatGPT 帳戶登入，即可在方案範圍內使用。</span></span>
+                      <span class="cg-path"><b>兩者都還沒有</b><span>大約一分鐘就能連結免費 AI。</span></span>
+                    </div>
+                    <div class="cg-open">
+                      <p class="cg-need">用你的 ChatGPT 帳戶登入，即可在方案範圍內使用。不需要安裝程式。</p>
+                      <ol class="cg-steps">
+                        <li class="cg-s-login"><i>1</i>登入</li>
+                        <li class="cg-s-ready"><i>2</i>連線完成</li>
+                      </ol>
+                      <div class="cg-card">
+                        <p class="cg-card-head">
+                          <i class="cg-ai">✦</i><b>ChatGPT</b>
+                          <span data-c="login">尚未登入</span>
+                          <span data-c="signing">正在登入…</span>
+                        </p>
+                        <p class="cg-note" data-c="login">瀏覽器中會開啟 ChatGPT 登入頁面。登入後允許此應用程式使用你的 ChatGPT 方案，就會自動完成連線。</p>
+                        <p class="cg-note" data-c="signing">請在開啟的瀏覽器中用 ChatGPT 帳戶登入，並允許此應用程式使用你的方案。完成後會自動連線。</p>
+                        <p class="cg-btns" data-c="login"><span class="cg-btn" data-t="login">使用 ChatGPT 繼續</span></p>
+                        <p class="cg-btns" data-c="signing"><span class="cg-link">取消登入</span></p>
+                      </div>
+                      <p class="cg-link cg-alt" data-c="login">這台電腦上已在使用 Codex 程式？透過 Codex 連線</p>
+                      <p class="cg-back">選擇其他方式</p>
+                    </div>
+                    <div class="cg-chat"><span class="cg-input"><s></s></span><span class="cg-model" data-t="model">自動 · ChatGPT</span><span class="cg-send">↑</span></div>
+                  </aside>
+                </div>
+              </div>
+
+              <!-- OpenAI's ChatGPT sign-in in the browser, then the page the app shows when it is done -->
+              <div class="br-window" data-frame>
+                <div class="br-bar"><span class="ms-nav">‹ › ↻</span><span class="ms-url">auth.openai.com</span></div>
+                <div class="br-page">
+                  <div class="br-box">
+                    <p class="br-title"><span class="br-before">使用 ChatGPT 登入</span><span class="br-after">已連線</span></p>
+                    <s class="br-before"></s><s class="br-before"></s>
+                    <span class="br-done">✓</span>
+                    <p class="br-after br-note">可以關閉此分頁並返回應用程式。</p>
+                    <span class="br-btn" data-t="allow">繼續</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>AI 面板出現「你現在在用哪種 AI？」時，按<b>我在用 ChatGPT</b>。</li>
+            <li>卡片上顯示「尚未登入」時，按<b>使用 ChatGPT 繼續</b>。瀏覽器中會開啟 ChatGPT 登入畫面。</li>
+            <li>用你正在用的 ChatGPT 帳戶登入，並允許這個應用程式使用你的 ChatGPT 方案。瀏覽器顯示<b>已連線</b>後，關閉那個分頁。</li>
+            <li>回到 IeumOffice 後，連線引導會消失，出現輸入文字的欄位。欄位下方看到<b>自動</b>和使用中的模型名稱就完成了。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          連結之後，<b>設定 → AI</b> 的 ChatGPT 卡片上會出現<b>管理用量</b>。按下後會開啟 ChatGPT 設定中的用量畫面，可以查看這個應用程式用了多少，或設定只有這個應用程式能用的上限。要中斷連線，請按同一張卡片上的<b>登出</b>。只會中斷這個應用程式的連線，這台電腦上的其他程式不受影響。
+        </p>
+        <p class="demo-note">
+          畫面是為了說明而簡化重繪的。瀏覽器的登入畫面屬於 OpenAI，實際外觀和按鈕名稱可能不同。代理程式模式和終端機指令不會使用直接連結的 ChatGPT。如果也想在那裡使用 ChatGPT 方案，請像下面這樣透過 Codex 程式連結。
+        </p>
+      </section>
+
+      <!-- ChatGPT through the Codex program: a way inside the ChatGPT answer since 0.12.8, the whole ChatGPT answer before it -->
+      <section class="guide" id="codex" aria-labelledby="codex-title">
+        <div class="guide-head">
+          <p class="guide-tag">ChatGPT · Codex</p>
+          <h2 id="codex-title">透過 Codex 程式連結</h2>
+          <p>
+            如果這台電腦上已經在使用 OpenAI 的 <b>Codex</b> 程式，也可以透過 Codex 連結。還沒有的話，第一次要先安裝，再用 ChatGPT 帳戶登入。IeumOffice 0.12.7 以前的版本，按<b>我在用 ChatGPT</b>就會直接出現這張
+            Codex 卡片。
+          </p>
+        </div>
+        <div class="player" data-player="codex">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="io-window">
+                <div class="io-bar">
+                  <svg class="io-mark" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span class="io-tab">家長通知單.docx</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="io-body">
+                  <div class="io-doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <aside class="io-panel" data-frame>
+                    <p class="io-panel-title">AI 助理</p>
+                    <p class="cg-title">連結 AI 即可開始使用</p>
+                    <div class="cg-ask">
+                      <p class="cg-q">你現在在用哪種 AI？</p>
+                      <span class="cg-path"><b>我有 Claude 付費訂閱</b><span>需要 Pro 或 Max 方案。</span></span>
+                      <span class="cg-path" data-t="path"><b>我在用 ChatGPT</b><span>用你的 ChatGPT 帳戶登入，即可在方案範圍內使用。</span></span>
+                      <span class="cg-path"><b>兩者都還沒有</b><span>大約一分鐘就能連結免費 AI。</span></span>
+                    </div>
+                    <div class="cg-open">
+                      <!-- the direct way comes first; its link leads to the Codex way -->
+                      <div class="cg-direct">
+                        <p class="cg-need">用你的 ChatGPT 帳戶登入，即可在方案範圍內使用。不需要安裝程式。</p>
+                        <ol class="cg-steps">
+                          <li class="cg-s-now"><i>1</i>登入</li>
+                          <li><i>2</i>連線完成</li>
+                        </ol>
+                        <div class="cg-card">
+                          <p class="cg-card-head"><i class="cg-ai">✦</i><b>ChatGPT</b><span>尚未登入</span></p>
+                          <p class="cg-btns"><span class="cg-btn">使用 ChatGPT 繼續</span></p>
+                        </div>
+                        <p class="cg-link" data-t="use-codex">這台電腦上已在使用 Codex 程式？透過 Codex 連線</p>
+                      </div>
+                      <div class="cg-via">
+                        <p class="cg-need">用你的 ChatGPT 帳戶登入 OpenAI 的 Codex 程式來使用。</p>
+                        <ol class="cg-steps">
+                          <li class="cg-s-install"><i>1</i>安裝程式</li>
+                          <li class="cg-s-login"><i>2</i>登入</li>
+                          <li class="cg-s-ready"><i>3</i>連線完成</li>
+                        </ol>
+                        <div class="cg-card">
+                          <p class="cg-card-head">
+                            <i class="cg-ai">✦</i><b>Codex</b>
+                            <span data-c="install">尚未安裝</span>
+                            <span data-c="login">尚未登入</span>
+                            <span data-c="signing">正在登入…</span>
+                          </p>
+                          <p class="cg-note" data-c="install">將在新的終端機視窗中執行 OpenAI 的官方安裝指令。</p>
+                          <p class="cg-note" data-c="login">按下後會開啟瀏覽器。用你的 OpenAI 帳戶登入並按下允許，就會自動完成連線。</p>
+                          <p class="cg-note" data-c="signing">請在開啟的瀏覽器中登入你的 OpenAI 帳戶並允許存取。完成後會自動連線。</p>
+                          <p class="cg-btns" data-c="install"><span class="cg-btn" data-t="install">安裝</span><span class="cg-link">官方安裝說明</span></p>
+                          <p class="cg-btns" data-c="login"><span class="cg-btn" data-t="login">登入</span><span class="cg-link">瀏覽器顯示了代碼？</span></p>
+                          <p class="cg-btns" data-c="signing"><span class="cg-link">瀏覽器沒有開啟？</span></p>
+                        </div>
+                      </div>
+                      <p class="cg-back">選擇其他方式</p>
+                    </div>
+                    <div class="cg-chat"><span class="cg-input"><s></s></span><span class="cg-model" data-t="model">自動 · Codex</span><span class="cg-send">↑</span></div>
+                  </aside>
+                </div>
+              </div>
+
+              <div class="ps-window" data-frame>
+                <div class="ps-bar"><span>Windows PowerShell</span><span class="ps-close" data-t="close">✕</span></div>
+                <div class="ps-body">
+                  <p>PS C:\Users\我的名字&gt; <b>winget install OpenAI.Codex</b></p>
+                  <p class="ps-run"><i></i></p>
+                  <p class="ps-out"><s></s><s></s><s></s></p>
+                </div>
+              </div>
+
+              <div class="br-window" data-frame>
+                <div class="br-bar"><span class="ms-nav">‹ › ↻</span><span class="ms-url">auth.openai.com</span></div>
+                <div class="br-page">
+                  <div class="br-box">
+                    <p class="br-title">登入 Codex</p>
+                    <s></s><s></s>
+                    <span class="br-done">✓</span>
+                    <span class="br-btn" data-t="allow">繼續</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>AI 面板出現「你現在在用哪種 AI？」時，按<b>我在用 ChatGPT</b>。</li>
+            <li>按 ChatGPT 卡片下方的<b>這台電腦上已在使用 Codex 程式？透過 Codex 連線</b>，就會換成 Codex 卡片。</li>
+            <li>卡片上顯示「尚未安裝」時，按<b>安裝</b>。會開啟新視窗，進行 OpenAI 的官方安裝。</li>
+            <li>視窗中的文字停下來，就表示安裝完成。關閉視窗回到 IeumOffice，卡片會變成「尚未登入」。</li>
+            <li>按<b>登入</b>會開啟瀏覽器。用你正在用的 ChatGPT 帳戶登入，依照指示繼續按下去。</li>
+            <li>瀏覽器顯示登入完成的畫面後，回到 IeumOffice。輸入文字的欄位下方看到<b>自動</b>和使用中的模型名稱就完成了。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          如果 Codex 已經連結，一開始就會看到 Codex 卡片。安裝視窗出現 <code>[Y] Yes [N] No</code> 這類詢問時，用鍵盤按 <b>Y</b> 再按 <b>Enter</b>。這是 Windows 第一次下載程式時詢問是否同意條款。改變主意的話，按 Codex 卡片下方的<b>不用 Codex，直接在應用程式中連線</b>，就能回到<a class="text-link" href="#chatgpt">直接連結的方式</a>。
+        </p>
+        <p class="demo-note">
+          畫面是為了說明而簡化重繪的。在 IeumOffice 中可以選擇 Codex 的地方，都會同時顯示「在應用程式中使用 Codex 訂閱並非 OpenAI 官方建議的方式」的提醒。請了解這一點後再選擇。
+        </p>
+      </section>
+
+      <!-- no subscription: free AI -->
+      <section class="guide" id="free" aria-labelledby="free-title">
+        <div class="guide-head">
+          <p class="guide-tag">免費 AI</p>
+          <h2 id="free-title">沒有訂閱就用免費 AI</h2>
+          <p>
+            沒有訂閱，也可以連結 <b>OpenRouter</b> 或 <b>Google Gemini</b> 的免費 AI 馬上使用。能力比訂閱的模型弱，每天能送出的請求數也有上限。最簡單的是按一次按鈕就完成的 OpenRouter。
+          </p>
+        </div>
+        <div class="player" data-player="free">
+          <div class="player-screen" data-screen>
+            <div class="stage" data-stage aria-hidden="true">
+              <div class="io-window">
+                <div class="io-bar">
+                  <svg class="io-mark" viewBox="0 0 1024 1024"><use href="#ieum-mark" /></svg>
+                  <span class="io-tab">家長通知單.docx</span>
+                  <span class="ms-caption"><i></i><i></i><i></i></span>
+                </div>
+                <div class="io-body">
+                  <div class="io-doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <aside class="io-panel" data-frame>
+                    <p class="io-panel-title">AI 助理</p>
+                    <p class="cg-title">連結 AI 即可開始使用</p>
+                    <div class="cg-ask">
+                      <p class="cg-q">你現在在用哪種 AI？</p>
+                      <span class="cg-path"><b>我有 Claude 付費訂閱</b><span>需要 Pro 或 Max 方案。</span></span>
+                      <span class="cg-path"><b>我在用 ChatGPT</b><span>用你的 ChatGPT 帳戶登入，即可在方案範圍內使用。</span></span>
+                      <span class="cg-path" data-t="path"><b>兩者都還沒有</b><span>大約一分鐘就能連結免費 AI。</span></span>
+                    </div>
+                    <div class="cg-open">
+                      <p class="cg-need">
+                        大約一分鐘就能連結免費 AI。免費使用期間，你傳送的內容可能會被該公司用來改進其
+                        AI。
+                      </p>
+                      <p class="cg-btns"><span class="cg-btn" data-t="connect-free">連結免費 AI</span></p>
+                      <p class="cg-back">選擇其他方式</p>
+                    </div>
+                    <div class="cg-chat"><span class="cg-input"><s></s></span><span class="cg-model" data-t="model">OpenRouter</span><span class="cg-send">↑</span></div>
+                  </aside>
+                </div>
+              </div>
+
+              <!-- Settings › AI, "use for free" -->
+              <div class="st-window" data-frame>
+                <div class="st-bar"><b>設定</b><span class="ms-caption"><i></i><i></i><i></i></span></div>
+                <div class="st-body">
+                  <ul class="st-side">
+                    <li>一般</li>
+                    <li class="is-on">AI</li>
+                    <li>字型</li>
+                    <li>關於</li>
+                  </ul>
+                  <div class="st-main">
+                    <p class="st-title">免費使用</p>
+                    <p class="st-desc">沒有訂閱？連接免費 AI 即可馬上開始。免費使用有每日額度限制。</p>
+                    <div class="fr-card">
+                      <p class="fr-head">
+                        <b>OpenRouter</b><i class="fr-badge">免費</i>
+                        <span class="fr-off">未連線</span>
+                        <span class="fr-wait">正在等待瀏覽器…</span>
+                        <span class="fr-on">已連線 · 使用中</span>
+                      </p>
+                      <p class="fr-desc">一鍵連接：在瀏覽器中註冊或登入 OpenRouter，然後允許存取。</p>
+                      <p class="fr-quota"><s></s></p>
+                      <p class="cg-btns fr-actions"><span class="cg-btn" data-t="or-connect">在瀏覽器中連接</span></p>
+                    </div>
+                    <div class="fr-card">
+                      <p class="fr-head"><b>Google Gemini</b><i class="fr-badge">免費</i><span>未連線</span></p>
+                      <p class="fr-desc">用你的 Google 帳戶建立金鑰並貼到這裡。僅限年滿 18 歲的使用者使用。</p>
+                      <p class="cg-btns"><span class="cg-btn cg-btn-plain">取得金鑰</span><span class="fr-input">貼上你的 Gemini 金鑰</span><span class="cg-btn cg-btn-plain">連線</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="br-window" data-frame>
+                <div class="br-bar"><span class="ms-nav">‹ › ↻</span><span class="ms-url">openrouter.ai</span></div>
+                <div class="br-page">
+                  <div class="br-box">
+                    <p class="br-title">允許 IeumOffice 連線</p>
+                    <s></s><s></s>
+                    <span class="br-done">✓</span>
+                    <span class="br-btn" data-t="allow">允許</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="ring" data-ring></span>
+              <span class="ripple" data-ripple></span>
+              <svg class="cursor" data-cursor viewBox="0 0 24 32" width="22" height="30">
+                <path d="M2 2v24l6.5-6.2 4.2 9.6 3.8-1.7-4.2-9.4H21z" />
+              </svg>
+            </div>
+          </div>
+
+          <ol class="player-steps" data-steps>
+            <li>AI 面板出現「你現在在用哪種 AI？」時，按<b>兩者都還沒有</b>。</li>
+            <li>按<b>連結免費 AI</b>，會開啟設定中的「免費使用」。</li>
+            <li>按 OpenRouter 卡片上的<b>在瀏覽器中連接</b>。在瀏覽器中註冊或登入 OpenRouter，然後按<b>允許</b>。</li>
+            <li>瀏覽器顯示已連線的畫面後，關閉那個分頁回來。卡片上會顯示<b>已連線 · 使用中</b>和今天剩下的免費請求數。</li>
+          </ol>
+
+          <div class="player-bar">
+            <button type="button" class="pb-btn" data-prev aria-label="上一步">‹ 上一步</button>
+            <button type="button" class="pb-btn pb-play" data-play aria-label="暫停">❚❚ 暫停</button>
+            <button type="button" class="pb-btn" data-next aria-label="下一步">下一步 ›</button>
+            <span class="pb-count" data-count aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="guide-next">
+          在第一次執行的引導中選擇<b>兩者都還沒有</b>，就不必經過第 2 步，這些卡片會直接在原處展開。
+        </p>
+        <details class="mac-guide" id="gemini">
+          <summary>用 Google Gemini 連結時</summary>
+          <div class="mac-guide-body">
+            <ol>
+              <li>按 Gemini 卡片上的<b>取得金鑰</b>，會開啟 Google AI Studio。用 Google 帳戶登入，建立金鑰並複製。</li>
+              <li>回到 IeumOffice，貼到「貼上你的 Gemini 金鑰」欄位，然後按<b>連線</b>。</li>
+            </ol>
+            <p>
+              僅限年滿 18 歲的使用者使用。在已連結帳單的 Google 專案中建立的金鑰可能會產生費用，請在沒有連結帳單的專案中建立。
+            </p>
+          </div>
+        </details>
+        <p class="demo-note">
+          免費使用期間，你傳送的內容可能會被該公司用於改進其 AI。處理含有個人資料的文件時請留意。今天的可用量用完時，AI 面板會告訴你，以及何時可以再使用。
+        </p>
+      </section>
+
+      <!-- when it does not work -->
+      <section class="guide guide-other" id="stuck" aria-labelledby="stuck-title">
+        <div class="guide-head">
+          <p class="guide-tag">卡住時</p>
+          <h2 id="stuck-title">連結時卡住了</h2>
+          <p>找到卡片上顯示的文字，展開來看。</p>
+        </div>
+
+        <details class="mac-guide" id="login-stuck">
+          <summary>停在「正在登入…」</summary>
+          <div class="mac-guide-body">
+            <p>
+              如果瀏覽器已經開啟登入畫面，在那裡登入並按允許就可以。花點時間也沒關係。這時請不要按卡片下方的連結或<b>開啟登入視窗</b>按鈕。按下去會停止目前的登入，從頭重新開始。
+            </p>
+            <p>如果瀏覽器完全沒有開啟，請這樣做。</p>
+            <ol>
+              <li>按卡片下方的連結，或 25 秒後出現的<b>開啟登入視窗</b>按鈕。會開啟一個黑色視窗。這時如果瀏覽器開啟了，就在那裡登入並按允許。視窗會自動關閉並完成連線。</li>
+              <li>如果瀏覽器還是沒有開啟，用滑鼠拖曳選取黑色視窗中以 <b>https://</b> 開頭的網址，按滑鼠右鍵複製。貼到瀏覽器的網址列，就會開啟登入畫面。</li>
+              <li>登入並按允許後，瀏覽器會顯示一組代碼。複製完整的代碼。有複製按鈕的話就按它。</li>
+              <li>在黑色視窗內按<b>一下</b>滑鼠右鍵貼上，然後按 <b>Enter</b>。貼上的代碼沒有顯示在視窗中也是正常的。</li>
+              <li>視窗關閉、卡片變成「已連線」就完成了。</li>
+            </ol>
+            <p>
+              視窗中出現 <b>Invalid code</b> 的話，表示代碼沒有複製完整。代碼中間有一個 <code>#</code>，前後兩段都要包含在內。請不要關閉視窗，重新複製代碼後貼到同一個視窗。
+            </p>
+            <p>要從頭再來，請按卡片上的<b>取消登入</b>，再按一次<b>登入</b>。</p>
+            <p>
+              ChatGPT 卡片（直接連結）沒有黑色登入視窗。請在瀏覽器中登入，一直做到允許為止。瀏覽器沒有開啟，或想重新來過，請按<b>取消登入</b>後再按一次<b>使用 ChatGPT 繼續</b>。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="login-unfinished">
+          <summary>出現「登入沒有完成」</summary>
+          <div class="mac-guide-body">
+            <p>
+              瀏覽器沒有完成登入，只顯示一組代碼就停住時，會出現這個提示。那組代碼要貼到登入視窗，而不是應用程式中。已經顯示過的代碼不能再用，請從頭重新登入。
+            </p>
+            <ol>
+              <li>按卡片上的<b>開啟登入視窗</b>按鈕，會開啟黑色的登入視窗。如果想改用瀏覽器重試，請按<b>改在瀏覽器中登入</b>。</li>
+              <li>照上方<a href="#login-stuck">停在「正在登入…」</a>的第 2～5 步在瀏覽器中登入，再把顯示的代碼貼到那個視窗。</li>
+            </ol>
+            <p>
+              還沒登入的卡片上也有<b>瀏覽器顯示了代碼？</b>連結，可以一開始就用這個視窗登入。這個登入視窗只能在 Windows 上使用（IeumOffice 0.12.7 起）。
+            </p>
+            <p>
+              如果 ChatGPT 卡片顯示「登入沒有完成」，表示你沒有允許這個應用程式使用 ChatGPT 方案，或沒有在
+              10 分鐘內完成登入。不需要登入視窗，再按一次<b>使用 ChatGPT 繼續</b>就會從頭開始。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="update">
+          <summary>出現「程式版本過舊」</summary>
+          <div class="mac-guide-body">
+            <p>
+              電腦上的 Claude Code 或 Codex 是舊版本。按卡片上的<b>更新</b>，會在新視窗中執行該公司的官方更新。在視窗中更新完成後，請回到 IeumOffice。應用程式會自動重新檢查。
+            </p>
+            <p>
+              如果卡片上同時顯示「此應用程式執行的檔案」，就必須更新那個檔案。更新安裝在 WSL（Ubuntu）或其他資料夾中的副本，不會變更這個檔案。沒有更新按鈕的話，請在 Windows PowerShell 中執行卡片上寫的指令。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="metered">
+          <summary>顯示「已登入，但不是訂閱方式」</summary>
+          <div class="mac-guide-body">
+            <p>
+              程式登入的不是訂閱帳戶，而是 API 金鑰或依用量付費的帳戶。這時按<b>仍要使用</b>，每次請求都會向那個帳戶收費。在你按下之前，IeumOffice 不會使用那個連線。
+            </p>
+            <p>
+              想用訂閱的話，在<b>設定 → AI</b> 的卡片上按<b>使用其他帳戶登入</b>，用你訂閱中的帳戶重新登入，再按<b>重新檢查</b>。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="check-failed">
+          <summary>出現「無法檢查連線狀態」</summary>
+          <div class="mac-guide-body">
+            <p>
+              程式沒有及時回應，或檢查時發生了問題。請稍後按<b>重新檢查</b>。如果電腦像公司或學校那樣透過 Proxy 連上網路，請先在 PowerShell 中確認 <code>claude</code> 或
+              <code>codex</code> 能不能用。在那裡不能用的話，在 IeumOffice 中也不能用。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="claude-free">
+          <summary>我只有免費的 Claude 帳戶</summary>
+          <div class="mac-guide-body">
+            <p>
+              Claude 要 Pro 或 Max 方案才能連結。用免費帳戶登入無法連線。如果不打算訂閱，請連結<a class="text-link" href="#free">免費 AI</a>。按卡片上的<b>選擇其他方式</b>，就會回到一開始的問題。
+            </p>
+          </div>
+        </details>
+
+        <details class="mac-guide" id="mac">
+          <summary>在 Mac 上連結時 <span class="tag">測試版</span></summary>
+          <div class="mac-guide-body">
+            <p>
+              在 Mac 上，卡片顯示的不是<b>安裝</b>按鈕，而是<b>官方安裝說明</b>。按下後會開啟該公司的安裝說明，請照上面寫的在終端機中安裝 Claude Code 或 Codex。安裝後回到 IeumOffice，卡片會變成「尚未登入」，之後的步驟和 Windows 一樣：按<b>登入</b>，在瀏覽器中登入即可。
+            </p>
+            <p>如果顯示版本過舊，請在終端機執行卡片上寫的更新指令。</p>
+            <p>直接連結 ChatGPT 時不需要安裝任何程式，所以在 Mac 上的步驟也和 Windows 相同。</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="guide guide-help">
+        <p>
+          還是不行的話，請按連線畫面下方的<b>複製求助資訊</b>，再貼到<a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">傳送意見回饋</a>送出。只會複製連線狀態和程式版本，不包含帳戶和檔案路徑。
+        </p>
+        <p>
+          IeumOffice 不會讀取或儲存 Claude Code 或 Codex 的登入資訊。登入只在該公司的程式和網頁上進行，
+          IeumOffice 也看不到你的 ChatGPT 密碼。直接連結 ChatGPT 時，只會在這台電腦上保留 OpenAI 發給本應用程式的那一組登入（在 Windows 上會加密保存），中斷連線時會先向 OpenAI 要求結束連線，再刪除。訂閱額度用完時，只會停止請求並告訴你，不會自動改用需要付費的連線。
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">製作者 <b>박준일</b>（溫陽女子高中韓國語文教師） · <a href="/zh-tw/story">製作故事</a></p>
+          <p>
+            IeumOffice 是以開源專案
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a>（Apache-2.0）為基礎修改而成的程式，
+            Hangul 編輯器以 <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a>（MIT）為基礎。本網站的字型是 Wanted Sans 和 Gowun Batang（SIL OFL 1.1）。
+          </p>
+          <p>Claude 是 Anthropic 的商標，ChatGPT 和 Codex 是 OpenAI 的商標。IeumOffice 與這兩家公司沒有關係。</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="外部連結">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">版本發布</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">回報問題</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">傳送意見回饋</a>
+        <a href="/zh-tw/install">安裝說明</a>
+        <a href="/zh-tw/connect">AI 連線說明</a>
+        <a href="/zh-tw/faq">常見問題</a>
+        <a href="/zh-tw/#opensource">開源</a>
+        <a href="/zh-tw/privacy.html">個人資料</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">授權</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          任何人都能免費使用，依現狀提供，不另作任何保證。<a href="/zh-tw/legal.html">法律聲明</a>（授權・商標） · 聯絡
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/connect.js"></script>
+  </body>
+</html>

@@ -1,6 +1,16 @@
 // Release lookups and installer links, shared by the landing page and the install help page.
 
+import { pick } from './i18n.js'
+
 export const REPO = 'pblsketch/ieumoffice'
+
+const L = pick({
+  ko: { win: (v) => `Windows용 ${v} 내려받기`, mac: (v) => `Mac용 ${v} 내려받기`, intel: (v) => `Intel Mac용 ${v} 내려받기`, linux: (v) => `Linux용 ${v} 내려받기`, beta: '베타', releases: '릴리스 페이지에서 내려받기', macPending: 'Apple Silicon Mac판 준비 중', intelPending: 'Intel Mac판 준비 중', linuxPending: 'Linux판 준비 중', notInVersion: '이 버전에는 없습니다' },
+  en: { win: (v) => `Download ${v} for Windows`, mac: (v) => `Download ${v} for Mac`, intel: (v) => `Download ${v} for Intel Mac`, linux: (v) => `Download ${v} for Linux`, beta: 'beta', releases: 'Download from the releases page', macPending: 'Apple Silicon Mac build coming soon', intelPending: 'Intel Mac build coming soon', linuxPending: 'Linux build coming soon', notInVersion: 'not in this version' },
+  ja: { win: (v) => `Windows 版 ${v} をダウンロード`, mac: (v) => `Mac 版 ${v} をダウンロード`, intel: (v) => `Intel Mac 版 ${v} をダウンロード`, linux: (v) => `Linux 版 ${v} をダウンロード`, beta: 'ベータ', releases: 'リリースページからダウンロード', macPending: 'Apple Silicon Mac 版は準備中', intelPending: 'Intel Mac 版は準備中', linuxPending: 'Linux 版は準備中', notInVersion: 'このバージョンにはありません' },
+  'zh-TW': { win: (v) => `下載 Windows 版 ${v}`, mac: (v) => `下載 Mac 版 ${v}`, intel: (v) => `下載 Intel Mac 版 ${v}`, linux: (v) => `下載 Linux 版 ${v}`, beta: 'Beta', releases: '從發行頁面下載', macPending: 'Apple Silicon Mac 版準備中', intelPending: 'Intel Mac 版準備中', linuxPending: 'Linux 版準備中', notInVersion: '這個版本沒有' },
+  es: { win: (v) => `Descargar ${v} para Windows`, mac: (v) => `Descargar ${v} para Mac`, intel: (v) => `Descargar ${v} para Mac con Intel`, linux: (v) => `Descargar ${v} para Linux`, beta: 'beta', releases: 'Descargar desde la página de versiones', macPending: 'Versión para Mac con Apple Silicon en preparación', intelPending: 'Versión para Mac con Intel en preparación', linuxPending: 'Versión para Linux en preparación', notInVersion: 'no está en esta versión' },
+})
 
 export async function fetchJson(url) {
   const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } })
@@ -92,13 +102,13 @@ export async function wireDownload() {
       a.href = exe.browser_download_url
     })
     guardRepeatedDownload([...links])
-    if (label) label.textContent = `Windows용 ${version} 내려받기`
+    if (label) label.textContent = L.win(version)
     if (meta) meta.textContent = `${exe.name} (${mb}MB)`
-    if (versionNote) versionNote.textContent = `${version} 베타`
+    if (versionNote) versionNote.textContent = `${version} ${L.beta}`
   } catch {
     // no published release yet, or GitHub is unreachable: the button keeps
     // pointing at the releases page, which says what is there
-    if (label) label.textContent = '릴리스 페이지에서 내려받기'
+    if (label) label.textContent = L.releases
   }
 
   /** the two Mac disks, when the release carries them: Apple Silicon and Intel
@@ -114,25 +124,25 @@ export async function wireDownload() {
         a.href = arm.browser_download_url
       })
       guardRepeatedDownload([...macLinks])
-      if (macLabel) macLabel.textContent = `Mac용 ${version} 내려받기`
-      if (macMeta) macMeta.textContent = `${arm.name} (${mb(arm)}MB) · Apple Silicon · 베타`
+      if (macLabel) macLabel.textContent = L.mac(version)
+      if (macMeta) macMeta.textContent = `${arm.name} (${mb(arm)}MB) · Apple Silicon · ${L.beta}`
     } else {
       // this release has no Apple Silicon build yet: say so rather than open a page without one
       macLinks.forEach((a) => {
         a.classList.add('is-pending')
         a.setAttribute('aria-disabled', 'true')
       })
-      if (macLabel) macLabel.textContent = 'Apple Silicon Mac판 준비 중'
+      if (macLabel) macLabel.textContent = L.macPending
     }
-    if (macFileMeta) macFileMeta.textContent = arm ? ` — ${arm.name} (${mb(arm)}MB)` : ' — 이 버전에는 없습니다'
+    if (macFileMeta) macFileMeta.textContent = arm ? ` — ${arm.name} (${mb(arm)}MB)` : ` — ${L.notInVersion}`
 
     if (intel) {
       macIntelLinks.forEach((a) => {
         a.href = intel.browser_download_url
       })
       guardRepeatedDownload([...macIntelLinks])
-      if (macIntelLabel) macIntelLabel.textContent = `Intel Mac용 ${version} 내려받기`
-      if (macIntelMeta) macIntelMeta.textContent = `${intel.name} (${mb(intel)}MB) · 베타`
+      if (macIntelLabel) macIntelLabel.textContent = L.intel(version)
+      if (macIntelMeta) macIntelMeta.textContent = `${intel.name} (${mb(intel)}MB) · ${L.beta}`
       // on the landing page the Intel line stays out of the way until there is a file for it
       if (macAlt) macAlt.hidden = false
     } else {
@@ -141,10 +151,10 @@ export async function wireDownload() {
         a.classList.add('is-pending')
         a.setAttribute('aria-disabled', 'true')
       })
-      if (macIntelLabel) macIntelLabel.textContent = 'Intel Mac판 준비 중'
+      if (macIntelLabel) macIntelLabel.textContent = L.intelPending
     }
     if (macIntelFileMeta) {
-      macIntelFileMeta.textContent = intel ? ` — ${intel.name} (${mb(intel)}MB)` : ' — 이 버전에는 없습니다'
+      macIntelFileMeta.textContent = intel ? ` — ${intel.name} (${mb(intel)}MB)` : ` — ${L.notInVersion}`
     }
   }
 
@@ -161,14 +171,14 @@ export async function wireDownload() {
       const primaryGuideLink =
         primary === appImage ? linuxAppImage : primary === deb ? linuxDeb : linuxRpm
       guardRepeatedDownload([...linuxLinks, primaryGuideLink])
-      if (linuxLabel) linuxLabel.textContent = `Linux용 ${rel.tag_name.replace(/^v/, '')} 내려받기`
+      if (linuxLabel) linuxLabel.textContent = L.linux(rel.tag_name.replace(/^v/, ''))
       if (linuxMeta) linuxMeta.textContent = `${primary.name} (${Math.round(primary.size / 1024 / 1024)}MB) · x64`
     } else {
       linuxLinks.forEach((a) => {
         a.classList.add('is-pending')
         a.setAttribute('aria-disabled', 'true')
       })
-      if (linuxLabel) linuxLabel.textContent = 'Linux판 준비 중'
+      if (linuxLabel) linuxLabel.textContent = L.linuxPending
     }
     if (appImage && linuxAppImage) {
       linuxAppImage.href = appImage.browser_download_url

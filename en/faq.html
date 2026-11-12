@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frequently asked questions · IeumOffice</title>
+    <meta name="description" content="Where people get stuck using IeumOffice, collected in one page: phone and iPad support, installing and removing, Hangul (HWP) save errors, pasting screenshots into PDF, Excel compatibility, use at work, and local LLMs." />
+    <link rel="canonical" href="https://ieumoffice.com/en/faq" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/en/faq" />
+    <meta property="og:title" content="Frequently asked questions · IeumOffice" />
+    <meta property="og:description" content="Phone and iPad support, installing and removing, Hangul (HWP) save errors, pasting screenshots into PDF, and Excel compatibility, answered in one page." />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-faq">
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav is-scrolled is-solid">
+      <a class="nav-brand" href="/en/" aria-label="IeumOffice home">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="Site sections">
+        <a href="/en/updates">Updates</a>
+        <a href="/en/story">The story</a>
+        <a href="/en/install">Install help</a>
+        <a href="/en/connect">Connect AI</a>
+        <a href="/en/faq" aria-current="page">FAQ</a>
+        <a href="/en/#formats">Documents</a>
+        <a href="/en/#hwp">Hangul</a>
+        <a href="/en/#ai">AI</a>
+      </nav>
+      <a class="btn btn-small" href="/en/#download">Download</a>
+    </header>
+
+    <main id="main">
+      <header class="install-head">
+        <p class="eyebrow">Help</p>
+        <h1>Frequently asked questions</h1>
+        <p class="install-lede">
+          Where people get stuck using IeumOffice, collected in one place. Answers are for version 0.12.12.
+          For anything not covered here, tell us through <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Send feedback</a>.
+        </p>
+      </header>
+
+      <nav class="faq-toc" aria-label="Questions">
+        <a href="#platforms">Supported systems</a>
+        <a href="#cost">Cost</a>
+        <a href="#portable">Portable version</a>
+        <a href="#install-remove">Installing and removing</a>
+        <a href="#first-run-freeze">Freezes at first launch</a>
+        <a href="#hwp-save">Hangul save errors</a>
+        <a href="#markdown-links">Markdown links</a>
+        <a href="#pdf-capture">PDF screenshots and pasting</a>
+        <a href="#excel-compat">Excel compatibility</a>
+        <a href="#excel-row-height">Excel row height</a>
+        <a href="#chatgpt">Connecting ChatGPT</a>
+        <a href="#gemini">Paid Gemini</a>
+        <a href="#business">Use at work</a>
+        <a href="#hwp-compare">Compared with Hancom Hangul</a>
+        <a href="#local-llm">Local LLM</a>
+        <a href="#ai-retry">AI retrying</a>
+        <a href="#updates">Update news</a>
+      </nav>
+
+      <div class="faq-list">
+        <section class="guide" id="platforms">
+          <div class="guide-head">
+            <p class="guide-tag">Supported systems</p>
+            <h2>Can I use it on a phone, as a mobile version, on an iPad or on Android?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              No. IeumOffice is a desktop program you install on a PC. There is no app for phones, mobile, iPhone,
+              Android, iPad or tablets, and no version that opens in a web browser. It can't be installed as a tablet or
+              mobile app.
+            </p>
+            <table>
+              <thead>
+                <tr><th>Operating system</th><th>Support</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Windows 10 and 11 (64-bit)</td><td>Full release</td></tr>
+                <tr><td>macOS (Apple Silicon, Intel)</td><td>Beta</td></tr>
+                <tr><td>Linux x64 (AppImage, deb, rpm)</td><td>Beta</td></tr>
+                <tr><td>iPad, iPhone, Android</td><td>Not supported</td></tr>
+              </tbody>
+            </table>
+            <h3>Can I use it on a Mac (beta)?</h3>
+            <p>
+              Yes. For Mac, both Apple Silicon and Intel are released as beta: Apple Silicon for M1 and later, and Intel
+              from 0.12.4. You choose the installer on the download page.
+            </p>
+            <h3>Since when does it work on Intel Macs?</h3>
+            <p>
+              Intel Macs have been supported as beta since 0.12.4, alongside Apple Silicon. You can choose the Intel Mac
+              installer on the download page. Because Mac and Linux are in beta, some parts have not been checked by the
+              developer directly and are confirmed through user reports.
+            </p>
+            <h3>Does it work on Windows 7 or 32-bit Windows?</h3>
+            <p>
+              No. Only 64-bit Windows 10 and 11 are supported. It can't be installed on 32-bit Windows or on Windows 7
+              or earlier.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="cost">
+          <div class="guide-head">
+            <p class="guide-tag">Cost</p>
+            <h2>Is it really free? What does it cost?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              The program is free. Editing and saving documents have no paid limits, and you need no account or
+              subscription. IeumOffice charges nothing.
+            </p>
+            <p>
+              The AI features run on the Claude or ChatGPT subscription you already have, or on an API key you enter
+              yourself. The subscription fee goes to that company, and you pay nothing extra to IeumOffice. With an API key
+              (OpenRouter, Gemini), that company may charge you for what you use, and some keys come with a free limit.
+            </p>
+            <p>
+              The app never switches you to a paid API key or a pay-as-you-go connection by itself. When a limit is used
+              up, it stops the request and tells you why.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="portable">
+          <div class="guide-head">
+            <p class="guide-tag">Install</p>
+            <h2>Is there a portable version that runs without installing?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              No. There is not yet a portable (zip) version that runs without installing, or a version to carry on a USB
+              drive.
+            </p>
+            <p>
+              On Windows, install it once with the installer (.exe), then start it from the Start menu or the desktop. On
+              a Mac, open the .dmg and move it to the Applications folder. On Linux, run the AppImage or install the .deb
+              or .rpm.
+            </p>
+            <p>
+              If installing gets stuck, open <a class="text-link" href="/en/install">Install help</a> and pick the screen
+              you see.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="install-remove">
+          <div class="guide-head">
+            <p class="guide-tag">Install</p>
+            <h2>How do I uninstall the program?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              On Windows, find IeumOffice in <b>Settings → Apps → Installed apps</b> and click <b>Uninstall</b>. On a Mac,
+              move IeumOffice from <b>Finder → Applications</b> to the Trash. On Linux, depending on how you installed it,
+              use <code>sudo apt remove ieumoffice</code> or <code>sudo dnf remove ieumoffice</code>, or delete the
+              AppImage file.
+            </p>
+            <p>
+              If uninstalling stops partway or you can't install again, install the same version once more and then try
+              uninstalling again. If that doesn't work, tell us through <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Send feedback</a>
+              which screen it stopped on.
+            </p>
+            <p>
+              Settings and the recent documents list may stay in the user data folder (Windows
+              <code>%APPDATA%\IeumOffice</code>, Mac
+              <code>~/Library/Application Support/IeumOffice</code>, Linux
+              <code>~/.config/IeumOffice</code>). To remove everything, delete this folder yourself after uninstalling.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="first-run-freeze">
+          <div class="guide-head">
+            <p class="guide-tag">Install</p>
+            <h2>At first launch it freezes on "Not responding" or a gray screen</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              This happened on PCs where Windows Security's <b>Controlled folder access</b> (ransomware protection) is on.
+              That feature stops new folders from being created in the Documents folder, so up to 0.12.7 the app could
+              freeze on first launch on such PCs. Updating to 0.12.8 or installing it fresh fixes this.
+            </p>
+            <p>
+              From 0.12.8, if the app can't write to the Documents folder, it saves new files in an <code>IeumOffice</code>
+              folder under your user folder and shows the notice "Can't save to the Documents folder" once. To save to the
+              Documents folder as before, add IeumOffice under <b>Allow an app through Controlled folder access</b> in
+              Windows Security and restart the app. You can also pick another folder in
+              <b>Settings → General → Save Location</b>.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="hwp-save">
+          <div class="guide-head">
+            <p class="guide-tag">Hangul</p>
+            <h2>A Hangul file won't save, and it says it was "not saved"</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              When saving, IeumOffice first writes a new file, then reads that file back to check that it matches the
+              screen. If what it reads back differs from the screen, it stops without overwriting the original. So
+              <b>your original file is still there.</b> It does not mean the file is broken; the app stopped so as not to
+              ruin the original with a result that differs from the screen. This check runs <b>only when saving as .hwp</b>.
+              <b>.hwpx</b> is a different format and is not checked this way.
+            </p>
+            <ol>
+              <li>In <b>Save As</b>, change the file type to <b>HWPX</b> and save to a new file.
+                After saving, open it in Hancom Hangul to check it.</li>
+              <li>If you still need .hwp, choose <b>HWP</b> in <b>Save As</b> and try saving to a new
+                file. It may hit the same check again.</li>
+              <li>If that fails, keep what is on screen with <b>Export as PDF</b>.</li>
+              <li>If nothing works, send us the document through <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Send feedback</a>.
+                A copy with personal information removed or changed is fine.</li>
+            </ol>
+            <p>
+              If the app closed suddenly, it offers a recovered copy the next time it starts. Recovered copies are kept in
+              <code>hwp-autosave</code> in the user data folder.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="markdown-links">
+          <div class="guide-head">
+            <p class="guide-tag">Markdown</p>
+            <h2>Clicking a link in Markdown doesn't open it</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              In the Markdown editor, a <b>plain click</b> on a link puts the cursor in it so you can edit the link text. To
+              open a link, <b>hold Ctrl and click</b> (on a Mac, <b>hold ⌘ and click</b>). In read-only views such as the
+              presentation screen (F5), a plain click opens it.
+            </p>
+            <p>
+              Only web addresses (http, https) and email addresses (mailto) open, in your default browser. Relative paths in
+              the document, <code>file://</code> addresses, and links in the source view (<b>Ctrl+E</b>) don't open yet.
+            </p>
+            <p>
+              The pointer turns into a hand over a link, yet a single click doesn't open it while you edit. That is so you
+              can edit the link text right where it is.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="pdf-capture">
+          <div class="guide-head">
+            <p class="guide-tag">PDF</p>
+            <h2>Can I paste a screenshot into a PDF, or copy a page?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Not yet. Pasting a screenshot from the clipboard with <b>Ctrl+V</b> in the PDF editor, and copying a whole page
+              to the clipboard at once, have not been added yet.
+            </p>
+            <p>For now there are two ways around it.</p>
+            <ul>
+              <li>Save the screenshot as an image file and put it into the PDF with <b>Insert image / stamp</b>.</li>
+              <li>Save pages as PNG files with <b>PDF tools → Export images</b>.</li>
+            </ul>
+            <p>
+              Pasting screenshots and copying pages have already been requested through Send feedback. If you need them
+              too, tell us through Send feedback.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="excel-compat">
+          <div class="guide-head">
+            <p class="guide-tag">Excel</p>
+            <h2>How compatible is it with Excel files?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Everyday .xlsx work is covered: cell editing, formulas, formatting, tables, charts (9 types), pivot tables,
+              conditional formatting, sorting and filtering, data validation, and sheet and workbook protection. .csv and
+              .tsv files also open as tables and are saved in their original format.
+            </p>
+            <p>That said, it does not support every Excel feature in exactly the same way.</p>
+            <ul>
+              <li><b>VBA macros</b> are not run. When you open and save an .xlsm file, the part that stores the macros is
+                left as it is, not deleted.</li>
+              <li>External data connections and some advanced pivot tables, charts and OLE objects may come out differently from Excel.</li>
+              <li>On saving, it reads the result back, and if it can't be read, the original is not overwritten.
+                For important documents, open them once in Excel after saving to check.</li>
+            </ul>
+            <p>
+              If a feature doesn't carry over, tell us through <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Send feedback</a>
+              and attach the file. A copy with personal information removed or changed is fine.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="excel-row-height">
+          <div class="guide-head">
+            <p class="guide-tag">Excel</p>
+            <h2>How do I make rows the same height in Excel?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              To give cells (rows) the same height, select several row headers (1, 2, 3…), choose
+              <b>Format → Row Height…</b> on the ribbon, and enter one value. The selected rows then have the same height.
+              To fit them to their content, use <b>Format → AutoFit Row Height</b>.
+            </p>
+            <p>
+              Column width works the same way, under <b>Format → Column Width…</b>. You can also drag the edge of a header to
+              resize, or double-click the edge to fit automatically.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="chatgpt">
+          <div class="guide-head">
+            <p class="guide-tag">Connecting AI</p>
+            <h2>Can I use it with a ChatGPT plan? Do I need the Codex program?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes, and from 0.12.8 you don't need the Codex program. In the connection guide, choose <b>I use ChatGPT</b>
+              and click <b>Continue with ChatGPT</b>, and a ChatGPT sign-in page opens in your browser. Sign in and allow
+              this app to use your plan, and it is connected. The <b>ChatGPT</b> card in Settings → AI does the same. To see
+              it on screen, open <a class="text-link" href="/en/connect#chatgpt">AI connection help</a>.
+            </p>
+            <p>
+              If you already use the Codex program on this PC, you can connect through Codex. Agent mode and the terminal
+              command still need the Claude Code or Codex program, as before.
+            </p>
+            <p>
+              When <b>AI to use</b> is set to <b>Automatic</b>, the app picks among what is connected in this order: Claude,
+              ChatGPT, Codex. It never picks a paid API key or a pay-as-you-go sign-in automatically.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="projects">
+          <div class="guide-head">
+            <p class="guide-tag">AI</p>
+            <h2>Do I have to give the AI the same background for every document?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              From 0.12.9, group them in a project. Under <b>Project</b> below the AI panel's input box, create a
+              <b>New project</b> or use <b>Add folder</b> to pick a folder you already work in. The instructions you write on
+              the <b>Projects</b> screen on Home, and the memory the AI builds up while chatting, go along with every request
+              in that project. The AI finds and reads files in the folder, and chats in the same project carry on in other
+              editors.
+            </p>
+            <p>
+              Instructions, memory and chats are kept in the <code>.ieumoffice</code> folder inside that folder. Files you
+              don't want the AI to see can be left out under <b>Files</b> on the project screen. If you don't pick a project,
+              each document has its own chat, as before.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="google-drive">
+          <div class="guide-head">
+            <p class="guide-tag">Files</p>
+            <h2>Can I open files from Google Drive?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes, from 0.12.9. Connect Google Drive in Settings → <b>Integrations</b>, then click <b>Choose from Google
+              Drive</b> on Home, and Google's file picker opens. The file you choose opens in a tab, and saving uploads it to
+              Drive again. You can also choose Drive files when attaching in the AI panel.
+            </p>
+            <p>
+              The app opens only files you chose in the picker and files it created itself; it doesn't see the rest of your
+              Drive. Before passing a Drive file to the AI, it asks you once to check that model training is turned off in
+              the AI account you use. Drive files are never passed to a free AI connection.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="gemini">
+          <div class="guide-head">
+            <p class="guide-tag">Connecting AI</p>
+            <h2>Can I connect with a paid Gemini plan?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              A Gemini Advanced (Google One AI Premium) subscription can't be used directly for AI in IeumOffice. The
+              Gemini you connect under Use for free is an <b>API key</b> made in Google AI Studio.
+            </p>
+            <p>
+              If you enter a paid Gemini API key, Google may charge you for what you use, and some keys come with a free
+              limit. The app never switches you to a paid API key by itself.
+            </p>
+            <p>
+              If you have a Gemini Advanced subscription, for now you need to connect a Claude or ChatGPT subscription, or
+              make an API key in Google AI Studio and connect that.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="business">
+          <div class="guide-head">
+            <p class="guide-tag">License</p>
+            <h2>Can I use it for work at a company or organization?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes. IeumOffice is free, open-source software released under the Apache License 2.0. Companies, schools and
+              public institutions can use it for work without any separate subscription, and editing and saving documents
+              have no paid limits.
+            </p>
+            <p>
+              The AI features run on each user's Claude or ChatGPT subscription or on an API key they enter. If you manage
+              them with company accounts, check that provider's terms. The app sends no usage statistics, and documents stay
+              on the PC.
+            </p>
+            <p>
+              The full license text is in <a class="text-link" href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">LICENSE on GitHub</a>.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="hwp-compare">
+          <div class="guide-head">
+            <p class="guide-tag">Hangul</p>
+            <h2>How is it different from Hancom Hangul?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              The IeumOffice Hangul editor opens and saves .hwp and .hwpx, and handles basic editing such as text, tables,
+              styles and shortcuts. Many shortcuts match those of Hancom Hangul 2024, and you can also have AI edit the
+              document or export it to PDF.
+            </p>
+            <p>
+              It does not reproduce every feature of Hancom Office. Documents with tracked changes open with their current
+              content, and the change history is not saved. Some objects, fields and page layouts may differ from Hancom
+              Hangul.
+            </p>
+            <p>
+              For important documents, save them in IeumOffice and then open them once in Hancom Hangul to check.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="local-llm">
+          <div class="guide-head">
+            <p class="guide-tag">Connecting AI</p>
+            <h2>Can I use it with a local LLM?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes (from 0.12.6). IeumOffice doesn't run models itself; it connects to an AI server (such as Ollama) running
+              on your PC or your organization's network. Register the server address under <b>Local AI</b> in
+              <b>Settings → AI</b>, and use Test connection to check that chatting works.
+            </p>
+            <p>
+              Registering a server doesn't change which AI is used; only a server you choose yourself is used. If the server
+              address is on the internet outside your PC, the app tells you that documents will go there. Editing and saving
+              documents work without the internet.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="ai-retry">
+          <div class="guide-head">
+            <p class="guide-tag">AI</p>
+            <h2>The AI says it is "sending a correct call again"</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              When the AI sends a call to a document-editing tool in the wrong format, the app asks it to send the request
+              again. If you wait a moment, it often answers again.
+            </p>
+            <p>
+              If it keeps repeating on the same request, try wording the request a little differently, or tell us through
+              <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Send feedback</a>
+              what the request was. A screenshot and the chat history help us find it.
+            </p>
+          </div>
+        </section>
+
+        <section class="guide" id="updates">
+          <div class="guide-head">
+            <p class="guide-tag">Updates</p>
+            <h2>Can I get update news by email?</h2>
+          </div>
+          <div class="faq-answer">
+            <p>
+              There is no service that sends update news by email or text message. IeumOffice does not collect email
+              addresses.
+            </p>
+            <p>
+              The app checks for a new version every 4 hours. You can check right away with <b>☰ menu → Check for
+              Updates…</b> in the tab bar (on a Mac, <b>Help → Check for Updates…</b>), and if there is a new version, the app
+              tells you. To stop automatic checks, turn off <b>Check for updates automatically</b> in
+              <b>Settings → About</b>. You can also download it from the GitHub Releases page.
+            </p>
+            <p>
+              To get notified of new releases on GitHub, choose <b>Watch → Custom → Releases</b> on the repository.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="guide guide-help">
+        <p>
+          For questions not covered here, tell us through
+          <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Send feedback</a>.
+          If you write which screen you got stuck on and what you were trying to do, we can find it faster.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">Made by <b>박준일</b> (Korean-language teacher at Onyang Girls' High School) · <a href="/en/story">The story</a></p>
+          <p>
+            IeumOffice is a modified version of the open-source project
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a> (Apache-2.0), and its Hangul
+            editor is built on <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a> (MIT). This page uses
+            the fonts Wanted Sans and Gowun Batang (SIL OFL 1.1).
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="External links">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">Releases</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">Report a problem</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Send feedback</a>
+        <a href="/en/connect">AI connection help</a>
+        <a href="/en/faq">FAQ</a>
+        <a href="/en/#opensource">Open source</a>
+        <a href="/en/privacy.html">Privacy</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">License</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          Free for everyone, provided as is, with no warranty of any kind.
+          <a href="/en/legal.html">Legal notice</a> (licenses, trademarks) · Contact
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/faq.js"></script>
+  </body>
+</html>

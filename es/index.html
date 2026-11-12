@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IeumOffice: del Hangul al PDF, una oficina gratuita en una sola ventana</title>
+    <meta
+      name="description"
+      content="Una suite ofimática gratuita y de código abierto que abre y edita en una sola ventana archivos de Hangul (HWP), Word, Excel, PowerPoint, PDF, EPUB, Markdown, HTML, mapas mentales y diagramas. Cuando lo necesites, puedes encargar tareas al panel de IA que está al lado."
+    />
+    <meta name="author" content="박준일" />
+    <meta name="keywords" content="IeumOffice, suite ofimática gratuita, visor de Hangul, editar HWP, HWPX, Word, Excel, PowerPoint, editar PDF, libros electrónicos EPUB, mapas mentales, diagramas, ofimática de código abierto, edición de documentos con IA" />
+    <link rel="canonical" href="https://ieumoffice.com/es/" />
+    <meta name="theme-color" content="#2b2489" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IeumOffice" />
+    <meta property="og:url" content="https://ieumoffice.com/es/" />
+    <meta property="og:title" content="IeumOffice: del Hangul al PDF, en una sola ventana" />
+    <meta
+      property="og:description"
+      content="Abre y edita en una sola ventana archivos de Hangul (HWP), Word, Excel, PowerPoint, PDF y EPUB. Es de código abierto y gratis para todos."
+    />
+    <meta property="og:image" content="https://ieumoffice.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://ieumoffice.com/es/#website",
+            "url": "https://ieumoffice.com/es/",
+            "name": "IeumOffice",
+            "alternateName": ["이음오피스", "이음 오피스", "Ieum Office"],
+            "inLanguage": "es",
+            "publisher": { "@id": "https://ieumoffice.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://ieumoffice.com/#organization",
+            "name": "IeumOffice",
+            "alternateName": "Ieum Office",
+            "url": "https://ieumoffice.com/",
+            "logo": "https://ieumoffice.com/icon-512.png"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "IeumOffice",
+            "alternateName": "Ieum Office",
+            "url": "https://ieumoffice.com/es/",
+            "image": "https://ieumoffice.com/og.png",
+            "publisher": { "@id": "https://ieumoffice.com/#organization" },
+            "description": "Una suite ofimática gratuita y de código abierto que abre y edita en una sola ventana archivos de Hangul (HWP), Word, Excel, PowerPoint, PDF, EPUB, Markdown, HTML, mapas mentales y diagramas.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Windows, macOS, Linux",
+            "license": "https://www.apache.org/licenses/LICENSE-2.0",
+            "downloadUrl": "https://github.com/pblsketch/ieumoffice/releases/latest",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+            "author": { "@type": "Person", "name": "박준일" },
+            "sameAs": ["https://github.com/pblsketch/ieumoffice"]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Saltar al contenido</a>
+
+    <header class="nav" data-nav>
+      <a class="nav-brand" href="#top" aria-label="IeumOffice, ir al inicio">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <span>IeumOffice</span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones de la página">
+        <a href="/es/updates">Novedades</a>
+        <a href="/es/story">Por qué lo hice</a>
+        <a href="#formats">Documentos</a>
+        <a href="#hwp">Hangul</a>
+        <a href="#ai">IA</a>
+        <a href="#cost">Costo</a>
+        <a href="#privacy">Privacidad</a>
+      </nav>
+      <a class="btn btn-small" href="#download">Descargar</a>
+    </header>
+
+    <main id="main">
+      <!-- Hero: the woven mark, the headline, and the app window that switches tabs -->
+      <section class="hero" id="top">
+        <svg class="hero-weave" viewBox="0 0 1024 1024" aria-hidden="true">
+          <defs>
+            <clipPath id="hw-upper"><rect width="1024" height="512" /></clipPath>
+            <clipPath id="hw-lower"><rect y="512" width="1024" height="512" /></clipPath>
+            <mask id="hw-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+              <rect width="1024" height="1024" fill="#fff" />
+              <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#hw-upper)" />
+            </mask>
+            <mask id="hw-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+              <rect width="1024" height="1024" fill="#fff" />
+              <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#hw-lower)" />
+            </mask>
+          </defs>
+          <g fill="none" stroke-width="112">
+            <g mask="url(#hw-under-ring)">
+              <rect class="hw-square" x="453" y="330" width="364" height="364" rx="96" pathLength="100" />
+            </g>
+            <g mask="url(#hw-under-square)">
+              <circle class="hw-ring" cx="399" cy="512" r="192" pathLength="100" />
+            </g>
+          </g>
+        </svg>
+
+        <div class="hero-copy">
+          <!-- one line on the newest release; update with every release (README, "after a new release") -->
+          <a class="hero-news" href="/es/updates#v0.12.12">
+            <b>Nueva versión 0.12.12</b><span>De PDF a documento Hangul y abrir mapas mentales de FreeMind</span><i aria-hidden="true">→</i>
+          </a>
+          <h1 class="hero-title">
+            <span class="line"><span>Del Hangul al PDF,</span></span>
+            <span class="line"><span>en una sola ventana.</span></span>
+          </h1>
+          <p class="hero-lede">
+            Abre en pestañas archivos de Hangul (HWP), Word, Excel, PowerPoint, PDF, EPUB, Markdown, HTML, mapas mentales y
+            diagramas, edítalos y guárdalos en su formato original. Cualquiera puede usarlo gratis.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-amber" href="#download" data-download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" /></svg>
+              <span>Descargar para Windows</span>
+            </a>
+            <a class="btn btn-ghost" href="/es/install#mac" data-download-mac>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" /></svg>
+              <span>Descargar para Mac</span>
+            </a>
+            <a class="btn btn-ghost" href="/es/install#linux" data-download-linux>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" /></svg>
+              <span>Descargar para Linux</span>
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/pblsketch/ieumoffice" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.2-4.6-5.1 0-1.1.4-2 1-2.7-.1-.2-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.2 9.2 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.5.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5a10.1 10.1 0 0 0 6.8-9.7C22 6.6 17.5 2 12 2z" fill="currentColor" stroke="none"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+          <p class="hero-note">
+            <span data-version>Beta</span> · Windows 10 y 11 (64 bits) ·
+            <a href="/es/install#mac"><span class="nowrap">Mac (Apple Silicon · Intel)</span></a> ·
+            <a href="/es/install#linux">Instrucciones para <span class="nowrap">Linux (x64 · deb · rpm)</span></a>
+          </p>
+          <p class="hero-stats" data-hero-stats hidden>
+            <span><b data-stat-downloads></b>descargas en total</span>
+            <span><b data-stat-windows></b>instalaciones en Windows</span>
+            <span><b data-stat-mac></b>instalaciones en Mac</span>
+            <span><b data-stat-linux></b>instalaciones en Linux</span>
+            <a class="stat-stars" href="https://github.com/pblsketch/ieumoffice" rel="noopener"><b data-stat-stars></b>estrellas en GitHub</a>
+          </p>
+        </div>
+
+        <div class="showcase" id="formats" data-showcase>
+          <figure class="window">
+            <div class="window-stage" data-stage>
+              <!-- filled by main.js -->
+            </div>
+            <span class="window-controls" aria-hidden="true"><i></i><i></i><i></i></span>
+          </figure>
+          <div class="format-bar" role="tablist" aria-label="Tipos de documento" data-format-bar></div>
+          <p class="format-caption" aria-live="polite" data-format-caption></p>
+        </div>
+      </section>
+
+      <!-- HWP -->
+      <section class="hwp" id="hwp">
+        <div class="split-head">
+          <div>
+            <p class="eyebrow">Hangul</p>
+            <h2>Los archivos Hangul<br />siguen siendo Hangul.</h2>
+          </div>
+          <p>
+            Abre y edita los documentos que se intercambian como archivos Hangul (HWP), como oficios o formularios de
+            solicitud. Al terminar, guárdalos en su formato original, conviértelos en PDF o imprímelos directamente.
+          </p>
+        </div>
+        <figure class="window window-flat hwp-shot">
+          <img src="/shots/hwp-1600.webp" srcset="/shots/hwp-1600.webp 1600w, /shots/hwp-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Un formulario de inscripción (.hwpx) abierto en el editor de Hangul de IeumOffice" loading="lazy" />
+        </figure>
+        <dl class="hwp-facts">
+          <div>
+            <dt>Guarda en el formato original</dt>
+            <dd>Un .hwp se guarda como .hwp, y un .hwpx como .hwpx. La primera vez que sobrescribe un archivo, deja el original como .bak. Con «Guardar como» puedes elegir cualquiera de los dos formatos o crear una copia en PDF.</dd>
+          </div>
+          <div>
+            <dt>Se vuelve a abrir en Hancom Hangul</dt>
+            <dd>Lo hice comprobando con cientos de documentos Hangul reales que los archivos editados y guardados se abren en Hancom Hangul 2024.</dd>
+          </div>
+          <div>
+            <dt>Documentos nuevos y PDF</dt>
+            <dd>Crea un documento Hangul en blanco desde el inicio y, cuando lo termines, conviértelo en PDF o imprímelo. En el editor de PDF, «Convertir PDF» → «PDF a HWP» también trae un PDF como documento Hangul para editarlo.</dd>
+          </div>
+          <div>
+            <dt>Las tareas repetitivas, para la IA</dt>
+            <dd>Puedes pedirle que rellene celdas de tablas, que añada o quite filas y columnas, que rellene campos de formulario o que inserte notas al pie y un índice.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          El editor de Hangul está hecho con <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a>, de código abierto.
+        </p>
+      </section>
+
+      <!-- AI -->
+      <section class="ai" id="ai">
+        <div class="split-head">
+          <div>
+            <p class="eyebrow">IA</p>
+            <h2>La IA, solo<br />cuando la necesitas.</h2>
+          </div>
+          <p>
+            Junto al editor hay un panel de IA. Si no lo usas, la suite funciona igual. Cuando quieras encargar algo que da
+            mucho trabajo, como rellenar una tabla o pulir un texto, pídeselo: la IA edita el documento abierto con las
+            herramientas de edición de la aplicación. Las tareas que encargas a menudo se guardan como habilidades y se
+            llaman escribiendo <code>/</code> en el campo de entrada.
+          </p>
+        </div>
+        <div
+          class="ai-demo"
+          data-ai-demo
+          data-request="Añade una fila de totales al final de la tabla de presupuesto y resalta las partidas de más de 1 millón de wones"
+          data-marks='[{"left":0.605,"top":0.386,"width":0.0775,"height":0.0654},{"left":0.605,"top":0.582,"width":0.0775,"height":0.098},{"left":0.605,"top":0.746,"width":0.0775,"height":0.065},{"left":0.2825,"top":0.812,"width":0.5225,"height":0.037}]'
+        >
+          <figure class="window window-flat">
+            <div class="ai-canvas">
+              <div class="ai-shot">
+                <img src="/shots/sheets-1600.webp" srcset="/shots/sheets-1600.webp 1600w, /shots/sheets-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Una tabla de presupuesto abierta en el editor de Excel de IeumOffice, con el panel de IA a la izquierda." loading="lazy" />
+              </div>
+              <div class="chat" aria-hidden="true">
+                <div class="chat-msg chat-user" data-chat-user></div>
+                <div class="chat-msg chat-ai" data-chat-ai>
+                  <ol class="chat-steps">
+                    <li>He leído el rango de la tabla de presupuesto</li>
+                    <li>He puesto una fórmula SUM en la fila de totales</li>
+                    <li>He resaltado los importes de más de 1 millón de wones</li>
+                  </ol>
+                  <p class="chat-done">He cambiado 1 fila de totales y 7 celdas de importes. <u>Deshacer</u></p>
+                </div>
+              </div>
+              <div class="chat-input" aria-hidden="true"><span data-chat-typed></span><i class="caret"></i></div>
+            </div>
+          </figure>
+          <p class="demo-note">La conversación de la imagen es un ejemplo para explicar el funcionamiento.</p>
+        </div>
+        <dl class="ai-points">
+          <div>
+            <dt>Se puede deshacer</dt>
+            <dd>La IA muestra qué ha cambiado y, si no te convence, lo deshaces.</dd>
+          </div>
+          <div>
+            <dt>Crea documentos nuevos a partir de tu material</dt>
+            <dd>Lee los archivos que elijas y crea con ellos una presentación, una página HTML o un mapa mental.</dd>
+          </div>
+          <div>
+            <dt>Pregunta a tus documentos</dt>
+            <dd>Elige en el inicio los archivos marcados con estrella y haz una pregunta: la IA los lee y te responde.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Cost -->
+      <section class="cost" id="cost">
+        <p class="eyebrow">Costo</p>
+        <h2>Usar la IA no cuesta nada extra.</h2>
+        <p class="section-lede">
+          IeumOffice obtiene las respuestas con la suscripción de Claude o ChatGPT que ya usas. Cada solicitud se descuenta
+          del límite de uso de tu suscripción, y no hace falta crear ninguna clave de API.
+        </p>
+        <div class="cost-cards">
+          <article class="cost-card">
+            <p class="cost-badge is-default">Predeterminado</p>
+            <h3>Suscripción</h3>
+            <p class="cost-who">Suscripción de Claude (Claude Code), planes de ChatGPT</p>
+            <p class="cost-what">Nada aparte de la cuota de la suscripción. Se descuenta de su límite de uso.</p>
+          </article>
+          <article class="cost-card">
+            <p class="cost-badge">Si no tienes suscripción</p>
+            <h3>IA gratuita</h3>
+            <p class="cost-who">OpenRouter, Google Gemini</p>
+            <p class="cost-what">Nada mientras no pases del límite gratuito. Se conecta en Configuración.</p>
+          </article>
+          <article class="cost-card">
+            <p class="cost-badge">Solo si lo eliges tú</p>
+            <h3>Pago por uso</h3>
+            <p class="cost-who">Claves de API, cuentas de pago por consumo</p>
+            <p class="cost-what">Pagas a esa empresa según lo que uses.</p>
+          </article>
+        </div>
+        <p class="cost-foot">
+          Cuando se agota el límite de la suscripción, la aplicación detiene la solicitud y te dice por qué. Si se sabe a qué
+          hora vuelve a estar disponible, también te lo dice. Nunca cambia por su cuenta a una conexión de pago.
+        </p>
+      </section>
+
+      <!-- Privacy -->
+      <section class="privacy" id="privacy">
+        <div class="privacy-head">
+          <p class="eyebrow">Privacidad</p>
+          <h2>Sin servidor y sin cuenta.</h2>
+          <p>
+            IeumOffice no envía estadísticas de uso, y los documentos se abren y se guardan en tu PC. Lo único que sale de tu
+            PC es lo que envías a una empresa de IA cuando le pides algo.
+          </p>
+          <a class="text-link" href="/es/privacy.html">Leer la política de privacidad completa</a>
+        </div>
+        <ul class="never">
+          <li>No lee, copia ni guarda los datos de inicio de sesión de Claude Code ni de Codex. Si conectas ChatGPT directamente en la aplicación, solo guarda en este PC el inicio de sesión que OpenAI concede a esta aplicación, y lo borra al desconectar.</li>
+          <li>No incluye pantallas de inicio de sesión propias. El inicio de sesión se hace en las páginas de cada empresa.</li>
+          <li>No inicia en segundo plano solicitudes de IA que no hayas pedido.</li>
+          <li>Ejecuta Claude Code y Codex con todas las herramientas que la aplicación puede desactivar desactivadas, y los cierra al cerrar la aplicación. La única excepción es la ventana del agente, que activa solo un conjunto fijo de herramientas en la carpeta de proyecto que tú eliges.</li>
+        </ul>
+      </section>
+
+      <!-- Developers -->
+      <section class="dev">
+        <div class="dev-copy">
+          <p class="eyebrow">Desarrolladores</p>
+          <h2>Los agentes de programación, con los mismos documentos.</h2>
+          <p>
+            La aplicación incluye el comando de terminal <code>ieumoffice</code>, un servidor MCP y una habilidad para
+            agentes. Si los registras en Configuración → Integraciones, Claude Code, Codex y Cursor leen y editan los mismos
+            archivos.
+          </p>
+        </div>
+        <pre class="terminal" aria-label="Ejemplo de terminal"><code><span class="t-dim">PS&gt;</span> ieumoffice docs read plan_feria_del_libro.docx
+<span class="t-dim">PS&gt;</span> ieumoffice sheet read presupuesto_feria.xlsx
+<span class="t-dim">PS&gt;</span> ieumoffice open presentacion_feria.pptx</code></pre>
+      </section>
+
+      <!-- Open source -->
+      <section class="oss" id="opensource">
+        <div class="split-head">
+          <div>
+            <p class="eyebrow">Código abierto</p>
+            <h2>Hecho sobre<br />código abierto.</h2>
+          </div>
+          <p>
+            IeumOffice también es código abierto, publicado con la licencia Apache-2.0. Pude hacerlo gracias a los proyectos
+            de abajo. Aquí solo aparecen los principales; los avisos de licencia están en el archivo
+            <a class="text-link" href="https://github.com/pblsketch/ieumoffice/blob/main/NOTICE" rel="noopener">NOTICE</a> del
+            repositorio.
+          </p>
+        </div>
+        <div class="oss-groups">
+          <div class="oss-group">
+            <h3>General</h3>
+            <ul>
+              <li><a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a><small>Punto de partida del motor de documentos y de todos los editores · Apache-2.0</small></li>
+              <li><a href="https://github.com/electron/electron" rel="noopener">Electron</a><small>Estructura de la aplicación de escritorio · MIT</small></li>
+              <li><a href="https://github.com/facebook/react" rel="noopener">React</a><small>Interfaz · MIT</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>Hangul</h3>
+            <ul>
+              <li><a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a><small>Motor que lee, escribe y dibuja documentos Hangul, y pantalla de edición · MIT</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>Word</h3>
+            <ul>
+              <li><a href="https://github.com/dolanmiu/docx" rel="noopener">docx</a><small>Creación de archivos de Word · MIT</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>Excel</h3>
+            <ul>
+              <li><a href="https://github.com/dream-num/univer" rel="noopener">Univer</a><small>Pantalla de edición de hojas · Apache-2.0</small></li>
+              <li><a href="https://github.com/ironcalc/IronCalc" rel="noopener">IronCalc</a><small>Cálculo de fórmulas · MIT, Apache-2.0</small></li>
+              <li><a href="https://github.com/tafia/calamine" rel="noopener">calamine</a><small>Lectura de archivos de Excel · MIT</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>PDF</h3>
+            <ul>
+              <li><a href="https://github.com/mozilla/pdf.js" rel="noopener">PDF.js</a><small>Visualización de PDF · Apache-2.0</small></li>
+              <li><a href="https://github.com/embedpdf/embed-pdf-viewer" rel="noopener">EmbedPDF PDFium</a><small>Dibujo y edición de PDF · MIT, BSD-3-Clause</small></li>
+              <li><a href="https://github.com/Hopding/pdf-lib" rel="noopener">pdf-lib</a><small>Creación y guardado de PDF · MIT</small></li>
+              <li><a href="https://github.com/harfbuzz/harfbuzzjs" rel="noopener">HarfBuzz</a><small>Composición del texto en los PDF traducidos · MIT</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>Markdown</h3>
+            <ul>
+              <li><a href="https://github.com/ueberdosis/tiptap" rel="noopener">Tiptap</a><small>Editor de bloques · MIT</small></li>
+              <li><a href="https://github.com/KaTeX/KaTeX" rel="noopener">KaTeX</a><small>Visualización de fórmulas · MIT</small></li>
+              <li><a href="https://github.com/mermaid-js/mermaid" rel="noopener">Mermaid</a><small>Dibujo de diagramas · MIT</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>HTML</h3>
+            <ul>
+              <li><a href="https://github.com/arnog/mathlive" rel="noopener">MathLive</a><small>Escritura de fórmulas · MIT</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>Mapas mentales</h3>
+            <ul>
+              <li><a href="https://github.com/SSShooter/mind-elixir-core" rel="noopener">Mind Elixir</a><small>Pantalla del mapa mental · MIT</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>Diagramas</h3>
+            <ul>
+              <li><a href="https://github.com/jgraph/drawio" rel="noopener">draw.io</a><small>Pantalla de edición de diagramas · Apache-2.0</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>Diapositivas</h3>
+            <ul>
+              <li><a href="https://github.com/orioncactus/pretendard" rel="noopener">Pretendard y 9 más</a><small>Fuentes de las plantillas: Pretendard, Noto Serif KR, Gowun Batang, Gowun Dodum, Do Hyeon, Black Han Sans, Archivo Black, Bebas Neue, Playfair Display, Space Grotesk · SIL OFL 1.1</small></li>
+            </ul>
+          </div>
+          <div class="oss-group">
+            <h3>Logotipo</h3>
+            <ul>
+              <li><a href="https://lucide.dev" rel="noopener">Lucide, Roboto</a><small>Forma y letras del logotipo · ISC, Apache-2.0</small></li>
+            </ul>
+          </div>
+        </div>
+        <h3 class="oss-sub">Proyectos de referencia</h3>
+        <p class="oss-note">No tomé su código; me basé en sus funciones y su diseño.</p>
+        <ul class="oss-refs">
+          <li><a href="https://github.com/oomol-lab/pdf-craft" rel="noopener">pdf-craft</a> Comparé su conjunto de funciones al crear la conversión de PDF a Markdown y EPUB.</li>
+          <li><a href="https://github.com/DoHyun468/claw-hwp" rel="noopener">claw-hwp</a> Me basé en el diseño de sus herramientas de IA para documentos Hangul.</li>
+          <li><a href="https://github.com/jkf87/hwp-mcp" rel="noopener">hwp-mcp</a> Me basé en su diseño de automatización de Hangul, por ejemplo en cómo señala las celdas de una tabla.</li>
+          <li><a href="https://github.com/zarazhangrui/frontend-slides" rel="noopener">frontend-slides</a> Rehíce el diseño de las plantillas de diapositivas a partir de este proyecto (MIT).</li>
+          <li><a href="https://k-slide.web.app" rel="noopener">k-slide</a> Me basé en sus combinaciones de fuentes coreanas para las plantillas.</li>
+        </ul>
+        <p class="star-cta">
+          <span class="star-cta-text">Si IeumOffice te resulta útil,
+          <a href="https://github.com/pblsketch/ieumoffice" rel="noopener" data-star-target>dale una estrella en GitHub<span class="star-count" data-star-count hidden></span></a>.</span>
+          <span class="star-cta-sub">Cada estrella ayuda a que la próxima persona encuentre este programa.</span>
+        </p>
+      </section>
+
+      <!-- Download -->
+      <section class="download" id="download">
+        <p class="eyebrow">Instalación</p>
+        <h2>Se instala en tres pasos.</h2>
+        <ol class="steps">
+          <li>
+            <h3>Descarga el instalador</h3>
+            <p>Descarga <code>IeumOffice-Setup.exe</code> con el botón de abajo. Es para Windows 10 y 11 de 64 bits.</p>
+          </li>
+          <li>
+            <h3>Si aparece una advertencia</h3>
+            <p>
+              Como es un programa gratuito y nuevo, Windows puede mostrar una advertencia. Si te bloquea, elige abajo la
+              pantalla que estás viendo. Te mostramos dónde hacer clic.
+            </p>
+          </li>
+          <li>
+            <h3>Conecta la IA</h3>
+            <p>En la guía de primer inicio, conecta tu suscripción de Claude o ChatGPT. Si no tienes suscripción, conecta una IA gratuita. Si te atascas, consulta la <a class="text-link" href="/es/connect">ayuda para conectar la IA</a>.</p>
+          </li>
+        </ol>
+        <div class="download-cta">
+          <svg class="download-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-lines" /></svg>
+          <div class="download-options">
+            <div class="download-option">
+              <a class="btn btn-amber btn-large" href="https://github.com/pblsketch/ieumoffice/releases" data-download data-download-main>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" /></svg>
+                <span data-download-label>Descargar para Windows</span>
+              </a>
+              <p class="download-meta" data-download-meta>Se descarga desde la página de versiones de GitHub.</p>
+            </div>
+            <div class="download-option">
+              <a class="btn btn-ghost btn-large" href="https://github.com/pblsketch/ieumoffice/releases" data-download-mac>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" /></svg>
+                <span data-download-mac-label>Descargar para Mac</span>
+              </a>
+              <p class="download-meta" data-download-mac-meta>Apple Silicon (M1 o posterior) · beta</p>
+              <p class="download-alt" data-download-mac-alt hidden>
+                <span>¿Tienes un Mac con Intel? <a href="https://github.com/pblsketch/ieumoffice/releases" data-download-mac-intel><span data-download-mac-intel-label>Descargar para Mac con Intel</span></a></span>
+                <span class="download-alt-file" data-download-mac-intel-meta>Intel · beta</span>
+              </p>
+            </div>
+            <div class="download-option">
+              <a class="btn btn-ghost btn-large" href="https://github.com/pblsketch/ieumoffice/releases" data-download-linux>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" /></svg>
+                <span data-download-linux-label>Descargar para Linux</span>
+              </a>
+              <p class="download-meta" data-download-linux-meta>64 bits (x64) · AppImage · deb · rpm · beta</p>
+            </div>
+          </div>
+          <p class="download-small">
+            La aplicación instalada busca versiones nuevas cada 4 horas. La interfaz está disponible en 21 idiomas. Si te
+            gusta, <a href="https://github.com/pblsketch/ieumoffice" rel="noopener" data-star-target>dale una estrella en GitHub</a>.
+          </p>
+          <p class="download-small">
+            Si al usarlo algo te resulta incómodo o echas algo en falta, cuéntalo en
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Enviar comentarios</a>.
+          </p>
+        </div>
+        <div class="stuck">
+          <p class="stuck-title">¿Te has atascado al instalar? <span>Elige la pantalla que estás viendo.</span></p>
+          <nav class="symptoms symptoms-compact" aria-label="Elegir la pantalla donde se atascó la instalación">
+            <a class="symptom" href="/es/install#edge">
+              <span class="symptom-pic symptom-pic-edge" aria-hidden="true">
+                <i class="sp-bar"></i><i class="sp-panel"><b></b><s></s><s></s></i>
+              </span>
+              <b>Edge no deja descargarlo</b>
+              <span>«no se descarga normalmente»</span>
+            </a>
+            <a class="symptom" href="/es/install#pc-protect">
+              <span class="symptom-pic symptom-pic-blue" aria-hidden="true">
+                <i class="sp-blue"><b></b><s></s><s></s></i>
+              </span>
+              <b>Sale una ventana azul de advertencia</b>
+              <span>«Windows protegió su PC»</span>
+            </a>
+            <a class="symptom" href="/es/install#smart-app-control">
+              <span class="symptom-pic symptom-pic-sac" aria-hidden="true">
+                <i class="sp-sac"><b></b><s></s><s></s><u></u></i>
+              </span>
+              <b>Lo bloqueó Control inteligente de aplicaciones</b>
+              <span>«una aplicación que puede no ser segura»</span>
+            </a>
+            <a class="symptom" href="/es/install#find-file">
+              <span class="symptom-pic symptom-pic-folder" aria-hidden="true">
+                <i class="sp-folder"></i>
+              </span>
+              <b>No encuentro el archivo descargado</b>
+              <span>Abrir la carpeta Descargas</span>
+            </a>
+            <a class="symptom" href="/es/install#installer">
+              <span class="symptom-pic symptom-pic-setup" aria-hidden="true">
+                <i class="sp-setup"><b></b><s></s><u></u></i>
+              </span>
+              <b>¿Qué pulso en el instalador?</b>
+              <span>Siguiente → Instalar → Terminar</span>
+            </a>
+          </nav>
+          <p class="stuck-more">
+            Si usas Mac o Linux: <a class="text-link" href="/es/install#mac">la primera vez que lo abres en Mac</a> ·
+            <a class="text-link" href="/es/install#linux">instalar en Linux</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="nav-mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#ieum-mark" /></svg>
+        <div>
+          <p class="maker">Creado por <b>박준일</b> (profesor de lengua coreana en el instituto femenino Onyang) · <a href="/es/story">Por qué lo hice</a></p>
+          <p>
+            IeumOffice es una versión modificada del proyecto de código abierto
+            <a href="https://github.com/genspark-ai/genoffice" rel="noopener">GenOffice</a> (Apache-2.0), y su editor de Hangul
+            se basa en <a href="https://github.com/edwardkim/rhwp" rel="noopener">rhwp</a> (MIT). Las fuentes de este sitio son
+            Wanted Sans y Gowun Batang (SIL OFL 1.1).
+          </p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces externos">
+        <a href="https://github.com/pblsketch/ieumoffice" rel="noopener">GitHub</a>
+        <a href="https://github.com/pblsketch/ieumoffice/releases" rel="noopener">Versiones</a>
+        <a href="https://github.com/pblsketch/ieumoffice/issues" rel="noopener">Informar de un problema</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_dlKfi_ZkcjBJFTH3S2nldTIoW0cMI9d_yDaEe6DwKY47A/viewform" rel="noopener">Enviar comentarios</a>
+        <a href="/es/install">Ayuda de instalación</a>
+        <a href="/es/connect">Ayuda para conectar la IA</a>
+        <a href="/es/faq">Preguntas frecuentes</a>
+        <a href="#opensource">Código abierto</a>
+        <a href="/es/privacy.html">Privacidad</a>
+        <a href="https://github.com/pblsketch/ieumoffice/blob/main/LICENSE" rel="noopener">Licencia</a>
+      </nav>
+      <div class="footer-legal">
+        <p>
+          Gratis para todos. Se ofrece tal cual, sin garantías.
+          <a href="/es/legal.html">Aviso legal</a> (licencias y marcas) · Contacto:
+          <a href="mailto:pblsketch@gmail.com">pblsketch@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="m-upper"><rect width="1024" height="512" /></clipPath>
+        <clipPath id="m-lower"><rect y="512" width="1024" height="512" /></clipPath>
+        <mask id="m-under-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <circle cx="399" cy="512" r="192" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-upper)" />
+        </mask>
+        <mask id="m-under-square" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+          <rect width="1024" height="1024" fill="#fff" />
+          <rect x="453" y="330" width="364" height="364" rx="96" fill="none" stroke="#000" stroke-width="160" clip-path="url(#m-lower)" />
+        </mask>
+        <symbol id="ieum-lines" viewBox="0 0 1024 1024">
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#6E63F0" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+        <symbol id="ieum-mark" viewBox="0 0 1024 1024">
+          <rect width="1024" height="1024" rx="230" fill="#4338CA" />
+          <g fill="none" stroke-width="112">
+            <rect x="453" y="330" width="364" height="364" rx="96" stroke="#FFB020" mask="url(#m-under-ring)" />
+            <circle cx="399" cy="512" r="192" stroke="#FFFFFF" mask="url(#m-under-square)" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

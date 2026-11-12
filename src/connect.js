@@ -5,6 +5,7 @@
 import './font.css'
 import './style.css'
 import './ask.js'
+import './lang-switch.js'
 import './install.css'
 import './connect.css'
 import { openDetailsFromHash, setupPlayers } from './player.js'
