@@ -62,6 +62,56 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "새 버전을 낸 뒤"). -->
 
+      <article class="release" id="v0.13.0">
+        <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">2026년 11월 17일</time></p>
+        <div class="split-head">
+          <h2>인쇄 쪽 배치,<br />워드 문서를 한글로</h2>
+          <p>
+            인쇄할 때 한 장에 여러 페이지를 모으거나 소책자, 포스터, 라벨 형태로 찍을 수 있습니다. 워드와 마크다운
+            문서는 한글 문서(.hwp, .hwpx)로 내보내고, 엑셀은 ODS 파일을 열고 저장합니다. 옛 워드·파워포인트
+            파일(.doc, .ppt)도 바로 열립니다.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/print-layout-0130-1600.webp" srcset="/shots/print-layout-0130-1600.webp 1600w, /shots/print-layout-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="PDF 편집기의 인쇄 창. '쪽 배치'에서 '한 장에 여러 쪽'을 고르고 한 장에 놓을 쪽 수를 4로 정했습니다. 아래 미리보기에는 1쪽과 2쪽이 한 장의 위쪽에 나란히 놓였고, 그 밑에 '결과 미리 보기'와 '배치한 결과를 PDF로 저장' 버튼이 있습니다." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>인쇄 쪽 배치</b> 워드·엑셀·파워포인트·PDF·한글·마크다운·HTML·마인드맵·다이어그램의 인쇄 창에 "쪽 배치" 항목이 생겼습니다. 한 장에 2·4·6·9·16페이지를 모아 찍거나 소책자, 포스터, 라벨 형태로 인쇄하고, 홀수·짝수 면만 찍거나 역순, 회색조로도 인쇄합니다. 배치한 결과는 미리 보거나 PDF로 저장할 수 있습니다. 워드와 마크다운은 고른 부분만, 파워포인트는 고른 슬라이드만 인쇄할 수도 있습니다.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/editor-choice-0130-1600.webp" srcset="/shots/editor-choice-0130-1600.webp 1600w, /shots/editor-choice-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="설정의 '편집기와 AI' 화면. 워드, 엑셀, 파워포인트, PDF, PDF 도구, 마크다운·텍스트, HTML, 마인드맵, 다이어그램, 한글, 전자책(EPUB)마다 켜고 끄는 스위치가 있고, 아래에 'AI 기능' 스위치가 있습니다. 모두 켜져 있습니다." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>쓸 편집기와 AI 고르기</b> 설정 → "편집기와 AI"에서 쓰지 않는 편집기와 AI를 끌 수 있습니다. 끈 편집기는 새 문서 카드와 메뉴에서 빠지고, 그 형식의 파일을 열면 다시 켤지 묻습니다. AI를 끄면 화면에서 AI 관련 부분이 빠지고, 로그인 정보와 키는 그대로 둡니다. 이미 쓰던 분께는 업데이트 후 홈 화면에서 한 번 묻습니다.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>워드·마크다운 문서를 한글로</dt>
+            <dd>워드와 마크다운 편집기의 파일 메뉴에서 "한글 문서로 내보내기…"를 고르거나, "다른 이름으로 저장"에서 HWP·HWPX를 고릅니다. 표 안의 표도 한글 표로 옮기고, 옮기지 못하는 요소가 있으면 저장 전에 알려 줍니다.</dd>
+          </div>
+          <div>
+            <dt>ODS 파일과 옛 .doc·.ppt 파일</dt>
+            <dd>엑셀 편집기에서 ODS 파일을 열고, "ODS로 내보내기…"로 ODS 파일도 만듭니다. 옛 워드 파일(.doc)과 파워포인트 파일(.ppt)은 .docx·.pptx로 변환한 사본을 새 탭에 열고, 원본은 그대로 둡니다.</dd>
+          </div>
+          <div>
+            <dt>한글 그림·도형과 표 안의 표</dt>
+            <dd>그림과 도형을 한컴 한글처럼 다룹니다. Shift를 누른 채 그림 모서리를 드래그하면 그림이 잘리고, Ctrl을 누른 채 옮기면 복사됩니다. 셀이나 글상자 안에 있는 표도 일반 표처럼 행·열을 넣고 빼고 셀을 병합할 수 있습니다.</dd>
+          </div>
+          <div>
+            <dt>AI가 고친 곳 한눈에 보기</dt>
+            <dd>AI가 문서를 고치면 어느 편집기에서든 같은 카드("문서 N곳을 고쳤습니다")와 노란색 표시로 알려 줍니다. 카드에서 표시를 지우거나 그 작업을 되돌릴 수 있고, 노란색 표시는 저장·인쇄 결과에 들어가지 않습니다.</dd>
+          </div>
+          <div>
+            <dt>PDF 페이지 복사·붙여넣기</dt>
+            <dd>PDF 편집기 왼쪽 미리보기에서 Ctrl+C·Ctrl+X·Ctrl+V로 페이지를 복사하고 잘라내고 붙여 넣습니다. 다른 PDF 탭에도 붙일 수 있습니다.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          한글 문서가 화면과 인쇄·PDF에서 서로 다른 글꼴로 나와 줄바꿈이 달라지던 것, 큰 엑셀 파일을 연 직후 멈춘 것처럼
+          보이던 것, 엑셀 병합 셀의 오른쪽·아래 테두리가 인쇄에서 빠지던 것, 바탕 화면의 PDF를 저장하지 못하던 것도
+          고쳤습니다. 화면 언어에 튀르키예어가 더해져 22개가 됐습니다.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.0" rel="noopener">0.13.0에서 고친 것까지 전부 보기</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.12.12">
         <p class="release-meta"><b>0.12.12</b><time datetime="2026-11-09">2026년 11월 9일</time></p>
         <div class="split-head">

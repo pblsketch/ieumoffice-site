@@ -61,6 +61,54 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "after releasing a new version"). -->
 
+      <article class="release" id="v0.13.0">
+        <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">2026年11月17日</time></p>
+        <div class="split-head">
+          <h2>印刷のページ配置、<br />Word 文書をハングルに</h2>
+          <p>
+            印刷するとき、1枚に複数のページをまとめたり、小冊子、ポスター、ラベルの形で印刷したりできます。Word と Markdown の文書はハングル文書（.hwp、.hwpx）に書き出せ、Excel は
+            ODS ファイルを開いて保存します。古い Word・PowerPoint ファイル（.doc、.ppt）もそのまま開けます。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/print-layout-0130-1600.webp" srcset="/shots/print-layout-0130-1600.webp 1600w, /shots/print-layout-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="PDF エディターの印刷画面。「ページ配置」で「1枚に複数ページ」を選び、1枚に置くページ数を 4 にしています。下のプレビューでは 1 ページ目と 2 ページ目が 1 枚の上側に並び、その下に「結果をプレビュー」と「配置した結果をPDFで保存」ボタンがあります。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>印刷のページ配置</b> Word・Excel・PowerPoint・PDF・ハングル・Markdown・HTML・マインドマップ・ダイアグラムの印刷画面に「ページ配置」の項目ができました。1枚に 2・4・6・9・16 ページをまとめて印刷したり、小冊子、ポスター、ラベルの形で印刷したりでき、奇数ページ・偶数ページだけ、逆順、グレースケールでも印刷できます。配置した結果はプレビューしたり PDF に保存したりできます。Word と Markdown は選んだ部分だけ、PowerPoint は選んだスライドだけを印刷することもできます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/editor-choice-0130-1600.webp" srcset="/shots/editor-choice-0130-1600.webp 1600w, /shots/editor-choice-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="設定の「エディターと AI」画面。Word、Excel、PowerPoint、PDF、PDF ツール、Markdown・テキスト、HTML、マインドマップ、ダイアグラム、HWP（ハングル）、電子書籍（EPUB）ごとにオン・オフのスイッチがあり、その下に「AI 機能」のスイッチがあります。すべてオンになっています。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>使うエディターと AI を選ぶ</b> 「設定 → エディターと AI」で、使わないエディターと AI をオフにできます。オフにしたエディターは新しい文書のカードとメニューから外れ、その形式のファイルを開くと再びオンにするか確認します。AI をオフにすると画面から AI 関連の部分が外れ、ログイン情報とキーはそのまま残ります。すでに使っている方には、アップデート後にホーム画面で一度確認します。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Word・Markdown 文書をハングルに</dt>
+            <dd>Word と Markdown エディターのファイルメニューで「HWP 文書としてエクスポート…」を選ぶか、「名前を付けて保存」で HWP・HWPX を選びます。表の中の表もハングルの表として移し、移せない要素があれば保存する前にお知らせします。</dd>
+          </div>
+          <div>
+            <dt>ODS ファイルと古い .doc・.ppt ファイル</dt>
+            <dd>Excel エディターで ODS ファイルを開き、「ODS としてエクスポート…」で ODS ファイルも作ります。古い Word ファイル（.doc）と PowerPoint ファイル（.ppt）は .docx・.pptx に変換したコピーを新しいタブで開き、元のファイルはそのまま残します。</dd>
+          </div>
+          <div>
+            <dt>ハングルの画像・図形と表の中の表</dt>
+            <dd>画像と図形を Hancom Hangul と同じように扱えます。Shift を押しながら画像の角をドラッグすると画像がトリミングされ、Ctrl を押しながら動かすとコピーされます。セルやテキストボックスの中にある表も、普通の表と同じように行・列を挿入・削除し、セルを結合できます。</dd>
+          </div>
+          <div>
+            <dt>AI が直したところをひと目で確認</dt>
+            <dd>AI が文書を直すと、どのエディターでも同じカード（「文書を N か所変更しました」）と黄色の表示でお知らせします。カードから表示を消したり、その作業を元に戻したりできます。黄色の表示は保存・印刷の結果には入りません。</dd>
+          </div>
+          <div>
+            <dt>PDF ページのコピー・貼り付け</dt>
+            <dd>PDF エディターの左のプレビューで、Ctrl+C・Ctrl+X・Ctrl+V を使ってページをコピー、切り取り、貼り付けします。別の PDF タブにも貼り付けられます。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          ハングル文書が画面と印刷・PDF で違うフォントになり改行の位置が変わっていた問題、大きな Excel ファイルを開いた直後に固まったように見えていた問題、Excel の結合セルの右と下の罫線が印刷で抜けていた問題、デスクトップにある
+          PDF を保存できなかった問題も修正しました。画面の言語にトルコ語が加わり、22 言語になりました。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.0" rel="noopener">0.13.0 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.12.12">
         <p class="release-meta"><b>0.12.12</b><time datetime="2026-11-09">2026年11月9日</time></p>
         <div class="split-head">

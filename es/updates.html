@@ -63,6 +63,59 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "새 버전을 낸 뒤"). -->
 
+      <article class="release" id="v0.13.0">
+        <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">17 de noviembre de 2026</time></p>
+        <div class="split-head">
+          <h2>Disposición de páginas al imprimir,<br />y de Word a documento Hangul</h2>
+          <p>
+            Al imprimir puedes reunir varias páginas en una hoja o imprimir en forma de folleto, póster o etiquetas.
+            Los documentos de Word y Markdown se pueden exportar como documentos Hangul (.hwp, .hwpx), y el editor de
+            Excel abre y guarda archivos ODS. Los archivos antiguos de Word y PowerPoint (.doc, .ppt) también se abren
+            directamente.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/print-layout-0130-1600.webp" srcset="/shots/print-layout-0130-1600.webp 1600w, /shots/print-layout-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Ventana de impresión del editor de PDF. En «Disposición de páginas» está elegido «Varias páginas por hoja», con 4 páginas por hoja. En la vista previa de abajo, las páginas 1 y 2 aparecen una junto a otra en la parte superior de una hoja, y debajo están los botones «Vista previa del resultado» y «Guardar el resultado dispuesto como PDF»." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Disposición de páginas al imprimir</b> La ventana de impresión de los editores de Word, Excel, PowerPoint, PDF, Hangul, Markdown, HTML, mapas mentales y diagramas tiene ahora el apartado «Disposición de páginas». Puedes reunir 2, 4, 6, 9 o 16 páginas en una hoja o imprimir en forma de folleto, póster o etiquetas, y también imprimir solo las páginas impares o pares, en orden inverso o en escala de grises. El resultado dispuesto se puede ver antes de imprimir o guardar como PDF. En Word y Markdown también puedes imprimir solo la parte seleccionada, y en PowerPoint solo las diapositivas seleccionadas.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/editor-choice-0130-1600.webp" srcset="/shots/editor-choice-0130-1600.webp 1600w, /shots/editor-choice-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Pantalla «Editores e IA» de Configuración. Word, Excel, PowerPoint, PDF, Herramientas PDF, Markdown y texto, HTML, Mapa mental, Diagrama, HWP (Hangul) y Libro electrónico (EPUB) tienen cada uno un interruptor para activarlos o desactivarlos, y debajo está el interruptor «Funciones de IA». Todos están activados." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Elegir qué editores e IA usar</b> En Configuración → «Editores e IA» puedes desactivar los editores y la IA que no uses. Un editor desactivado desaparece de las tarjetas de documento nuevo y de los menús, y al abrir un archivo de ese formato se pregunta si quieres volver a activarlo. Al desactivar la IA, las partes relacionadas con la IA desaparecen de la pantalla, y los datos de inicio de sesión y las claves se conservan. A quienes ya usaban IeumOffice se les pregunta una vez en la pantalla de inicio después de actualizar.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>De Word y Markdown a documento Hangul</dt>
+            <dd>En el menú Archivo de los editores de Word y Markdown, elige «Exportar como documento HWP…» o elige HWP o HWPX en «Guardar como». Las tablas dentro de tablas también pasan a ser tablas de Hangul y, si hay elementos que no se pueden pasar, se avisa antes de guardar.</dd>
+          </div>
+          <div>
+            <dt>Archivos ODS y archivos antiguos .doc y .ppt</dt>
+            <dd>El editor de Excel abre archivos ODS y, con «Exportar como ODS…», también crea archivos ODS. Los archivos antiguos de Word (.doc) y de PowerPoint (.ppt) se abren en una pestaña nueva como una copia convertida a .docx o .pptx, y el original no cambia.</dd>
+          </div>
+          <div>
+            <dt>Imágenes, formas y tablas dentro de tablas en Hangul</dt>
+            <dd>Las imágenes y las formas se manejan como en Hancom Hangul. Si arrastras una esquina de una imagen con Shift pulsado, la imagen se recorta, y si la mueves con Ctrl pulsado, se copia. En las tablas que están dentro de una celda o de un cuadro de texto también puedes insertar y eliminar filas y columnas y combinar celdas, como en cualquier otra tabla.</dd>
+          </div>
+          <div>
+            <dt>Ver de un vistazo lo que cambió la IA</dt>
+            <dd>Cuando la IA modifica un documento, cualquier editor lo indica con la misma tarjeta («Cambios hechos en el documento: N») y con marcas amarillas. Desde la tarjeta puedes quitar las marcas o deshacer ese cambio. Las marcas amarillas no aparecen en lo que se guarda ni en lo que se imprime.</dd>
+          </div>
+          <div>
+            <dt>Copiar y pegar páginas de PDF</dt>
+            <dd>En las miniaturas de la izquierda del editor de PDF, usa Ctrl+C, Ctrl+X y Ctrl+V para copiar, cortar y pegar páginas. También puedes pegarlas en otra pestaña de PDF.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          También se corrigieron estos problemas: los documentos Hangul usaban fuentes distintas en pantalla y al
+          imprimir o en PDF, y por eso los saltos de línea cambiaban; los archivos grandes de Excel parecían bloqueados
+          justo después de abrirlos; los bordes derecho e inferior de las celdas combinadas de Excel faltaban al
+          imprimir; y no se podían guardar los PDF del escritorio. Se añadió el turco como idioma de la interfaz, con lo
+          que ya son 22.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.0" rel="noopener">Ver todo lo que cambió en 0.13.0, también lo corregido</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.12.12">
         <p class="release-meta"><b>0.12.12</b><time datetime="2026-11-09">9 de noviembre de 2026</time></p>
         <div class="split-head">

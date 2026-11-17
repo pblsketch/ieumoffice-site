@@ -742,6 +742,48 @@ async function mindmapMmShot(app, shell, scratch) {
   console.log('wrote mindmap-mm-01212')
 }
 
+/** 0.13.0: the PDF print dialog with 쪽 배치 set to four pages on a sheet. Nothing is printed. */
+async function printLayoutShot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'pdf')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const page = app.windows().find((p) => p.url().includes('://pdf/'))
+  if (!page) return
+  const collapse = page.locator('.ai-panel-collapse')
+  if (await collapse.isVisible().catch(() => false)) await collapse.click()
+  await sleep(1000)
+  await page.locator('.pdf-thumb .pdf-thumb-box').first().click()
+  await page.keyboard.press('Control+p')
+  const dialog = page.locator('.pdf-print-dialog')
+  await dialog.waitFor({ state: 'visible', timeout: 30_000 })
+  const panel = dialog.locator('.gs-pl')
+  await panel.locator('input[data-pl="mode"][value="nup"]').check()
+  await panel.locator('select[data-pl="nup-count"]').selectOption(process.env.NUP ?? '4')
+  await sleep(2500)
+  // the arranged sheet sits under the options: bring it into the dialog's view
+  await panel.locator('[data-pl="system-note"]').scrollIntoViewIfNeeded().catch(() => {})
+  await dialog.evaluate((el) => { el.scrollTop = el.scrollHeight }).catch(() => {})
+  await sleep(1200)
+  await shot(app, 'print-layout-0130')
+  console.log('wrote print-layout-0130')
+  await page.keyboard.press('Escape').catch(() => {})
+  await sleep(800)
+}
+
+/** 0.13.0: Settings → 편집기와 AI, every editor still on. Nothing is changed. */
+async function editorChoiceShot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1200)
+  await shell.locator('.account-btn').first().click()
+  await shell.locator('.set-nav-item', { hasText: '편집기와 AI' }).first().click()
+  await sleep(1500)
+  await shot(app, 'editor-choice-0130', [216, 60, 1008, 602])
+  console.log('wrote editor-choice-0130')
+  await shell.keyboard.press('Escape').catch(() => {})
+  await sleep(600)
+}
+
 const want = (name) => !ONLY.length || ONLY.includes(name)
 
 async function main() {
@@ -765,6 +807,14 @@ async function main() {
       console.log('windows:', app.windows().map((p) => p.url()))
       const grab = await grabLayers(app)
       console.log('layers:', grab.layers.map(({ png, ...b }) => b))
+    }
+
+    // 0.13.0 asks once which editors to keep; the scratch profile may count as an
+    // existing user, so close it (keeps every editor on) before anything else
+    const pick = shell.locator('.ec-pick-close')
+    if (await pick.isVisible().catch(() => false)) {
+      await pick.click()
+      await sleep(800)
     }
 
     // Home with the sample folder open
@@ -844,6 +894,8 @@ async function main() {
     if (want('hwp-from-pdf-01212') || want('hwp-from-pdf-menu-01212') || want('hwp-from-pdf-done-01212'))
       await hwpFromPdfShot(app, shell, opened)
     if (want('mindmap-mm-01212')) await mindmapMmShot(app, shell, scratch)
+    if (want('print-layout-0130')) await printLayoutShot(app, shell, opened)
+    if (want('editor-choice-0130')) await editorChoiceShot(app, shell)
   } finally {
     // an imported document is unsaved and may ask before the app closes: do not wait on it
     if (app) {

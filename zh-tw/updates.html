@@ -61,6 +61,52 @@
 
       <!-- Newest first. Each release adds one <article> at the top (see the site README, "after releasing a new version"). -->
 
+      <article class="release" id="v0.13.0">
+        <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">2026 年 11 月 17 日</time></p>
+        <div class="split-head">
+          <h2>列印頁面編排，<br />把 Word 文件匯出成 Hangul</h2>
+          <p>
+            列印時可以把多頁集中印在一張紙上，或印成小冊子、海報、標籤的形式。Word 與 Markdown 文件可以匯出成 Hangul 文件（.hwp、.hwpx），Excel 可以開啟並儲存 ODS 檔案。舊的 Word・PowerPoint 檔案（.doc、.ppt）也能直接開啟。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/print-layout-0130-1600.webp" srcset="/shots/print-layout-0130-1600.webp 1600w, /shots/print-layout-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="PDF 編輯器的列印視窗。在「頁面編排」中選擇「每張多頁」，並把每張紙要放的頁數設為 4。下方預覽中，第 1 頁和第 2 頁並排在一張紙的上半部，其下有「預覽結果」與「將編排結果儲存為 PDF」按鈕。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>列印頁面編排</b> Word・Excel・PowerPoint・PDF・Hangul・Markdown・HTML・心智圖・圖表的列印視窗多了「頁面編排」項目。可以在一張紙上集中印 2・4・6・9・16 頁，或印成小冊子、海報、標籤的形式，也能只印奇數頁或偶數頁、反向列印、以灰階列印。編排好的結果可以先預覽，也能儲存為 PDF。Word 與 Markdown 也可以只印選取的部分，PowerPoint 可以只印選取的投影片。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/editor-choice-0130-1600.webp" srcset="/shots/editor-choice-0130-1600.webp 1600w, /shots/editor-choice-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="設定中的「編輯器與 AI」畫面。Word、Excel、PowerPoint、PDF、PDF 工具、Markdown 與文字、HTML、心智圖、圖表、HWP、電子書（EPUB）各有一個開關，下方有「AI 功能」開關。全部都是開啟的。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>選擇要用的編輯器與 AI</b> 在「設定 → 編輯器與 AI」中，可以關閉不用的編輯器與 AI。關閉的編輯器會從新文件卡片與選單中移除，開啟該格式的檔案時會詢問是否重新開啟。關閉 AI 後，畫面上與 AI 相關的部分會移除，登入資訊與金鑰維持原樣。原本就在使用的人，更新後會在首頁詢問一次。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>把 Word・Markdown 文件匯出成 Hangul</dt>
+            <dd>在 Word 與 Markdown 編輯器的檔案選單中選「匯出為 HWP 文件…」，或在「另存新檔」中選 HWP・HWPX。表格中的表格也會轉成 Hangul 表格；有無法轉過去的元素時，會在儲存前告訴你。</dd>
+          </div>
+          <div>
+            <dt>ODS 檔案與舊的 .doc・.ppt 檔案</dt>
+            <dd>在 Excel 編輯器中開啟 ODS 檔案，也能用「匯出為 ODS…」建立 ODS 檔案。舊的 Word 檔案（.doc）與 PowerPoint 檔案（.ppt）會轉換成 .docx・.pptx 副本，在新分頁中開啟，原始檔案保持不變。</dd>
+          </div>
+          <div>
+            <dt>Hangul 圖片・圖形與表格中的表格</dt>
+            <dd>圖片與圖形的操作方式和 Hancom Hangul 一樣。按住 Shift 拖曳圖片角落會裁切圖片，按住 Ctrl 移動則會複製。儲存格或文字方塊中的表格，也能像一般表格一樣插入、刪除列與欄，並合併儲存格。</dd>
+          </div>
+          <div>
+            <dt>一眼看出 AI 修改的地方</dt>
+            <dd>AI 修改文件後，不論在哪個編輯器，都會用同樣的卡片（「已修改文件 N 處」）和黃色標示告訴你。可以從卡片清除標示，或復原那次修改。黃色標示不會出現在儲存與列印的結果中。</dd>
+          </div>
+          <div>
+            <dt>複製・貼上 PDF 頁面</dt>
+            <dd>在 PDF 編輯器左側的預覽中，用 Ctrl+C・Ctrl+X・Ctrl+V 複製、剪下、貼上頁面。也能貼到其他 PDF 分頁。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          另外也修正了：Hangul 文件在畫面上與列印・PDF 中使用不同字型，導致換行位置不同；開啟大型 Excel 檔案後，有一段時間看起來像當掉；Excel 合併儲存格的右側與下方框線在列印時消失；無法儲存桌面上的 PDF。介面語言新增土耳其語，共 22 種。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.0" rel="noopener">查看 0.13.0 的完整修正內容</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.12.12">
         <p class="release-meta"><b>0.12.12</b><time datetime="2026-11-09">2026 年 11 月 9 日</time></p>
         <div class="split-head">

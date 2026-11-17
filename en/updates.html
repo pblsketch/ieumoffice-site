@@ -62,6 +62,57 @@
 
       <!-- Newest first. Each release adds one <article> at the top (see the README section on what to do after a release). -->
 
+      <article class="release" id="v0.13.0">
+        <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">November 17, 2026</time></p>
+        <div class="split-head">
+          <h2>Print page layouts,<br />and Word documents to Hangul</h2>
+          <p>
+            When you print, you can put several pages on one sheet or print them as a booklet, poster or labels.
+            Word and Markdown documents can be exported as Hangul documents (.hwp, .hwpx), and the Excel editor
+            opens and saves ODS files. Old Word and PowerPoint files (.doc, .ppt) also open directly.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/print-layout-0130-1600.webp" srcset="/shots/print-layout-0130-1600.webp 1600w, /shots/print-layout-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The print window in the PDF editor. Under &quot;Page layout&quot;, &quot;Several pages per sheet&quot; is chosen and the number of pages per sheet is set to 4. In the preview below, pages 1 and 2 sit side by side at the top of one sheet, and under it are the &quot;Preview the result&quot; and &quot;Save the arranged result as PDF&quot; buttons." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Page layout for printing</b> The print window in the Word, Excel, PowerPoint, PDF, Hangul, Markdown, HTML, mind map and diagram editors now has a "Page layout" section. Print 2, 4, 6, 9 or 16 pages on one sheet, or print as a booklet, poster or labels. You can also print only odd or even pages, print in reverse order, or print in grayscale. You can preview the arranged result or save it as a PDF. In Word and Markdown you can also print only the part you selected, and in PowerPoint only the slides you selected.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/editor-choice-0130-1600.webp" srcset="/shots/editor-choice-0130-1600.webp 1600w, /shots/editor-choice-0130-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The &quot;Editors and AI&quot; page in Settings. Word, Excel, PowerPoint, PDF, PDF tools, Markdown and text, HTML, Mind map, Diagram, HWP (Hangul) and E-book (EPUB) each have an on/off switch, and below them is an &quot;AI features&quot; switch. All of them are on." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Choosing editors and AI</b> In Settings → "Editors and AI" you can turn off the editors and the AI you don't use. A turned-off editor is removed from the new document cards and the menus, and when you open a file in its format you are asked whether to turn it back on. Turning off AI removes the AI parts from the screen, and your sign-ins and keys stay as they are. If you were already using IeumOffice, you are asked once on the home screen after the update.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Word and Markdown documents to Hangul</dt>
+            <dd>In the File menu of the Word or Markdown editor, choose "Export as HWP Document…", or choose HWP or HWPX in "Save As". Tables inside tables also become Hangul tables, and if something can't be carried over, you are told before saving.</dd>
+          </div>
+          <div>
+            <dt>ODS files and old .doc and .ppt files</dt>
+            <dd>The Excel editor opens ODS files, and "Export as ODS…" makes ODS files too. Old Word files (.doc) and PowerPoint files (.ppt) open in a new tab as a copy converted to .docx or .pptx, and the original stays as it is.</dd>
+          </div>
+          <div>
+            <dt>Hangul pictures, shapes and tables in tables</dt>
+            <dd>Pictures and shapes work the way they do in Hancom Hangul. Hold Shift and drag a corner of a picture to crop it, and hold Ctrl while moving it to make a copy. Tables inside a cell or text box can have rows and columns inserted and deleted and cells merged, the same as any other table.</dd>
+          </div>
+          <div>
+            <dt>Seeing what the AI changed</dt>
+            <dd>When the AI edits a document, every editor shows the same card ("Changes made to the document: N") and marks the changes in yellow. From the card you can clear the marks or undo that change. The yellow marks are not included when you save or print.</dd>
+          </div>
+          <div>
+            <dt>Copying and pasting PDF pages</dt>
+            <dd>In the thumbnails on the left of the PDF editor, use Ctrl+C, Ctrl+X and Ctrl+V to copy, cut and paste pages. You can paste them into another PDF tab too.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Also fixed: Hangul documents used different fonts on screen and in print or PDF, so lines broke in different
+          places; large Excel files looked frozen right after opening; the right and bottom borders of merged Excel
+          cells were missing in print; and PDFs on the desktop could not be saved. Turkish has been added as a display
+          language, bringing the total to 22.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.0" rel="noopener">See everything in 0.13.0, including fixes</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.12.12">
         <p class="release-meta"><b>0.12.12</b><time datetime="2026-11-09">November 9, 2026</time></p>
         <div class="split-head">
