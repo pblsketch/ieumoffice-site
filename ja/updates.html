@@ -61,6 +61,36 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "after releasing a new version"). -->
 
+      <article class="release" id="v0.13.2">
+        <p class="release-meta"><b>0.13.2</b><time datetime="2026-11-22">2026年11月22日</time></p>
+        <div class="split-head">
+          <h2>起動の高速化、<br />ホワイトボードの改善</h2>
+          <p>
+            アプリを起動してからホーム画面が表示されるまでの待ち時間を短くしました。ホワイトボードの付箋メモ・接続線・テキストの見た目と操作を整え、AI アシスタントパネルも他のエディターと同じデザインにそろえました。
+          </p>
+        </div>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>アプリ起動速度の改善</dt>
+            <dd>起動時にすぐ使わない変換機能やダイアログ、状態確認を後回しにし、コンパイルキャッシュを有効にしました。ホーム画面がこれまでより早く開き、文書ファイルを直接開くときもホーム画面の準備を後回しにします。</dd>
+          </div>
+          <div>
+            <dt>ホワイトボードの付箋・接続線・テキスト</dt>
+            <dd>付箋メモは 8 色のパステルカラーと紙の影を備え、置いた直後からすぐ入力できます。接続線は直線・曲線・角丸の折れ線、4 種類の矢印先端、中央ラベル、図形の 4 辺にあるクイック接続点に対応しました。テキストは日本語・韓国語・英語の大きさに合わせて自動調整され、背景カードのオン・オフも選べます。</dd>
+          </div>
+          <div>
+            <dt>ホワイトボード AI パネルの統一</dt>
+            <dd>ホワイトボードの AI アシスタントパネルを他のエディターと同じ見た目と動作にそろえました。パネル幅の変更、左右の配置切り替え、進行状況の表示、回答のコピー、変更カードと元に戻す、ファイルのドラッグ添付、ダークテーマが同じように使えます。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          ホワイトボードのタブを開いたまま操作していないときも、自動保存の状態確認が繰り返されて CPU 使用率が高くなっていた問題を修正しました。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.2" rel="noopener">0.13.2 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.1">
         <p class="release-meta"><b>0.13.1</b><time datetime="2026-11-22">2026年11月22日</time></p>
         <div class="split-head">
