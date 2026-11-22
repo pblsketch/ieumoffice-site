@@ -42,6 +42,7 @@ const FORMATS_KO = [
   { id: 'mindmap', label: '마인드맵', file: 'mindmap', color: '#b04e83', title: '마인드맵 .xmind', text: 'XMind 파일을 열고 고쳐 같은 파일로 저장합니다. 토픽 글자와 가지 선의 모양·색을 바꾸고, 그림(PNG·SVG), PDF, 마크다운 개요로 내보냅니다. FreeMind·Freeplane 파일(.mm)은 새 지도로 가져옵니다.', alt: '마인드맵 편집기에서 아이디어 지도를 연 화면' },
   { id: 'epub', label: 'EPUB', file: 'epub', color: '#2f6f5e', title: 'EPUB 전자책', text: 'EPUB 책을 열어 읽고 본문을 고쳐 저장합니다. 다른 언어로 번역해 번역본 파일로 저장합니다.', alt: 'EPUB 편집기에서 가을 북페어 안내책을 연 화면' },
   { id: 'diagram', shot: 'diagram-01211', label: '다이어그램', file: 'diagram', color: '#7a8b2c', title: '다이어그램 .drawio', text: 'draw.io 파일을 열어 순서도나 구성도를 고치고 연 형식 그대로 저장합니다. Visio 파일(.vsdx)은 새 다이어그램으로 가져옵니다.', alt: '다이어그램 편집기에서 북페어 참가 신청 처리 순서도를 연 화면' },
+  { id: 'whiteboard', shot: 'whiteboard-0131', label: '화이트보드', file: 'whiteboard', color: '#2b8a9e', title: '화이트보드 .whiteboard', text: '스티커 메모, 도형, 연결선, 손글씨, 표, 스티커를 종이 질감 보드 위에 놓고 정리합니다. PDF를 페이지 배경으로 깔고 그 위에 표시하거나 Excalidraw 파일을 가져오며, 그림(PNG·SVG)과 PDF로 내보냅니다.', alt: '화이트보드 편집기에서 2026 가을 골목 북페어 운영 기획 보드를 연 화면' },
 ]
 
 // other languages swap in their words (src/formats-copy.js); ids, icons and captures stay

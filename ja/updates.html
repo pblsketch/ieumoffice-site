@@ -61,6 +61,52 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "after releasing a new version"). -->
 
+      <article class="release" id="v0.13.1">
+        <p class="release-meta"><b>0.13.1</b><time datetime="2026-11-22">2026年11月22日</time></p>
+        <div class="split-head">
+          <h2>ホワイトボードエディター、<br />連携サービスと Obsidian</h2>
+          <p>
+            紙の質感のホワイトボードエディターが新たに加わりました。付箋メモ、図形、接続線、手書き、表、ステッカーを自由に並べ、PDF の上に直接書き込んだり、画像（PNG・SVG）や PDF に書き出して印刷したりできます。設定の「連携」では、Google ドライブ・Notion・Canva・Obsidian 保管庫をまとめて接続できます。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/whiteboard-0131-1600.webp" srcset="/shots/whiteboard-0131-1600.webp 1600w, /shots/whiteboard-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ホワイトボードエディターで「秋の路地ブックフェア企画ボード」を開いた画面。左側に 2 ページのサムネイルが並び、紙の質感のボード上に動線フロー図、パステルカラーの付箋メモ 6 枚、手書きの下線、蛍光ペンで強調した時間割表、目標カード、リンクカード、紙風ステッカーが配置されています。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>ホワイトボードエディター</b> 付箋メモ、テキストボックス、8 種類の図形、接続線、ペンと蛍光ペン、画像、表、リンクカード、19 種類の組み込みステッカーをボード上に並べて整理します。複数のページを 1 つの .whiteboard ファイルにまとめ、F5 キーでプレゼン表示したり、PNG・SVG・PDF に書き出して印刷したりできます。他のエディターと同じように AI パネルやコマンドラインからも操作できます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/connectors-0131-1600.webp" srcset="/shots/connectors-0131-1600.webp 1600w, /shots/connectors-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="設定の「連携」画面。「連携サービス」の下に Notion、Canva、Obsidian 保管庫、Korean Law MCP、kordoc MCP のカードが並び、各カードの右側に接続や保管庫フォルダー追加のボタンがあります。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>連携サービスを 1 か所で管理</b> 「設定 → 連携」の「連携サービス」に Google ドライブ、Notion、Canva、Obsidian 保管庫、韓国法令情報センター、kordoc をまとめました。必要なサービスだけを選んで接続し、チャット入力欄の横にある接続ボタンから、その会話で使うサービスをひと目で確認してオン・オフできます。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Excalidraw 取り込みと PDF 背景</dt>
+            <dd>Excalidraw ファイル（.excalidraw、.excalidraw.png、.excalidraw.svg）をホワイトボードに取り込みます。元のファイルは変更せず、最初の保存時に新しい .whiteboard ファイルを作ります。PDF をページの背景に敷いて、その上に手書きやメモを残すこともできます。</dd>
+          </div>
+          <div>
+            <dt>Obsidian 保管庫と Notion・Canva の添付</dt>
+            <dd>Obsidian を起動せずに、IeumOffice からローカル保管庫のノートを検索して読み書きできます。保管庫フォルダーの中に索引ファイルは作りません。チャット入力欄の添付（+）メニューから Obsidian ノート、Notion ページ、Canva デザインを選んで添付でき、Canva デザインは PowerPoint や PDF に書き出して新しいタブで開けます。</dd>
+          </div>
+          <div>
+            <dt>Markdown の選択書式バー</dt>
+            <dd>Markdown エディターでマウスやキーボードで文字を選ぶと、すぐ上に書式バーが表示されます。太字、斜体、リンク、見出し、箇条書きをリボンと同じ操作で適用でき、ショートカットキーも一緒に確認できます。</dd>
+          </div>
+          <div>
+            <dt>AI アシスタントパネルの統一</dt>
+            <dd>10 個のエディターの AI アシスタントパネルを同じ見た目にそろえました。作業の段階が回答の上に順に積み上がり、AI が直した場所はカードを押してそのまま移動できます。回答のコピーは Excel と PDF にも追加され、EPUB とダイアグラムでは AI パネルを左右どちらにも配置できます。</dd>
+          </div>
+          <div>
+            <dt>kordoc が作ったハングル文書をすぐ開く</dt>
+            <dd>kordoc で作成した .hwpx・.hwp ファイルを、空のハングルタブにそのまま開いたり、新しいハングルタブで開いたりできます。編集中の文書を上書きすることはありません。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          ハングル文書内のハイパーリンクがポップアップブロックで開けなかった問題、ページをまたいで編集した表を保存すると拒否された問題、フォントが非常に多い PC でフォント変更時に固まる原因を解消しました。Ctrl（Mac は ⌘）+ホイールでの拡大・縮小は OS の設定によらず 1 目盛り 5% に統一し、Linux のネットワークフォルダー（gvfs）での保存エラーや、複数ページ割付印刷で PDF が膨らむ問題も修正しました。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.1" rel="noopener">0.13.1 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.0">
         <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">2026年11月17日</time></p>
         <div class="split-head">

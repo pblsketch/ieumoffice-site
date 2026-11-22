@@ -784,6 +784,60 @@ async function editorChoiceShot(app, shell) {
   await sleep(600)
 }
 
+/** 0.13.1: the new warm paper-craft whiteboard editor with a two-page book fair planning board. */
+async function whiteboardShot(app, shell, scratch) {
+  const file = join(scratch.docs, '가을 북페어', '북페어_기획보드.whiteboard')
+  const before = [...app.windows()]
+  await shell.evaluate((path) => window.aiOffice.openPath(path), file)
+  const page = await editorPage(app, before)
+  await page.locator('.wb-zoom-level').first().waitFor({ state: 'visible', timeout: 60_000 })
+  await sleep(2000)
+  const closeAi = page.locator('.ai-dock button.wb-btn', { hasText: '×' }).first()
+  if (await closeAi.isVisible().catch(() => false)) await closeAi.click()
+  await sleep(1000)
+  await page.locator('.wb-zoom-level').first().click()
+  await sleep(1800)
+  await shot(app, 'whiteboard-0131')
+  console.log('wrote whiteboard-0131')
+}
+
+/** 0.13.1: Settings → 연동 showing the unified Connected Services cards (Notion, Canva, Obsidian, Law, kordoc). */
+async function connectorsShot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1200)
+  await shell.locator('.account-btn').first().click()
+  await shell.locator('.set-nav-item', { hasText: '연동' }).first().click()
+  await sleep(1800)
+  // Scroll the right settings pane so the Connected Services heading and all cards fit without clipping
+  await shell.evaluate(() => {
+    const pane = document.querySelector('.set-content') ?? document.querySelector('.set-body')
+    const heading = [...document.querySelectorAll('.set-pane-subtitle')].find((el) =>
+      el.textContent?.includes('연결한 서비스'),
+    )
+    if (pane && heading) {
+      const top = heading.getBoundingClientRect().top - pane.getBoundingClientRect().top + pane.scrollTop - 16
+      pane.scrollTop = Math.max(0, top)
+    }
+  })
+  await sleep(800)
+  const crop = await shell.evaluate(() => {
+    const dlg = document.querySelector('.set-dialog') ?? document.querySelector('.set-modal')
+    if (!dlg) return [216, 60, 1008, 668]
+    const r = dlg.getBoundingClientRect()
+    const pad = 24
+    return [
+      Math.max(0, Math.round(r.x - pad)),
+      Math.max(0, Math.round(r.y - pad)),
+      Math.round(r.width + pad * 2),
+      Math.round(r.height + pad * 2),
+    ]
+  })
+  await shot(app, 'connectors-0131', crop)
+  console.log('wrote connectors-0131', crop)
+  await shell.keyboard.press('Escape').catch(() => {})
+  await sleep(600)
+}
+
 const want = (name) => !ONLY.length || ONLY.includes(name)
 
 async function main() {
@@ -896,6 +950,8 @@ async function main() {
     if (want('mindmap-mm-01212')) await mindmapMmShot(app, shell, scratch)
     if (want('print-layout-0130')) await printLayoutShot(app, shell, opened)
     if (want('editor-choice-0130')) await editorChoiceShot(app, shell)
+    if (want('whiteboard-0131')) await whiteboardShot(app, shell, scratch)
+    if (want('connectors-0131')) await connectorsShot(app, shell)
   } finally {
     // an imported document is unsaved and may ask before the app closes: do not wait on it
     if (app) {

@@ -62,6 +62,59 @@
 
       <!-- Newest first. Each release adds one <article> at the top (see the README section on what to do after a release). -->
 
+      <article class="release" id="v0.13.1">
+        <p class="release-meta"><b>0.13.1</b><time datetime="2026-11-22">November 22, 2026</time></p>
+        <div class="split-head">
+          <h2>Whiteboard editor,<br />connected services and Obsidian</h2>
+          <p>
+            A paper-textured whiteboard editor has been added. Arrange sticky notes, shapes, connectors, handwriting,
+            tables and stickers on a board, mark up directly over a PDF page, and export to PNG, SVG or PDF for
+            printing. In Settings → Integrations, you can now connect Google Drive, Notion, Canva and Obsidian vaults
+            in one place.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/whiteboard-0131-1600.webp" srcset="/shots/whiteboard-0131-1600.webp 1600w, /shots/whiteboard-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The whiteboard editor showing a 2026 autumn alley book fair planning board. Two page thumbnails sit in the left rail, and the paper-textured canvas holds a visitor flowchart, six pastel sticky notes, a hand-drawn underline, a timetable with a yellow highlight, three numbered goal cards, a link card and die-cut paper stickers." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Whiteboard editor</b> Place sticky notes, text boxes, eight shapes, connectors, pen and highlighter strokes, images, tables, link cards and nineteen built-in stickers on a board. Keep multiple pages in one .whiteboard file, press F5 to present, and export to PNG, SVG or PDF or print directly. Just like the other editors, the AI panel and the command-line tool work with whiteboards too.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/connectors-0131-1600.webp" srcset="/shots/connectors-0131-1600.webp 1600w, /shots/connectors-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The Integrations page in Settings. Under &quot;Connected services&quot;, cards for Notion, Canva, Obsidian Vault, Korean Law MCP and kordoc MCP appear in a list, each with a Connect or Add vault folder button on the right." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Connected services in one place</b> Under Settings → Integrations, "Connected services" brings together Google Drive, Notion, Canva, Obsidian Vault, Korean Law MCP and kordoc. Connect only what you use, and use the Connect button beside the chat input to see and toggle active services for the current conversation.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Excalidraw import and PDF backgrounds</dt>
+            <dd>Import Excalidraw files (.excalidraw, .excalidraw.png, .excalidraw.svg) into a whiteboard without touching the original file; the first save suggests a new .whiteboard file beside it. You can also place PDF pages as a board background and draw or leave notes on top.</dd>
+          </div>
+          <div>
+            <dt>Obsidian vaults and Notion or Canva attachments</dt>
+            <dd>Search, read and edit local Obsidian notes from IeumOffice without opening Obsidian, without creating index files inside your vault. From the + attach menu in chat, pick Obsidian notes, Notion pages or Canva designs; Canva designs can also be exported to PowerPoint or PDF and opened in a new tab.</dd>
+          </div>
+          <div>
+            <dt>Markdown selection formatting bar</dt>
+            <dd>Select text with the mouse or keyboard in the Markdown editor and a formatting bar appears right above it. Apply bold, italic, links, headings and lists the same way as on the ribbon, with keyboard shortcuts shown alongside.</dd>
+          </div>
+          <div>
+            <dt>Unified AI assistant panels</dt>
+            <dd>Ten editors now share the same AI panel layout: work steps stack neatly above the reply, and clicking a changed item jumps straight to that spot. Copy-reply is now in Excel and PDF too, and EPUB and Diagram let you dock the AI panel on the left or right.</dd>
+          </div>
+          <div>
+            <dt>Open Hangul files made by kordoc directly</dt>
+            <dd>Open .hwpx and .hwp files produced by kordoc straight into an empty Hangul tab or a new Hangul tab without overwriting a document you are already editing.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Also fixed: hyperlinks inside Hangul documents (including mailto:) were blocked as pop-ups; saving a Hangul
+          table edited across pages was rejected; reading installed fonts from the renderer could freeze PCs with huge
+          font libraries; Ctrl/⌘+wheel zoom now moves in consistent 5% steps regardless of OS scroll settings; Linux
+          network folders (gvfs) no longer fail to save; and multi-page print layouts no longer bloat shared-resource
+          PDFs.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.1" rel="noopener">See everything in 0.13.1, including fixes</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.0">
         <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">November 17, 2026</time></p>
         <div class="split-head">

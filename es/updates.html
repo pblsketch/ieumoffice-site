@@ -63,6 +63,59 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "새 버전을 낸 뒤"). -->
 
+      <article class="release" id="v0.13.1">
+        <p class="release-meta"><b>0.13.1</b><time datetime="2026-11-22">22 de noviembre de 2026</time></p>
+        <div class="split-head">
+          <h2>Editor de pizarra,<br />servicios conectados y Obsidian</h2>
+          <p>
+            Se ha incorporado un editor de pizarra con textura de papel. Coloca notas adhesivas, formas, conectores,
+            trazos a mano, tablas y pegatinas, anota directamente sobre un PDF y exporta a imagen (PNG, SVG) o PDF
+            para imprimir. En Configuración → Integraciones puedes conectar Google Drive, Notion, Canva y bóvedas de
+            Obsidian en un solo lugar.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/whiteboard-0131-1600.webp" srcset="/shots/whiteboard-0131-1600.webp 1600w, /shots/whiteboard-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="El editor de pizarra con el tablero de organización de la feria del libro de otoño. A la izquierda aparecen las miniaturas de dos páginas y, sobre el lienzo con textura de papel, un diagrama de recorrido, seis notas adhesivas en tonos pastel, un subrayado a mano, un horario resaltado en amarillo, tres tarjetas de objetivos numeradas, una tarjeta de enlace y pegatinas." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Editor de pizarra</b> Organiza ideas con notas adhesivas, cuadros de texto, ocho formas, conectores, bolígrafo y resaltador, imágenes, tablas, tarjetas de enlace y diecinueve pegatinas integradas. Guarda varias páginas en un mismo archivo .whiteboard, pulsa F5 para presentar y exporta a PNG, SVG o PDF o imprime directamente. Como el resto de los editores, también funciona con el panel de IA y la línea de comandos.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/connectors-0131-1600.webp" srcset="/shots/connectors-0131-1600.webp 1600w, /shots/connectors-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="La pantalla de Integraciones en Configuración. Bajo «Servicios conectados» aparecen las tarjetas de Notion, Canva, Bóveda de Obsidian, Korean Law MCP y kordoc MCP, cada una con un botón a la derecha para conectar o añadir una carpeta de bóveda." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Servicios conectados en un solo lugar</b> En Configuración → Integraciones, «Servicios conectados» reúne Google Drive, Notion, Canva, Bóveda de Obsidian, el centro nacional de legislación de Corea y kordoc. Conecta solo lo que usas y utiliza el botón de conexión junto al cuadro de chat para ver y activar o desactivar servicios en la conversación actual.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Importación de Excalidraw y fondos PDF</dt>
+            <dd>Importa archivos de Excalidraw (.excalidraw, .excalidraw.png, .excalidraw.svg) a una pizarra sin tocar el original; al guardar por primera vez propone un archivo .whiteboard nuevo. También puedes colocar páginas de un PDF como fondo y escribir o dibujar encima.</dd>
+          </div>
+          <div>
+            <dt>Bóvedas de Obsidian y adjuntos de Notion y Canva</dt>
+            <dd>Busca, lee y edita notas locales de Obsidian desde IeumOffice sin abrir Obsidian y sin crear archivos de índice dentro de tu bóveda. Desde el menú adjuntar (+) del chat puedes elegir notas de Obsidian, páginas de Notion o diseños de Canva; los diseños de Canva también se exportan a PowerPoint o PDF para abrirlos en una pestaña nueva.</dd>
+          </div>
+          <div>
+            <dt>Barra de formato al seleccionar en Markdown</dt>
+            <dd>Al seleccionar texto con el ratón o el teclado en el editor de Markdown, aparece una barra de formato justo encima. Aplica negrita, cursiva, enlaces, estilos de párrafo y listas igual que en la cinta, con sus atajos visibles.</dd>
+          </div>
+          <div>
+            <dt>Panel de asistente de IA unificado</dt>
+            <dd>Diez editores comparten ahora el mismo panel de IA: los pasos de trabajo se muestran encima de la respuesta y al pulsar en un cambio saltas directamente a ese lugar. Copiar respuesta llega también a Excel y PDF, y en EPUB y Diagrama puedes acoplar el panel a la izquierda o a la derecha.</dd>
+          </div>
+          <div>
+            <dt>Abrir directamente documentos Hangul creados con kordoc</dt>
+            <dd>Los archivos .hwpx y .hwp generados por kordoc se abren directamente en una pestaña de Hangul vacía o en una pestaña nueva, sin sobrescribir el documento que estés editando.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          También se corrigieron estos problemas: los enlaces dentro de documentos Hangul (incluido mailto:) se
+          bloqueaban como ventanas emergentes; se rechazaba guardar tras editar una tabla repartida entre páginas; se
+          eliminó la causa que bloqueaba el cambio de fuente en equipos con miles de fuentes; el zoom con Ctrl/⌘+rueda
+          avanza ahora un 5% uniforme sin depender del sistema operativo; y se resolvieron los errores al guardar en
+          carpetas de red en Linux (gvfs) y el aumento excesivo de tamaño en PDF al imprimir varias páginas por hoja.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.1" rel="noopener">Ver todo lo que cambió en 0.13.1, también lo corregido</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.0">
         <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">17 de noviembre de 2026</time></p>
         <div class="split-head">

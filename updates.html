@@ -62,6 +62,52 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "새 버전을 낸 뒤"). -->
 
+      <article class="release" id="v0.13.1">
+        <p class="release-meta"><b>0.13.1</b><time datetime="2026-11-22">2026년 11월 22일</time></p>
+        <div class="split-head">
+          <h2>화이트보드 편집기,<br />연결한 서비스 · Obsidian</h2>
+          <p>
+            종이 질감의 화이트보드 편집기가 새로 들어왔습니다. 스티커 메모, 도형, 연결선, 손글씨, 표, 스티커를 자유롭게 놓고 PDF 위에 바로 표시하며, 그림 파일(PNG·SVG)이나 PDF로 내보내 인쇄합니다. 설정의 "연동"에서는 Google 드라이브·Notion·Canva·Obsidian 볼트를 한자리에서 연결합니다.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/whiteboard-0131-1600.webp" srcset="/shots/whiteboard-0131-1600.webp 1600w, /shots/whiteboard-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="화이트보드 편집기에서 '가을 골목 북페어 기획 보드'를 연 화면. 왼쪽에는 '운영 기획 보드'와 '현장 부스 배치도' 두 쪽의 미리보기가 있고, 도구 막대 옆 종이 질감 보드 위에 동선 흐름도, 파스텔 스티커 메모 여섯 장, 손글씨 밑줄, 형광펜으로 강조한 시간표, 핵심 목표 카드, 링크 카드, 종이 스티커가 놓여 있습니다." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>화이트보드 편집기</b> 스티커 메모, 글상자, 도형 여덟 가지, 연결선, 펜과 형광펜, 그림, 표, 링크 카드, 기본 스티커 열아홉 개를 보드 위에 놓고 정리합니다. 여러 쪽을 한 파일(.whiteboard)에 담아 두고, F5로 발표 화면을 띄우거나 PNG·SVG·PDF로 내보내고 인쇄합니다. 다른 편집기처럼 AI 창과 터미널 명령어에서도 다룹니다.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/connectors-0131-1600.webp" srcset="/shots/connectors-0131-1600.webp 1600w, /shots/connectors-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="설정의 '연동' 화면. '연결한 서비스' 아래에 Notion, Canva, Obsidian 볼트, Korean Law MCP, kordoc MCP 카드가 나란히 있고, 각 카드 오른쪽에 '연결' 또는 '볼트 폴더 추가' 단추가 있습니다." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>연결한 서비스 한자리에서 관리</b> 설정 → "연동"의 "연결한 서비스"에 Google 드라이브, Notion, Canva, Obsidian 볼트, 국가법령정보센터, kordoc을 모았습니다. 필요한 서비스만 골라 연결하고, 대화창 옆 [연결] 단추에서 지금 대화에 켤 서비스를 한눈에 보고 켜고 끕니다.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Excalidraw 가져오기와 PDF 배경</dt>
+            <dd>Excalidraw 파일(.excalidraw, .excalidraw.png, .excalidraw.svg)을 화이트보드로 가져옵니다. 원본은 건드리지 않고 처음 저장할 때 .whiteboard 파일을 새로 만듭니다. PDF를 보드 페이지 배경으로 깔고 그 위에 손글씨나 메모를 남길 수도 있습니다.</dd>
+          </div>
+          <div>
+            <dt>Obsidian 볼트와 Notion·Canva 첨부</dt>
+            <dd>Obsidian을 켜지 않고 이음오피스에서 로컬 볼트의 노트를 찾고 읽고 고칩니다. 볼트 폴더 안에 색인 파일을 만들지 않습니다. 대화창의 첨부(+) 메뉴에서 Obsidian 노트, Notion 페이지, Canva 디자인을 골라 붙이고, Canva 디자인은 파워포인트·PDF로 내보내 새 탭에서 엽니다.</dd>
+          </div>
+          <div>
+            <dt>마크다운 선택 서식 막대</dt>
+            <dd>마크다운 편집기에서 마우스나 키보드로 글을 골라 두면 바로 위에 서식 막대가 뜹니다. 굵게, 기울임, 링크, 문단 모양, 목록을 리본과 같은 방식으로 적용하고 단축키도 함께 보여 줍니다.</dd>
+          </div>
+          <div>
+            <dt>AI 도우미 패널 통일</dt>
+            <dd>편집기 열 곳의 AI 도우미 패널을 같은 모양으로 맞췄습니다. 작업 단계가 답변 위에 차례로 쌓이고, AI가 고친 곳은 카드에서 눌러 그 자리로 갑니다. 답변 복사가 엑셀과 PDF에도 생겼고, EPUB과 다이어그램은 AI 패널을 왼쪽이나 오른쪽에 붙일 수 있습니다.</dd>
+          </div>
+          <div>
+            <dt>kordoc에서 만든 한글 문서 바로 열기</dt>
+            <dd>kordoc으로 만든 .hwpx·.hwp 파일을 빈 한글 탭으로 바로 열거나 새 한글 탭에서 엽니다. 지금 고치던 문서는 덮어쓰지 않습니다.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          한글 문서 안 하이퍼링크가 팝업 차단에 막혀 열리지 않던 것, 표를 쪽에 걸쳐 고친 뒤 저장이 거부되던 것, 글꼴이 아주 많은 PC에서 글꼴을 바꾸다 멈추던 원인을 없앴습니다. Ctrl(맥은 ⌘)+휠 확대·축소는 운영체제 설정과 관계없이 한 칸 5%로 맞췄고, Linux 네트워크 폴더 저장 오류와 여러 쪽 모아 찍기에서 PDF가 부풀던 문제도 고쳤습니다.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.1" rel="noopener">0.13.1에서 고친 것까지 전부 보기</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.0">
         <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">2026년 11월 17일</time></p>
         <div class="split-head">

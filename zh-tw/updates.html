@@ -61,6 +61,52 @@
 
       <!-- Newest first. Each release adds one <article> at the top (see the site README, "after releasing a new version"). -->
 
+      <article class="release" id="v0.13.1">
+        <p class="release-meta"><b>0.13.1</b><time datetime="2026-11-22">2026 年 11 月 22 日</time></p>
+        <div class="split-head">
+          <h2>白板編輯器、<br />已連線的服務與 Obsidian</h2>
+          <p>
+            全新加入紙張質感的白板編輯器。可以在白板上自由擺放便利貼、圖形、連接線、手寫筆跡、表格與貼紙，也能直接把 PDF 鋪在背後標記，並匯出成圖片（PNG、SVG）或 PDF 列印。在設定的「整合」中，現在能於同一處連線 Google 雲端硬碟、Notion、Canva 與 Obsidian 倉庫。
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/whiteboard-0131-1600.webp" srcset="/shots/whiteboard-0131-1600.webp 1600w, /shots/whiteboard-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="白板編輯器中開啟「秋季巷弄書展營運企劃白板」的畫面。左側有兩頁縮圖，紙張質感的畫布上排列著參觀動線流程圖、六張粉彩便利貼、手繪底線、螢光筆標記的時間表、三張編號目標卡片、連結卡片與紙雕風格貼紙。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>白板編輯器</b> 在畫布上擺放便利貼、文字方塊、8 種圖形、連接線、鋼筆與螢光筆、圖片、表格、連結卡片以及 19 種內建貼紙。一份 .whiteboard 檔案可容納多個頁面，按 F5 進入簡報模式，也能匯出成 PNG、SVG、PDF 或直接列印。和其他編輯器一樣，白板同樣支援 AI 面板與命令列工具。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/connectors-0131-1600.webp" srcset="/shots/connectors-0131-1600.webp 1600w, /shots/connectors-0131-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="設定中的「整合」畫面。「已連線的服務」下方並列著 Notion、Canva、Obsidian 倉庫、Korean Law MCP 與 kordoc MCP 卡片，每張卡片右側都有連線或新增倉庫資料夾的按鈕。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>在同一處管理已連線的服務</b> 在「設定 → 整合」的「已連線的服務」中，整合了 Google 雲端硬碟、Notion、Canva、Obsidian 倉庫、韓國法令資訊中心與 kordoc。只連線需要的服務，並透過對話輸入框旁的連線按鈕，一眼查看並開關這次對話要啟用的服務。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>匯入 Excalidraw 與 PDF 背景</dt>
+            <dd>將 Excalidraw 檔案（.excalidraw、.excalidraw.png、.excalidraw.svg）匯入成白板，不會動到原始檔案，首次儲存時會建議建立新的 .whiteboard 檔案。也能把 PDF 頁面鋪成白板背景，直接在上面手寫或貼上筆記。</dd>
+          </div>
+          <div>
+            <dt>Obsidian 倉庫與 Notion・Canva 附件</dt>
+            <dd>不必開啟 Obsidian，就能在 IeumOffice 裡搜尋、閱讀並修改本機倉庫中的筆記，也不會在倉庫資料夾內建立索引檔。在對話的附加（+）選單中可挑選 Obsidian 筆記、Notion 頁面或 Canva 設計；Canva 設計還能匯出成 PowerPoint 或 PDF，在新分頁中開啟。</dd>
+          </div>
+          <div>
+            <dt>Markdown 選取格式工具列</dt>
+            <dd>在 Markdown 編輯器中以滑鼠或鍵盤選取文字，上方就會浮出格式工具列。可像功能區一樣套用粗體、斜體、連結、段落樣式與清單，並一併顯示快速鍵。</dd>
+          </div>
+          <div>
+            <dt>統一 AI 助理面板</dt>
+            <dd>十個編輯器的 AI 助理面板現在有相同的外觀：工作步驟會依序排在回覆上方，點選卡片就能直接跳到 AI 修改的位置。Excel 與 PDF 也加入了複製回覆按鈕，EPUB 與圖表則可將 AI 面板停靠在左側或右側。</dd>
+          </div>
+          <div>
+            <dt>直接開啟 kordoc 產生的 Hangul 文件</dt>
+            <dd>將 kordoc 產生的 .hwpx・.hwp 檔案直接載入空白的 Hangul 分頁，或於新的 Hangul 分頁開啟，不會覆蓋正在編輯的文件。</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          另外也修正了：Hangul 文件內的超連結被快顯封鎖而無法開啟、跨頁修改表格後儲存遭拒、字型極多的電腦在切換字型時卡住的原因；Ctrl（Mac 為 ⌘）+滾輪縮放不再受作業系統設定影響，一律以每格 5% 調整；同時修正了 Linux 網路資料夾（gvfs）儲存失敗與多頁合一列印時 PDF 體積暴增的問題。
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.1" rel="noopener">查看 0.13.1 的完整修正內容</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.0">
         <p class="release-meta"><b>0.13.0</b><time datetime="2026-11-17">2026 年 11 月 17 日</time></p>
         <div class="split-head">

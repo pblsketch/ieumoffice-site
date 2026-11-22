@@ -15,6 +15,7 @@ export const FORMAT_COPY = {
     mindmap: ['Mind map', 'Mind map .xmind', 'Open and edit XMind files and save them as the same file. Change topic text and the shape and color of branch lines, and export to an image (PNG, SVG), PDF or a Markdown outline. FreeMind and Freeplane files (.mm) come in as new maps.', 'An idea map open in the mind map editor'],
     epub: ['EPUB', 'EPUB e-books', 'Open EPUB books to read, edit the text and save. Translate a book into another language and save the translation as its own file.', 'A book fair guide open in the EPUB editor'],
     diagram: ['Diagram', 'Diagram .drawio', 'Open draw.io files to edit flowcharts and layouts, and save them in the same format. Visio files (.vsdx) come in as new diagrams.', 'A sign-up process flowchart open in the diagram editor'],
+    whiteboard: ['Whiteboard', 'Whiteboard .whiteboard', 'Place sticky notes, shapes, connectors, handwriting, tables and stickers on a paper-textured board. Put a PDF behind a page to mark it up, bring in Excalidraw files, and export to PNG, SVG or PDF.', 'A 2026 autumn alley book fair planning board open in the whiteboard editor'],
   },
   ja: {
     home: ['ホーム', 'ホーム', '最近の文書やフォルダーを確認し、ファイル名や内容で検索します。新しい文書もここから作れます。', 'IeumOffice のホーム画面'],
@@ -28,6 +29,7 @@ export const FORMAT_COPY = {
     mindmap: ['マインドマップ', 'マインドマップ .xmind', 'XMind ファイルを開いて編集し、同じファイルとして保存します。トピックの文字や枝線の形・色を変え、画像（PNG・SVG）、PDF、Markdown のアウトラインに書き出します。FreeMind・Freeplane のファイル（.mm）は新しいマップとして取り込みます。', 'マインドマップエディターでアイデアマップを開いた画面'],
     epub: ['EPUB', 'EPUB 電子書籍', 'EPUB の本を開いて読み、本文を直して保存します。別の言語に翻訳し、翻訳版のファイルとして保存できます。', 'EPUB エディターでブックフェアの案内冊子を開いた画面'],
     diagram: ['ダイアグラム', 'ダイアグラム .drawio', 'draw.io ファイルを開いてフローチャートや構成図を編集し、同じ形式のまま保存します。Visio ファイル（.vsdx）は新しいダイアグラムとして取り込みます。', 'ダイアグラムエディターで参加申込の処理フローを開いた画面'],
+    whiteboard: ['ホワイトボード', 'ホワイトボード .whiteboard', '付箋メモ、図形、接続線、手書き、表、ステッカーを紙の質感のボード上に並べて整理します。PDF をページの背景に敷いて書き込んだり、Excalidraw ファイルを取り込んだりでき、画像（PNG・SVG）や PDF に書き出せます。', 'ホワイトボードエディターで 2026 秋の路地ブックフェア運営企画ボードを開いた画面'],
   },
   'zh-TW': {
     home: ['首頁', '首頁', '查看最近的文件與資料夾，並依檔名和內容搜尋。新文件也從這裡建立。', 'IeumOffice 首頁畫面'],
@@ -41,6 +43,7 @@ export const FORMAT_COPY = {
     mindmap: ['心智圖', '心智圖 .xmind', '開啟並編輯 XMind 檔案，存回同一個檔案。可以改變主題文字與分支線的樣式和顏色，並匯出成圖片（PNG、SVG）、PDF 或 Markdown 大綱。FreeMind、Freeplane 檔案（.mm）會匯入成新的心智圖。', '在心智圖編輯器中開啟點子圖的畫面'],
     epub: ['EPUB', 'EPUB 電子書', '開啟 EPUB 書籍閱讀，修改內文後儲存。也能翻譯成其他語言，另存成譯本檔案。', '在 EPUB 編輯器中開啟書展導覽手冊的畫面'],
     diagram: ['圖表', '圖表 .drawio', '開啟 draw.io 檔案編輯流程圖或架構圖，並以相同格式儲存。Visio 檔案（.vsdx）會匯入成新的圖表。', '在圖表編輯器中開啟報名處理流程圖的畫面'],
+    whiteboard: ['白板', '白板 .whiteboard', '在紙張質感的白板上擺放便利貼、圖形、連接線、手寫筆跡、表格與貼紙來整理想法。可以把 PDF 鋪成頁面背景直接標記，也能匯入 Excalidraw 檔案，並匯出成圖片（PNG、SVG）或 PDF。', '在白板編輯器中開啟 2026 秋季巷弄書展營運企劃白板的畫面'],
   },
   es: {
     home: ['Inicio', 'Inicio', 'Consulta los documentos y carpetas recientes y busca por nombre de archivo o por contenido. Los documentos nuevos también se crean aquí.', 'La pantalla de inicio de IeumOffice'],
@@ -54,5 +57,6 @@ export const FORMAT_COPY = {
     mindmap: ['Mapa mental', 'Mapa mental .xmind', 'Abre y edita archivos de XMind y guárdalos en el mismo archivo. Cambia el texto de los temas y la forma y el color de las ramas, y exporta a imagen (PNG, SVG), PDF o un esquema en Markdown. Los archivos de FreeMind y Freeplane (.mm) se importan como mapas nuevos.', 'Un mapa de ideas abierto en el editor de mapas mentales'],
     epub: ['EPUB', 'Libros EPUB', 'Abre libros EPUB para leerlos, corrige el texto y guarda. Traduce un libro a otro idioma y guarda la traducción como un archivo aparte.', 'La guía de una feria del libro abierta en el editor de EPUB'],
     diagram: ['Diagrama', 'Diagrama .drawio', 'Abre archivos de draw.io para editar diagramas de flujo y esquemas, y guárdalos en el mismo formato. Los archivos de Visio (.vsdx) se importan como diagramas nuevos.', 'Un diagrama de flujo de inscripciones abierto en el editor de diagramas'],
+    whiteboard: ['Pizarra', 'Pizarra .whiteboard', 'Coloca notas adhesivas, formas, conectores, trazos a mano, tablas y pegatinas sobre una pizarra con textura de papel. Pon un PDF como fondo de página para anotar encima, importa archivos de Excalidraw y exporta a PNG, SVG o PDF.', 'Un tablero de organización de la feria del libro abierto en el editor de pizarra'],
   },
 }
