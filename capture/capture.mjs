@@ -838,6 +838,107 @@ async function connectorsShot(app, shell) {
   await sleep(600)
 }
 
+/** 0.13.3: standalone PDF Tools window showing all 24 local tools in a clean wide grid. */
+async function pdfTools0133Shot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1000)
+  await shell.locator('.quick-card', { hasText: 'PDF 도구' }).first().click()
+  let pdfToolsPage = null
+  for (let i = 0; i < 40; i++) {
+    pdfToolsPage = app.windows().find((p) => p.url().includes('pdf-tools.html'))
+    if (pdfToolsPage) break
+    await sleep(400)
+  }
+  if (!pdfToolsPage) throw new Error('pdf-tools window did not open')
+  await pdfToolsPage.waitForLoadState('domcontentloaded')
+  await sleep(1200)
+  await app.evaluate(async ({ BrowserWindow }) => {
+    const win = BrowserWindow.getAllWindows().find((w) => w.webContents.getURL().includes('pdf-tools.html'))
+    if (win) {
+      win.setContentSize(1320, 940)
+      win.center()
+    }
+  })
+  await sleep(1500)
+  const b64 = await app.evaluate(async ({ BrowserWindow }) => {
+    const win = BrowserWindow.getAllWindows().find((w) => w.webContents.getURL().includes('pdf-tools.html'))
+    if (!win) throw new Error('pdf-tools BrowserWindow not found')
+    const img = await win.webContents.capturePage()
+    return img.toPNG().toString('base64')
+  })
+  mkdirSync(OUT, { recursive: true })
+  writeFileSync(join(OUT, 'pdf-tools-0133.png'), Buffer.from(b64, 'base64'))
+  console.log('wrote pdf-tools-0133')
+  await pdfToolsPage.close().catch(() => {})
+  await sleep(600)
+}
+
+/** 0.13.3: upgraded split live print preview in Docs with unified destination, 2-up borders, and watermark. */
+async function printUpgrade0133Shot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'docs')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2500)
+  const page = app.windows().find((p) => p.url().includes('://docs/'))
+  if (!page) return
+  const collapse = page.locator('.ai-panel-collapse')
+  if (await collapse.isVisible().catch(() => false)) await collapse.click()
+  await sleep(800)
+  await page.locator('button[data-quick-print="main"]').first().click()
+  const dialog = page.locator('.modal.print-dialog')
+  await dialog.waitFor({ state: 'visible', timeout: 30_000 })
+  await sleep(1200)
+  // Pick Save as PDF so the unified destination dropdown clearly shows the integrated output options
+  const printerSel = dialog.locator('select[data-print="printer"]')
+  const pdfOpt = await printerSel.evaluate((sel) => {
+    const opts = [...sel.options]
+    const hit = opts.find((o) => o.value === '__save_pdf__' || o.value.includes('pdf') || o.text.includes('PDF'))
+    return hit ? hit.value : null
+  })
+  if (pdfOpt) await printerSel.selectOption(pdfOpt)
+  // Enable 2-up with thin borders and a clean diagonal watermark so LivePrintPreview renders the arranged result
+  await dialog.locator('input[data-pl="mode"][value="nup"]').check().catch(() => {})
+  await dialog.locator('select[data-pl="nup-count"]').selectOption('2').catch(() => {})
+  const borderSel = dialog.locator('select[data-pl="nup-border"]')
+  if (await borderSel.isVisible().catch(() => false)) {
+    await borderSel.selectOption('thin').catch(() => {})
+  }
+  const wmDetails = dialog.locator('details[data-pl="watermark-section"]')
+  if (await wmDetails.count()) {
+    await wmDetails.locator('summary').click().catch(() => {})
+    await sleep(300)
+    await dialog.locator('input[data-pl="wm-kind"][value="text"]').check().catch(() => {})
+    await dialog.locator('input[data-pl="wm-text"]').fill('검토본').catch(() => {})
+  }
+  // Wait for PDFium LivePrintPreview image to render
+  await dialog.locator('img[data-pl="live-img"]').waitFor({ state: 'visible', timeout: 25_000 }).catch(() => {})
+  await sleep(2000)
+  await shot(app, 'print-upgrade-0133')
+  console.log('wrote print-upgrade-0133')
+  await page.keyboard.press('Escape').catch(() => {})
+  await sleep(600)
+}
+
+/** 0.13.3: Whiteboard editor upgrade with the 12 built-in localized board templates gallery open. */
+async function whiteboardTemplates0133Shot(app, shell, scratch) {
+  const file = join(scratch.docs, '가을 북페어', '북페어_기획보드.whiteboard')
+  const before = [...app.windows()]
+  await shell.evaluate((path) => window.aiOffice.openPath(path), file)
+  const page = await editorPage(app, before)
+  await page.locator('.wb-zoom-level').first().waitFor({ state: 'visible', timeout: 60_000 })
+  await sleep(2000)
+  const collapseAi = page.locator('.ai-panel-collapse').first()
+  if (await collapseAi.isVisible().catch(() => false)) await collapseAi.click()
+  await sleep(800)
+  await page.locator('button.wb-tool-btn[aria-label="템플릿"]').first().click()
+  await page.locator('.wb-template-modal').waitFor({ state: 'visible', timeout: 15_000 })
+  await sleep(1500)
+  await shot(app, 'whiteboard-templates-0133')
+  console.log('wrote whiteboard-templates-0133')
+  await page.keyboard.press('Escape').catch(() => {})
+  await sleep(600)
+}
+
 const want = (name) => !ONLY.length || ONLY.includes(name)
 
 async function main() {
@@ -952,6 +1053,9 @@ async function main() {
     if (want('editor-choice-0130')) await editorChoiceShot(app, shell)
     if (want('whiteboard-0131')) await whiteboardShot(app, shell, scratch)
     if (want('connectors-0131')) await connectorsShot(app, shell)
+    if (want('pdf-tools-0133')) await pdfTools0133Shot(app, shell)
+    if (want('print-upgrade-0133')) await printUpgrade0133Shot(app, shell, opened)
+    if (want('whiteboard-templates-0133')) await whiteboardTemplates0133Shot(app, shell, scratch)
   } finally {
     // an imported document is unsaved and may ask before the app closes: do not wait on it
     if (app) {
