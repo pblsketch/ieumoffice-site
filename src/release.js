@@ -125,7 +125,7 @@ export async function wireDownload() {
       })
       guardRepeatedDownload([...macLinks])
       if (macLabel) macLabel.textContent = L.mac(version)
-      if (macMeta) macMeta.textContent = `${arm.name} (${mb(arm)}MB) · Apple Silicon · ${L.beta}`
+      if (macMeta) macMeta.textContent = `${arm.name} (${mb(arm)}MB) · Apple Silicon`
     } else {
       // this release has no Apple Silicon build yet: say so rather than open a page without one
       macLinks.forEach((a) => {
@@ -142,7 +142,7 @@ export async function wireDownload() {
       })
       guardRepeatedDownload([...macIntelLinks])
       if (macIntelLabel) macIntelLabel.textContent = L.intel(version)
-      if (macIntelMeta) macIntelMeta.textContent = `${intel.name} (${mb(intel)}MB) · ${L.beta}`
+      if (macIntelMeta) macIntelMeta.textContent = `${intel.name} (${mb(intel)}MB)`
       // on the landing page the Intel line stays out of the way until there is a file for it
       if (macAlt) macAlt.hidden = false
     } else {

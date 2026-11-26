@@ -14,7 +14,7 @@ const CASES = [
   { q: '정말 무료인가요? 나중에 돈 내야 하나요?', source: ['비용'], must: ['무료'] },
   { q: 'Claude 구독은 어떻게 연결하나요?', source: ['Claude'] },
   { q: '맥에서도 쓸 수 있나요?', source: ['Mac'], must: ['Apple Silicon'] },
-  { q: '인텔 맥북에서도 되나요?', source: ['인텔 맥', 'Mac (베타)'], must: ['Intel', '0.12.4'], mustNot: ['지원하지 않', '실행되지 않'] },
+  { q: '인텔 맥북에서도 되나요?', source: ['인텔 맥', 'Mac'], must: ['Intel', '0.12.4'], mustNot: ['지원하지 않', '실행되지 않'] },
   { q: '리눅스 설치 방법', source: ['Linux'] },
   { q: '한글 파일을 고치고 hwp로 저장할 수 있나요?', source: ['한글'] },
   { q: '한글 파일을 PDF로 만들 수 있나요?', source: ['한글 파일'], mustNot: ['자료에는 그 내용이 없', '방법은 제가 가진 안내 자료에 없'] },
