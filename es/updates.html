@@ -63,6 +63,50 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "새 버전을 낸 뒤"). -->
 
+      <article class="release" id="v0.13.4">
+        <p class="release-meta"><b>0.13.4</b><time datetime="2026-11-28">28 de noviembre de 2026</time></p>
+        <div class="split-head">
+          <h2>Herramientas de tesis en Hangul,<br />Antigravity y panel de archivos</h2>
+          <p>
+            Añadimos al editor de Hangul el panel lateral de Esquema, Buscar y Bibliografía junto con índices, tablas
+            de contenido y macros. También llegan la suscripción de Google Antigravity, el panel de archivos junto a
+            las pestañas, instalaciones más rápidas y correcciones en OCR de PDF y espaciado de Word.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-workpane-0134-1600.webp" srcset="/shots/hwp-workpane-0134-1600.webp 1600w, /shots/hwp-workpane-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="El editor de Hangul con el plan de la feria del libro (.hwpx) abierto y el panel lateral izquierdo desplegado. Arriba aparecen las pestañas Esquema, Buscar y Bibliografía, junto con filtros de nivel, botones de subir o bajar nivel y un árbol jerárquico de títulos con números de página." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Panel lateral de Hangul (Esquema, Buscar, Bibliografía)</b> Cambia niveles de título o mueve secciones enteras desde el esquema, y busca o reemplaza con Ctrl+F en texto, tablas (incluidas tablas anidadas), cuadros de texto, notas al pie y notas finales. Gestiona una bibliografía local (BibTeX, RIS, CSL JSON), cambia entre estilos APA, Chicago, MLA e IEEE y ejecuta 6 comprobaciones; las referencias halladas con IA requieren verificación manual antes de citarse.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/file-panel-0134-1600.webp" srcset="/shots/file-panel-0134-1600.webp 1600w, /shots/file-panel-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="El editor de Word con el plan de la feria del libro (.docx) abierto y el panel de archivos desplegado a la izquierda. Incluye búsqueda rápida, los nueve archivos de la carpeta actual con marcas de pestaña abierta, carpetas fijadas y documentos recientes." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Panel de archivos y vista rápida con Espacio</b> Abre el panel de archivos junto a cualquier pestaña de edición para moverte por la carpeta actual, carpetas fijadas y documentos recientes sin volver al inicio. Pulsa Espacio sobre un archivo para previsualizarlo al lado, navega con las flechas y pulsa Intro para abrirlo.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/antigravity-0134-1600.webp" srcset="/shots/antigravity-0134-1600.webp 1600w, /shots/antigravity-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Pantalla Configuración → IA con cuatro tarjetas de suscripción: Claude, ChatGPT, Codex y Antigravity. La tarjeta de Antigravity muestra estado conectado, el aviso del protocolo ACP oficial y los botones de cuenta." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Suscripción de Google Antigravity</b> Conecta tu suscripción de Google Antigravity en Configuración → IA mediante el cliente oficial ACP para usarla en los 11 editores, el panel de preguntas del inicio y el modo agente. En claves de API, Solar pasa a llamarse Upstage Solar e incorpora solar-mini-4-5-preview.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Índices, copia de entrega y macros en Hangul</dt>
+            <dd>Crea tablas de contenido con tabulador punteado o tabla de dos columnas (cuerpo, tablas, figuras, ecuaciones) e índices en varias columnas que se actualizan en su sitio al reabrir el archivo. Avisa si hay entradas desactualizadas antes de guardar o imprimir, e incluye Guardar copia de entrega sin marcas internas. También permite grabar macros de teclas y ejecutar macros de script restringidas (compatibles con HAction, .ieummacro) sin leer jamás macros incrustadas en documentos.</dd>
+          </div>
+          <div>
+            <dt>Plantillas HTML, opciones de diapositivas y atajos IME</dt>
+            <dd>Cinco plantillas prácticas de una página aparecen en documentos HTML vacíos y en la cinta sin necesitar IA, y el panel de IA en presentaciones suma chips de estructura por propósito y separación de notas del orador. Los atajos de edición, cierre de pestañas y pizarra funcionan ahora con teclados coreanos y otros IME, junto con edición de tablas en diapositivas con un clic, selección múltiple de celdas y mayor compatibilidad de fórmulas con Excel.</dd>
+          </div>
+          <div>
+            <dt>Instalación más rápida y Mac/Linux fuera de beta</dt>
+            <dd>Reducimos a menos de la mitad los archivos instalados (de 5.973 a 2.625) para acelerar instalaciones y actualizaciones. A partir de la próxima versión (0.13.5), las actualizaciones de Windows descargarán solo las partes modificadas (subir a 0.13.4 aún descarga el instalador completo). Las distribuciones de Mac y Linux dejan atrás la etiqueta beta.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          También corregimos los bloqueos del OCR automático en PDF escaneados y eliminamos el límite de 40 páginas, ajustamos el interlineado 1,5x y saltos de página de Word en coreano y los márgenes de PDF sin encabezados, eliminamos los saltos de desplazamiento al escribir y problemas de marcas de agua en Word, corregimos el solapamiento de tablas de encabezado y el ajuste de imágenes en celdas de Hangul, elevamos el contraste a WCAG AA y actualizamos Electron a 43.8.10.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.4" rel="noopener">Ver todo lo que cambió en 0.13.4, también lo corregido</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.3">
         <p class="release-meta"><b>0.13.3</b><time datetime="2026-11-25">25 de noviembre de 2026</time></p>
         <div class="split-head">

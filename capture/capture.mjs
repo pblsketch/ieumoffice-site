@@ -939,6 +939,120 @@ async function whiteboardTemplates0133Shot(app, shell, scratch) {
   await sleep(600)
 }
 
+/** 0.13.4: Hangul editor with the left workpane (개요 · 찾기 · 참고문헌) open beside a structured HWPX report. */
+async function hwpWorkpane0134Shot(app, shell, scratch) {
+  const file = join(scratch.docs, '가을 북페어', '가을북페어_기획서.hwpx')
+  cpSync(join(HERE, 'samples-extra', '가을북페어_기획서.hwpx'), file)
+  const before = [...app.windows()]
+  await shell.evaluate((path) => window.aiOffice.openPath(path), file)
+  const page = await editorPage(app, before)
+  await page.waitForSelector('.hwp-app[data-phase="ready"]', { timeout: 90_000 })
+  await sleep(2500)
+  const collapseAi = page.locator('.ai-panel-collapse').first()
+  if (await collapseAi.isVisible().catch(() => false)) await collapseAi.click()
+  await sleep(800)
+  const toggle = page.locator('button.workpane-toggle').first()
+  await toggle.waitFor({ state: 'visible', timeout: 15_000 })
+  if ((await toggle.getAttribute('aria-pressed')) !== 'true') {
+    await toggle.click()
+  }
+  await page.locator('.workpane-side:not(.collapsed)').first().waitFor({ state: 'visible', timeout: 15_000 })
+  await sleep(1800)
+  await shot(app, 'hwp-workpane-0134')
+  console.log('wrote hwp-workpane-0134')
+  if ((await toggle.getAttribute('aria-pressed')) === 'true') {
+    await toggle.click().catch(() => {})
+  }
+  await sleep(600)
+  // close the extra sample tab so subsequent shots keep the standard un-overflowed tab strip
+  const extraTab = await tabOf(shell, '가을북페어_기획서.hwpx')
+  if (extraTab) {
+    await shell.evaluate((id) => window.aiOfficeTabs.close(id), extraTab.id).catch(() => {})
+    await sleep(600)
+  }
+}
+
+/** 0.13.4: Editor-side file list panel open beside the Word plan, showing current folder & registered folders. */
+async function filePanel0134Shot(app, shell, opened) {
+  const entry = opened.find(([name]) => name === 'docs')
+  if (!entry) return
+  await shell.locator('.tab-title', { hasText: entry[1] }).first().click()
+  await sleep(2000)
+  const page = app.windows().find((p) => p.url().includes('://docs/'))
+  if (page) {
+    const collapseAi = page.locator('.ai-panel-collapse').first()
+    if (await collapseAi.isVisible().catch(() => false)) await collapseAi.click()
+  }
+  await shell.evaluate(() => window.aiOfficeFilePanel.setOpen(true))
+  await shell.locator('.file-panel:not([hidden])').first().waitFor({ state: 'visible', timeout: 15_000 })
+  await sleep(2000)
+  await shot(app, 'file-panel-0134')
+  console.log('wrote file-panel-0134')
+  await shell.evaluate(() => window.aiOfficeFilePanel.setOpen(false))
+  await sleep(600)
+}
+
+/** 0.13.4: Settings → AI showing subscription cards including Google Antigravity. */
+async function antigravity0134Shot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1200)
+  await shell.locator('.account-btn').first().click()
+  await sleep(1000)
+  const okBtn = shell.getByRole('button', { name: '확인', exact: true }).first()
+  if (await okBtn.isVisible().catch(() => false)) {
+    await okBtn.click()
+    await sleep(800)
+  }
+  await shell.locator('.ai-sub-card').first().waitFor({ state: 'visible', timeout: 15_000 })
+  await shell.locator('.ai-sub-card[data-provider="antigravity"]').first().scrollIntoViewIfNeeded().catch(() => {})
+  // hide any PC-local plan tier suffix (e.g. "연결됨 · ultra") so the screenshot shows neutral product UI
+  await shell.evaluate(() => {
+    for (const el of document.querySelectorAll('.ai-sub-card .ai-sub-state, .ai-sub-card [class*="state"], .ai-sub-card [class*="status"]')) {
+      if (el.children.length === 0 && el.textContent && el.textContent.includes('·')) {
+        el.textContent = el.textContent.split('·')[0].trim()
+      }
+    }
+  })
+  await sleep(1200)
+  const crop = await shell.evaluate(() => {
+    const dlg = document.querySelector('.set-dialog') ?? document.querySelector('.set-modal')
+    if (!dlg) return [216, 60, 1008, 668]
+    const r = dlg.getBoundingClientRect()
+    const pad = 24
+    return [
+      Math.max(0, Math.round(r.x - pad)),
+      Math.max(0, Math.round(r.y - pad)),
+      Math.round(r.width + pad * 2),
+      Math.round(r.height + pad * 2),
+    ]
+  })
+  await shot(app, 'antigravity-0134', crop)
+  console.log('wrote antigravity-0134', crop)
+  const closeBtn = shell.locator('.set-close').first()
+  if (await closeBtn.isVisible().catch(() => false)) {
+    await closeBtn.click()
+  } else {
+    await shell.keyboard.press('Escape').catch(() => {})
+  }
+  await sleep(800)
+}
+
+/** 0.13.4: Blank HTML editor showing the 5 offline 1-page practical templates. */
+async function htmlTemplates0134Shot(app, shell) {
+  await shell.evaluate(() => window.aiOfficeTabs.activate('home'))
+  await sleep(1000)
+  const before = [...app.windows()]
+  await shell.locator('.quick-card', { hasText: 'HTML' }).first().click()
+  const page = await editorPage(app, before)
+  await page.locator('[data-testid="html-blank-templates"]').first().waitFor({ state: 'visible', timeout: 30_000 })
+  await sleep(1200)
+  const collapseAi = page.locator('.ai-panel-collapse').first()
+  if (await collapseAi.isVisible().catch(() => false)) await collapseAi.click()
+  await sleep(1000)
+  await shot(app, 'html-templates-0134')
+  console.log('wrote html-templates-0134')
+}
+
 const want = (name) => !ONLY.length || ONLY.includes(name)
 
 async function main() {
@@ -1056,6 +1170,10 @@ async function main() {
     if (want('pdf-tools-0133')) await pdfTools0133Shot(app, shell)
     if (want('print-upgrade-0133')) await printUpgrade0133Shot(app, shell, opened)
     if (want('whiteboard-templates-0133')) await whiteboardTemplates0133Shot(app, shell, scratch)
+    if (want('hwp-workpane-0134')) await hwpWorkpane0134Shot(app, shell, scratch)
+    if (want('file-panel-0134')) await filePanel0134Shot(app, shell, opened)
+    if (want('antigravity-0134')) await antigravity0134Shot(app, shell)
+    if (want('html-templates-0134')) await htmlTemplates0134Shot(app, shell)
   } finally {
     // an imported document is unsaved and may ask before the app closes: do not wait on it
     if (app) {

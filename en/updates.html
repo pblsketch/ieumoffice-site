@@ -62,6 +62,50 @@
 
       <!-- Newest first. Each release adds one <article> at the top (see the README section on what to do after a release). -->
 
+      <article class="release" id="v0.13.4">
+        <p class="release-meta"><b>0.13.4</b><time datetime="2026-11-28">November 28, 2026</time></p>
+        <div class="split-head">
+          <h2>Long-document Hangul tools,<br />Antigravity and the files panel</h2>
+          <p>
+            Adds an Outline, Find and Bibliography workpane to the Hangul editor along with TOC, index and macro tools.
+            Also adds Google Antigravity subscription support, a files panel beside editor tabs, faster installs, and
+            fixes for scanned PDF OCR stalls and Word line spacing.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-workpane-0134-1600.webp" srcset="/shots/hwp-workpane-0134-1600.webp 1600w, /shots/hwp-workpane-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The Hangul editor with a fall book fair plan (.hwpx) open and the left workpane expanded. Outline, Find and Bibliography tabs sit at the top of the pane, with level filters (1, 2, 3, All), promote/demote and style-mapping buttons, and a nested heading tree with page numbers beside the document." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Hangul workpane (Outline, Find, Bibliography)</b> Adjust heading levels or reorder whole sections from the Outline tree, and search or replace across body text, tables (including nested tables), text boxes, footnotes and endnotes with Ctrl+F. Manage a local bibliography (BibTeX, RIS, CSL JSON), switch between APA, Chicago, MLA and IEEE styles, and run 6 citation checks. AI-found references require human verification before citing.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/file-panel-0134-1600.webp" srcset="/shots/file-panel-0134-1600.webp 1600w, /shots/file-panel-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="The Word editor with the fall book fair plan (.docx) open and the files panel expanded on the left. A search box sits at the top, followed by the current folder listing nine sample files with open-tab dots, pinned folders, and recent documents right beside the open document." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Editor files panel and Spacebar Quick Look</b> Open the files panel beside any editor tab to browse the current folder, pinned folders and recent documents without leaving your file. Press Space on any item to preview it in a floating window next to the list, move with arrow keys, and press Enter to open.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/antigravity-0134-1600.webp" srcset="/shots/antigravity-0134-1600.webp 1600w, /shots/antigravity-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Settings → AI showing four subscription connection cards stacked in order: Claude, ChatGPT, Codex and Antigravity, with the Antigravity card displaying its connected status, official ACP protocol note, and account controls." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Google Antigravity subscription</b> Connect a Google Antigravity subscription in Settings → AI through the official ACP client for all 11 editor AI panels, the Home Q&amp;A panel and Agent mode. In API key providers, Solar is renamed to Upstage Solar and adds solar-mini-4-5-preview.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul TOC, index, submission copy and macros</dt>
+            <dd>Build dotted-tab or two-column tables of contents (body, tables, figures, equations) and multi-column indexes that refresh in place after reopening. Alerts warn before saving or printing stale entries, and Save Submission Copy strips internal markers into a clean file. Record key macros or run restricted script macros (HAction compatible, .ieummacro); embedded document macros are never read or run.</dd>
+          </div>
+          <div>
+            <dt>HTML templates, Slides options and IME shortcuts</dt>
+            <dd>Five offline one-page HTML templates now appear on blank documents and in the ribbon, and the Slides AI bar adds purpose-based deck structure chips and a speaker-notes split toggle. Editor shortcuts, tab close and whiteboard tools now work under Korean and other non-Latin IMEs, alongside single-click Slides table editing, multi-cell selection and stronger Excel formula compatibility.</dd>
+          </div>
+          <div>
+            <dt>Faster installs and Mac/Linux out of beta</dt>
+            <dd>Cut installed file count by more than half (5,973 to 2,625) to speed up installation and updates. Starting with the next version (0.13.5), Windows auto-updates download only changed blocks (updating to 0.13.4 still downloads the full installer). Mac and Linux builds drop the beta label.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          Also fixed: scanned PDF auto-OCR stalls and the 40-page cap, Korean Word BatangChe 1.5x line-grid height, page breaks and headerless PDF margins, Word typing scroll jumps and watermarks, Hangul multi-column head-table overlap and cell picture Square wrap, WCAG AA contrast and UI polish, plus Electron 43.8.10 security updates.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.4" rel="noopener">See everything in 0.13.4, including fixes</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.3">
         <p class="release-meta"><b>0.13.3</b><time datetime="2026-11-25">November 25, 2026</time></p>
         <div class="split-head">

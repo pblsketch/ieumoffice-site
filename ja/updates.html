@@ -61,6 +61,44 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "after releasing a new version"). -->
 
+      <article class="release" id="v0.13.4">
+        <p class="release-meta"><b>0.13.4</b><time datetime="2026-11-28">2026年11月28日</time></p>
+        <div class="split-head">
+          <h2>ハングル長文・論文ツールと<br />Antigravity 連携・ファイル一覧パネル</h2>
+          <p>ハングルエディターにアウトライン・検索・参考文献の作業ペインと目次・索引・マクロを追加しました。Google Antigravity サブスクリプション連携とエディター横のファイル一覧パネルを加え、スキャン PDF の文字認識によるフリーズや Word の行間・余白の不具合を修正しました。</p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-workpane-0134-1600.webp" srcset="/shots/hwp-workpane-0134-1600.webp 1600w, /shots/hwp-workpane-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="ハングルエディターで秋のブックフェア企画書（.hwpx）を開き、左側の作業ペインを広げた画面。上部にアウトライン・検索・参考文献のタブがあり、階層フィルターやレベル変更ボタンとともに見出しツリーとページ番号が文書の隣に表示されています。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>ハングル左作業ペイン（アウトライン・検索・参考文献）</b> アウトライン一覧で見出しレベルの変更や章・節ごとの移動ができ、検索タブ（Ctrl+F）では本文のほか表（入れ子表を含む）・テキストボックス・脚注・文末脚注までまとめて検索・置換できます。参考文献ライブラリ（BibTeX・RIS・CSL JSON）と APA・Chicago・MLA・IEEE の引用形式切替、6 種の整合性チェックにも対応し、AI が見つけた文献は人の確認後にのみ引用できます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/file-panel-0134-1600.webp" srcset="/shots/file-panel-0134-1600.webp 1600w, /shots/file-panel-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="Word エディターで企画書（.docx）を開いた左側にファイル一覧パネルを表示した画面。検索欄の下に同じフォルダー内の 9 ファイルと開いているタブの印、登録フォルダー、最近の文書が文書と並んで表示されています。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>エディター横のファイル一覧パネルとクイックルック</b> ホームに戻らずエディタータブの左側にファイル一覧パネルを開き、同じフォルダー・登録フォルダー・最近の文書を行き来できます。ファイル上で Space を押すと文書を開かずに横へプレビュー窓を表示し、矢印キーでめくって Enter で開けます。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/antigravity-0134-1600.webp" srcset="/shots/antigravity-0134-1600.webp 1600w, /shots/antigravity-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="設定の AI 画面。サブスクリプション接続の下に Claude、ChatGPT、Codex、Antigravity の 4 枚のカードが並び、一番下の Antigravity カードに接続済み表示と公式 ACP プロトコルの案内・アカウント操作ボタンが見えます。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Google Antigravity サブスクリプション連携</b> 設定 → AI から Google Antigravity サブスクリプションを公式 ACP クライアントで接続し、11 種のエディターの標準 AI パネル・ホーム質問パネル・エージェントモードで利用できます。API キー一覧では Solar を Upstage Solar に改名し solar-mini-4-5-preview を追加しました。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>ハングル目次・索引・提出用保存とマクロ</dt>
+            <dd>点線タブ・2 列表の目次（本文・表・図・数式）と多段索引を作成でき、文書を開き直してもその場で更新できます。保存や印刷の前に古い項目を知らせ、内部編集マークだけを除いて別保存する提出用コピー保存を追加しました。キーマクロ記録と制限付きスクリプトマクロ（HAction 互換、.ieummacro）も利用でき、文書内のマクロは読み込み・実行しません。</dd>
+          </div>
+          <div>
+            <dt>HTML テンプレート・スライド構成・IME ショートカット</dt>
+            <dd>空の HTML 文書とリボンに AI なしで使える 1 ページ実務テンプレート 5 種を追加し、スライド AI には目的別の構成選択と発表者ノート分離を設けました。韓国語などの IME 入力中でも各種ショートカットやタブ閉じ・ホワイトボード操作が効くようになり、スライド表のシングルクリック編集・複数セル選択や Excel 数式互換も向上しています。</dd>
+          </div>
+          <div>
+            <dt>インストール高速化と Mac・Linux 正式表記</dt>
+            <dd>インストールされるファイル数を半分以下（5,973 件 → 2,625 件）に減らし、導入と更新を速くしました。次のバージョン（0.13.5）から Windows の自動更新は差分のみをダウンロードします（0.13.4 への更新は旧コードのため全体を取得します）。Mac 版と Linux 版からベータ表記を外しました。</dd>
+          </div>
+        </dl>
+        <p class="credit">スキャン PDF の自動 OCR 停止と 40 ページ上限の撤廃、韓国語 Word の BatangChe 1.5 行グリッド・改ページ・ヘッダーなし PDF 余白・入力時のスクロール飛びと透かし、ハングル多段見出し表の重なり・セル画像の折り返し、WCAG AA コントラストと UI 調整、Electron 43.8.10 のセキュリティ更新を反映しました。</p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.4" rel="noopener">0.13.4 で修正した内容まですべて見る</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.3">
         <p class="release-meta"><b>0.13.3</b><time datetime="2026-11-25">2026年11月25日</time></p>
         <div class="split-head">

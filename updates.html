@@ -62,6 +62,49 @@
 
       <!-- Newest first. Each release adds one <article> at the top (README "새 버전을 낸 뒤"). -->
 
+      <article class="release" id="v0.13.4">
+        <p class="release-meta"><b>0.13.4</b><time datetime="2026-11-28">2026년 11월 28일</time></p>
+        <div class="split-head">
+          <h2>한글 긴 문서·논문 도구와<br />Antigravity 연동·파일 목록 칸</h2>
+          <p>
+            한글 편집기에 개요·찾기·참고문헌 작업창과 차례·색인·매크로를 넣었습니다. Google Antigravity 구독 연동과
+            편집기 옆 파일 목록 칸을 더하고, 스캔 PDF 글자 인식 멈춤과 워드 줄 간격·여백 오류를 고쳤습니다.
+          </p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-workpane-0134-1600.webp" srcset="/shots/hwp-workpane-0134-1600.webp 1600w, /shots/hwp-workpane-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="한글 편집기에서 '가을북페어_기획서.hwpx'를 열고 왼쪽 작업창을 펼친 화면. 작업창 상단에 개요·찾기·참고문헌 탭이 있고, 개요 탭 아래 1·2·3·전체 수준 필터와 수준 올리기·수준 내리기·수준 연결 단추, 그리고 '1. 행사 개요', '추진 목표', '기본 정보', '2. 프로그램', '운영 원칙', '3. 추진 일정', '4. 기대 효과' 제목 목록과 쪽 번호가 계층대로 보입니다." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>한글 왼쪽 작업창(개요·찾기·참고문헌)</b> 개요 목록에서 제목 수준을 바꾸거나 장·절을 통째로 옮기고, 찾기 탭(Ctrl+F)에서 본문·표(표 안의 표 포함)·글상자·각주·미주를 한 번에 찾아 바꿉니다. 참고문헌 모음(BibTeX·RIS·CSL JSON)과 APA·Chicago·MLA·IEEE 인용 꼴 전환, 6가지 점검도 지원하며 AI가 찾은 문헌은 사람이 확인한 뒤에만 인용할 수 있습니다.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/file-panel-0134-1600.webp" srcset="/shots/file-panel-0134-1600.webp 1600w, /shots/file-panel-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="워드 편집기에서 '가을북페어_기획서.docx'를 연 화면 왼쪽에 파일 목록 칸을 펼친 모습. 상단에 파일 찾기 입력 칸이 있고, 아래에 '이 문서가 있는 폴더 가을 북페어'의 문서 9개와 열린 탭 표시 점, 등록된 폴더 '내 문서', 최근 문서 목록이 문서 바로 옆에 나란히 보입니다." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>편집기 옆 파일 목록 칸과 빠른 미리보기</b> 홈 화면으로 가지 않고도 편집기 탭 왼쪽에 파일 목록 칸을 열어 같은 폴더, 등록한 폴더, 최근 문서를 오갈 수 있습니다. 파일 목록 칸에서 Space를 누르면 문서를 열지 않고 바로 옆에 미리보기 창을 띄워 방향키로 훑어보고 Enter로 엽니다.</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/antigravity-0134-1600.webp" srcset="/shots/antigravity-0134-1600.webp 1600w, /shots/antigravity-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="설정의 AI 화면. '구독 연결' 아래 Claude, ChatGPT, Codex, Antigravity 카드 네 개가 나란히 놓여 있고, 맨 아래 Antigravity 카드에 '연결됨' 표시와 함께 공식 ACP 프로토콜 안내 및 계정 관리 단추가 보입니다." loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Google Antigravity 구독 연동</b> 설정 → AI에서 Google Antigravity 구독을 공식 ACP 클라이언트로 연결해 11개 편집기의 기본 AI 창, 홈 질문 패널, 에이전트 모드에서 쓸 수 있습니다. 고급 키 제공자 목록에는 Upstage Solar 이름과 solar-mini-4-5-preview를 추가했습니다.</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>한글 차례·색인·제출본 저장과 매크로</dt>
+            <dd>점선 탭·2칸 표 방식의 본문·표·그림·수식 차례와 다단 색인을 문서를 다시 열어도 제자리에서 새로 고칩니다. 저장·인쇄 전에 오래된 항목을 알려 주고, 내부 편집 표시만 빼고 따로 저장하는 제출본 저장을 넣었습니다. 키 매크로 기록과 제한된 스크립트 매크로(HAction 호환, .ieummacro)도 쓸 수 있으며 문서 안 매크로는 실행하지 않습니다.</dd>
+          </div>
+          <div>
+            <dt>HTML 템플릿·슬라이드 구성·한글 입력 단축키</dt>
+            <dd>빈 HTML 문서와 리본에 AI 없이 쓰는 1쪽 실무 템플릿 5종을 넣었고, 슬라이드 AI에는 목적별 구성과 발표자 노트 분리 선택을 더했습니다. 한글 입력 상태에서도 편집기 단축키와 탭 닫기, 화이트보드 도구 단축키가 동작하며, 슬라이드 표 한 번 클릭 편집·여러 칸 선택과 엑셀 수식 호환성도 높였습니다.</dd>
+          </div>
+          <div>
+            <dt>더 빠른 설치와 Mac·Linux 정식 표기</dt>
+            <dd>설치 파일 수를 절반 이하(5,973개 → 2,625개)로 줄여 설치와 업데이트가 빨라졌습니다. 다음 버전(0.13.5)부터는 Windows 자동 업데이트가 바뀐 부분만 내려받습니다(이번 0.13.4 업데이트는 이전 버전 코드로 받아 전체를 내려받습니다). Mac과 Linux 배포판에서 베타 표기도 떼었습니다.</dd>
+          </div>
+        </dl>
+        <p class="credit">
+          스캔 PDF 자동 글자 인식 멈춤 수정과 40쪽 제한 해제, 워드 바탕체 1.5줄 격자·쪽 나눔·PDF 여백·스크롤 튐·워터마크, 한글 다단 머리 표 겹침·셀 그림 어울림, 화면 글자 대비(WCAG AA)와 Electron 43.8.10 보안 업데이트를 반영했습니다.
+        </p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.4" rel="noopener">0.13.4에서 고친 것까지 전부 보기</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.3">
         <p class="release-meta"><b>0.13.3</b><time datetime="2026-11-25">2026년 11월 25일</time></p>
         <div class="split-head">

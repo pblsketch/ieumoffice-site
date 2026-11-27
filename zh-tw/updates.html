@@ -61,6 +61,44 @@
 
       <!-- Newest first. Each release adds one <article> at the top (see the site README, "after releasing a new version"). -->
 
+      <article class="release" id="v0.13.4">
+        <p class="release-meta"><b>0.13.4</b><time datetime="2026-11-28">2026 年 11 月 28 日</time></p>
+        <div class="split-head">
+          <h2>Hangul 長文・論文工具與<br />Antigravity 連動・檔案面板</h2>
+          <p>為 Hangul 編輯器加入大綱・尋找・參考文獻側欄，以及目錄・索引・巨集功能。同時新增 Google Antigravity 訂閱連結與編輯器旁的檔案清單面板，並修正掃描 PDF 文字辨識卡頓與 Word 行距・邊界異常。</p>
+        </div>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/hwp-workpane-0134-1600.webp" srcset="/shots/hwp-workpane-0134-1600.webp 1600w, /shots/hwp-workpane-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在 Hangul 編輯器開啟秋季書展企劃書（.hwpx）並展開左側工作窗格的畫面。窗格上方有大綱、尋找與參考文獻分頁，下方顯示階層篩選、升降階層與樣式連結按鈕，以及附有頁碼的樹狀標題清單。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Hangul 左側工作窗格（大綱・尋找・參考文獻）</b> 可在大綱樹狀清單調整標題階層或整節搬移，尋找分頁（Ctrl+F）一次搜尋並取代內文、表格（含巢狀表格）、文字方塊、註腳與章節附註。支援本機參考文獻庫（BibTeX・RIS・CSL JSON）、APA・Chicago・MLA・IEEE 引用格式切換與 6 項檢查，AI 找到的文獻須經人工確認才能引用。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/file-panel-0134-1600.webp" srcset="/shots/file-panel-0134-1600.webp 1600w, /shots/file-panel-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="在 Word 編輯器開啟企劃書（.docx）時於左側展開檔案清單面板的畫面。上方有檔案搜尋列，下方列出同資料夾中的 9 個範例檔案與已開啟圓點標記、已加入資料夾與最近文件。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>編輯器旁檔案清單面板與快速預覽</b> 不必切回首頁即可在編輯器分頁左側開啟檔案清單面板，切換同資料夾、已加入資料夾與最近文件。在檔案上按 Space 可不開啟分頁直接於一旁預覽，以方向鍵瀏覽並按 Enter 開啟。</p>
+        <figure class="window window-flat new-shot">
+          <img src="/shots/antigravity-0134-1600.webp" srcset="/shots/antigravity-0134-1600.webp 1600w, /shots/antigravity-0134-2880.webp 2880w" sizes="(min-width: 1230px) 1180px, 96vw" alt="設定中的 AI 畫面。訂閱連結下方並排顯示 Claude、ChatGPT、Codex 與 Antigravity 四張卡片，最下方的 Antigravity 卡片顯示已連線狀態、官方 ACP 協定說明與帳號管理按鈕。" loading="lazy" />
+        </figure>
+        <p class="new-caption"><b>Google Antigravity 訂閱連結</b> 可在設定 → AI 透過官方 ACP 用戶端連結 Google Antigravity 訂閱，於 11 款編輯器的 AI 面板、首頁問答面板與代理模式中使用。進階 API 金鑰清單亦將 Solar 更名為 Upstage Solar 並加入 solar-mini-4-5-preview。</p>
+        <dl class="hwp-facts new-facts">
+          <div>
+            <dt>Hangul 目錄・索引・提交副本與巨集</dt>
+            <dd>支援點線定位與兩欄表格樣式的本文・表・圖・公式目錄及多欄索引，重新開啟檔案後仍可原地更新。儲存與列印前會提醒過期項目，並新增去除內部編輯標記的「另存提交副本」。另加入按鍵巨集錄製與受限腳本巨集（相容 HAction、.ieummacro），絕不讀取或執行文件內嵌巨集。</dd>
+          </div>
+          <div>
+            <dt>HTML 範本・簡報架構選項與輸入法快捷鍵</dt>
+            <dd>空白 HTML 文件與功能區新增 5 款離線單頁實用範本，簡報 AI 工具列加入用途導向架構選項與講者備忘錄分離開關。韓文等非拉丁輸入法狀態下也能正常使用各編輯器快捷鍵、關閉分頁與白板工具，同時強化簡報表格單擊編輯・多格選取與 Excel 公式相容性。</dd>
+          </div>
+          <div>
+            <dt>安裝加速與 Mac・Linux 正式標示</dt>
+            <dd>將安裝檔案數減少超過一半（5,973 個降至 2,625 個），明顯縮短安裝與更新時間。自下個版本（0.13.5）起 Windows 自動更新將僅下載差異區塊（升級至 0.13.4 仍由舊版程式下載完整安裝檔）。Mac 與 Linux 版本亦正式移除測試版標示。</dd>
+          </div>
+        </dl>
+        <p class="credit">同時修正掃描 PDF 自動 OCR 卡頓並取消 40 頁上限、韓文 Word BatangChe 1.5 倍行格高度・分頁與無頁首尾 PDF 邊界、Word 輸入捲動跳動與浮水印、Hangul 多欄首表重疊與表格圖片文繞圖、WCAG AA 文字對比與介面微調，並升級 Electron 43.8.10 安全性更新。</p>
+        <p class="credit">
+          <a href="https://github.com/pblsketch/ieumoffice/releases/tag/v0.13.4" rel="noopener">查看 0.13.4 的完整修正內容</a>
+        </p>
+      </article>
+
       <article class="release" id="v0.13.3">
         <p class="release-meta"><b>0.13.3</b><time datetime="2026-11-25">2026 年 11 月 25 日</time></p>
         <div class="split-head">
