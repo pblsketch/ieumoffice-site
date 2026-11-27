@@ -34,7 +34,7 @@ npm run build    # dist/ 에 만들기
 | 번체 중국어 | `zh-tw/` | `zh-TW` |
 | 스페인어 | `es/` | `es` |
 
-- 페이지 여섯 개는 `<폴더>/<이름>.html`, 개인정보 처리방침과 법적 고지는 `public/<폴더>/privacy.html`·`legal.html`입니다. 주소는 `/en/`, `/en/install#mac`처럼 폴더가 앞에 붙고, `vercel.json`의 `rewrites`가 `.html` 없는 주소를 잇습니다.
+- 페이지 여섯 개는 `<폴더>/<이름>.html`, 개인정보 처리방침과 법적 고지는 `public/<폴더>/privacy.html`·`legal.html`입니다. 주소는 `/en/`, `/en/install#mac`처럼 폴더가 앞에 붙고, Cloudflare Pages가 `.html` 없는 주소를 자동으로 잇습니다.
 - 언어 목록은 `src/i18n.js`의 `LANGS` 한 곳입니다. 빌드(`vite.config.js`)가 이 목록으로 페이지를 모으고, 각 페이지의 `<head>`에 `hreflang` 대체 주소를, 위쪽 막대에 언어 메뉴를 넣습니다. 번역본에 메뉴를 손으로 넣지 않습니다. 정적 파일인 개인정보·법적 고지는 맨 위의 언어 줄과 `hreflang`을 직접 적어 두었습니다. `public/sitemap.xml`에도 모든 언어 주소가 있습니다.
 - 페이지가 브라우저 언어와 다르고 그 언어판이 있으면 왼쪽 아래에 "이 페이지는 ○○어로도 있습니다" 띠가 한 번 뜹니다(`src/lang-switch.js`). 메뉴에서 언어를 고르거나 띠를 닫으면 그 선택을 브라우저에 기억하고 다시 묻지 않습니다. 주소를 저절로 옮기지는 않습니다.
 - 스크립트가 만드는 글(편집기 탭 설명, 내려받기 단추, 단계 재생기, 질문 창)은 각 파일 안의 `{ ko, en, ja, 'zh-TW', es }` 표에 있습니다. 편집기 탭의 다른 언어 글은 `src/formats-copy.js`입니다. 한국어 글을 고치면 이 표들도 같이 고칩니다.
@@ -64,11 +64,11 @@ npm run build    # dist/ 에 만들기
 - **자동 갱신** `.github/workflows/kb.yml`: 매일 새벽 3시(KST)에 돌고, `main`에 페이지(`*.html`, `public/*.html`)나 `scripts/build-kb.mjs`가 바뀌어 올라갈 때도 돕니다. Actions 탭에서 "Question helper knowledge base" → Run workflow로 손으로 돌릴 수도 있습니다. 하는 일은 이렇습니다.
   1. 앱 저장소의 최신 릴리스 태그를 찾고, 필요한 파일만 받습니다(부분 복제, 몇 MB).
   2. `npm run kb`로 지식베이스를 다시 만들고 `npm run kb:check`로 검사합니다. 출처마다 조각이 남아 있는지, 제품 이름이 바뀌었는지, 조각 크기와 검색 몇 개를 봅니다. 모델은 부르지 않습니다.
-  3. 파일이 달라졌으면 `chore(kb): …`로 `main`에 커밋합니다. 그러면 Vercel이 다시 배포합니다. 같으면 아무것도 하지 않습니다.
+  3. 파일이 달라졌으면 `chore(kb): …`로 `main`에 커밋하고(`lib/kb-data.js`, `lib/kb-index.js`), 이어서 `deploy.yml`이 Cloudflare Pages에 다시 배포합니다. 같으면 아무것도 하지 않습니다.
   4. 검사가 실패하면 커밋하지 않고 빨간 실행으로 남습니다. GitHub가 저장소 주인에게 메일을 보내니, 그 메일이 오면 실행 기록의 ✗ 줄을 봅니다.
 - **모델**은 Claude Haiku 5.5(`claude-haiku-5-5`, 바꾸려면 `QA_MODEL`)입니다. 저장소 주인의 Claude Console 조직에서 돌고, 워크스페이스 `ieumoffice-site`에 월 지출 한도 $20이 걸려 있습니다. 한도나 크레딧이 떨어지면 답 대신 안내 조각이 나옵니다.
 - **API 인증**: Cloudflare Pages Production Secret에 `ANTHROPIC_API_KEY`(`ieumoffice-site` 워크스페이스, 월 지출 한도 $20)를 등록해 씁니다. 검색 색인(`lib/kb-index.js`)은 `npm run kb` 때 미리 계산해 넣어 Cloudflare 무료 CPU 한도(10ms) 안에서 동작합니다. Vercel OIDC 경로(`lib/vercel-claude.js`)는 로컬 개발이나 호환용으로만 남겨 두었습니다.
-- **로컬에서 보기**: `vercel env pull .env.local`로 개발용 OIDC 토큰과 ID를 받은 뒤, `npm run dev:api`(질문 서버, 8787)와 `npm run dev`를 함께 띄웁니다. Vite가 `/api`를 질문 서버로 넘깁니다.
+- **로컬에서 보기**: `.env.local`에 `ANTHROPIC_API_KEY`를 넣은 뒤 `npm run dev:api`(질문 서버, 8787)와 `npm run dev`를 함께 띄웁니다. Vite가 `/api`를 질문 서버로 넘깁니다.
 - **시험**: `npm run kb:eval`은 질문마다 Claude가 고른 조각에 맞는 자료가 들어갔는지 봅니다. `-- --answer`는 답까지 받아 꼭 들어갈 말과 들어가면 안 되는 말을 봅니다. 질문 20여 개에 몇 센트가 듭니다. `-- --offline`은 Claude 없이 글자 검색만 봅니다. 실제 질문에 틀리게 답한 사례가 생기면 `scripts/kb-eval.mjs`에 넣습니다.
 - **대화 기록**: 답이 끝날 때마다 `lib/log.js`가 한 줄을 저장소 주인(pblsketch@gmail.com)의 시트 "이음오피스 질문 도우미 기록"에 보냅니다. 남기는 것은 시각, 질문, 답, 결과(답함 / 자료에 없음 / 답 못 함), 근거 제목, 지식베이스 버전, 대화 차례입니다. IP는 남기지 않고 이메일·전화·주민번호·카드번호 꼴은 가립니다. 시트에 붙은 Apps Script 웹 앱이 받고(`QA_LOG_URL`, 비밀 `QA_LOG_SECRET`), 매일 새벽 90일 지난 줄을 지웁니다. 두 변수가 없으면 기록하지 않습니다. 서버 로그에는 오류 상태 코드만 남깁니다. 사용자에게 알리는 문구는 채팅 창 아래와 `public/privacy.html#ask`에 있습니다. "자료에 없음"으로 끝난 질문은 도움말에 보탤 내용이자 `kb:eval`에 넣을 후보입니다.
 
@@ -100,6 +100,6 @@ node capture/form-banner.mjs    # public/form-banner.png (의견 설문 머리�
 3. **다른 칸과 어긋나지 않게** 봅니다. 편집기 설명(`src/main.js`의 `FORMATS`)과 한글·AI·비용·개인정보 칸의 문장이 새 기능이나 바뀐 동작과 맞는지 확인합니다. 오래 쓸 기능은 메인 소개 칸에도 옮겨 적습니다.
 4. **캡처**는 그 버전으로 빌드한 이음오피스(`IEUM_REPO`, 기본 `E:/github/openoffice-release`)로 찍습니다. 새 장면은 `capture/capture.mjs`에 장면 함수를 하나 더해 이름으로 찍고(`node capture/capture.mjs split pdf-reading`), 그 이름만 변환합니다(`python capture/optimize.py split pdf-reading`). 이름은 버전마다 겹치지 않게 짓습니다(앞 버전 항목이 옛 캡처를 계속 씁니다). 엑셀을 다시 찍으면 `MARKS`도 맞춥니다.
 5. **문구**는 humanizer로 검토합니다. 추상적인 말("표시", "도구가 늘었다")이나 전문 용어("주석", "릴리스", "본문", "EPUB")는 일반 사용자가 바로 알아듣는 말로 바꾸거나 괄호로 풀어 씁니다. 오피스가 먼저이고 AI는 보조 도구로 씁니다.
-6. **질문 도우미의 지식베이스**는 따로 손대지 않아도 됩니다. 8번에서 페이지를 push하면 "Question helper knowledge base" 작업이 새 릴리스 태그와 새 업데이트 페이지로 다시 만들어 커밋합니다. 그 실행이 초록인지, 그리고 `lib/kb-data.js`의 첫 줄 버전이 새 태그인지 확인합니다. `faq.html`의 "0.12.8 기준"(버전 번호)과 지원 환경·설치·저장·호환성 답이 새 버전과 맞는지 먼저 고칩니다. 앱 도움말이 크게 바뀐 버전이면 Claude로 답까지 시험합니다(`vercel env pull .env.local` 뒤 `npm run kb:eval -- --answer`, 몇 센트). 틀린 답이 나오면 지침(`lib/qa.js`)이나 시험 질문(`scripts/kb-eval.mjs`)을 고칩니다.
-7. **명령줄 설치 스크립트**: 앱 README가 Linux 사용자에게 `curl -fsSL https://ieumoffice.com/cli/install.sh | sh`를 안내합니다. 새 버전마다 앱 저장소의 `packaging/cli/install.sh`(그 버전의 `DEFAULT_VERSION`)를 `public/cli/install.sh`로 복사합니다. `.gitattributes`가 LF 줄 끝을 지키고, `vercel.json`이 `/cli/`를 일반 글(`text/plain`)로 내보냅니다.
-8. `npm run build`와 `npx vite preview`로 데스크톱·모바일 폭에서 `/updates.html`과 메인을 확인하고, 저장소 주인의 확인을 받은 뒤 `main`에 push합니다. Vercel이 배포하면 https://ieumoffice.com/updates 와 메인의 한 줄 안내, 내려받기 버튼의 버전을 다시 봅니다.
+6. **질문 도우미의 지식베이스**는 따로 손대지 않아도 됩니다. 8번에서 페이지를 push하면 "Question helper knowledge base" 작업이 새 릴리스 태그와 새 업데이트 페이지로 다시 만들어 커밋하고, 변경이 있으면 곧바로 "Deploy to Cloudflare Pages"가 다시 배포합니다. 두 실행이 초록인지, 그리고 `lib/kb-data.js`의 첫 줄 버전이 새 태그인지 확인합니다. `faq.html`의 "0.12.8 기준"(버전 번호)과 지원 환경·설치·저장·호환성 답이 새 버전과 맞는지 먼저 고칩니다. 앱 도움말이 크게 바뀐 버전이면 Claude로 답까지 시험합니다(`.env.local`에 `ANTHROPIC_API_KEY`를 두고 `npm run kb:eval -- --answer`, 몇 센트). 틀린 답이 나오면 지침(`lib/qa.js`)이나 시험 질문(`scripts/kb-eval.mjs`)을 고칩니다.
+7. **명령줄 설치 스크립트**: 앱 README가 Linux 사용자에게 `curl -fsSL https://ieumoffice.com/cli/install.sh | sh`를 안내합니다. 새 버전마다 앱 저장소의 `packaging/cli/install.sh`(그 버전의 `DEFAULT_VERSION`)를 `public/cli/install.sh`로 복사합니다. `.gitattributes`가 LF 줄 끝을 지키고, `public/_headers`가 `/cli/`를 일반 글(`text/plain`)로 내보냅니다.
+8. `npm run build`와 `npx vite preview`로 데스크톱·모바일 폭에서 `/updates.html`과 메인을 확인하고, 저장소 주인의 확인을 받은 뒤 `main`에 push합니다. GitHub Actions의 **"Deploy to Cloudflare Pages"**가 초록으로 끝나면 https://ieumoffice.com/updates 와 메인의 한 줄 안내, 내려받기 버튼의 버전을 다시 봅니다.

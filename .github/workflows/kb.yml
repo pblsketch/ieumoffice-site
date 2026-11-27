@@ -1,8 +1,8 @@
 # Keeps the question helper's knowledge base (lib/kb-data.js) in step with the
 # app's latest release and this site's pages. Runs every night, whenever a page
 # is pushed to main, and by hand (Actions → Question helper knowledge base →
-# Run workflow). When the rebuilt file differs it is committed to main, which
-# makes Vercel redeploy the site; when nothing changed nothing happens.
+# Run workflow). When the rebuilt file differs it is committed to main and the
+# deploy job pushes the updated site to Cloudflare Pages; when nothing changed nothing happens.
 
 name: Question helper knowledge base
 
