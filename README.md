@@ -1,6 +1,6 @@
 # 이음오피스 소개 사이트
 
-[이음오피스](https://github.com/pblsketch/ieumoffice)를 소개하고 설치 파일을 내려받는 한 쪽짜리 사이트입니다. Vite로 만들고 Vercel에 올립니다.
+[이음오피스](https://github.com/pblsketch/ieumoffice)를 소개하고 설치 파일을 내려받는 한 쪽짜리 사이트입니다. Vite로 만들고 Cloudflare Pages에 올립니다.
 
 페이지는 다섯 개이고, 모든 페이지에 질문 도우미 창이 붙습니다(아래 "질문 도우미"). 메인(`index.html`), 업데이트 소식(`updates.html`, 주소 `/updates`), 만든 이야기(`story.html`, 주소 `/story`), 설치 도움말(`install.html`, 주소 `/install`), AI 연결 도움말(`connect.html`, 주소 `/connect`). 만든 이야기는 저장소 주인이 직접 쓴 글이므로 맞춤법과 띄어쓰기 말고는 손대지 않습니다.
 
@@ -14,11 +14,9 @@ npm run dev      # 로컬에서 보기
 npm run build    # dist/ 에 만들기
 ```
 
-`main`에 push하면 Vercel이 자동으로 배포합니다(프로젝트 `ieumoffice`, https://ieumoffice.com).
+`main`에 push하면 GitHub Actions(`.github/workflows/deploy.yml`)가 `kb:check`·`check:i18n`·`vite build`를 거쳐 Cloudflare Pages(프로젝트 `ieumoffice-site`, https://ieumoffice.com)에 자동으로 배포합니다.
 
-주소는 Cloudflare에서 산 `ieumoffice.com`입니다. Cloudflare DNS의 `@`와 `www` CNAME이 Vercel을 가리키고(프록시 끔), `www.ieumoffice.com`과 `ieumoffice.vercel.app`은 `vercel.json`의 `redirects`가 `ieumoffice.com`으로 옮깁니다. 이미 Google에 등록한 `privacy.html`, `form-banner.png`, Search Console 확인 파일만 vercel.app 주소에서도 그대로 열립니다.
-
-앱 캡처(`/shots/`)는 `cdn.ieumoffice.com`에서 내려받습니다(2026-11-09). 캡처가 사이트 전송량의 대부분이라 Vercel 무료 한도(Fast Data Transfer 100GB)를 넘었기 때문입니다. `cdn` CNAME은 `cname.vercel-dns.com`을 가리키고 **이 레코드만 Cloudflare 프록시를 켭니다**. Cloudflare가 캡처를 보관해 내주므로 다시 받는 몫은 Vercel 전송량에 들지 않습니다. 같은 Vercel 프로젝트의 도메인이라 저장소의 `public/shots/`가 그대로 원본이고, `vercel.json`이 이 주소에서 `/shots/` 밖의 경로를 `ieumoffice.com`으로 옮깁니다. 정식 빌드(`VERCEL_ENV=production`)만 `vite.config.js`가 페이지와 `src/main.js`의 캡처 주소를 cdn으로 바꾸고, 미리보기와 로컬 빌드는 같은 주소의 `/shots/`를 씁니다. `@`·`www`의 프록시는 켜지 않습니다. 켜면 질문 도우미의 요청 제한(`api/ask.js`, IP별)이 모든 방문자를 Cloudflare IP 몇 개로 보게 됩니다. 이미 올린 캡처를 같은 이름으로 바꾸면 Cloudflare와 브라우저가 최대 하루 동안 옛 그림을 보여 줄 수 있으니, 새 캡처는 새 이름(예: `-01212`)으로 올립니다.
+주소는 Cloudflare에서 산 `ieumoffice.com`입니다. Cloudflare DNS의 `@`, `www`, `cdn` CNAME이 모두 `ieumoffice-site.pages.dev`를 가리키고(프록시 켬), Cloudflare Redirect Rules가 `www.ieumoffice.com/*`과 `cdn.ieumoffice.com`의 `/shots/` 밖 경로를 `https://ieumoffice.com`으로 301 리디렉션합니다. 정적 자산(HTML·JS·CSS·아이콘·캡처)은 Cloudflare Pages 정적 CDN에서 직접 서빙되고, `/api/stats`와 `/api/ask`만 Pages Functions(`functions/api/`)로 실행됩니다. 캐시 정책과 `/cli/*`의 `text/plain` 헤더는 `public/_headers`에 있습니다. 이미 올린 캡처를 같은 이름으로 바꾸면 Cloudflare와 브라우저가 최대 하루 동안 옛 그림을 보여 줄 수 있으니, 새 캡처는 새 이름(예: `-01212`)으로 올립니다.
 
 검색 등록: `robots.txt`와 `sitemap.xml`이 `public/`에 있습니다. 페이지를 더하면 `sitemap.xml`에도 넣고, 각 페이지 `<head>`에 `canonical`을 `https://ieumoffice.com/...`으로 답니다.
 
@@ -69,7 +67,7 @@ npm run build    # dist/ 에 만들기
   3. 파일이 달라졌으면 `chore(kb): …`로 `main`에 커밋합니다. 그러면 Vercel이 다시 배포합니다. 같으면 아무것도 하지 않습니다.
   4. 검사가 실패하면 커밋하지 않고 빨간 실행으로 남습니다. GitHub가 저장소 주인에게 메일을 보내니, 그 메일이 오면 실행 기록의 ✗ 줄을 봅니다.
 - **모델**은 Claude Haiku 5.5(`claude-haiku-5-5`, 바꾸려면 `QA_MODEL`)입니다. 저장소 주인의 Claude Console 조직에서 돌고, 워크스페이스 `ieumoffice-site`에 월 지출 한도 $20이 걸려 있습니다. 한도나 크레딧이 떨어지면 답 대신 안내 조각이 나옵니다.
-- **API 키는 없습니다.** Vercel의 OIDC 토큰을 Anthropic Workload Identity Federation으로 짧은 토큰과 바꿉니다. Vercel 환경변수에는 비밀이 아닌 ID 네 개만 있습니다(`ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`, `ANTHROPIC_WORKSPACE_ID`). 콘솔의 발급자 `https://oidc.vercel.com/wnsdlf1212-6473s-projects`는 최대 토큰 수명이 12시간이어야 합니다. Vercel 토큰 수명이 실제 사이트 2시간, 개발용 12시간이라, 이보다 짧으면 `jwt_lifetime_too_long`으로 거절됩니다. `ANTHROPIC_API_KEY`를 환경에 넣으면 페더레이션보다 먼저 쓰이니 넣지 않습니다.
+- **API 인증**: Cloudflare Pages Production Secret에 `ANTHROPIC_API_KEY`(`ieumoffice-site` 워크스페이스, 월 지출 한도 $20)를 등록해 씁니다. 검색 색인(`lib/kb-index.js`)은 `npm run kb` 때 미리 계산해 넣어 Cloudflare 무료 CPU 한도(10ms) 안에서 동작합니다. Vercel OIDC 경로(`lib/vercel-claude.js`)는 로컬 개발이나 호환용으로만 남겨 두었습니다.
 - **로컬에서 보기**: `vercel env pull .env.local`로 개발용 OIDC 토큰과 ID를 받은 뒤, `npm run dev:api`(질문 서버, 8787)와 `npm run dev`를 함께 띄웁니다. Vite가 `/api`를 질문 서버로 넘깁니다.
 - **시험**: `npm run kb:eval`은 질문마다 Claude가 고른 조각에 맞는 자료가 들어갔는지 봅니다. `-- --answer`는 답까지 받아 꼭 들어갈 말과 들어가면 안 되는 말을 봅니다. 질문 20여 개에 몇 센트가 듭니다. `-- --offline`은 Claude 없이 글자 검색만 봅니다. 실제 질문에 틀리게 답한 사례가 생기면 `scripts/kb-eval.mjs`에 넣습니다.
 - **대화 기록**: 답이 끝날 때마다 `lib/log.js`가 한 줄을 저장소 주인(pblsketch@gmail.com)의 시트 "이음오피스 질문 도우미 기록"에 보냅니다. 남기는 것은 시각, 질문, 답, 결과(답함 / 자료에 없음 / 답 못 함), 근거 제목, 지식베이스 버전, 대화 차례입니다. IP는 남기지 않고 이메일·전화·주민번호·카드번호 꼴은 가립니다. 시트에 붙은 Apps Script 웹 앱이 받고(`QA_LOG_URL`, 비밀 `QA_LOG_SECRET`), 매일 새벽 90일 지난 줄을 지웁니다. 두 변수가 없으면 기록하지 않습니다. 서버 로그에는 오류 상태 코드만 남깁니다. 사용자에게 알리는 문구는 채팅 창 아래와 `public/privacy.html#ask`에 있습니다. "자료에 없음"으로 끝난 질문은 도움말에 보탤 내용이자 `kb:eval`에 넣을 후보입니다.
@@ -91,7 +89,7 @@ node capture/form-banner.mjs    # public/form-banner.png (의견 설문 머리�
 
 엑셀 화면의 AI 시연에서 강조 상자의 위치는 `src/main.js`의 `MARKS`에 캡처 대비 비율로 적혀 있습니다. 엑셀 캡처가 달라지면 함께 맞춥니다.
 
-`public/form-banner.png`는 앱 안 "의견 보내기"의 Google 설문 머리글입니다. 설문의 테마 맞춤설정 → 헤더 이미지 선택 → URL 사용에 `https://ieumoffice.vercel.app/form-banner.png`를 넣어 두었습니다. 배너를 바꾸면 그 PNG를 다시 올리고, 설문에서도 다시 골라 주세요.
+`public/form-banner.png`는 앱 안 "의견 보내기"의 Google 설문 머리글입니다. 배너를 바꿀 때는 새 PNG를 올린 뒤 설문의 테마 맞춤설정 → 헤더 이미지 선택 → URL 사용에 `https://ieumoffice.com/form-banner.png`를 넣어 다시 골라 주세요.
 
 ## 새 버전을 낸 뒤
 
