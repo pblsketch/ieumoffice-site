@@ -431,10 +431,13 @@ async function siteGrowthNumbers() {
 
 let growthCache
 function growthNumbers() {
-  return (growthCache ??= (async () =>
-    (await siteGrowthNumbers()) ??
-    (await liveGrowthNumbers()) ??
-    (await fetchJson(GROWTH_SUMMARY_URL).catch(() => null)))())
+  return (growthCache ??= (async () => {
+    const site = await siteGrowthNumbers()
+    if (site && site.source === 'live') return site
+    const live = await liveGrowthNumbers()
+    if (live && (!site || live.totalDownloads >= site.totalDownloads)) return live
+    return site ?? (await fetchJson(GROWTH_SUMMARY_URL).catch(() => null))
+  })())
 }
 
 function fillStats(strip, data) {
